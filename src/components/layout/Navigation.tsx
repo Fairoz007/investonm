@@ -241,6 +241,7 @@ const MobileNavItem = ({ item }: { item: NavItem }) => {
 export const Navigation = () => {
   const isScrolled = useScrollPosition(50);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -295,10 +296,21 @@ export const Navigation = () => {
               </button>
 
               {/* Language Selector */}
-              <button className="hidden md:flex items-center gap-1 text-xs font-semibold text-white/80 hover:text-white transition-colors tracking-wide">
-                <span>English</span>
-                <ChevronDown className="w-3 h-3" />
-              </button>
+              <div className="hidden md:flex relative group">
+                <button className="flex items-center gap-1 text-xs font-semibold text-white/80 hover:text-white transition-colors tracking-wide py-2">
+                  <span>English</span>
+                  <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+                </button>
+                <div className="absolute top-[100%] right-0 pt-2 w-32 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  <div className="bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    {['English', 'Arabic', 'Russian', 'Chinese', 'Persian', 'Turkish'].map((lang) => (
+                      <button key={lang} className="w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-[#00c2b5] hover:bg-white/5 transition-colors">
+                        {lang}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* Vision 2040 Logo */}
               <div className="hidden lg:flex items-center text-right border-l border-white/20 pl-6 h-10">
@@ -346,10 +358,35 @@ export const Navigation = () => {
                       <button className="w-full py-3 bg-[#00c2b5] text-[#111] font-bold rounded-full hover:bg-[#00ebd9] transition-colors tracking-wider">
                         Login
                       </button>
-                      <button className="flex items-center justify-center gap-2 w-full py-3 text-white/80 hover:text-white transition-colors">
-                        <Globe className="w-5 h-5" />
-                        <span>English</span>
-                      </button>
+                      <div className="flex flex-col w-full pb-4">
+                        <button
+                          onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
+                          className="flex items-center justify-center gap-2 w-full py-3 text-white/80 hover:text-white transition-colors"
+                        >
+                          <Globe className="w-5 h-5" />
+                          <span>English</span>
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-[#00c2b5]' : ''}`} />
+                        </button>
+                        <AnimatePresence>
+                          {isMobileLangOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden bg-white/5 border border-white/10 rounded-lg mt-2 mb-2"
+                            >
+                              <div className="flex flex-col py-2">
+                                {['English', 'Arabic', 'Russian', 'Chinese', 'Persian', 'Turkish'].map((lang) => (
+                                  <button key={lang} className="w-full text-center py-2.5 text-sm text-white/60 hover:text-[#00c2b5] transition-colors">
+                                    {lang}
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     </div>
                   </div>
                 </SheetContent>
