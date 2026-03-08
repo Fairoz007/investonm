@@ -1,4 +1,4 @@
-# Invest Saudi - Technical Specification
+# invest Oman - Technical Specification
 
 ## 1. Tech Stack Overview
 
