@@ -2,163 +2,52 @@ import type { NavItem, Slide, InvestCard } from '@/types';
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    label: 'WHY OMAN',
-    href: '#why-oman',
-    subtitle: 'Discover the Sultanate\'s limitless potential',
+    label: 'HOME',
+    href: '/',
+  },
+  {
+    label: 'ABOUT OMAN',
+    href: '/about-oman',
+    subtitle: 'Why Oman is a Global Investment Destination',
     children: [
-      { label: 'Vision and Leadership Message', href: '/why-oman/vision-leadership' },
-      { label: 'Why Invest in Oman', href: '/why-oman/why-invest' },
-      { label: 'Living in Oman', href: '/why-oman/living' },
-      { label: 'Oman Vision 2040', href: '/why-oman/vision-2040' },
-      { label: 'National Investment Strategy', href: '/why-oman/nis' },
-      { label: 'National Strategies', href: '/why-oman/national-strategies' },
-      { label: 'About Oman Investment', href: '/why-oman/about-oman-investment' },
+      { label: 'Oman’s Infrastructure Advantage', href: '/about-oman#infrastructure' },
+      { label: 'Legislation', href: '/about-oman#legislation' },
+      { label: 'Business Ecosystem', href: '/about-oman#ecosystem' },
+      { label: 'Strategic Location', href: '/about-oman#location' },
+      { label: 'A Cost-Effective Business Hub', href: '/about-oman#hub' },
+      { label: 'Friendly Business Environment', href: '/about-oman#environment' },
+      { label: 'Incentives to Invest', href: '/about-oman#incentives' },
     ],
   },
   {
-    label: 'SECTOR & OPPORTUNITIES',
-    href: '#sectors',
-    subtitle: 'A Unified Hub of Investment Opportunities',
+    label: 'KEY SECTORS',
+    href: '/key-sectors',
+    subtitle: 'Strategic Investment Sectors in Oman',
     children: [
-      { label: 'Investment Opportunities', href: '/sectors/opportunities' },
-      {
-        label: 'Sectors',
-        href: '/sectors/key-sectors',
-        hasSubmenu: true,
-        submenu: {
-          type: 'multicolumn',
-          columns: [
-            {
-              title: 'Manufacturing & Industrial Sectors',
-              items: [
-                { label: 'Defense & Space', href: '#' },
-                { label: 'Agriculture & Food', href: '#' },
-                { label: 'Automotive', href: '#' },
-                { label: 'Energy', href: '#' },
-                { label: 'Mining & Metals', href: '#' },
-                { label: 'Petrochemicals', href: '#' },
-                { label: 'Biotechnology & Pharma', href: '#' },
-                { label: 'Machinery & Equipment', href: '#' },
-              ]
-            },
-            {
-              title: 'Services Sectors',
-              items: [
-                { label: 'Information & Communication', href: '#' },
-                { label: 'Education & Training', href: '#' },
-                { label: 'Healthcare & Medical', href: '#' },
-                { label: 'Real Estate', href: '#' },
-                { label: 'Transport & Logistics', href: '#' },
-                { label: 'Tourism', href: '#' },
-                { label: 'Media', href: '#' },
-                { label: 'Culture', href: '#' },
-                { label: 'Entertainment', href: '#' },
-              ]
-            },
-            {
-              title: 'Environmental Services',
-              items: [
-                { label: 'Recycling', href: '#' },
-                { label: 'Water', href: '#' },
-                { label: 'Environment Services', href: '#' },
-              ]
-            },
-            {
-              title: 'Other',
-              items: [
-                { label: 'Sport', href: '#' },
-                { label: 'Cybersecurity', href: '#' },
-              ]
-            }
-          ]
-        }
-      },
-      {
-        label: 'Regions',
-        href: '/sectors/regions',
-        hasSubmenu: true,
-        submenu: {
-          type: 'twocolumn',
-          columns: [
-            {
-              items: [
-                { label: 'Muscat Governorate', href: '#' },
-                { label: 'Dhofar Governorate', href: '#' },
-                { label: 'Musandam Governorate', href: '#' },
-                { label: 'Al Buraimi Governorate', href: '#' },
-                { label: 'Al Dakhiliyah Governorate', href: '#' },
-                { label: 'Al Batinah North Governorate', href: '#' },
-                { label: 'Al Batinah South Governorate', href: '#' },
-                { label: 'Ash Sharqiyah South Governorate', href: '#' },
-                { label: 'Ash Sharqiyah North Governorate', href: '#' },
-              ]
-            },
-            {
-              items: [
-                { label: 'Al Dhahirah Governorate', href: '#' },
-                { label: 'Al Wusta Governorate', href: '#' },
-              ]
-            }
-          ]
-        }
-      },
-      { label: 'Real Estate', href: '/sectors/real-estate' },
-      { label: 'Giga Projects', href: '/sectors/giga-projects' },
-      { label: 'Investor Journey Guide', href: '/sectors/journey' },
+      { label: 'Energy', href: '/key-sectors#energy' },
+      { label: 'Luxury', href: '/key-sectors#luxury' },
+      { label: 'Trade', href: '/key-sectors#trade' },
+      { label: 'Investments', href: '/key-sectors#investments' },
+      { label: 'Tourism & Hospitality', href: '/key-sectors#tourism' },
+      { label: 'Education', href: '/key-sectors#education' },
+      { label: 'Logistics', href: '/key-sectors#logistics' },
+      { label: 'Real Estate', href: '/key-sectors#real-estate' },
     ],
   },
   {
-    label: 'SETUP & SCALE',
-    href: '#setup',
-    subtitle: 'Start and grow your business with our comprehensive support',
+    label: 'WHO WE ARE',
+    href: '/who-we-are',
+    subtitle: 'Your Strategic Investment Partner',
     children: [
-      { label: 'Investor Services', href: '/setup/investor-services' },
-      { label: 'E Services', href: '/setup/e-services' },
-      { label: 'Investor Service Catalog', href: '/setup/catalog' },
-      { label: 'Investor Registration Advisor', href: '/setup/registration' },
-      { label: 'Scaling by Investor – Value Added Services', href: '/setup/scaling' },
-      { label: 'Investor Process Explorer', href: '/setup/process' },
-    ],
-  },
-  {
-    label: 'PROGRAMS & INCENTIVES',
-    href: '#programs',
-    subtitle: 'Explore specialized programs, incentives, and tailored initiatives',
-    children: [
-      { label: 'RHQ', href: '/programs/rhq' },
-      { label: 'GSCRI', href: '/programs/gscri' },
-      { label: 'Ignite', href: '/programs/ignite' },
-      { label: 'Shreek', href: '/programs/shareek' },
-      { label: 'Catalyze Oman', href: '/programs/catalyze-oman' },
-      { label: 'Sustainability & Green', href: '/programs/sustainability' },
-      { label: 'Special Economic Zones', href: '/programs/sez' },
-      { label: 'Success Stories', href: '/programs/success-stories' },
-      { label: 'Incentives', href: '/programs/incentives' },
-      { label: 'Startup Oman', href: '/programs/startup-oman' },
-    ],
-  },
-  {
-    label: 'KNOWLEDGE',
-    href: '#knowledge',
-    subtitle: 'Key insights into Oman\'s economic and investment ecosystem.',
-    children: [
-      { label: 'Economic & Investment Reports', href: '/knowledge/reports' },
-      { label: 'Competitiveness Insights', href: '/knowledge/competitiveness' },
-      { label: 'Foreign Direct Investment Insights', href: '/knowledge/fdi' },
-      { label: 'Investment Growth & Opportunities', href: '/knowledge/growth' },
-      { label: 'Investment Council', href: '/knowledge/council' },
-      { label: 'Events Calendar', href: '/knowledge/events' },
-      { label: 'News', href: '/knowledge/news' },
+      { label: 'Our Mission', href: '/who-we-are#mission' },
+      { label: 'Our Vision', href: '/who-we-are#vision' },
+      { label: 'Our Services', href: '/who-we-are#services' },
     ],
   },
   {
     label: 'CONTACT US',
     href: '/contact',
-    subtitle: 'Get in touch with our local and international teams for support',
-    children: [
-      { label: 'Contact Us', href: '/contact' },
-      { label: 'International Offices', href: '/contact/international' },
-    ],
+    subtitle: 'Connect with Our Investment Team',
   },
 ];
 

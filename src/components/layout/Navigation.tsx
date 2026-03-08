@@ -251,6 +251,7 @@ export const Navigation = () => {
   const isScrolled = useScrollPosition(50);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -305,21 +306,35 @@ export const Navigation = () => {
               </button>
 
               {/* Language Selector */}
-              <div className="hidden md:flex relative group">
-                <button className="flex items-center gap-1 text-xs font-semibold text-white/80 hover:text-white transition-colors tracking-wide py-2">
+              <div
+                className="hidden md:flex relative"
+                onMouseEnter={() => setIsLangMenuOpen(true)}
+                onMouseLeave={() => setIsLangMenuOpen(false)}
+              >
+                <button className={`flex items-center gap-1 text-xs font-semibold tracking-wide py-2 transition-colors ${isLangMenuOpen ? 'text-[#00c2b5]' : 'text-white/80 hover:text-white'}`}>
                   <span>English</span>
-                  <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180 text-[#00c2b5]' : ''}`} />
                 </button>
-                <div className="absolute top-[100%] right-0 pt-2 w-32 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
-                    {LANGUAGES.map((lang) => (
-                      <button key={lang.name} className="flex justify-between items-center w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-[#00c2b5] hover:bg-white/5 transition-colors group/lang">
-                        <span>{lang.native}</span>
-                        {lang.name !== lang.native && <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                <AnimatePresence>
+                  {isLangMenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-[100%] right-0 pt-2 w-32 z-50 pointer-events-auto"
+                    >
+                      <div className="bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
+                        {LANGUAGES.map((lang) => (
+                          <button key={lang.name} className="flex justify-between items-center w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-[#00c2b5] hover:bg-white/5 transition-colors group/lang">
+                            <span>{lang.native}</span>
+                            {lang.name !== lang.native && <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Vision 2040 Logo */}

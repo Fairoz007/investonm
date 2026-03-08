@@ -1,219 +1,118 @@
-// Footer component
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
-
-type FooterLinkColumn = {
-  title: string;
-  links: { label: string; href: string; }[];
-};
-
-const footerLinks: FooterLinkColumn[] = [
-  {
-    title: 'WHY OMAN',
-    links: [
-      { label: 'Why Invest in Oman', href: '/why-oman/why-invest' },
-      { label: 'Quality of Life', href: '/why-oman/quality-of-life' },
-      { label: 'National Strategy', href: '/why-oman/national-strategy' },
-      { label: 'About Invest Oman', href: '/why-oman/about-invest oman' },
-    ]
-  },
-  {
-    title: 'SECTOR & OPPORTUNITIES',
-    links: [
-      { label: 'Key Sectors', href: '/sectors/key-sectors' },
-      { label: 'Regions', href: '/sectors/regions' },
-      { label: 'Real Estate', href: '/sectors/real-estate' },
-      { label: 'Giga Projects', href: '/sectors/giga-projects' },
-      { label: 'Incentives', href: '/sectors/incentives' },
-    ]
-  },
-  {
-    title: 'SETUP & SCALE',
-    links: [
-      { label: 'Investor Services', href: '/setup/investor-services' },
-      { label: 'E-Services', href: '/setup/e-services' },
-    ]
-  },
-  {
-    title: 'PROGRAMS & INCENTIVES',
-    links: [
-      { label: 'RHQ', href: '/programs/rhq' },
-      { label: 'Startup Oman', href: '/programs/startup-oman' },
-      { label: 'GSCRI', href: '/programs/gscri' },
-      { label: 'Shareek', href: '/programs/shareek' },
-      { label: 'Catalyze Oman', href: '/programs/catalyze-oman' },
-    ]
-  },
-  {
-    title: 'KNOWLEDGE',
-    links: [
-      { label: 'Reports and Insights', href: '/knowledge/reports' },
-      { label: 'Events Calendar', href: '/knowledge/events' },
-      { label: 'Laws & Regulation', href: '/knowledge/laws' },
-      { label: 'The Dashboards Pages', href: '/knowledge/dashboards' },
-    ]
-  },
-  {
-    title: 'VALUE ADDED SERVICES',
-    links: [
-      { label: 'Business Visa for Investors', href: '#' },
-      { label: 'Strategic Investors Program', href: '#' },
-      { label: 'MIZA', href: '#' },
-      { label: 'Matchmaking', href: '#' },
-    ]
-  }
-];
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#F5F7F7] text-dark-light">
-      {/* CTA Section */}
-      <div className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-dark to-dark-light" />
-        <div className="container-custom relative z-10">
-          <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Invest in Oman?
-              </h2>
-              <p className="text-white/70 mb-8">
-                Curious about how investors succeed in Oman? Access one of the
-                world's most ambitious investment platforms. Invest in Oman to
-                unlock full market opportunity, sovereign backing, and long-term growth.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/30 hover:bg-white/10 transition-colors flex items-center gap-2">
-                  Download Investor Guide
-                </button>
-                <Link
-                  to="/setup/investor-services"
-                  className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors flex items-center gap-2"
-                >
-                  Start Your Investment Registration
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
+    <footer className="bg-[#020b0d] text-white/70 border-t border-white/10 font-sans">
+      {/* Main Footer Content */}
+      <div className="container-custom pt-20 pb-12">
+        <div className="flex flex-col lg:flex-row gap-16 justify-between mb-16">
 
-      {/* Contact Cards */}
-      <div className="container-custom py-12">
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* Invest Oman Call Center */}
-          <ScrollReveal>
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Phone className="w-6 h-6 text-primary" />
+          {/* Company Info */}
+          <div className="lg:w-1/3 space-y-8">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#00c2b5]/10 flex items-center justify-center border border-[#00c2b5]/30">
+                  <span className="text-xl font-bold tracking-widest text-[#00c2b5]">S</span>
                 </div>
-                <h3 className="text-lg font-semibold text-dark-light">Shomoukh Contact Center</h3>
-              </div>
-              <p className="text-gray-600 text-sm mb-4">
-                Shomoukh Call Center serves as a trusted point of contact, providing a
-                dedicated support and clear guidance to meet your business needs
-                throughout your investment journey in Oman.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span>Airport Heights, Muscat, Sultanate of Oman</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Mail className="w-4 h-4 text-primary" />
-                  <span>info@shomoukh.om</span>
+                <div className="flex flex-col">
+                  <span className="text-xs text-white/50 leading-tight font-arabic">استثمر في عُمان</span>
+                  <span className="text-sm font-bold text-white tracking-widest">SHOMOUKH</span>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
 
-          {/* MIZA Support */}
-          <ScrollReveal delay={0.1}>
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-accent-cyan/10 rounded-xl">
-                  <MapPin className="w-6 h-6 text-accent-cyan" />
-                </div>
-                <h3 className="text-lg font-semibold text-dark-light">MIZA Support</h3>
-              </div>
-              <p className="text-gray-600 text-sm mb-4">
-                MIZA provides integrated support and innovative value-added
-                services tailored to the needs of businesses and individuals, facilitating
-                seamless establishment and growth in the Sultanate.
+              <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm">
+                Your strategic partner for exploring, establishing, and growing your investment in the Sultanate of Oman.
               </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm">
-                  <Phone className="w-4 h-4 text-accent-cyan" />
-                  <span>966115065777 / 8002449990 (ext. 4)</span>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-[#00c2b5] mt-0.5 shrink-0" />
+                  <span className="text-sm text-white/70">
+                    Postal Office Box: 1756<br />
+                    Postal Code: 111<br />
+                    Airport Heights, Muscat<br />
+                    Sultanate of Oman
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Mail className="w-4 h-4 text-accent-cyan" />
-                  <span>MIZA@invest oman.gov.sa</span>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-[#00c2b5] shrink-0" />
+                  <a href="mailto:info@shomoukh.om" className="text-sm text-white/70 hover:text-[#00c2b5] transition-colors">
+                    info@shomoukh.om
+                  </a>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
-        </div>
+            </ScrollReveal>
+          </div>
 
-        {/* Footer Links */}
-        <div
-          className="grid gap-8 mb-12 overflow-x-auto min-w-full"
-          style={{ gridTemplateColumns: 'repeat(6, minmax(180px, 1fr))' }}
-        >
-          {footerLinks.map((column, index) => (
-            <ScrollReveal key={column.title} delay={index * 0.05} className="flex flex-col">
-              <h4 className="text-[12px] font-bold text-primary mb-6 tracking-widest uppercase">{column.title}</h4>
+          {/* Navigation Links */}
+          <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
+
+            {/* Useful Links */}
+            <ScrollReveal delay={0.1}>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Useful Links</h4>
               <ul className="space-y-4">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-[11px] text-gray-500 font-medium hover:text-primary transition-colors tracking-wide"
-                    >
-                      {link.label}
+                <li><Link to="/" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Home</Link></li>
+                <li><Link to="/who-we-are" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Who We Are</Link></li>
+                <li><Link to="/contact" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Contact Us</Link></li>
+                <li><Link to="#" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Privacy Policy</Link></li>
+              </ul>
+            </ScrollReveal>
+
+            {/* Key Sectors */}
+            <ScrollReveal delay={0.2}>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Key Sectors</h4>
+              <ul className="space-y-4">
+                {['Energy', 'Luxury', 'Trade', 'Investments', 'Tourism & Hospitality', 'Education', 'Logistics', 'Real Estate'].map((sector) => (
+                  <li key={sector}>
+                    <Link to={`/key-sectors`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group">
+                      <span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {sector}
                     </Link>
                   </li>
                 ))}
               </ul>
             </ScrollReveal>
-          ))}
+
+            {/* About Oman */}
+            <ScrollReveal delay={0.3}>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">About Oman</h4>
+              <ul className="space-y-4">
+                {[
+                  'Oman’s Infrastructure Advantage',
+                  'Legislation',
+                  'Business Ecosystem',
+                  'Strategic Location',
+                  'A Cost-Effective Business Hub',
+                  'Oman’s Friendly Business Environment',
+                  'Incentives to Invest in Oman'
+                ].map((item) => (
+                  <li key={item}>
+                    <Link to="/about-oman" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group">
+                      <span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+
+          </div>
         </div>
 
-        {/* Social Links & Copyright */}
-        <div className="border-t border-gray-200 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">FOLLOW Invest Oman ON SOCIAL MEDIA</span>
-              <div className="flex gap-3">
-                <a
-                  href="#"
-                  className="p-2 bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">For any enquiries, get in touch!</span>
-              <Link
-                to="/contact"
-                className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-white/50 text-center md:text-left">
+            © 2025 Shomoukh International Investment LLC. All rights reserved.
           </div>
-
-          <div className="mt-8 text-center text-sm text-gray-500">
-            All Rights Reserved to Shomoukh International Investment © 2026
+          <div className="flex items-center gap-4">
+            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#00c2b5] hover:text-[#111] transition-colors">
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#00c2b5] hover:text-[#111] transition-colors">
+              <Twitter className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
