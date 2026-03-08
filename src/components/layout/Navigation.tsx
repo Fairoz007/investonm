@@ -7,6 +7,15 @@ import { NAV_ITEMS } from '@/lib/constants';
 import type { NavItem } from '@/types';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
+const LANGUAGES = [
+  { name: 'English', native: 'English' },
+  { name: 'Arabic', native: 'العربية' },
+  { name: 'Russian', native: 'Русский' },
+  { name: 'Chinese', native: '中文' },
+  { name: 'Persian', native: 'فارسی' },
+  { name: 'Turkish', native: 'Türkçe' }
+];
+
 const NavDropdown = ({ item }: { item: NavItem }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeChildIndex, setActiveChildIndex] = useState<number | null>(null);
@@ -303,9 +312,10 @@ export const Navigation = () => {
                 </button>
                 <div className="absolute top-[100%] right-0 pt-2 w-32 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
-                    {['English', 'Arabic', 'Russian', 'Chinese', 'Persian', 'Turkish'].map((lang) => (
-                      <button key={lang} className="w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-[#00c2b5] hover:bg-white/5 transition-colors">
-                        {lang}
+                    {LANGUAGES.map((lang) => (
+                      <button key={lang.name} className="flex justify-between items-center w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-[#00c2b5] hover:bg-white/5 transition-colors group/lang">
+                        <span>{lang.native}</span>
+                        {lang.name !== lang.native && <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>}
                       </button>
                     ))}
                   </div>
@@ -377,9 +387,10 @@ export const Navigation = () => {
                               className="overflow-hidden bg-white/5 border border-white/10 rounded-lg mt-2 mb-2"
                             >
                               <div className="flex flex-col py-2">
-                                {['English', 'Arabic', 'Russian', 'Chinese', 'Persian', 'Turkish'].map((lang) => (
-                                  <button key={lang} className="w-full text-center py-2.5 text-sm text-white/60 hover:text-[#00c2b5] transition-colors">
-                                    {lang}
+                                {LANGUAGES.map((lang) => (
+                                  <button key={lang.name} className="flex flex-col items-center w-full text-center py-2 text-sm text-white/60 hover:text-[#00c2b5] transition-colors">
+                                    <span>{lang.native}</span>
+                                    {lang.name !== lang.native && <span className="text-[10px] opacity-50">{lang.name}</span>}
                                   </button>
                                 ))}
                               </div>
