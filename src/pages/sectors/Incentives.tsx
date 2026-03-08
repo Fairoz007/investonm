@@ -28,7 +28,7 @@ const incentiveCategories = [
   {
     icon: Users,
     title: 'Visa & Immigration',
-    description: 'Streamlined processes for bringing talent to Saudi Arabia.',
+    description: 'Streamlined processes for bringing talent to Oman.',
     benefits: [
       'Investor visa facilitation',
       'Work permit support',
@@ -63,8 +63,8 @@ const incentiveCategories = [
 const specialPrograms = [
   {
     name: 'Regional Headquarters Program',
-    description: 'Incentives for multinational companies establishing their regional headquarters in Saudi Arabia.',
-    benefits: ['10-year tax incentives', 'Visa facilitation', 'Regulatory support', 'MISA partnership'],
+    description: 'Incentives for multinational companies establishing their regional headquarters in Oman.',
+    benefits: ['10-year tax incentives', 'Visa facilitation', 'Regulatory support', 'Invest Oman partnership'],
   },
   {
     name: 'Shareek Program',
@@ -73,18 +73,18 @@ const specialPrograms = [
   },
   {
     name: 'Global Supply Chain Resilience Initiative',
-    description: 'Support for companies establishing manufacturing and supply chain operations in the Kingdom.',
+    description: 'Support for companies establishing manufacturing and supply chain operations in the Sultanate.',
     benefits: ['Financial incentives', 'Land allocation', 'Regulatory support', 'Market access'],
   },
   {
-    name: 'Startup Saudi',
+    name: 'Startup Oman',
     description: 'Comprehensive support ecosystem for entrepreneurs and startups.',
     benefits: ['Funding access', 'Mentorship programs', 'Incubator support', 'Networking opportunities'],
   },
 ];
 
 const eligibilityCriteria = [
-  'Alignment with Vision 2030 objectives',
+  'Alignment with Oman Vision 2040 objectives',
   'Minimum investment thresholds',
   'Job creation commitments',
   'Technology transfer requirements',
@@ -111,7 +111,7 @@ export default function Incentives() {
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 Comprehensive incentive packages designed to maximize returns and support 
-                your business growth in Saudi Arabia.
+                your business growth in Oman.
               </p>
             </div>
           </ScrollReveal>

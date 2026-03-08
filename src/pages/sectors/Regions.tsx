@@ -4,7 +4,7 @@ import { ScrollReveal } from '@/components/shared/ScrollReveal';
 const regions = [
   {
     name: 'Riyadh Region',
-    description: 'The political and administrative capital, Riyadh is the largest city and main business hub of Saudi Arabia.',
+    description: 'The political and administrative capital, Riyadh is the largest city and main business hub of Oman.',
     highlights: ['Financial center', 'Government headquarters', 'Technology hub', 'Cultural landmarks'],
     keyCities: ['Riyadh', 'Diriyah', 'Kharj'],
     gdpContribution: '25%',
@@ -20,7 +20,7 @@ const regions = [
   },
   {
     name: 'Eastern Province',
-    description: 'The industrial heartland of Saudi Arabia, home to the oil industry and major petrochemical complexes.',
+    description: 'The industrial heartland of Oman, home to the oil industry and major petrochemical complexes.',
     highlights: ['Oil & gas hub', 'Industrial zone', 'Port facilities', 'Free zones'],
     keyCities: ['Dammam', 'Khobar', 'Dhahran', 'Jubail'],
     gdpContribution: '28%',
@@ -89,7 +89,7 @@ export default function Regions() {
                 Investment Regions
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Discover the unique opportunities each region of Saudi Arabia offers, 
+                Discover the unique opportunities each region of Oman offers, 
                 from bustling commercial centers to emerging economic zones.
               </p>
             </div>

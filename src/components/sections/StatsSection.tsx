@@ -51,7 +51,7 @@ export const StatsSection = () => {
         {/* Section Header */}
         <ScrollReveal delay={0} className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Saudi Arabia: Where Vision Becomes Investment
+            Oman: Where Vision Becomes Investment
           </h2>
           <p className="text-white/60 text-lg">
             The world's most trusted and future-ready investment destination

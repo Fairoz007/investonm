@@ -6,7 +6,7 @@ const programFeatures = [
   {
     icon: HandshakeIcon,
     title: 'Strategic Partnership',
-    description: 'Direct partnership with the Saudi government for large-scale projects.',
+    description: 'Direct partnership with the Oman government for large-scale projects.',
   },
   {
     icon: Building2,
@@ -21,7 +21,7 @@ const programFeatures = [
   {
     icon: Target,
     title: 'Strategic Alignment',
-    description: 'Projects aligned with Vision 2030 national priorities.',
+    description: 'Projects aligned with Oman Vision 2040 national priorities.',
   },
 ];
 
@@ -217,7 +217,7 @@ export default function Shareek() {
                 Partner with the Government
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Explore strategic partnership opportunities and join forces with the Saudi government 
+                Explore strategic partnership opportunities and join forces with the Oman government 
                 to deliver transformational projects.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

@@ -33,7 +33,7 @@ const lawCategories = [
       { title: 'Labor Law', type: 'Law' },
       { title: 'Social Insurance Law', type: 'Law' },
       { title: 'Work Environment Law', type: 'Law' },
-      { title: 'Saudization Guidelines', type: 'Guideline' },
+      { title: 'Omanzation Guidelines', type: 'Guideline' },
     ],
   },
   {
@@ -58,12 +58,12 @@ const recentUpdates = [
   {
     title: 'New Data Protection Regulations',
     date: 'September 2025',
-    description: 'Comprehensive data protection framework for businesses operating in Saudi Arabia.',
+    description: 'Comprehensive data protection framework for businesses operating in Oman.',
   },
   {
-    title: 'Updated Saudization Requirements',
+    title: 'Updated Omanzation Requirements',
     date: 'August 2025',
-    description: 'Revised quotas and requirements for Saudi national employment.',
+    description: 'Revised quotas and requirements for Oman national employment.',
   },
   {
     title: 'E-Commerce Law Amendments',
@@ -91,7 +91,7 @@ export default function Laws() {
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 Access comprehensive information about the legal and regulatory framework 
-                governing investment and business operations in Saudi Arabia.
+                governing investment and business operations in Oman.
               </p>
             </div>
           </ScrollReveal>

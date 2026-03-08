@@ -10,12 +10,12 @@ type FooterLinkColumn = {
 
 const footerLinks: FooterLinkColumn[] = [
   {
-    title: 'WHY SAUDI',
+    title: 'WHY OMAN',
     links: [
-      { label: 'Why Invest in Saudi Arabia', href: '/why-saudi/why-invest' },
-      { label: 'Quality of Life', href: '/why-saudi/quality-of-life' },
-      { label: 'National Strategy', href: '/why-saudi/national-strategy' },
-      { label: 'About MISA', href: '/why-saudi/about-misa' },
+      { label: 'Why Invest in Oman', href: '/why-oman/why-invest' },
+      { label: 'Quality of Life', href: '/why-oman/quality-of-life' },
+      { label: 'National Strategy', href: '/why-oman/national-strategy' },
+      { label: 'About Invest Oman', href: '/why-oman/about-invest oman' },
     ]
   },
   {
@@ -39,10 +39,10 @@ const footerLinks: FooterLinkColumn[] = [
     title: 'PROGRAMS & INCENTIVES',
     links: [
       { label: 'RHQ', href: '/programs/rhq' },
-      { label: 'Startup Saudi', href: '/programs/startup-saudi' },
+      { label: 'Startup Oman', href: '/programs/startup-oman' },
       { label: 'GSCRI', href: '/programs/gscri' },
       { label: 'Shareek', href: '/programs/shareek' },
-      { label: 'Catalyze Saudi', href: '/programs/catalyze-saudi' },
+      { label: 'Catalyze Oman', href: '/programs/catalyze-oman' },
     ]
   },
   {
@@ -101,7 +101,7 @@ export const Footer = () => {
       {/* Contact Cards */}
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* MISA Call Center */}
+          {/* Invest Oman Call Center */}
           <ScrollReveal>
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
@@ -140,7 +140,7 @@ export const Footer = () => {
               <p className="text-gray-600 text-sm mb-4">
                 MIZA provides integrated support and innovative value-added
                 services tailored to the needs of businesses and individuals, facilitating
-                seamless establishment and growth in the Kingdom.
+                seamless establishment and growth in the Sultanate.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm">
@@ -149,7 +149,7 @@ export const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4 text-accent-cyan" />
-                  <span>MIZA@misa.gov.sa</span>
+                  <span>MIZA@invest oman.gov.sa</span>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ export const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">FOLLOW MISA ON SOCIAL MEDIA</span>
+              <span className="text-sm text-gray-600">FOLLOW Invest Oman ON SOCIAL MEDIA</span>
               <div className="flex gap-3">
                 <a
                   href="#"

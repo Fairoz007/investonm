@@ -74,12 +74,12 @@ export default function QualityOfLife() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Saudi</span>
+                <span className="text-sm font-medium">Why Oman</span>
                 <ArrowRight className="w-4 h-4" />
                 <span className="text-sm text-white/60">Quality of Life</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Quality of Life in Saudi Arabia
+                Quality of Life in Oman
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 Experience a world-class lifestyle with modern amenities, rich culture, 
@@ -98,7 +98,7 @@ export default function QualityOfLife() {
               World-Class Lifestyle Amenities
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Saudi Arabia offers a comprehensive range of lifestyle amenities 
+              Oman offers a comprehensive range of lifestyle amenities 
               designed to provide residents with comfort, convenience, and enjoyment.
             </p>
           </ScrollReveal>
@@ -178,7 +178,7 @@ export default function QualityOfLife() {
                 Discover Your New Home
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Learn more about living in Saudi Arabia and how we can help you 
+                Learn more about living in Oman and how we can help you 
                 and your family settle in comfortably.
               </p>
               <button className="btn-primary">Get Relocation Support</button>

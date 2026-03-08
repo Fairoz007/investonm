@@ -2,17 +2,17 @@ import type { NavItem, Slide, InvestCard } from '@/types';
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    label: 'WHY SAUDI',
-    href: '#why-saudi',
-    subtitle: 'Discover the Kingdom\'s limitless potential',
+    label: 'WHY OMAN',
+    href: '#why-oman',
+    subtitle: 'Discover the Sultanate\'s limitless potential',
     children: [
-      { label: 'Vision and Leadership Message', href: '/why-saudi/vision-leadership' },
-      { label: 'Why Invest Saudi Arabia', href: '/why-saudi/why-invest' },
-      { label: 'Living in Saudi', href: '/why-saudi/living' },
-      { label: 'Vision 2030', href: '/why-saudi/vision-2030' },
-      { label: 'National Investment Strategy', href: '/why-saudi/nis' },
-      { label: 'National Strategies', href: '/why-saudi/national-strategies' },
-      { label: 'About MISA', href: '/why-saudi/about-misa' },
+      { label: 'Vision and Leadership Message', href: '/why-oman/vision-leadership' },
+      { label: 'Why Invest in Oman', href: '/why-oman/why-invest' },
+      { label: 'Living in Oman', href: '/why-oman/living' },
+      { label: 'Oman Vision 2040', href: '/why-oman/vision-2040' },
+      { label: 'National Investment Strategy', href: '/why-oman/nis' },
+      { label: 'National Strategies', href: '/why-oman/national-strategies' },
+      { label: 'About Oman Investment', href: '/why-oman/about-oman-investment' },
     ],
   },
   {
@@ -82,23 +82,21 @@ export const NAV_ITEMS: NavItem[] = [
           columns: [
             {
               items: [
-                { label: 'Riyadh Region', href: '#' },
-                { label: 'Makkah Region', href: '#' },
-                { label: 'Madinah Region', href: '#' },
-                { label: 'Eastern Province', href: '#' },
-                { label: 'Asir Region', href: '#' },
-                { label: 'Tabuk Region', href: '#' },
-                { label: 'Hail Region', href: '#' },
-                { label: 'Northern Borders Region', href: '#' },
-                { label: 'Jazan Region', href: '#' },
+                { label: 'Muscat Governorate', href: '#' },
+                { label: 'Dhofar Governorate', href: '#' },
+                { label: 'Musandam Governorate', href: '#' },
+                { label: 'Al Buraimi Governorate', href: '#' },
+                { label: 'Al Dakhiliyah Governorate', href: '#' },
+                { label: 'Al Batinah North Governorate', href: '#' },
+                { label: 'Al Batinah South Governorate', href: '#' },
+                { label: 'Ash Sharqiyah South Governorate', href: '#' },
+                { label: 'Ash Sharqiyah North Governorate', href: '#' },
               ]
             },
             {
               items: [
-                { label: 'Najran Region', href: '#' },
-                { label: 'Al-Baha Region', href: '#' },
-                { label: 'Al-Jouf Region', href: '#' },
-                { label: 'Al-Qassim Region', href: '#' },
+                { label: 'Al Dhahirah Governorate', href: '#' },
+                { label: 'Al Wusta Governorate', href: '#' },
               ]
             }
           ]
@@ -131,18 +129,18 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'GSCRI', href: '/programs/gscri' },
       { label: 'Ignite', href: '/programs/ignite' },
       { label: 'Shreek', href: '/programs/shareek' },
-      { label: 'Catalyze Saudi', href: '/programs/catalyze-saudi' },
+      { label: 'Catalyze Oman', href: '/programs/catalyze-oman' },
       { label: 'Sustainability & Green', href: '/programs/sustainability' },
       { label: 'Special Economic Zones', href: '/programs/sez' },
       { label: 'Success Stories', href: '/programs/success-stories' },
       { label: 'Incentives', href: '/programs/incentives' },
-      { label: 'Startup Saudi', href: '/programs/startup-saudi' },
+      { label: 'Startup Oman', href: '/programs/startup-oman' },
     ],
   },
   {
     label: 'KNOWLEDGE',
     href: '#knowledge',
-    subtitle: 'Key insights into Saudi Arabia’s economic and investment ecosystem.',
+    subtitle: 'Key insights into Oman\'s economic and investment ecosystem.',
     children: [
       { label: 'Economic & Investment Reports', href: '/knowledge/reports' },
       { label: 'Competitiveness Insights', href: '/knowledge/competitiveness' },
@@ -191,7 +189,7 @@ export const WHY_INVEST_CARDS: InvestCard[] = [
   {
     id: 1,
     title: 'Transformational Vision, Young Nation',
-    description: '70% of Saudi Population under 35, digitally native, globally connected',
+    description: 'Majority of Oman\'s Population under 35, digitally native, globally connected',
     gradient: 'from-teal-600 to-teal-800',
     stat: '70%',
   },

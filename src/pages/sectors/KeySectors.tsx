@@ -6,7 +6,7 @@ const sectors = [
   {
     icon: Cpu,
     name: 'Information Technology',
-    description: 'Saudi Arabia is rapidly becoming a regional tech hub with significant investments in digital infrastructure, AI, and cloud computing.',
+    description: 'Oman is rapidly becoming a regional tech hub with significant investments in digital infrastructure, AI, and cloud computing.',
     opportunities: ['Data centers', 'Cybersecurity', 'AI & Machine Learning', 'Fintech'],
     growth: '+25%',
     growthLabel: 'Annual Growth',
@@ -30,7 +30,7 @@ const sectors = [
   {
     icon: Plane,
     name: 'Tourism & Entertainment',
-    description: 'Vision 2030 aims to make Saudi Arabia a top global tourism destination with massive investments in infrastructure.',
+    description: 'Oman Vision 2040 aims to make Oman a top global tourism destination with massive investments in infrastructure.',
     opportunities: ['Hospitality', 'Entertainment venues', 'Tourism services', 'Cultural experiences'],
     growth: '+30%',
     growthLabel: 'Annual Growth',
@@ -87,7 +87,7 @@ export default function KeySectors() {
                 Key Investment Sectors
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Explore diverse investment opportunities across Saudi Arabia's fastest-growing 
+                Explore diverse investment opportunities across Oman's fastest-growing 
                 sectors, each offering unique advantages and strong growth potential.
               </p>
             </div>

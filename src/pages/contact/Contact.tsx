@@ -14,7 +14,7 @@ const contactMethods = [
     icon: Mail,
     title: 'Email',
     description: 'Send us your inquiries and we will respond promptly.',
-    details: ['InvestorCare@misa.gov.sa', 'info@misa.gov.sa'],
+    details: ['InvestorCare@invest oman.gov.sa', 'info@invest oman.gov.sa'],
     availability: 'Response within 24 hours',
   },
   {
@@ -219,7 +219,7 @@ export default function Contact() {
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="text-white/70">Phone: 966115065777 (ext. 4)</div>
-                    <div className="text-white/70">Email: MIZA@misa.gov.sa</div>
+                    <div className="text-white/70">Email: MIZA@invest oman.gov.sa</div>
                   </div>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function Contact() {
                 Frequently Asked Questions
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Find quick answers to common questions about investing in Saudi Arabia.
+                Find quick answers to common questions about investing in Oman.
               </p>
               <button className="btn-secondary">View FAQs</button>
             </div>

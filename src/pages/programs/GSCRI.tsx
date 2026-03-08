@@ -16,7 +16,7 @@ const objectives = [
   {
     icon: TrendingUp,
     title: 'Enable Exports',
-    description: 'Position Saudi Arabia as a global export hub for key industries.',
+    description: 'Position Oman as a global export hub for key industries.',
   },
   {
     icon: Shield,
@@ -81,7 +81,7 @@ export default function GSCRI() {
                 Global Supply Chain Resilience Initiative
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Strengthen global supply chains by establishing Saudi Arabia as a resilient 
+                Strengthen global supply chains by establishing Oman as a resilient 
                 manufacturing and logistics hub for critical industries.
               </p>
             </div>

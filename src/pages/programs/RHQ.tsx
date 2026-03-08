@@ -16,7 +16,7 @@ const benefits = [
   {
     icon: Globe,
     title: 'Regulatory Support',
-    description: 'Dedicated support for navigating Saudi regulations and compliance.',
+    description: 'Dedicated support for navigating Oman regulations and compliance.',
   },
   {
     icon: Clock,
@@ -30,7 +30,7 @@ const eligibilityCriteria = [
   'Commitment to establish regional headquarters in Riyadh',
   'Minimum number of employees at the RHQ',
   'Strategic decision-making functions at the RHQ',
-  'Compliance with Saudization requirements',
+  'Compliance with Omanzation requirements',
 ];
 
 const approvedActivities = [
@@ -62,7 +62,7 @@ export default function RHQ() {
                 Regional Headquarters Program
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Establish your regional headquarters in Saudi Arabia and unlock exclusive incentives 
+                Establish your regional headquarters in Oman and unlock exclusive incentives 
                 designed to support your Middle East and North Africa operations.
               </p>
             </div>
@@ -187,7 +187,7 @@ export default function RHQ() {
                 Establish Your Regional Headquarters
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join leading multinational companies that have chosen Saudi Arabia 
+                Join leading multinational companies that have chosen Oman 
                 as their regional headquarters for the Middle East and North Africa.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

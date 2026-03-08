@@ -6,7 +6,7 @@ const services = [
   {
     icon: Users,
     title: 'Investor Registration',
-    description: 'Streamlined registration process for establishing your business in Saudi Arabia.',
+    description: 'Streamlined registration process for establishing your business in Oman.',
     features: [
       'Online application submission',
       'Document verification support',
@@ -17,7 +17,7 @@ const services = [
   {
     icon: Building2,
     title: 'Business Setup Support',
-    description: 'Comprehensive assistance for setting up your operations in the Kingdom.',
+    description: 'Comprehensive assistance for setting up your operations in the Sultanate.',
     features: [
       'Location selection guidance',
       'Facility setup support',
@@ -28,7 +28,7 @@ const services = [
   {
     icon: FileText,
     title: 'Regulatory Guidance',
-    description: 'Expert advice on navigating Saudi regulations and compliance requirements.',
+    description: 'Expert advice on navigating Oman regulations and compliance requirements.',
     features: [
       'Legal structure consultation',
       'Compliance requirements',
@@ -133,7 +133,7 @@ export default function InvestorServices() {
               Our Services
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              End-to-end support to ensure your investment success in Saudi Arabia.
+              End-to-end support to ensure your investment success in Oman.
             </p>
           </ScrollReveal>
 
@@ -209,7 +209,7 @@ export default function InvestorServices() {
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
                 Our team is ready to assist you every step of the way. 
-                Reach out to begin your investment journey in Saudi Arabia.
+                Reach out to begin your investment journey in Oman.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <button className="btn-primary">Contact Investor Services</button>

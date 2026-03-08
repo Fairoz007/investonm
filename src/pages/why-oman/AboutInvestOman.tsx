@@ -5,7 +5,7 @@ const services = [
   {
     icon: Target,
     title: 'Investment Facilitation',
-    description: 'Streamlined processes to help investors establish and grow their businesses in Saudi Arabia.',
+    description: 'Streamlined processes to help investors establish and grow their businesses in Oman.',
   },
   {
     icon: Users,
@@ -26,8 +26,8 @@ const services = [
 
 const milestones = [
   { year: '2000', event: 'SAGIA established as the investment authority' },
-  { year: '2015', event: 'Launch of Vision 2030 transformation plan' },
-  { year: '2020', event: 'Rebranded as Ministry of Investment of Saudi Arabia (MISA)' },
+  { year: '2015', event: 'Launch of Oman Vision 2040 transformation plan' },
+  { year: '2020', event: 'Rebranded as Ministry of Investment of Oman (Invest Oman)' },
   { year: '2021', event: 'Introduction of new investor services and digital platforms' },
   { year: '2023', event: 'Record-breaking FDI inflows achieved' },
   { year: '2024', event: 'Launch of MIZA integrated support platform' },
@@ -40,7 +40,7 @@ const stats = [
   { value: '<24h', label: 'Response Time' },
 ];
 
-export default function AboutMISA() {
+export default function AboutInvestOman() {
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -50,15 +50,15 @@ export default function AboutMISA() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Saudi</span>
+                <span className="text-sm font-medium">Why Oman</span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">About MISA</span>
+                <span className="text-sm text-white/60">About Invest Oman</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Ministry of Investment of Saudi Arabia
+                Ministry of Investment of Oman
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                MISA is your gateway to investment opportunities in Saudi Arabia, 
+                Invest Oman is your gateway to investment opportunities in Oman,
                 providing comprehensive support and services to investors worldwide.
               </p>
             </div>
@@ -92,20 +92,20 @@ export default function AboutMISA() {
               </h2>
               <div className="space-y-4 text-white/70">
                 <p>
-                  The Ministry of Investment of Saudi Arabia (MISA) is the government body responsible 
-                  for regulating and promoting investment in the Kingdom. Formerly known as SAGIA 
-                  (Saudi Arabian General Investment Authority), MISA was elevated to ministry status 
-                  in 2020 to reflect the growing importance of foreign investment in achieving Vision 2030.
+                  The Ministry of Investment of Oman (Invest Oman) is the government body responsible
+                  for regulating and promoting investment in the Sultanate. Formerly known as SAGIA
+                  (Omann General Investment Authority), Invest Oman was elevated to ministry status
+                  in 2020 to reflect the growing importance of foreign investment in achieving Oman Vision 2040.
                 </p>
                 <p>
-                  MISA's mission is to create an attractive investment environment, facilitate business 
-                  operations, and provide comprehensive support to investors. Through streamlined processes, 
-                  digital services, and dedicated support teams, MISA ensures that investors have everything 
-                  they need to succeed in Saudi Arabia.
+                  Invest Oman's mission is to create an attractive investment environment, facilitate business
+                  operations, and provide comprehensive support to investors. Through streamlined processes,
+                  digital services, and dedicated support teams, Invest Oman ensures that investors have everything
+                  they need to succeed in Oman.
                 </p>
                 <p>
-                  With over 30 international offices and a commitment to excellence, MISA serves as the 
-                  primary point of contact for investors looking to explore opportunities in one of the 
+                  With over 30 international offices and a commitment to excellence, Invest Oman serves as the
+                  primary point of contact for investors looking to explore opportunities in one of the
                   world's most dynamic and rapidly growing economies.
                 </p>
               </div>
@@ -175,7 +175,7 @@ export default function AboutMISA() {
                     Get in Touch
                   </h2>
                   <p className="text-white/70 mb-8">
-                    Our team is ready to assist you with any questions about investing in Saudi Arabia.
+                    Our team is ready to assist you with any questions about investing in Oman.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
@@ -193,7 +193,7 @@ export default function AboutMISA() {
                       </div>
                       <div>
                         <div className="text-sm text-white/50">Email</div>
-                        <div className="text-white">InvestorCare@misa.gov.sa</div>
+                        <div className="text-white">InvestorCare@investoman.gov.om</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -202,7 +202,7 @@ export default function AboutMISA() {
                       </div>
                       <div>
                         <div className="text-sm text-white/50">Headquarters</div>
-                        <div className="text-white">Riyadh, Saudi Arabia</div>
+                        <div className="text-white">Muscat, Oman</div>
                       </div>
                     </div>
                   </div>

@@ -19,7 +19,7 @@ const dashboards = [
     icon: Users,
     name: 'Labor Market Dashboard',
     description: 'Comprehensive view of employment trends, workforce composition, and labor market dynamics.',
-    metrics: ['Employment Growth', 'Sectoral Distribution', 'Saudization Rates', 'Wage Trends'],
+    metrics: ['Employment Growth', 'Sectoral Distribution', 'Omanzation Rates', 'Wage Trends'],
   },
   {
     icon: Globe,
@@ -66,7 +66,7 @@ export default function Dashboards() {
                 The Dashboards
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Access real-time data and analytics on Saudi Arabia's economy, investment trends, 
+                Access real-time data and analytics on Oman's economy, investment trends, 
                 and business environment through our comprehensive dashboards.
               </p>
             </div>
@@ -98,7 +98,7 @@ export default function Dashboards() {
               Available Dashboards
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Explore our interactive dashboards for comprehensive insights into Saudi Arabia's economy.
+              Explore our interactive dashboards for comprehensive insights into Oman's economy.
             </p>
           </ScrollReveal>
 

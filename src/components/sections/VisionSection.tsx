@@ -9,8 +9,8 @@ const visionTabs = [
     label: 'Transformational Vision driven by Young Nation',
     icon: Users,
     content: [
-      { icon: Users, text: '70% of Saudis are under 35, digitally native, globally connected' },
-      { icon: TrendingUp, text: 'Saudi women participation in the labor market rising to 34% in Q3 2025 from 23% in 2016' },
+      { icon: Users, text: '70% of Omans are under 35, digitally native, globally connected' },
+      { icon: TrendingUp, text: 'Oman women participation in the labor market rising to 34% in Q3 2025 from 23% in 2016' },
     ],
   },
   {
@@ -82,7 +82,7 @@ export const VisionSection = () => {
             <div className="glass-card p-8 h-full">
               <div className="flex flex-col h-full">
                 <blockquote className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 flex-1">
-                  "Our Vision is a strong, thriving, and stable Saudi Arabia that provides
+                  "Our Vision is a strong, thriving, and stable Oman that provides
                   opportunity for all. Our Vision is a tolerant country with Islam as its
                   constitution and moderation as its method. We will welcome qualified
                   individuals from all over the world and will respect those who have come

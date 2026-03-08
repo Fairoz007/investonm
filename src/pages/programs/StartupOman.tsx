@@ -12,13 +12,13 @@ const supportAreas = [
   {
     icon: Building2,
     title: 'Incubators & Accelerators',
-    description: 'Access world-class incubation and acceleration programs across the Kingdom.',
+    description: 'Access world-class incubation and acceleration programs across the Sultanate.',
     features: ['Co-working spaces', 'Mentorship programs', 'Networking events', 'Demo days'],
   },
   {
     icon: Users,
     title: 'Talent & Hiring',
-    description: 'Find and hire top talent from Saudi Arabia and around the world.',
+    description: 'Find and hire top talent from Oman and around the world.',
     features: ['Talent matching', 'Visa support', 'Training programs', 'University partnerships'],
   },
   {
@@ -55,11 +55,11 @@ const successStories = [
   {
     name: 'Stc Pay',
     sector: 'Fintech',
-    description: 'Digital wallet that became the first fintech unicorn in Saudi Arabia.',
+    description: 'Digital wallet that became the first fintech unicorn in Oman.',
   },
 ];
 
-export default function StartupSaudi() {
+export default function StartupOman() {
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -71,10 +71,10 @@ export default function StartupSaudi() {
               <div className="flex items-center gap-2 text-primary mb-4">
                 <span className="text-sm font-medium">Programs & Incentives</span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Startup Saudi</span>
+                <span className="text-sm text-white/60">Startup Oman</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Startup Saudi
+                Startup Oman
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 The ultimate launchpad for entrepreneurs, providing comprehensive support 
@@ -109,7 +109,7 @@ export default function StartupSaudi() {
               Comprehensive Support
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Everything you need to build and scale your startup in Saudi Arabia.
+              Everything you need to build and scale your startup in Oman.
             </p>
           </ScrollReveal>
 
@@ -150,7 +150,7 @@ export default function StartupSaudi() {
               Success Stories
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Meet some of the startups that have scaled to success with Startup Saudi support.
+              Meet some of the startups that have scaled to success with Startup Oman support.
             </p>
           </ScrollReveal>
 
@@ -180,7 +180,7 @@ export default function StartupSaudi() {
                 Launch Your Startup
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join Saudi Arabia's thriving startup ecosystem and turn your innovative 
+                Join Oman's thriving startup ecosystem and turn your innovative 
                 idea into the next big success story.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

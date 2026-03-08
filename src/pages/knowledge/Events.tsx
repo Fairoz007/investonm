@@ -18,18 +18,18 @@ const upcomingEvents = [
     description: 'The most attended tech event in the world, showcasing the latest in technology and innovation.',
   },
   {
-    title: 'Saudi Infrastructure Summit',
+    title: 'Oman Infrastructure Summit',
     date: 'November 15-17, 2025',
     location: 'Jeddah',
     type: 'Infrastructure',
-    description: 'Exploring infrastructure development opportunities and mega projects across the Kingdom.',
+    description: 'Exploring infrastructure development opportunities and mega projects across the Sultanate.',
   },
   {
-    title: 'Made in Saudi Expo',
+    title: 'Made in Oman Expo',
     date: 'December 10-14, 2025',
     location: 'Riyadh',
     type: 'Trade Show',
-    description: 'Showcasing Saudi manufacturing capabilities and export opportunities.',
+    description: 'Showcasing Oman manufacturing capabilities and export opportunities.',
   },
 ];
 
@@ -70,7 +70,7 @@ const pastHighlights = [
     description: 'The most attended tech event globally.',
   },
   {
-    title: 'Saudi Green Initiative Forum',
+    title: 'Oman Green Initiative Forum',
     attendees: '2,000+',
     deals: 'N/A',
     description: 'Global leaders committed to sustainability goals.',
@@ -96,7 +96,7 @@ export default function Events() {
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 Connect with the investment community at conferences, forums, and networking 
-                events across Saudi Arabia and around the world.
+                events across Oman and around the world.
               </p>
             </div>
           </ScrollReveal>
@@ -207,11 +207,11 @@ export default function Events() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Host Your Event in Saudi Arabia
+                Host Your Event in Oman
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
                 Partner with us to organize investment-focused events and connect 
-                with the growing business community in the Kingdom.
+                with the growing business community in the Sultanate.
               </p>
               <button className="btn-primary">Partner with Us</button>
             </div>

@@ -42,7 +42,7 @@ export const HeroSection = () => {
               variants={itemVariants}
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight tracking-wide"
             >
-              Invest in Saudi Arabia
+              Invest in Oman
             </motion.h1>
 
             {/* Subheadline */}
@@ -51,7 +51,7 @@ export const HeroSection = () => {
               className="text-base md:text-lg text-white/90 mb-10 max-w-[600px] leading-relaxed"
             >
               Driven by world class opportunities, powered by talent, and designed
-              for limitless scale, Saudi Arabia is redefining what nations can build.
+              for limitless scale, Oman is redefining what nations can build.
             </motion.p>
 
             <motion.div

@@ -263,11 +263,7 @@ export const Navigation = () => {
               <Link to="/" className="flex items-center gap-3 group">
                 <div className="flex items-center gap-3">
                   {/* Oman Emblem representing Logo icon */}
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/d/dd/National_emblem_of_Oman.svg"
-                    alt="Shomoukh Emblem"
-                    className="w-10 h-10 object-contain brightness-0 invert transition-transform duration-300 group-hover:scale-105"
-                  />
+
                   <div className="flex flex-col">
                     <span className="text-xs text-white leading-tight font-arabic text-left">استثمر في عُمان</span>
                     <span className="text-sm font-bold text-white leading-tight tracking-widest mt-0.5" style={{ fontFamily: 'sans-serif' }}>

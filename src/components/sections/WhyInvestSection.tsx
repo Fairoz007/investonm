@@ -5,12 +5,12 @@ import { WHY_INVEST_CARDS } from '@/lib/constants';
 
 export const WhyInvestSection = () => {
   return (
-    <section id="why-saudi" className="section-padding bg-dark">
+    <section id="why-oman" className="section-padding bg-dark">
       <div className="container-custom">
         {/* Section Header */}
         <ScrollReveal delay={0} className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Why Invest in Saudi Arabia
+            Why Invest in Oman
           </h2>
           <p className="text-white/60 text-lg">Top 5 Reasons to Invest</p>
         </ScrollReveal>

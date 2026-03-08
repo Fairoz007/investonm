@@ -26,7 +26,7 @@ const gigaProjects = [
   {
     name: 'Qiddiya',
     tagline: 'The Capital of Entertainment',
-    description: 'The entertainment, sports, and arts capital of Saudi Arabia, offering world-class attractions and experiences.',
+    description: 'The entertainment, sports, and arts capital of Oman, offering world-class attractions and experiences.',
     investment: '$8B',
     area: '334 km²',
     highlights: ['Six Flags Qiddiya', 'Speed Park', 'Water Theme Park', 'Performing Arts Center'],
@@ -36,7 +36,7 @@ const gigaProjects = [
   {
     name: 'Diriyah Gate',
     tagline: 'Birthplace of a Nation',
-    description: 'A cultural and heritage destination celebrating the birthplace of the Saudi nation, featuring museums, galleries, and cultural experiences.',
+    description: 'A cultural and heritage destination celebrating the birthplace of the Oman nation, featuring museums, galleries, and cultural experiences.',
     investment: '$20B',
     area: '7 km²',
     highlights: ['At-Turaif', 'Samhan Bridge', 'Museum District', 'Cultural Events'],
@@ -119,11 +119,11 @@ export default function GigaProjects() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Vision 2030 Giga Projects
+              Oman Vision 2040 Giga Projects
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
               These transformational projects are creating new industries, attracting global talent, 
-              and positioning Saudi Arabia as a leader in innovation and sustainable development.
+              and positioning Oman as a leader in innovation and sustainable development.
             </p>
           </ScrollReveal>
 
@@ -200,7 +200,7 @@ export default function GigaProjects() {
                 Be Part of the Transformation
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Connect with our team to explore investment opportunities in Saudi Arabia's 
+                Connect with our team to explore investment opportunities in Oman's 
                 giga projects and secure your place in the future.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

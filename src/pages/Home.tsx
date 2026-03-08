@@ -218,7 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4 — REGIONS OF SAUDI ARABIA -> Your Partner in Oman's Prosperity */}
+      {/* SECTION 4 — REGIONS OF OMAN -> Your Partner in Oman's Prosperity */}
       <section ref={regionsRef} className="relative py-32 overflow-hidden border-t border-white/5">
         <motion.div
           className="absolute inset-0 z-0 h-[140%] w-full -top-[20%]"

@@ -6,7 +6,7 @@ const reportCategories = [
   {
     icon: TrendingUp,
     name: 'Economic Reports',
-    description: 'Comprehensive analysis of Saudi Arabia\'s economic performance and outlook.',
+    description: 'Comprehensive analysis of Oman\'s economic performance and outlook.',
     reports: [
       { title: 'Quarterly Economic Review Q3 2025', date: 'October 2025' },
       { title: 'Annual Economic Report 2024', date: 'January 2025' },
@@ -28,10 +28,10 @@ const reportCategories = [
   {
     icon: Globe,
     name: 'Investment Guides',
-    description: 'Practical guides for investors considering Saudi Arabia.',
+    description: 'Practical guides for investors considering Oman.',
     reports: [
       { title: 'Investor Guide 2025', date: 'January 2025' },
-      { title: 'Doing Business in Saudi Arabia', date: 'December 2024' },
+      { title: 'Doing Business in Oman', date: 'December 2024' },
       { title: 'Regional Investment Guide', date: 'November 2024' },
       { title: 'Sector-Specific Investment Guides', date: 'October 2024' },
     ],
@@ -40,20 +40,20 @@ const reportCategories = [
 
 const featuredReports = [
   {
-    title: 'Saudi Arabia Investment Report 2025',
+    title: 'Oman Investment Report 2025',
     description: 'Comprehensive overview of investment opportunities, economic trends, and regulatory updates for 2025.',
     type: 'Annual Report',
     date: 'January 2025',
   },
   {
-    title: 'Vision 2030 Progress Report',
-    description: 'Detailed analysis of Vision 2030 achievements and upcoming opportunities across all sectors.',
+    title: 'Oman Vision 2040 Progress Report',
+    description: 'Detailed analysis of Oman Vision 2040 achievements and upcoming opportunities across all sectors.',
     type: 'Strategic Report',
     date: 'December 2024',
   },
   {
     title: 'FDI Confidence Index 2025',
-    description: 'Global investor sentiment and confidence in Saudi Arabia as an investment destination.',
+    description: 'Global investor sentiment and confidence in Oman as an investment destination.',
     type: 'Market Research',
     date: 'November 2024',
   },
@@ -78,7 +78,7 @@ export default function Reports() {
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 Access comprehensive reports, market analysis, and investment insights 
-                to inform your investment decisions in Saudi Arabia.
+                to inform your investment decisions in Oman.
               </p>
             </div>
           </ScrollReveal>

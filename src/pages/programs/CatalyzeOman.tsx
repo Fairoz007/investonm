@@ -21,7 +21,7 @@ const programBenefits = [
   {
     icon: Sparkles,
     title: 'Recognition',
-    description: 'Gain visibility and recognition in the Saudi business ecosystem.',
+    description: 'Gain visibility and recognition in the Oman business ecosystem.',
   },
 ];
 
@@ -62,12 +62,12 @@ const eligibilityCriteria = [
   'Innovative product or service with market potential',
   'Scalable business model',
   'Strong founding team',
-  'Alignment with Saudi market needs',
-  'Commitment to establish operations in Saudi Arabia',
+  'Alignment with Oman market needs',
+  'Commitment to establish operations in Oman',
   'Willingness to collaborate with local partners',
 ];
 
-export default function CatalyzeSaudi() {
+export default function CatalyzeOman() {
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -79,14 +79,14 @@ export default function CatalyzeSaudi() {
               <div className="flex items-center gap-2 text-primary mb-4">
                 <span className="text-sm font-medium">Programs & Incentives</span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Catalyze Saudi</span>
+                <span className="text-sm text-white/60">Catalyze Oman</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Catalyze Saudi
+                Catalyze Oman
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
                 An accelerator program designed to fast-track innovative companies and help them 
-                scale their operations in Saudi Arabia and beyond.
+                scale their operations in Oman and beyond.
               </p>
             </div>
           </ScrollReveal>
@@ -101,7 +101,7 @@ export default function CatalyzeSaudi() {
               Program Benefits
             </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Comprehensive support to accelerate your growth in the Saudi market.
+              Comprehensive support to accelerate your growth in the Oman market.
             </p>
           </ScrollReveal>
 
@@ -168,7 +168,7 @@ export default function CatalyzeSaudi() {
                 Eligibility Criteria
               </h2>
               <p className="text-white/60 text-center mb-8">
-                Companies must meet the following requirements to join the Catalyze Saudi program:
+                Companies must meet the following requirements to join the Catalyze Oman program:
               </p>
               <div className="space-y-4">
                 {eligibilityCriteria.map((criterion) => (
@@ -195,11 +195,11 @@ export default function CatalyzeSaudi() {
                 Accelerate Your Growth
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join Catalyze Saudi and fast-track your company's growth in one of the world's 
+                Join Catalyze Oman and fast-track your company's growth in one of the world's 
                 most dynamic and rapidly evolving markets.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Apply to Catalyze Saudi</button>
+                <button className="btn-primary">Apply to Catalyze Oman</button>
                 <button className="btn-secondary">Learn More</button>
               </div>
             </div>

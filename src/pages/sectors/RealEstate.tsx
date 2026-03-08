@@ -81,7 +81,7 @@ export default function RealEstate() {
                 Real Estate Investment
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                One of the world's most dynamic real estate markets, driven by Vision 2030 
+                One of the world's most dynamic real estate markets, driven by Oman Vision 2040 
                 mega-projects and rapid urban development.
               </p>
             </div>
@@ -187,7 +187,7 @@ export default function RealEstate() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Invest in Saudi Real Estate
+                Invest in Oman Real Estate
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
                 Connect with our real estate investment specialists to explore 

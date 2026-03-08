@@ -7,7 +7,7 @@ const reasons = [
     icon: Users,
     title: 'Transformational Vision, Young Nation',
     stat: '70%',
-    description: 'of Saudi Population under 35, digitally native, globally connected',
+    description: 'of Oman Population under 35, digitally native, globally connected',
     gradient: 'from-teal-500 to-teal-700',
   },
   {
@@ -63,7 +63,7 @@ const additionalBenefits = [
   },
   {
     title: 'Government Support',
-    description: 'Dedicated support through MISA and other government entities to facilitate investment.',
+    description: 'Dedicated support through Invest Oman and other government entities to facilitate investment.',
   },
 ];
 
@@ -77,15 +77,15 @@ export default function WhyInvest() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Saudi</span>
+                <span className="text-sm font-medium">Why Oman</span>
                 <ArrowRight className="w-4 h-4" />
                 <span className="text-sm text-white/60">Why Invest</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Why Invest in Saudi Arabia
+                Why Invest in Oman
               </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Discover why Saudi Arabia is the world's most ambitious investment 
+                Discover why Oman is the world's most ambitious investment 
                 destination, offering unparalleled opportunities for growth and success.
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function WhyInvest() {
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
                 Connect with our team to learn more about investment opportunities 
-                and how we can support your business in Saudi Arabia.
+                and how we can support your business in Oman.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <button className="btn-primary">Contact Us</button>
