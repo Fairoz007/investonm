@@ -4,60 +4,162 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: 'WHY SAUDI',
     href: '#why-saudi',
+    subtitle: 'Discover the Kingdom\'s limitless potential',
     children: [
-      { label: 'Why Invest in Saudi Arabia', href: '/why-saudi/why-invest' },
-      { label: 'Quality of Life', href: '/why-saudi/quality-of-life' },
-      { label: 'National Strategy', href: '/why-saudi/national-strategy' },
+      { label: 'Vision and Leadership Message', href: '/why-saudi/vision-leadership' },
+      { label: 'Why Invest Saudi Arabia', href: '/why-saudi/why-invest' },
+      { label: 'Living in Saudi', href: '/why-saudi/living' },
+      { label: 'Vision 2030', href: '/why-saudi/vision-2030' },
+      { label: 'National Investment Strategy', href: '/why-saudi/nis' },
+      { label: 'National Strategies', href: '/why-saudi/national-strategies' },
       { label: 'About MISA', href: '/why-saudi/about-misa' },
     ],
   },
   {
     label: 'SECTOR & OPPORTUNITIES',
     href: '#sectors',
+    subtitle: 'A Unified Hub of Investment Opportunities',
     children: [
-      { label: 'INVESTMENT OPPORTUNITIES', href: '/sectors/opportunities' },
-      { label: 'SECTORS', href: '/sectors/key-sectors' },
-      { label: 'REGIONS', href: '/sectors/regions' },
-      { label: 'REAL ESTATE', href: '/sectors/real-estate' },
-      { label: 'GIGA PROJECTS', href: '/sectors/giga-projects' },
-      { label: 'INVESTOR JOURNEY GUIDE', href: '/sectors/journey' },
+      { label: 'Investment Opportunities', href: '/sectors/opportunities' },
+      {
+        label: 'Sectors',
+        href: '/sectors/key-sectors',
+        hasSubmenu: true,
+        submenu: {
+          type: 'multicolumn',
+          columns: [
+            {
+              title: 'Manufacturing & Industrial Sectors',
+              items: [
+                { label: 'Defense & Space', href: '#' },
+                { label: 'Agriculture & Food', href: '#' },
+                { label: 'Automotive', href: '#' },
+                { label: 'Energy', href: '#' },
+                { label: 'Mining & Metals', href: '#' },
+                { label: 'Petrochemicals', href: '#' },
+                { label: 'Biotechnology & Pharma', href: '#' },
+                { label: 'Machinery & Equipment', href: '#' },
+              ]
+            },
+            {
+              title: 'Services Sectors',
+              items: [
+                { label: 'Information & Communication', href: '#' },
+                { label: 'Education & Training', href: '#' },
+                { label: 'Healthcare & Medical', href: '#' },
+                { label: 'Real Estate', href: '#' },
+                { label: 'Transport & Logistics', href: '#' },
+                { label: 'Tourism', href: '#' },
+                { label: 'Media', href: '#' },
+                { label: 'Culture', href: '#' },
+                { label: 'Entertainment', href: '#' },
+              ]
+            },
+            {
+              title: 'Environmental Services',
+              items: [
+                { label: 'Recycling', href: '#' },
+                { label: 'Water', href: '#' },
+                { label: 'Environment Services', href: '#' },
+              ]
+            },
+            {
+              title: 'Other',
+              items: [
+                { label: 'Sport', href: '#' },
+                { label: 'Cybersecurity', href: '#' },
+              ]
+            }
+          ]
+        }
+      },
+      {
+        label: 'Regions',
+        href: '/sectors/regions',
+        hasSubmenu: true,
+        submenu: {
+          type: 'twocolumn',
+          columns: [
+            {
+              items: [
+                { label: 'Riyadh Region', href: '#' },
+                { label: 'Makkah Region', href: '#' },
+                { label: 'Madinah Region', href: '#' },
+                { label: 'Eastern Province', href: '#' },
+                { label: 'Asir Region', href: '#' },
+                { label: 'Tabuk Region', href: '#' },
+                { label: 'Hail Region', href: '#' },
+                { label: 'Northern Borders Region', href: '#' },
+                { label: 'Jazan Region', href: '#' },
+              ]
+            },
+            {
+              items: [
+                { label: 'Najran Region', href: '#' },
+                { label: 'Al-Baha Region', href: '#' },
+                { label: 'Al-Jouf Region', href: '#' },
+                { label: 'Al-Qassim Region', href: '#' },
+              ]
+            }
+          ]
+        }
+      },
+      { label: 'Real Estate', href: '/sectors/real-estate' },
+      { label: 'Giga Projects', href: '/sectors/giga-projects' },
+      { label: 'Investor Journey Guide', href: '/sectors/journey' },
     ],
   },
   {
     label: 'SETUP & SCALE',
     href: '#setup',
+    subtitle: 'Start and grow your business with our comprehensive support',
     children: [
       { label: 'Investor Services', href: '/setup/investor-services' },
-      { label: 'E-Services', href: '/setup/e-services' },
+      { label: 'E Services', href: '/setup/e-services' },
+      { label: 'Investor Service Catalog', href: '/setup/catalog' },
+      { label: 'Investor Registration Advisor', href: '/setup/registration' },
+      { label: 'Scaling by Investor – Value Added Services', href: '/setup/scaling' },
+      { label: 'Investor Process Explorer', href: '/setup/process' },
     ],
   },
   {
     label: 'PROGRAMS & INCENTIVES',
     href: '#programs',
+    subtitle: 'Explore specialized programs, incentives, and tailored initiatives',
     children: [
       { label: 'RHQ', href: '/programs/rhq' },
-      { label: 'Startup Saudi', href: '/programs/startup-saudi' },
       { label: 'GSCRI', href: '/programs/gscri' },
-      { label: 'Shareek', href: '/programs/shareek' },
+      { label: 'Ignite', href: '/programs/ignite' },
+      { label: 'Shreek', href: '/programs/shareek' },
       { label: 'Catalyze Saudi', href: '/programs/catalyze-saudi' },
+      { label: 'Sustainability & Green', href: '/programs/sustainability' },
+      { label: 'Special Economic Zones', href: '/programs/sez' },
+      { label: 'Success Stories', href: '/programs/success-stories' },
+      { label: 'Incentives', href: '/programs/incentives' },
+      { label: 'Startup Saudi', href: '/programs/startup-saudi' },
     ],
   },
   {
     label: 'KNOWLEDGE',
     href: '#knowledge',
+    subtitle: 'Key insights into Saudi Arabia’s economic and investment ecosystem.',
     children: [
-      { label: 'Reports and Insights', href: '/knowledge/reports' },
+      { label: 'Economic & Investment Reports', href: '/knowledge/reports' },
+      { label: 'Competitiveness Insights', href: '/knowledge/competitiveness' },
+      { label: 'Foreign Direct Investment Insights', href: '/knowledge/fdi' },
+      { label: 'Investment Growth & Opportunities', href: '/knowledge/growth' },
+      { label: 'Investment Council', href: '/knowledge/council' },
       { label: 'Events Calendar', href: '/knowledge/events' },
-      { label: 'Laws & Regulation', href: '/knowledge/laws' },
-      { label: 'The Dashboards Pages', href: '/knowledge/dashboards' },
+      { label: 'News', href: '/knowledge/news' },
     ],
   },
   {
     label: 'CONTACT US',
     href: '/contact',
+    subtitle: 'Get in touch with our local and international teams for support',
     children: [
-      { label: 'CONTACT US', href: '/contact' },
-      { label: 'INTERNATIONAL OFFICES', href: '/contact/international' },
+      { label: 'Contact Us', href: '/contact' },
+      { label: 'International Offices', href: '/contact/international' },
     ],
   },
 ];

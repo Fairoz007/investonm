@@ -3,44 +3,67 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 
-const footerLinks = {
-  'WHY SAUDI': [
-    { label: 'Why Invest in Saudi Arabia', href: '/why-saudi/why-invest' },
-    { label: 'Quality of Life', href: '/why-saudi/quality-of-life' },
-    { label: 'National Strategy', href: '/why-saudi/national-strategy' },
-    { label: 'About MISA', href: '/why-saudi/about-misa' },
-  ],
-  'SECTOR & OPPORTUNITIES': [
-    { label: 'Key Sectors', href: '/sectors/key-sectors' },
-    { label: 'Regions', href: '/sectors/regions' },
-    { label: 'Real Estate', href: '/sectors/real-estate' },
-    { label: 'Giga Projects', href: '/sectors/giga-projects' },
-    { label: 'Incentives', href: '/sectors/incentives' },
-  ],
-  'SETUP & SCALE': [
-    { label: 'Investor Services', href: '/setup/investor-services' },
-    { label: 'E-Services', href: '/setup/e-services' },
-  ],
-  'PROGRAMS & INCENTIVES': [
-    { label: 'RHQ', href: '/programs/rhq' },
-    { label: 'Startup Saudi', href: '/programs/startup-saudi' },
-    { label: 'GSCRI', href: '/programs/gscri' },
-    { label: 'Shareek', href: '/programs/shareek' },
-    { label: 'Catalyze Saudi', href: '/programs/catalyze-saudi' },
-  ],
-  'KNOWLEDGE': [
-    { label: 'Reports and Insights', href: '/knowledge/reports' },
-    { label: 'Events Calendar', href: '/knowledge/events' },
-    { label: 'Laws & Regulation', href: '/knowledge/laws' },
-    { label: 'The Dashboards Pages', href: '/knowledge/dashboards' },
-  ],
-  'VALUE ADDED SERVICES': [
-    { label: 'Business Visa for Investors', href: '#' },
-    { label: 'Strategic Investors Program', href: '#' },
-    { label: 'MIZA', href: '#' },
-    { label: 'Matchmaking', href: '#' },
-  ],
+type FooterLinkColumn = {
+  title: string;
+  links: { label: string; href: string; }[];
 };
+
+const footerLinks: FooterLinkColumn[] = [
+  {
+    title: 'WHY SAUDI',
+    links: [
+      { label: 'Why Invest in Saudi Arabia', href: '/why-saudi/why-invest' },
+      { label: 'Quality of Life', href: '/why-saudi/quality-of-life' },
+      { label: 'National Strategy', href: '/why-saudi/national-strategy' },
+      { label: 'About MISA', href: '/why-saudi/about-misa' },
+    ]
+  },
+  {
+    title: 'SECTOR & OPPORTUNITIES',
+    links: [
+      { label: 'Key Sectors', href: '/sectors/key-sectors' },
+      { label: 'Regions', href: '/sectors/regions' },
+      { label: 'Real Estate', href: '/sectors/real-estate' },
+      { label: 'Giga Projects', href: '/sectors/giga-projects' },
+      { label: 'Incentives', href: '/sectors/incentives' },
+    ]
+  },
+  {
+    title: 'SETUP & SCALE',
+    links: [
+      { label: 'Investor Services', href: '/setup/investor-services' },
+      { label: 'E-Services', href: '/setup/e-services' },
+    ]
+  },
+  {
+    title: 'PROGRAMS & INCENTIVES',
+    links: [
+      { label: 'RHQ', href: '/programs/rhq' },
+      { label: 'Startup Saudi', href: '/programs/startup-saudi' },
+      { label: 'GSCRI', href: '/programs/gscri' },
+      { label: 'Shareek', href: '/programs/shareek' },
+      { label: 'Catalyze Saudi', href: '/programs/catalyze-saudi' },
+    ]
+  },
+  {
+    title: 'KNOWLEDGE',
+    links: [
+      { label: 'Reports and Insights', href: '/knowledge/reports' },
+      { label: 'Events Calendar', href: '/knowledge/events' },
+      { label: 'Laws & Regulation', href: '/knowledge/laws' },
+      { label: 'The Dashboards Pages', href: '/knowledge/dashboards' },
+    ]
+  },
+  {
+    title: 'VALUE ADDED SERVICES',
+    links: [
+      { label: 'Business Visa for Investors', href: '#' },
+      { label: 'Strategic Investors Program', href: '#' },
+      { label: 'MIZA', href: '#' },
+      { label: 'Matchmaking', href: '#' },
+    ]
+  }
+];
 
 export const Footer = () => {
   return (
@@ -52,11 +75,11 @@ export const Footer = () => {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Invest in Saudi Arabia?
+                Ready to Invest in Oman?
               </h2>
               <p className="text-white/70 mb-8">
-                Curious about how investors succeed in Saudi Arabia? Access one of the
-                world's most ambitious investment platforms. Invest in Saudi Arabia to
+                Curious about how investors succeed in Oman? Access one of the
+                world's most ambitious investment platforms. Invest in Oman to
                 unlock full market opportunity, sovereign backing, and long-term growth.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -85,21 +108,21 @@ export const Footer = () => {
                 <div className="p-3 bg-primary/10 rounded-xl">
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-dark-light">MISA Call Center</h3>
+                <h3 className="text-lg font-semibold text-dark-light">Shomoukh Contact Center</h3>
               </div>
               <p className="text-gray-600 text-sm mb-4">
-                MISA Call Center serves as a trusted point of contact, providing a
+                Shomoukh Call Center serves as a trusted point of contact, providing a
                 dedicated support and clear guidance to meet your business needs
-                throughout your investment journey in the Saudi Arabia.
+                throughout your investment journey in Oman.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span>966115065777 / 8002449990</span>
+                  <MapPin className="w-4 h-4 text-primary" />
+                  <span>Airport Heights, Muscat, Sultanate of Oman</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>InvestorCare@misa.gov.sa</span>
+                  <span>info@shomoukh.om</span>
                 </div>
               </div>
             </div>
@@ -134,24 +157,25 @@ export const Footer = () => {
         </div>
 
         {/* Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-          {Object.entries(footerLinks).map(([category, links], index) => (
-            <ScrollReveal key={category} delay={index * 0.05}>
-              <div>
-                <h4 className="text-sm font-semibold text-primary mb-4">{category}</h4>
-                <ul className="space-y-2">
-                  {links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        to={link.href}
-                        className="text-sm text-gray-600 hover:text-primary transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        <div
+          className="grid gap-8 mb-12 overflow-x-auto min-w-full"
+          style={{ gridTemplateColumns: 'repeat(6, minmax(180px, 1fr))' }}
+        >
+          {footerLinks.map((column, index) => (
+            <ScrollReveal key={column.title} delay={index * 0.05} className="flex flex-col">
+              <h4 className="text-[12px] font-bold text-primary mb-6 tracking-widest uppercase">{column.title}</h4>
+              <ul className="space-y-4">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.href}
+                      className="text-[11px] text-gray-500 font-medium hover:text-primary transition-colors tracking-wide"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </ScrollReveal>
           ))}
         </div>
@@ -189,7 +213,7 @@ export const Footer = () => {
           </div>
 
           <div className="mt-8 text-center text-sm text-gray-500">
-            All Rights Reserved to Invest Saudi © 2026
+            All Rights Reserved to Shomoukh International Investment © 2026
           </div>
         </div>
       </div>
