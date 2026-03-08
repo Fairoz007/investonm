@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Scale, FileText, Download, BookOpen, Gavel } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const lawCategories = [
   {
@@ -73,6 +74,7 @@ const recentUpdates = [
 ];
 
 export default function Laws() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -82,17 +84,14 @@ export default function Laws() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Knowledge</span>
+                <span className="text-sm font-medium"> {t('laws.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Laws & Regulation</span>
+                <span className="text-sm text-white/60"> {t('laws.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Laws & Regulation
-              </h1>
+                 {t('laws.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Access comprehensive information about the legal and regulatory framework 
-                governing investment and business operations in Oman.
-              </p>
+                 {t('laws.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -103,8 +102,7 @@ export default function Laws() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Recent Updates
-            </h2>
+               {t('laws.text.5')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -133,8 +131,7 @@ export default function Laws() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Legal Framework
-            </h2>
+               {t('laws.text.6')} </h2>
           </ScrollReveal>
 
           <div className="space-y-8">
@@ -181,15 +178,12 @@ export default function Laws() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Need Legal Guidance?
-              </h2>
+                 {t('laws.text.7')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Our team can help you understand the legal and regulatory requirements 
-                for your specific investment and business activities.
-              </p>
+                 {t('laws.text.8')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Request Legal Consultation</button>
-                <button className="btn-secondary">Contact Legal Team</button>
+                <button className="btn-primary"> {t('laws.text.9')} </button>
+                <button className="btn-secondary"> {t('laws.text.10')} </button>
               </div>
             </div>
           </ScrollReveal>

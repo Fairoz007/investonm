@@ -1,5 +1,6 @@
 import { ArrowRight, Target, Users, Globe, Award, Phone, Mail, MapPin } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const services = [
   {
@@ -41,6 +42,7 @@ const stats = [
 ];
 
 export default function AboutInvestOman() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -50,17 +52,14 @@ export default function AboutInvestOman() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Oman</span>
+                <span className="text-sm font-medium"> {t('aboutinvestoman.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">About Invest Oman</span>
+                <span className="text-sm text-white/60"> {t('aboutinvestoman.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Ministry of Investment of Oman
-              </h1>
+                 {t('aboutinvestoman.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Invest Oman is your gateway to investment opportunities in Oman,
-                providing comprehensive support and services to investors worldwide.
-              </p>
+                 {t('aboutinvestoman.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -88,32 +87,20 @@ export default function AboutInvestOman() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Your Partner in Investment Success
-              </h2>
+                 {t('aboutinvestoman.text.5')} </h2>
               <div className="space-y-4 text-white/70">
                 <p>
-                  The Ministry of Investment of Oman (Invest Oman) is the government body responsible
-                  for regulating and promoting investment in the Sultanate. Formerly known as SAGIA
-                  (Omann General Investment Authority), Invest Oman was elevated to ministry status
-                  in 2020 to reflect the growing importance of foreign investment in achieving Oman Vision 2040.
-                </p>
+                   {t('aboutinvestoman.text.6')} </p>
                 <p>
-                  Invest Oman's mission is to create an attractive investment environment, facilitate business
-                  operations, and provide comprehensive support to investors. Through streamlined processes,
-                  digital services, and dedicated support teams, Invest Oman ensures that investors have everything
-                  they need to succeed in Oman.
-                </p>
+                   {t('aboutinvestoman.text.7')} </p>
                 <p>
-                  With over 30 international offices and a commitment to excellence, Invest Oman serves as the
-                  primary point of contact for investors looking to explore opportunities in one of the
-                  world's most dynamic and rapidly growing economies.
-                </p>
+                   {t('aboutinvestoman.text.8')} </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="glass-card p-8">
-                <h3 className="text-xl font-bold text-white mb-6">Our Services</h3>
+                <h3 className="text-xl font-bold text-white mb-6"> {t('aboutinvestoman.text.9')} </h3>
                 <div className="space-y-6">
                   {services.map((service) => (
                     <div key={service.title} className="flex gap-4">
@@ -138,8 +125,7 @@ export default function AboutInvestOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-              Our Journey
-            </h2>
+               {t('aboutinvestoman.text.10')} </h2>
           </ScrollReveal>
 
           <div className="max-w-3xl mx-auto">
@@ -172,18 +158,16 @@ export default function AboutInvestOman() {
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-4">
-                    Get in Touch
-                  </h2>
+                     {t('aboutinvestoman.text.11')} </h2>
                   <p className="text-white/70 mb-8">
-                    Our team is ready to assist you with any questions about investing in Oman.
-                  </p>
+                     {t('aboutinvestoman.text.12')} </p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-primary/20 rounded-xl">
                         <Phone className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <div className="text-sm text-white/50">Call Center</div>
+                        <div className="text-sm text-white/50"> {t('aboutinvestoman.text.13')} </div>
                         <div className="text-white">966115065777 / 8002449990</div>
                       </div>
                     </div>
@@ -192,8 +176,8 @@ export default function AboutInvestOman() {
                         <Mail className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <div className="text-sm text-white/50">Email</div>
-                        <div className="text-white">InvestorCare@investoman.gov.om</div>
+                        <div className="text-sm text-white/50"> {t('aboutinvestoman.text.14')} </div>
+                        <div className="text-white"> {t('aboutinvestoman.text.15')} </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -201,16 +185,15 @@ export default function AboutInvestOman() {
                         <MapPin className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <div className="text-sm text-white/50">Headquarters</div>
-                        <div className="text-white">Muscat, Oman</div>
+                        <div className="text-sm text-white/50"> {t('aboutinvestoman.text.16')} </div>
+                        <div className="text-white"> {t('aboutinvestoman.text.17')} </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center">
                   <button className="btn-primary text-lg px-8 py-4">
-                    Contact Us
-                  </button>
+                     {t('aboutinvestoman.text.18')} </button>
                 </div>
               </div>
             </div>

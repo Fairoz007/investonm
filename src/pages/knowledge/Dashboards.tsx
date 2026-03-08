@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, TrendingUp, PieChart, Globe, Users, DollarSign } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const dashboards = [
   {
@@ -49,6 +50,7 @@ const featuredMetrics = [
 ];
 
 export default function Dashboards() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -58,17 +60,14 @@ export default function Dashboards() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Knowledge</span>
+                <span className="text-sm font-medium"> {t('dashboards.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Dashboards</span>
+                <span className="text-sm text-white/60"> {t('dashboards.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                The Dashboards
-              </h1>
+                 {t('dashboards.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Access real-time data and analytics on Oman's economy, investment trends, 
-                and business environment through our comprehensive dashboards.
-              </p>
+                 {t('dashboards.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -95,11 +94,9 @@ export default function Dashboards() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Available Dashboards
-            </h2>
+               {t('dashboards.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Explore our interactive dashboards for comprehensive insights into Oman's economy.
-            </p>
+               {t('dashboards.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -139,12 +136,9 @@ export default function Dashboards() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-4">
-                    Data API Access
-                  </h2>
+                     {t('dashboards.text.7')} </h2>
                   <p className="text-white/70 mb-6">
-                    Integrate our economic and investment data directly into your applications 
-                    and analytics platforms through our comprehensive API.
-                  </p>
+                     {t('dashboards.text.8')} </p>
                   <ul className="space-y-3 mb-8">
                     {[
                       'Real-time data feeds',
@@ -158,16 +152,15 @@ export default function Dashboards() {
                       </li>
                     ))}
                   </ul>
-                  <button className="btn-primary">Request API Access</button>
+                  <button className="btn-primary"> {t('dashboards.text.9')} </button>
                 </div>
                 <div className="glass-card p-6">
                   <div className="text-center">
                     <BarChart3 className="w-24 h-24 text-primary mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-white mb-2">Custom Reports</h3>
+                    <h3 className="text-xl font-bold text-white mb-2"> {t('dashboards.text.10')} </h3>
                     <p className="text-white/60 text-sm mb-4">
-                      Request customized reports and analysis tailored to your specific needs.
-                    </p>
-                    <button className="btn-secondary">Request Custom Report</button>
+                       {t('dashboards.text.11')} </p>
+                    <button className="btn-secondary"> {t('dashboards.text.12')} </button>
                   </div>
                 </div>
               </div>

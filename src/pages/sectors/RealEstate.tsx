@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Building2, Home, Briefcase, Hotel } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const segments = [
   {
@@ -64,6 +65,7 @@ const marketStats = [
 ];
 
 export default function RealEstate() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -73,17 +75,14 @@ export default function RealEstate() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Sectors & Opportunities</span>
+                <span className="text-sm font-medium"> {t('realestate.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Real Estate</span>
+                <span className="text-sm text-white/60"> {t('realestate.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Real Estate Investment
-              </h1>
+                 {t('realestate.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                One of the world's most dynamic real estate markets, driven by Oman Vision 2040 
-                mega-projects and rapid urban development.
-              </p>
+                 {t('realestate.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -110,11 +109,9 @@ export default function RealEstate() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Market Segments
-            </h2>
+               {t('realestate.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Diverse opportunities across residential, commercial, hospitality, and industrial real estate.
-            </p>
+               {t('realestate.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -151,11 +148,9 @@ export default function RealEstate() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Key Real Estate Markets
-            </h2>
+               {t('realestate.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Prime locations offering the strongest growth potential and investment returns.
-            </p>
+               {t('realestate.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -168,10 +163,10 @@ export default function RealEstate() {
                   </div>
                   <div className="space-y-2">
                     <div className="text-sm text-white/60">
-                      <span className="text-white/40">Focus:</span> {market.focus}
+                      <span className="text-white/40"> {t('realestate.text.9')} </span> {market.focus}
                     </div>
                     <div className="text-sm text-white/60">
-                      <span className="text-white/40">Highlight:</span> {market.highlight}
+                      <span className="text-white/40"> {t('realestate.text.10')} </span> {market.highlight}
                     </div>
                   </div>
                 </div>
@@ -187,15 +182,12 @@ export default function RealEstate() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Invest in Oman Real Estate
-              </h2>
+                 {t('realestate.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Connect with our real estate investment specialists to explore 
-                opportunities tailored to your investment goals.
-              </p>
+                 {t('realestate.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Speak to a Specialist</button>
-                <button className="btn-secondary">Download Market Report</button>
+                <button className="btn-primary"> {t('realestate.text.13')} </button>
+                <button className="btn-secondary"> {t('realestate.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>

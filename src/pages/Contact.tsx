@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Mail, MapPin, Send } from 'lucide-react';
+import { useTranslation } from "react-i18next";
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
@@ -13,6 +14,7 @@ const staggerContainer: Variants = {
 };
 
 export default function Contact() {
+    const { t } = useTranslation();
     return (
         <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans pt-24">
             {/* Hero Section */}
@@ -24,7 +26,7 @@ export default function Contact() {
                         transition={{ duration: 0.8 }}
                         className="text-5xl md:text-7xl font-bold mb-6 text-white"
                     >
-                        Connect with Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]">Investment Team</span>
+                        {t('contact.text.1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('contact.text.2')} </span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
@@ -32,8 +34,7 @@ export default function Contact() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl mx-auto"
                     >
-                        Reach out to our experts for comprehensive support, strategic guidance, and inquiries regarding investment opportunities in Oman.
-                    </motion.p>
+                        {t('contact.text.3')} </motion.p>
                 </div>
             </section>
 
@@ -56,13 +57,13 @@ export default function Contact() {
                                         <MapPin className="w-6 h-6 text-[#00c2b5]" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold mb-4">Office Address</h3>
+                                        <h3 className="text-xl font-bold mb-4"> {t('contact.text.4')} </h3>
                                         <div className="text-white/70 space-y-1 leading-relaxed">
-                                            <p>Shomoukh International Investment LLC</p>
-                                            <p>Postal Office Box: 1756</p>
-                                            <p>Postal Code: 111</p>
-                                            <p>Airport Heights, Muscat</p>
-                                            <p>Sultanate of Oman</p>
+                                            <p> {t('contact.text.5')} </p>
+                                            <p> {t('contact.text.6')} </p>
+                                            <p> {t('contact.text.7')} </p>
+                                            <p> {t('contact.text.8')} </p>
+                                            <p> {t('contact.text.9')} </p>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -72,13 +73,11 @@ export default function Contact() {
                                         <Mail className="w-6 h-6 text-[#00c2b5]" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold mb-4">Email Us</h3>
+                                        <h3 className="text-xl font-bold mb-4"> {t('contact.text.10')} </h3>
                                         <p className="text-white/70 leading-relaxed mb-4">
-                                            For general inquiries and investment proposals.
-                                        </p>
+                                            {t('contact.text.11')} </p>
                                         <a href="mailto:info@shomoukh.om" className="text-2xl font-bold text-[#00c2b5] hover:text-[#009288] transition-colors break-all">
-                                            info@shomoukh.om
-                                        </a>
+                                            {t('contact.text.12')} </a>
                                     </div>
                                 </motion.div>
                             </div>
@@ -107,10 +106,10 @@ export default function Contact() {
                             className="lg:w-1/2"
                         >
                             <motion.div variants={fadeInUp} className="bg-white/5 border border-white/10 rounded-[2rem] p-10 lg:p-14">
-                                <h3 className="text-3xl font-bold mb-8">Send Us a Message</h3>
+                                <h3 className="text-3xl font-bold mb-8"> {t('contact.text.13')} </h3>
                                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                                     <div className="space-y-2">
-                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2">Full Name</label>
+                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2"> {t('contact.text.14')} </label>
                                         <input
                                             type="text"
                                             className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#00c2b5]/50 focus:ring-1 focus:ring-[#00c2b5]/50 transition-all font-medium"
@@ -119,7 +118,7 @@ export default function Contact() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2">Email Address</label>
+                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2"> {t('contact.text.15')} </label>
                                         <input
                                             type="email"
                                             className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#00c2b5]/50 focus:ring-1 focus:ring-[#00c2b5]/50 transition-all font-medium"
@@ -128,7 +127,7 @@ export default function Contact() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2">Company Name</label>
+                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2"> {t('contact.text.16')} </label>
                                         <input
                                             type="text"
                                             className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#00c2b5]/50 focus:ring-1 focus:ring-[#00c2b5]/50 transition-all font-medium"
@@ -137,7 +136,7 @@ export default function Contact() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2">Message</label>
+                                        <label className="text-sm text-white/60 font-medium uppercase tracking-wider ml-2"> {t('contact.text.17')} </label>
                                         <textarea
                                             rows={5}
                                             className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#00c2b5]/50 focus:ring-1 focus:ring-[#00c2b5]/50 transition-all font-medium resize-none custom-scrollbar"
@@ -146,7 +145,7 @@ export default function Contact() {
                                     </div>
 
                                     <button className="w-full py-5 bg-[#00c2b5] hover:bg-[#00a89d] text-[#111] font-bold rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(0,194,181,0.2)]">
-                                        Send Inquiry <Send className="w-5 h-5" />
+                                        {t('contact.text.18')} <Send className="w-5 h-5" />
                                     </button>
                                 </form>
                             </motion.div>

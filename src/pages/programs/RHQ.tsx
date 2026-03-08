@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Percent, Users, Globe, Clock } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const benefits = [
   {
@@ -45,6 +46,7 @@ const approvedActivities = [
 ];
 
 export default function RHQ() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -54,17 +56,14 @@ export default function RHQ() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Programs & Incentives</span>
+                <span className="text-sm font-medium"> {t('rhq.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">RHQ</span>
+                <span className="text-sm text-white/60"> {t('rhq.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Regional Headquarters Program
-              </h1>
+                 {t('rhq.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Establish your regional headquarters in Oman and unlock exclusive incentives 
-                designed to support your Middle East and North Africa operations.
-              </p>
+                 {t('rhq.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -75,11 +74,9 @@ export default function RHQ() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Program Benefits
-            </h2>
+               {t('rhq.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Comprehensive incentives package for companies establishing their regional headquarters.
-            </p>
+               {t('rhq.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -107,11 +104,9 @@ export default function RHQ() {
           <div className="grid lg:grid-cols-2 gap-12">
             <ScrollReveal>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Eligibility Criteria
-              </h2>
+                 {t('rhq.text.7')} </h2>
               <p className="text-white/60 mb-8">
-                Companies must meet the following requirements to qualify for the RHQ Program:
-              </p>
+                 {t('rhq.text.8')} </p>
               <div className="space-y-4">
                 {eligibilityCriteria.map((criterion) => (
                   <div key={criterion} className="flex items-start gap-3">
@@ -124,11 +119,9 @@ export default function RHQ() {
 
             <ScrollReveal delay={0.2}>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Approved Activities
-              </h2>
+                 {t('rhq.text.9')} </h2>
               <p className="text-white/60 mb-8">
-                The following activities are eligible for tax incentives under the RHQ Program:
-              </p>
+                 {t('rhq.text.10')} </p>
               <div className="space-y-4">
                 {approvedActivities.map((activity) => (
                   <div key={activity} className="flex items-start gap-3">
@@ -147,31 +140,28 @@ export default function RHQ() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Why Choose Riyadh?
-            </h2>
+               {t('rhq.text.11')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Riyadh offers the perfect combination of strategic location, world-class infrastructure, 
-              and business-friendly environment.
-            </p>
+               {t('rhq.text.12')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
             <ScrollReveal delay={0}>
               <div className="glass-card p-6 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">G20</div>
-                <div className="text-white/60">Largest Economy in MENA</div>
+                <div className="text-4xl font-bold text-primary mb-2"> {t('rhq.text.13')} </div>
+                <div className="text-white/60"> {t('rhq.text.14')} </div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <div className="glass-card p-6 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">35M+</div>
-                <div className="text-white/60">Population Market Access</div>
+                <div className="text-4xl font-bold text-primary mb-2"> {t('rhq.text.15')} </div>
+                <div className="text-white/60"> {t('rhq.text.16')} </div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <div className="glass-card p-6 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">KAFD</div>
-                <div className="text-white/60">World-Class Financial District</div>
+                <div className="text-4xl font-bold text-primary mb-2"> {t('rhq.text.17')} </div>
+                <div className="text-white/60"> {t('rhq.text.18')} </div>
               </div>
             </ScrollReveal>
           </div>
@@ -184,15 +174,12 @@ export default function RHQ() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Establish Your Regional Headquarters
-              </h2>
+                 {t('rhq.text.19')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join leading multinational companies that have chosen Oman 
-                as their regional headquarters for the Middle East and North Africa.
-              </p>
+                 {t('rhq.text.20')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Apply for RHQ Program</button>
-                <button className="btn-secondary">Download Program Guide</button>
+                <button className="btn-primary"> {t('rhq.text.21')} </button>
+                <button className="btn-secondary"> {t('rhq.text.22')} </button>
               </div>
             </div>
           </ScrollReveal>

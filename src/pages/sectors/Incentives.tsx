@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Percent, Building2, Users, Zap, Briefcase, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const incentiveCategories = [
   {
@@ -93,6 +94,7 @@ const eligibilityCriteria = [
 ];
 
 export default function Incentives() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -102,17 +104,14 @@ export default function Incentives() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Sectors & Opportunities</span>
+                <span className="text-sm font-medium"> {t('incentives.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Incentives</span>
+                <span className="text-sm text-white/60"> {t('incentives.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Investment Incentives
-              </h1>
+                 {t('incentives.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Comprehensive incentive packages designed to maximize returns and support 
-                your business growth in Oman.
-              </p>
+                 {t('incentives.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -123,11 +122,9 @@ export default function Incentives() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Incentive Categories
-            </h2>
+               {t('incentives.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              A range of incentives tailored to support different aspects of your investment.
-            </p>
+               {t('incentives.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -162,11 +159,9 @@ export default function Incentives() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Special Programs
-            </h2>
+               {t('incentives.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Targeted incentive programs for specific investment types and sectors.
-            </p>
+               {t('incentives.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -198,11 +193,9 @@ export default function Incentives() {
           <ScrollReveal>
             <div className="glass-card p-8 max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                Eligibility Criteria
-              </h2>
+                 {t('incentives.text.9')} </h2>
               <p className="text-white/60 text-center mb-8">
-                Incentives are available to qualifying investments that meet the following criteria:
-              </p>
+                 {t('incentives.text.10')} </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {eligibilityCriteria.map((criterion) => (
                   <div key={criterion} className="flex items-center gap-3">
@@ -222,15 +215,12 @@ export default function Incentives() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Maximize Your Investment Returns
-              </h2>
+                 {t('incentives.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Our incentive specialists can help you identify and access the incentives 
-                that best match your investment profile.
-              </p>
+                 {t('incentives.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Apply for Incentives</button>
-                <button className="btn-secondary">Schedule a Consultation</button>
+                <button className="btn-primary"> {t('incentives.text.13')} </button>
+                <button className="btn-secondary"> {t('incentives.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>

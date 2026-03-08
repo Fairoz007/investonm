@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Users, FileText, HandshakeIcon, Lightbulb, Building2, Phone } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const services = [
   {
@@ -100,6 +101,7 @@ const processSteps = [
 ];
 
 export default function InvestorServices() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -109,17 +111,14 @@ export default function InvestorServices() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Setup & Scale</span>
+                <span className="text-sm font-medium"> {t('investorservices.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Investor Services</span>
+                <span className="text-sm text-white/60"> {t('investorservices.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Investor Services
-              </h1>
+                 {t('investorservices.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Comprehensive support services designed to facilitate your investment journey 
-                from initial inquiry to successful operation.
-              </p>
+                 {t('investorservices.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -130,11 +129,9 @@ export default function InvestorServices() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Our Services
-            </h2>
+               {t('investorservices.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              End-to-end support to ensure your investment success in Oman.
-            </p>
+               {t('investorservices.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -169,11 +166,9 @@ export default function InvestorServices() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Investment Process
-            </h2>
+               {t('investorservices.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              A streamlined five-step process to get your investment up and running.
-            </p>
+               {t('investorservices.text.8')} </p>
           </ScrollReveal>
 
           <div className="max-w-4xl mx-auto">
@@ -205,15 +200,12 @@ export default function InvestorServices() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Start Your Investment Journey
-              </h2>
+                 {t('investorservices.text.9')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Our team is ready to assist you every step of the way. 
-                Reach out to begin your investment journey in Oman.
-              </p>
+                 {t('investorservices.text.10')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Contact Investor Services</button>
-                <button className="btn-secondary">Download Service Guide</button>
+                <button className="btn-primary"> {t('investorservices.text.11')} </button>
+                <button className="btn-secondary"> {t('investorservices.text.12')} </button>
               </div>
             </div>
           </ScrollReveal>

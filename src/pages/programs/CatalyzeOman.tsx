@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Lightbulb, Users, Rocket, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const programBenefits = [
   {
@@ -68,6 +69,7 @@ const eligibilityCriteria = [
 ];
 
 export default function CatalyzeOman() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -77,17 +79,14 @@ export default function CatalyzeOman() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Programs & Incentives</span>
+                <span className="text-sm font-medium"> {t('catalyzeoman.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Catalyze Oman</span>
+                <span className="text-sm text-white/60"> {t('catalyzeoman.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Catalyze Oman
-              </h1>
+                 {t('catalyzeoman.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                An accelerator program designed to fast-track innovative companies and help them 
-                scale their operations in Oman and beyond.
-              </p>
+                 {t('catalyzeoman.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -98,11 +97,9 @@ export default function CatalyzeOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Program Benefits
-            </h2>
+               {t('catalyzeoman.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Comprehensive support to accelerate your growth in the Oman market.
-            </p>
+               {t('catalyzeoman.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -129,11 +126,9 @@ export default function CatalyzeOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Focus Areas
-            </h2>
+               {t('catalyzeoman.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Priority sectors for innovation and acceleration support.
-            </p>
+               {t('catalyzeoman.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -165,11 +160,9 @@ export default function CatalyzeOman() {
           <ScrollReveal>
             <div className="glass-card p-8 max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-6 text-center">
-                Eligibility Criteria
-              </h2>
+                 {t('catalyzeoman.text.9')} </h2>
               <p className="text-white/60 text-center mb-8">
-                Companies must meet the following requirements to join the Catalyze Oman program:
-              </p>
+                 {t('catalyzeoman.text.10')} </p>
               <div className="space-y-4">
                 {eligibilityCriteria.map((criterion) => (
                   <div key={criterion} className="flex items-start gap-3">
@@ -192,15 +185,12 @@ export default function CatalyzeOman() {
                 <Sparkles className="w-12 h-12 text-primary" />
               </div>
               <h2 className="text-3xl font-bold text-white mb-4">
-                Accelerate Your Growth
-              </h2>
+                 {t('catalyzeoman.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join Catalyze Oman and fast-track your company's growth in one of the world's 
-                most dynamic and rapidly evolving markets.
-              </p>
+                 {t('catalyzeoman.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Apply to Catalyze Oman</button>
-                <button className="btn-secondary">Learn More</button>
+                <button className="btn-primary"> {t('catalyzeoman.text.13')} </button>
+                <button className="btn-secondary"> {t('catalyzeoman.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>

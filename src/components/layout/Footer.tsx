@@ -1,8 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+  const { lang } = useParams();
+  const displayLang = lang || 'en';
+
   return (
     <footer className="bg-[#020b0d] text-white/70 border-t border-white/10 font-sans">
       {/* Main Footer Content */}
@@ -14,33 +19,30 @@ export const Footer = () => {
             <ScrollReveal>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-[#00c2b5]/10 flex items-center justify-center border border-[#00c2b5]/30">
-                  <span className="text-xl font-bold tracking-widest text-[#00c2b5]">S</span>
+                  <span className="text-xl font-bold tracking-widest text-[#00c2b5]"> {t('footer.text.1')} </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs text-white/50 leading-tight font-arabic">استثمر في عُمان</span>
-                  <span className="text-sm font-bold text-white tracking-widest">SHOMOUKH</span>
+                  <span className="text-xs text-white/50 leading-tight font-arabic"></span>
+                  <span className="text-sm font-bold text-white tracking-widest"> {t('footer.text.2')} </span>
                 </div>
               </div>
 
               <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm">
-                Your strategic partner for exploring, establishing, and growing your investment in the Sultanate of Oman.
-              </p>
+                {t('footer.text.3')} </p>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-[#00c2b5] mt-0.5 shrink-0" />
                   <span className="text-sm text-white/70">
-                    Postal Office Box: 1756<br />
-                    Postal Code: 111<br />
-                    Airport Heights, Muscat<br />
-                    Sultanate of Oman
-                  </span>
+                    {t('footer.text.4')} <br />
+                    {t('footer.text.5')} <br />
+                    {t('footer.text.6')} <br />
+                    {t('footer.text.7')} </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-[#00c2b5] shrink-0" />
                   <a href="mailto:info@shomoukh.om" className="text-sm text-white/70 hover:text-[#00c2b5] transition-colors">
-                    info@shomoukh.om
-                  </a>
+                    {t('footer.text.8')} </a>
                 </div>
               </div>
             </ScrollReveal>
@@ -51,24 +53,33 @@ export const Footer = () => {
 
             {/* Useful Links */}
             <ScrollReveal delay={0.1}>
-              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Useful Links</h4>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm"> {t('footer.text.9')} </h4>
               <ul className="space-y-4">
-                <li><Link to="/" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Home</Link></li>
-                <li><Link to="/who-we-are" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Who We Are</Link></li>
-                <li><Link to="/contact" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Contact Us</Link></li>
-                <li><Link to="#" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>Privacy Policy</Link></li>
+                <li><Link to={`/${displayLang}`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.10')} </Link></li>
+                <li><Link to={`/${displayLang}/who-we-are`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.11')} </Link></li>
+                <li><Link to={`/${displayLang}/contact`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.12')} </Link></li>
+                <li><Link to="#" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.13')} </Link></li>
               </ul>
             </ScrollReveal>
 
             {/* Key Sectors */}
             <ScrollReveal delay={0.2}>
-              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Key Sectors</h4>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm"> {t('footer.text.14')} </h4>
               <ul className="space-y-4">
-                {['Energy', 'Luxury', 'Trade', 'Investments', 'Tourism & Hospitality', 'Education', 'Logistics', 'Real Estate'].map((sector) => (
-                  <li key={sector}>
-                    <Link to={`/key-sectors`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group">
+                {[
+                  { label: 'Energy', href: '/key-sectors#energy' },
+                  { label: 'Luxury', href: '/key-sectors#luxury' },
+                  { label: 'Trade', href: '/key-sectors#trade' },
+                  { label: 'Investments', href: '/key-sectors#investments' },
+                  { label: 'Tourism & Hospitality', href: '/key-sectors#tourism' },
+                  { label: 'Education', href: '/key-sectors#education' },
+                  { label: 'Logistics', href: '/key-sectors#logistics' },
+                  { label: 'Real Estate', href: '/key-sectors#real-estate' }
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group">
                       <span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {sector}
+                      {t(item.label)}
                     </Link>
                   </li>
                 ))}
@@ -77,21 +88,21 @@ export const Footer = () => {
 
             {/* About Oman */}
             <ScrollReveal delay={0.3}>
-              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">About Oman</h4>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm"> {t('footer.text.15')} </h4>
               <ul className="space-y-4">
                 {[
-                  'Oman’s Infrastructure Advantage',
-                  'Legislation',
-                  'Business Ecosystem',
-                  'Strategic Location',
-                  'A Cost-Effective Business Hub',
-                  'Oman’s Friendly Business Environment',
-                  'Incentives to Invest in Oman'
+                  { label: 'Oman’s Infrastructure Advantage', href: '/about-oman#infrastructure' },
+                  { label: 'Legislation', href: '/about-oman#legislation' },
+                  { label: 'Business Ecosystem', href: '/about-oman#ecosystem' },
+                  { label: 'Strategic Location', href: '/about-oman#location' },
+                  { label: 'A Cost-Effective Business Hub', href: '/about-oman#hub' },
+                  { label: 'Friendly Business Environment', href: '/about-oman#environment' },
+                  { label: 'Incentives to Invest', href: '/about-oman#incentives' }
                 ].map((item) => (
-                  <li key={item}>
-                    <Link to="/about-oman" className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group">
+                  <li key={item.label}>
+                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[#00c2b5] transition-colors flex items-center gap-2 group">
                       <span className="w-1 h-1 rounded-full bg-[#00c2b5] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {item}
+                      {t(item.label)}
                     </Link>
                   </li>
                 ))}
@@ -104,8 +115,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-white/50 text-center md:text-left">
-            © 2026 Shomoukh International Investment LLC. All rights reserved.
-          </div>
+            {t('footer.text.16')} </div>
           <div className="flex items-center gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#00c2b5] hover:text-[#111] transition-colors">
               <Linkedin className="w-4 h-4" />

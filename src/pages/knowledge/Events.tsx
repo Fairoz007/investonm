@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, MapPin, Clock } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const upcomingEvents = [
   {
@@ -78,6 +79,7 @@ const pastHighlights = [
 ];
 
 export default function Events() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -87,17 +89,14 @@ export default function Events() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Knowledge</span>
+                <span className="text-sm font-medium"> {t('events.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Events Calendar</span>
+                <span className="text-sm text-white/60"> {t('events.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Events Calendar
-              </h1>
+                 {t('events.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Connect with the investment community at conferences, forums, and networking 
-                events across Oman and around the world.
-              </p>
+                 {t('events.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -108,8 +107,7 @@ export default function Events() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Upcoming Events
-            </h2>
+               {t('events.text.5')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -148,8 +146,7 @@ export default function Events() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Recurring Events
-            </h2>
+               {t('events.text.6')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -174,8 +171,7 @@ export default function Events() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Past Event Highlights
-            </h2>
+               {t('events.text.7')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -186,11 +182,11 @@ export default function Events() {
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
                       <div className="text-2xl font-bold text-primary">{event.attendees}</div>
-                      <div className="text-white/50 text-xs">Attendees</div>
+                      <div className="text-white/50 text-xs"> {t('events.text.8')} </div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-primary">{event.deals}</div>
-                      <div className="text-white/50 text-xs">Deals Announced</div>
+                      <div className="text-white/50 text-xs"> {t('events.text.9')} </div>
                     </div>
                   </div>
                   <p className="text-white/60 text-sm">{event.description}</p>
@@ -207,13 +203,10 @@ export default function Events() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Host Your Event in Oman
-              </h2>
+                 {t('events.text.10')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Partner with us to organize investment-focused events and connect 
-                with the growing business community in the Sultanate.
-              </p>
-              <button className="btn-primary">Partner with Us</button>
+                 {t('events.text.11')} </p>
+              <button className="btn-primary"> {t('events.text.12')} </button>
             </div>
           </ScrollReveal>
         </div>

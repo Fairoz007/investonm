@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Rocket, Lightbulb, Users, DollarSign, Building2 } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const supportAreas = [
   {
@@ -60,6 +61,7 @@ const successStories = [
 ];
 
 export default function StartupOman() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -69,17 +71,14 @@ export default function StartupOman() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Programs & Incentives</span>
+                <span className="text-sm font-medium"> {t('startupoman.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Startup Oman</span>
+                <span className="text-sm text-white/60"> {t('startupoman.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Startup Oman
-              </h1>
+                 {t('startupoman.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                The ultimate launchpad for entrepreneurs, providing comprehensive support 
-                to turn innovative ideas into successful businesses.
-              </p>
+                 {t('startupoman.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -106,11 +105,9 @@ export default function StartupOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Comprehensive Support
-            </h2>
+               {t('startupoman.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Everything you need to build and scale your startup in Oman.
-            </p>
+               {t('startupoman.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -147,11 +144,9 @@ export default function StartupOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Success Stories
-            </h2>
+               {t('startupoman.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Meet some of the startups that have scaled to success with Startup Oman support.
-            </p>
+               {t('startupoman.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -177,15 +172,12 @@ export default function StartupOman() {
                 <Rocket className="w-12 h-12 text-primary" />
               </div>
               <h2 className="text-3xl font-bold text-white mb-4">
-                Launch Your Startup
-              </h2>
+                 {t('startupoman.text.9')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join Oman's thriving startup ecosystem and turn your innovative 
-                idea into the next big success story.
-              </p>
+                 {t('startupoman.text.10')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Apply Now</button>
-                <button className="btn-secondary">Explore Incubators</button>
+                <button className="btn-primary"> {t('startupoman.text.11')} </button>
+                <button className="btn-secondary"> {t('startupoman.text.12')} </button>
               </div>
             </div>
           </ScrollReveal>

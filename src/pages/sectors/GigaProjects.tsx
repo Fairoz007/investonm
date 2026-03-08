@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Building2, TrendingUp, Zap, Leaf, Users } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const gigaProjects = [
   {
@@ -73,6 +74,7 @@ const impactStats = [
 ];
 
 export default function GigaProjects() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -82,17 +84,14 @@ export default function GigaProjects() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Sectors & Opportunities</span>
+                <span className="text-sm font-medium"> {t('gigaprojects.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Giga Projects</span>
+                <span className="text-sm text-white/60"> {t('gigaprojects.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Giga Projects
-              </h1>
+                 {t('gigaprojects.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Transformational projects reshaping the economic landscape and creating 
-                unprecedented investment opportunities across multiple sectors.
-              </p>
+                 {t('gigaprojects.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -119,12 +118,9 @@ export default function GigaProjects() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Oman Vision 2040 Giga Projects
-            </h2>
+               {t('gigaprojects.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              These transformational projects are creating new industries, attracting global talent, 
-              and positioning Oman as a leader in innovation and sustainable development.
-            </p>
+               {t('gigaprojects.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -148,17 +144,17 @@ export default function GigaProjects() {
 
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="p-3 bg-white/5 rounded-lg">
-                      <div className="text-sm text-white/50">Investment</div>
+                      <div className="text-sm text-white/50"> {t('gigaprojects.text.7')} </div>
                       <div className="text-xl font-bold text-primary">{project.investment}</div>
                     </div>
                     <div className="p-3 bg-white/5 rounded-lg">
-                      <div className="text-sm text-white/50">Area</div>
+                      <div className="text-sm text-white/50"> {t('gigaprojects.text.8')} </div>
                       <div className="text-xl font-bold text-primary">{project.area}</div>
                     </div>
                   </div>
 
                   <div className="mb-4">
-                    <div className="text-sm text-white/50 mb-2">Key Components:</div>
+                    <div className="text-sm text-white/50 mb-2"> {t('gigaprojects.text.9')} </div>
                     <div className="flex flex-wrap gap-2">
                       {project.highlights.map((highlight) => (
                         <span
@@ -172,7 +168,7 @@ export default function GigaProjects() {
                   </div>
 
                   <div>
-                    <div className="text-sm text-white/50 mb-2">Investment Sectors:</div>
+                    <div className="text-sm text-white/50 mb-2"> {t('gigaprojects.text.10')} </div>
                     <div className="flex flex-wrap gap-2">
                       {project.sectors.map((sector) => (
                         <span
@@ -197,15 +193,12 @@ export default function GigaProjects() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Be Part of the Transformation
-              </h2>
+                 {t('gigaprojects.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Connect with our team to explore investment opportunities in Oman's 
-                giga projects and secure your place in the future.
-              </p>
+                 {t('gigaprojects.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Explore Opportunities</button>
-                <button className="btn-secondary">Download Project Brochures</button>
+                <button className="btn-primary"> {t('gigaprojects.text.13')} </button>
+                <button className="btn-secondary"> {t('gigaprojects.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>

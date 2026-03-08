@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Cpu, Stethoscope, GraduationCap, Plane, Zap, Factory, Building2, ShoppingCart } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const sectors = [
   {
@@ -70,6 +71,7 @@ const sectors = [
 ];
 
 export default function KeySectors() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -79,17 +81,14 @@ export default function KeySectors() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Sectors & Opportunities</span>
+                <span className="text-sm font-medium"> {t('keysectors.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Key Sectors</span>
+                <span className="text-sm text-white/60"> {t('keysectors.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Key Investment Sectors
-              </h1>
+                 {t('keysectors.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Explore diverse investment opportunities across Oman's fastest-growing 
-                sectors, each offering unique advantages and strong growth potential.
-              </p>
+                 {t('keysectors.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -119,7 +118,7 @@ export default function KeySectors() {
                   <p className="text-white/60 mb-6">{sector.description}</p>
 
                   <div>
-                    <div className="text-sm text-white/50 mb-2">Key Opportunities:</div>
+                    <div className="text-sm text-white/50 mb-2"> {t('keysectors.text.5')} </div>
                     <div className="flex flex-wrap gap-2">
                       {sector.opportunities.map((opp) => (
                         <span
@@ -144,15 +143,12 @@ export default function KeySectors() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Find Your Investment Opportunity
-              </h2>
+                 {t('keysectors.text.6')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Our team can help you identify the best opportunities aligned with your 
-                business goals and investment strategy.
-              </p>
+                 {t('keysectors.text.7')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Schedule a Consultation</button>
-                <button className="btn-secondary">Download Sector Reports</button>
+                <button className="btn-primary"> {t('keysectors.text.8')} </button>
+                <button className="btn-secondary"> {t('keysectors.text.9')} </button>
               </div>
             </div>
           </ScrollReveal>

@@ -1,24 +1,26 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, Globe, X } from 'lucide-react';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { NAV_ITEMS } from '@/lib/constants';
 import type { NavItem } from '@/types';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useTranslation } from "react-i18next";
 
 const LANGUAGES = [
-  { name: 'English', native: 'English' },
-  { name: 'Arabic', native: 'العربية' },
-  { name: 'Russian', native: 'Русский' },
-  { name: 'Chinese', native: '中文' },
-  { name: 'Persian', native: 'فارسی' },
-  { name: 'Turkish', native: 'Türkçe' }
+  { name: 'English', native: 'English', code: 'en' },
+  { name: 'Arabic', native: 'العربية', code: 'ar' },
+  { name: 'Russian', native: 'Русский', code: 'ru' },
+  { name: 'Chinese', native: '中文', code: 'zh' },
+  { name: 'Persian', native: 'فارسی', code: 'fa' },
+  { name: 'Turkish', native: 'Türkçe', code: 'tr' }
 ];
 
-const NavDropdown = ({ item }: { item: NavItem }) => {
+const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeChildIndex, setActiveChildIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   const hasSidebar = item.children?.some(child => child.hasSubmenu);
   const activeChild = activeChildIndex !== null && item.children ? item.children[activeChildIndex] : null;
@@ -31,7 +33,7 @@ const NavDropdown = ({ item }: { item: NavItem }) => {
     >
       <button className={`nav-link flex items-center gap-1 py-8 text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap transition-colors relative ${isOpen ? 'text-[#00c2b5]' : 'text-white/70 hover:text-[#00c2b5]'
         }`}>
-        {item.label}
+        {t(item.label)}
         <span className={`text-[10px] transition-transform ${isOpen ? 'rotate-180 text-[#00c2b5]' : 'opacity-70'} ml-0.5`}>▾</span>
         {/* Active underline indicator */}
         {isOpen && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#00c2b5]" />}
@@ -61,8 +63,8 @@ const NavDropdown = ({ item }: { item: NavItem }) => {
               </button>
 
               <div className="flex flex-col mb-4">
-                <h2 className="text-[#00c2b5] text-[11px] font-semibold tracking-widest uppercase mb-1">{item.label}</h2>
-                {item.subtitle && <p className="text-white/50 text-xs">{item.subtitle}</p>}
+                <h2 className="text-[#00c2b5] text-[11px] font-semibold tracking-widest uppercase mb-1">{t(item.label)}</h2>
+                {item.subtitle && <p className="text-white/50 text-xs">{t(item.subtitle)}</p>}
               </div>
 
               <div className="w-full h-[1px] bg-[#00c2b5] mb-6 opacity-30" />
@@ -73,13 +75,13 @@ const NavDropdown = ({ item }: { item: NavItem }) => {
                   {item.children?.map((child, index) => (
                     <Link
                       key={index}
-                      to={child.href}
+                      to={`/${lang}${child.href}`}
                       onMouseEnter={() => hasSidebar && setActiveChildIndex(index)}
                       className={`flex items-center gap-4 py-1 transition-colors group ${hasSidebar ? 'w-full' : 'w-fit'} ${activeChildIndex === index ? 'text-[#00c2b5]' : 'text-white/60 hover:text-white'}`}
                     >
                       <span className="text-[10px] font-mono opacity-40 w-4">{String(index + 1).padStart(2, '0')}</span>
                       <span className={`text-[11px] font-medium tracking-wider uppercase ${hasSidebar ? 'flex-1' : ''}`}>
-                        {child.label}
+                        {t(child.label)}
                       </span>
                       {child.hasSubmenu && <ChevronDown className="w-3 h-3 -rotate-90 opacity-50 group-hover:opacity-100" />}
                     </Link>
@@ -105,17 +107,17 @@ const NavDropdown = ({ item }: { item: NavItem }) => {
                                 <div key={idx} className="flex flex-col">
                                   {col.title && (
                                     <h3 className="text-[#00c2b5] text-[10px] font-semibold tracking-widest uppercase mb-3 border-b border-white/10 pb-2">
-                                      {col.title}
+                                      {t(col.title)}
                                     </h3>
                                   )}
                                   <div className="flex flex-col gap-2">
                                     {col.items.map((subItem, sIdx) => (
                                       <Link
                                         key={sIdx}
-                                        to={subItem.href}
+                                        to={`/${lang}${subItem.href}`}
                                         className="text-[11px] text-white/60 hover:text-[#00c2b5] transition-colors"
                                       >
-                                        {subItem.label}
+                                        {t(subItem.label)}
                                       </Link>
                                     ))}
                                   </div>
@@ -129,10 +131,10 @@ const NavDropdown = ({ item }: { item: NavItem }) => {
                                   {col.items.map((subItem, sIdx) => (
                                     <Link
                                       key={sIdx}
-                                      to={subItem.href}
+                                      to={`/${lang}${subItem.href}`}
                                       className="text-[11px] text-white/60 hover:text-[#00c2b5] transition-colors"
                                     >
-                                      {subItem.label}
+                                      {t(subItem.label)}
                                     </Link>
                                   ))}
                                 </div>
@@ -153,17 +155,18 @@ const NavDropdown = ({ item }: { item: NavItem }) => {
   );
 };
 
-const MobileNavItem = ({ item }: { item: NavItem }) => {
+const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [expandedChildIndex, setExpandedChildIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   if (!item.children) {
     return (
       <Link
-        to={item.href}
+        to={`/${lang}${item.href}`}
         className="block py-3 text-lg font-medium text-white/80 hover:text-white transition-colors"
       >
-        {item.label}
+        {t(item.label)}
       </Link>
     );
   }
@@ -174,7 +177,7 @@ const MobileNavItem = ({ item }: { item: NavItem }) => {
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex items-center justify-between w-full py-3 text-lg font-medium text-white/80 hover:text-[#00c2b5] transition-colors"
       >
-        {item.label}
+        {t(item.label)}
         <ChevronDown
           className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#00c2b5]' : ''}`}
         />
@@ -197,7 +200,7 @@ const MobileNavItem = ({ item }: { item: NavItem }) => {
                         onClick={() => setExpandedChildIndex(expandedChildIndex === index ? null : index)}
                         className="flex items-center justify-between w-full py-2 text-sm text-white/60 hover:text-[#00c2b5] transition-colors"
                       >
-                        {child.label}
+                        {t(child.label)}
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedChildIndex === index ? 'rotate-180 text-[#00c2b5]' : ''}`} />
                       </button>
                       <AnimatePresence>
@@ -213,12 +216,12 @@ const MobileNavItem = ({ item }: { item: NavItem }) => {
                               {child.submenu.columns.map((col, idx) => (
                                 <div key={idx} className="space-y-2">
                                   {col.title && (
-                                    <h4 className="text-[10px] text-[#00c2b5] uppercase tracking-wider">{col.title}</h4>
+                                    <h4 className="text-[10px] text-[#00c2b5] uppercase tracking-wider">{t(col.title)}</h4>
                                   )}
                                   <div className="flex flex-col gap-2">
                                     {col.items.map((sub, sIdx) => (
-                                      <Link key={sIdx} to={sub.href} className="text-sm text-white/40 hover:text-white transition-colors">
-                                        {sub.label}
+                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="text-sm text-white/40 hover:text-white transition-colors">
+                                        {t(sub.label)}
                                       </Link>
                                     ))}
                                   </div>
@@ -231,10 +234,10 @@ const MobileNavItem = ({ item }: { item: NavItem }) => {
                     </div>
                   ) : (
                     <Link
-                      to={child.href}
+                      to={`/${lang}${child.href}`}
                       className="block py-2 text-sm text-white/60 hover:text-white transition-colors"
                     >
-                      {child.label}
+                      {t(child.label)}
                     </Link>
                   )}
                 </div>
@@ -248,21 +251,35 @@ const MobileNavItem = ({ item }: { item: NavItem }) => {
 };
 
 export const Navigation = () => {
+  const { t, i18n } = useTranslation();
   const isScrolled = useScrollPosition(50);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { lang: currentLang } = useParams();
+
+  const handleLanguageChange = (langCode: string) => {
+    const currentPath = location.pathname;
+    const pathParts = currentPath.split('/');
+    // pathParts[1] is the language code
+    pathParts[1] = langCode;
+    const newPath = pathParts.join('/');
+    navigate(newPath);
+    setIsLangMenuOpen(false);
+    setIsMobileLangOpen(false);
+  };
+
+  const displayLang = currentLang || 'en';
 
   return (
     <>
-
-
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className={`sticky top-0 left-0 w-full z-[1000] transition-all duration-500 m-0 p-0 ${isScrolled || location.pathname !== '/'
+        className={`sticky top-0 left-0 w-full z-[1000] transition-all duration-500 m-0 p-0 ${isScrolled || location.pathname !== `/${displayLang}`
           ? 'bg-black backdrop-blur-lg border-b border-white/10'
           : 'bg-transparent'
           }`}
@@ -271,17 +288,13 @@ export const Navigation = () => {
           <nav className="flex items-center h-[80px] w-full justify-between">
             {/* Logo */}
             <div className="flex shrink-0 justify-start">
-              <Link to="/" className="flex items-center gap-3 group">
+              <Link to={`/${displayLang}`} className="flex items-center gap-3 group">
                 <div className="flex items-center gap-3">
-                  {/* Oman Emblem representing Logo icon */}
-
                   <div className="flex flex-col">
                     <span className="text-xl font-bold text-white leading-none tracking-widest" style={{ fontFamily: 'sans-serif' }}>
-                      SHOMOUKH
-                    </span>
+                      {t('navigation.text.1')} </span>
                     <span className="text-[10px] text-white/80 leading-tight tracking-[0.2em] mt-0.5" style={{ fontFamily: 'sans-serif' }}>
-                      INTERNATIONAL INVESTMENT
-                    </span>
+                      {t('navigation.text.2')} </span>
                   </div>
                 </div>
               </Link>
@@ -291,10 +304,10 @@ export const Navigation = () => {
             <div className="hidden lg:flex items-center justify-center gap-[28px] h-full whitespace-nowrap flex-1 px-4">
               {NAV_ITEMS.map((item, index) =>
                 item.children ? (
-                  <NavDropdown key={index} item={item} />
+                  <NavDropdown key={index} item={item} lang={displayLang} />
                 ) : (
-                  <Link key={index} to={item.href} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap text-white/70 hover:text-[#00c2b5] transition-colors relative">
-                    {item.label}
+                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap text-white/70 hover:text-[#00c2b5] transition-colors relative">
+                    {t(item.label)}
                   </Link>
                 )
               )}
@@ -303,9 +316,12 @@ export const Navigation = () => {
             {/* Right Side Actions */}
             <div className="flex shrink-0 items-center justify-end gap-6">
               {/* Login Button */}
-              <button className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[#00c2b5] text-[#111] text-xs font-bold rounded-full hover:bg-[#00ebd9] transition-colors duration-300 tracking-wider">
-                Login
-              </button>
+              <Link
+                to={`/${displayLang}/signin`}
+                className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[#00c2b5] text-[#111] text-xs font-bold rounded-full hover:bg-[#00ebd9] transition-colors duration-300 tracking-wider"
+              >
+                {t('navigation.text.3')}
+              </Link>
 
               {/* Language Selector */}
               <div
@@ -314,7 +330,8 @@ export const Navigation = () => {
                 onMouseLeave={() => setIsLangMenuOpen(false)}
               >
                 <button className={`flex items-center gap-1 text-xs font-semibold tracking-wide py-2 transition-colors ${isLangMenuOpen ? 'text-[#00c2b5]' : 'text-white/80 hover:text-white'}`}>
-                  <span>English</span>
+                  <Globe className="w-3 h-3" />
+                  <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180 text-[#00c2b5]' : ''}`} />
                 </button>
                 <AnimatePresence>
@@ -328,9 +345,13 @@ export const Navigation = () => {
                     >
                       <div className="bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
                         {LANGUAGES.map((lang) => (
-                          <button key={lang.name} className="flex justify-between items-center w-full text-left px-4 py-2.5 text-xs text-white/70 hover:text-[#00c2b5] hover:bg-white/5 transition-colors group/lang">
+                          <button
+                            key={lang.code}
+                            onClick={() => handleLanguageChange(lang.code)}
+                            className={`flex justify-between items-center w-full text-left px-4 py-2.5 text-xs transition-colors group/lang ${displayLang === lang.code ? 'text-[#00c2b5] bg-white/5' : 'text-white/70 hover:text-[#00c2b5] hover:bg-white/5'}`}
+                          >
                             <span>{lang.native}</span>
-                            {lang.name !== lang.native && <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>}
+                            <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>
                           </button>
                         ))}
                       </div>
@@ -362,16 +383,9 @@ export const Navigation = () => {
                   <div className="flex flex-col h-full mt-8">
                     <div className="flex items-center justify-between mb-8">
                       <div className="flex items-center gap-2">
-                        <svg
-                          viewBox="0 0 32 32"
-                          className="w-8 h-8 text-white"
-                          fill="currentColor"
-                        >
-                          <path d="M16 4C12 4 8 7 8 11C8 13 9 15 11 16C9 16 7 15 5 14C5 18 8 21 12 22V28H20V22C24 21 27 18 27 14C25 15 23 16 21 16C23 15 24 13 24 11C24 7 20 4 16 4Z" />
-                        </svg>
                         <div className="flex flex-col">
-                          <span className="text-lg font-bold text-white leading-none tracking-widest">SHOMOUKH</span>
-                          <span className="text-[10px] text-white/80 leading-tight tracking-[0.2em] mt-0.5">INTERNATIONAL INVESTMENT</span>
+                          <span className="text-lg font-bold text-white leading-none tracking-widest"> {t('navigation.text.5')} </span>
+                          <span className="text-[10px] text-white/80 leading-tight tracking-[0.2em] mt-0.5"> {t('navigation.text.6')} </span>
                         </div>
                       </div>
                     </div>
@@ -379,22 +393,26 @@ export const Navigation = () => {
                     <div className="flex-1 overflow-auto">
                       <div className="space-y-1">
                         {NAV_ITEMS.map((item, index) => (
-                          <MobileNavItem key={index} item={item} />
+                          <MobileNavItem key={index} item={item} lang={displayLang} />
                         ))}
                       </div>
                     </div>
 
                     <div className="pt-6 border-t border-white/10 space-y-4">
-                      <button className="w-full py-3 bg-[#00c2b5] text-[#111] font-bold rounded-full hover:bg-[#00ebd9] transition-colors tracking-wider">
-                        Login
-                      </button>
+                      <Link
+                        to={`/${displayLang}/signin`}
+                        className="w-full py-3 bg-[#00c2b5] text-[#111] font-bold rounded-full hover:bg-[#00ebd9] transition-colors tracking-wider text-center block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {t('navigation.text.7')}
+                      </Link>
                       <div className="flex flex-col w-full pb-4">
                         <button
                           onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
                           className="flex items-center justify-center gap-2 w-full py-3 text-white/80 hover:text-white transition-colors"
                         >
                           <Globe className="w-5 h-5" />
-                          <span>English</span>
+                          <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
                           <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-[#00c2b5]' : ''}`} />
                         </button>
                         <AnimatePresence>
@@ -408,9 +426,13 @@ export const Navigation = () => {
                             >
                               <div className="flex flex-col py-2">
                                 {LANGUAGES.map((lang) => (
-                                  <button key={lang.name} className="flex flex-col items-center w-full text-center py-2 text-sm text-white/60 hover:text-[#00c2b5] transition-colors">
+                                  <button
+                                    key={lang.code}
+                                    onClick={() => handleLanguageChange(lang.code)}
+                                    className={`flex flex-col items-center w-full text-center py-2 text-sm transition-colors ${displayLang === lang.code ? 'text-[#00c2b5]' : 'text-white/60 hover:text-[#00c2b5]'}`}
+                                  >
                                     <span>{lang.native}</span>
-                                    {lang.name !== lang.native && <span className="text-[10px] opacity-50">{lang.name}</span>}
+                                    <span className="text-[10px] opacity-50">{lang.name}</span>
                                   </button>
                                 ))}
                               </div>

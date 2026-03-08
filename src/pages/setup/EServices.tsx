@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Laptop, FileText, CheckCircle2, Clock, Shield, Globe } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const eServices = [
   {
@@ -62,6 +63,7 @@ const quickLinks = [
 ];
 
 export default function EServices() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -71,17 +73,14 @@ export default function EServices() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Setup & Scale</span>
+                <span className="text-sm font-medium"> {t('eservices.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">E-Services</span>
+                <span className="text-sm text-white/60"> {t('eservices.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                E-Services Portal
-              </h1>
+                 {t('eservices.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Access all investment services digitally, anytime, anywhere. 
-                Our secure online platform makes managing your investment simple and efficient.
-              </p>
+                 {t('eservices.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -92,11 +91,9 @@ export default function EServices() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Available E-Services
-            </h2>
+               {t('eservices.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Complete range of digital services to manage your investment journey.
-            </p>
+               {t('eservices.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -133,11 +130,9 @@ export default function EServices() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Benefits of E-Services
-            </h2>
+               {t('eservices.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Why use our digital platform for your investment needs.
-            </p>
+               {t('eservices.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -161,11 +156,9 @@ export default function EServices() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Quick Access
-            </h2>
+               {t('eservices.text.9')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Frequently used services at your fingertips.
-            </p>
+               {t('eservices.text.10')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -193,15 +186,12 @@ export default function EServices() {
                 <Laptop className="w-12 h-12 text-primary" />
               </div>
               <h2 className="text-3xl font-bold text-white mb-4">
-                Access E-Services Portal
-              </h2>
+                 {t('eservices.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Login to your account to access all digital services, track applications, 
-                and manage your investment online.
-              </p>
+                 {t('eservices.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Login to Portal</button>
-                <button className="btn-secondary">Create Account</button>
+                <button className="btn-primary"> {t('eservices.text.13')} </button>
+                <button className="btn-secondary"> {t('eservices.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>

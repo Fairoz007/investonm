@@ -1,5 +1,6 @@
 import { ArrowRight, Target, TrendingUp, Lightbulb } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const pillars = [
   {
@@ -63,6 +64,7 @@ const economicTargets = [
 ];
 
 export default function NationalStrategy() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -72,17 +74,14 @@ export default function NationalStrategy() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Oman</span>
+                <span className="text-sm font-medium"> {t('nationalstrategy.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">National Strategy</span>
+                <span className="text-sm text-white/60"> {t('nationalstrategy.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Oman Vision 2040
-              </h1>
+                 {t('nationalstrategy.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Oman's ambitious roadmap for economic diversification, social transformation, 
-                and global engagement, creating unprecedented opportunities for investors.
-              </p>
+                 {t('nationalstrategy.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -93,12 +92,9 @@ export default function NationalStrategy() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              The Three Pillars of Oman Vision 2040
-            </h2>
+               {t('nationalstrategy.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Oman Vision 2040 is built on three fundamental pillars that guide all development efforts 
-              and create opportunities across sectors.
-            </p>
+               {t('nationalstrategy.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -130,12 +126,9 @@ export default function NationalStrategy() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Giga Projects
-            </h2>
+               {t('nationalstrategy.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Transformational projects that are reshaping the economic landscape 
-              and creating new investment opportunities.
-            </p>
+               {t('nationalstrategy.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -157,11 +150,9 @@ export default function NationalStrategy() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Economic Transformation Targets
-            </h2>
+               {t('nationalstrategy.text.9')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Measurable goals that demonstrate the Sultanate's commitment to economic diversification.
-            </p>
+               {t('nationalstrategy.text.10')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -171,12 +162,12 @@ export default function NationalStrategy() {
                   <h3 className="text-lg font-semibold text-white mb-4">{target.label}</h3>
                   <div className="flex items-center gap-4">
                     <div className="text-center">
-                      <div className="text-sm text-white/50 mb-1">Current</div>
+                      <div className="text-sm text-white/50 mb-1"> {t('nationalstrategy.text.11')} </div>
                       <div className="text-2xl font-bold text-white/70">{target.current}</div>
                     </div>
                     <ArrowRight className="w-5 h-5 text-primary flex-1" />
                     <div className="text-center">
-                      <div className="text-sm text-white/50 mb-1">Target 2030</div>
+                      <div className="text-sm text-white/50 mb-1"> {t('nationalstrategy.text.12')} </div>
                       <div className="text-2xl font-bold text-primary">{target.target}</div>
                     </div>
                   </div>
@@ -193,15 +184,12 @@ export default function NationalStrategy() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Be Part of the Transformation
-              </h2>
+                 {t('nationalstrategy.text.13')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Join thousands of investors who are already capitalizing on the opportunities 
-                created by Oman Vision 2040.
-              </p>
+                 {t('nationalstrategy.text.14')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Explore Opportunities</button>
-                <button className="btn-secondary">Download Oman Vision 2040 Report</button>
+                <button className="btn-primary"> {t('nationalstrategy.text.15')} </button>
+                <button className="btn-secondary"> {t('nationalstrategy.text.16')} </button>
               </div>
             </div>
           </ScrollReveal>

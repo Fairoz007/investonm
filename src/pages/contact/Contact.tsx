@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Mail, MapPin, Clock, Send, Building2, Users } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const contactMethods = [
   {
@@ -55,6 +56,7 @@ const inquiryTypes = [
 ];
 
 export default function Contact() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -64,17 +66,14 @@ export default function Contact() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Contact</span>
+                <span className="text-sm font-medium"> {t('contact.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Contact Us</span>
+                <span className="text-sm text-white/60"> {t('contact.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Contact Us
-              </h1>
+                 {t('contact.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                We're here to help you with your investment journey. Reach out to us through 
-                any of our channels and our team will assist you promptly.
-              </p>
+                 {t('contact.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -118,11 +117,11 @@ export default function Contact() {
             {/* Contact Form */}
             <ScrollReveal>
               <div className="glass-card p-8">
-                <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold text-white mb-6"> {t('contact.text.5')} </h2>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-white/70 text-sm mb-2">First Name</label>
+                      <label className="block text-white/70 text-sm mb-2"> {t('contact.text.6')} </label>
                       <input
                         type="text"
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:border-primary"
@@ -130,7 +129,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-white/70 text-sm mb-2">Last Name</label>
+                      <label className="block text-white/70 text-sm mb-2"> {t('contact.text.7')} </label>
                       <input
                         type="text"
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:border-primary"
@@ -140,7 +139,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-white/70 text-sm mb-2">Email</label>
+                    <label className="block text-white/70 text-sm mb-2"> {t('contact.text.8')} </label>
                     <input
                       type="email"
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:border-primary"
@@ -149,7 +148,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-white/70 text-sm mb-2">Company</label>
+                    <label className="block text-white/70 text-sm mb-2"> {t('contact.text.9')} </label>
                     <input
                       type="text"
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:border-primary"
@@ -158,9 +157,9 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-white/70 text-sm mb-2">Inquiry Type</label>
+                    <label className="block text-white/70 text-sm mb-2"> {t('contact.text.10')} </label>
                     <select className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary">
-                      <option value="" className="bg-dark">Select inquiry type</option>
+                      <option value="" className="bg-dark"> {t('contact.text.11')} </option>
                       {inquiryTypes.map((type) => (
                         <option key={type} value={type} className="bg-dark">{type}</option>
                       ))}
@@ -168,7 +167,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-white/70 text-sm mb-2">Message</label>
+                    <label className="block text-white/70 text-sm mb-2"> {t('contact.text.12')} </label>
                     <textarea
                       rows={4}
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:border-primary resize-none"
@@ -178,8 +177,7 @@ export default function Contact() {
 
                   <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
                     <Send className="w-4 h-4" />
-                    Send Message
-                  </button>
+                     {t('contact.text.13')} </button>
                 </form>
               </div>
             </ScrollReveal>
@@ -187,7 +185,7 @@ export default function Contact() {
             {/* International Offices */}
             <ScrollReveal delay={0.2}>
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6">International Offices</h2>
+                <h2 className="text-2xl font-bold text-white mb-6"> {t('contact.text.14')} </h2>
                 <div className="space-y-4">
                   {offices.map((office) => (
                     <div key={office.region} className="glass-card p-6">
@@ -212,14 +210,13 @@ export default function Contact() {
                 <div className="mt-6 glass-card p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Users className="w-5 h-5 text-primary" />
-                    <h3 className="text-lg font-semibold text-white">MIZA Support</h3>
+                    <h3 className="text-lg font-semibold text-white"> {t('contact.text.15')} </h3>
                   </div>
                   <p className="text-white/60 text-sm mb-4">
-                    For integrated support and value-added services, contact MIZA directly.
-                  </p>
+                     {t('contact.text.16')} </p>
                   <div className="space-y-2 text-sm">
-                    <div className="text-white/70">Phone: 966115065777 (ext. 4)</div>
-                    <div className="text-white/70">Email: MIZA@invest oman.gov.sa</div>
+                    <div className="text-white/70"> {t('contact.text.17')} </div>
+                    <div className="text-white/70"> {t('contact.text.18')} </div>
                   </div>
                 </div>
               </div>
@@ -234,12 +231,10 @@ export default function Contact() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Frequently Asked Questions
-              </h2>
+                 {t('contact.text.19')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Find quick answers to common questions about investing in Oman.
-              </p>
-              <button className="btn-secondary">View FAQs</button>
+                 {t('contact.text.20')} </p>
+              <button className="btn-secondary"> {t('contact.text.21')} </button>
             </div>
           </ScrollReveal>
         </div>

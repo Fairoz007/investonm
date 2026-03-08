@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin, Building2 } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const regions = [
   {
@@ -72,6 +73,7 @@ const specialZones = [
 ];
 
 export default function Regions() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -81,17 +83,14 @@ export default function Regions() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Sectors & Opportunities</span>
+                <span className="text-sm font-medium"> {t('regions.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Regions</span>
+                <span className="text-sm text-white/60"> {t('regions.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Investment Regions
-              </h1>
+                 {t('regions.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Discover the unique opportunities each region of Oman offers, 
-                from bustling commercial centers to emerging economic zones.
-              </p>
+                 {t('regions.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -116,16 +115,16 @@ export default function Regions() {
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center p-3 bg-white/5 rounded-lg">
                       <div className="text-lg font-bold text-primary">{region.gdpContribution}</div>
-                      <div className="text-xs text-white/50">GDP Share</div>
+                      <div className="text-xs text-white/50"> {t('regions.text.5')} </div>
                     </div>
                     <div className="text-center p-3 bg-white/5 rounded-lg">
                       <div className="text-lg font-bold text-primary">{region.population}</div>
-                      <div className="text-xs text-white/50">Population</div>
+                      <div className="text-xs text-white/50"> {t('regions.text.6')} </div>
                     </div>
                   </div>
 
                   <div className="mb-3">
-                    <div className="text-xs text-white/50 mb-2">Key Cities:</div>
+                    <div className="text-xs text-white/50 mb-2"> {t('regions.text.7')} </div>
                     <div className="flex flex-wrap gap-1">
                       {region.keyCities.map((city) => (
                         <span key={city} className="px-2 py-0.5 bg-white/5 text-white/70 text-xs rounded">
@@ -136,7 +135,7 @@ export default function Regions() {
                   </div>
 
                   <div>
-                    <div className="text-xs text-white/50 mb-2">Highlights:</div>
+                    <div className="text-xs text-white/50 mb-2"> {t('regions.text.8')} </div>
                     <div className="flex flex-wrap gap-1">
                       {region.highlights.map((highlight) => (
                         <span key={highlight} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded">
@@ -157,11 +156,9 @@ export default function Regions() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Special Economic Zones
-            </h2>
+               {t('regions.text.9')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Designated zones offering unique incentives and infrastructure for specific industries.
-            </p>
+               {t('regions.text.10')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -186,13 +183,10 @@ export default function Regions() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Find the Right Location for Your Business
-              </h2>
+                 {t('regions.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Our regional experts can help you identify the optimal location 
-                based on your industry and business requirements.
-              </p>
-              <button className="btn-primary">Connect with Regional Experts</button>
+                 {t('regions.text.12')} </p>
+              <button className="btn-primary"> {t('regions.text.13')} </button>
             </div>
           </ScrollReveal>
         </div>

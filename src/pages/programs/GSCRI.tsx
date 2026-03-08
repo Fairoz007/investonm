@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Factory, Globe, CheckCircle2, TrendingUp, Shield } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const objectives = [
   {
@@ -64,6 +65,7 @@ const incentives = [
 ];
 
 export default function GSCRI() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -73,17 +75,14 @@ export default function GSCRI() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Programs & Incentives</span>
+                <span className="text-sm font-medium"> {t('gscri.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">GSCRI</span>
+                <span className="text-sm text-white/60"> {t('gscri.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Global Supply Chain Resilience Initiative
-              </h1>
+                 {t('gscri.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Strengthen global supply chains by establishing Oman as a resilient 
-                manufacturing and logistics hub for critical industries.
-              </p>
+                 {t('gscri.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -94,11 +93,9 @@ export default function GSCRI() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Program Objectives
-            </h2>
+               {t('gscri.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Building a more resilient and diversified global supply chain ecosystem.
-            </p>
+               {t('gscri.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -125,11 +122,9 @@ export default function GSCRI() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Target Sectors
-            </h2>
+               {t('gscri.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Priority sectors for supply chain localization and resilience.
-            </p>
+               {t('gscri.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -160,11 +155,9 @@ export default function GSCRI() {
           <ScrollReveal>
             <div className="glass-card p-8 max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-6 text-center">
-                Program Incentives
-              </h2>
+                 {t('gscri.text.9')} </h2>
               <p className="text-white/60 text-center mb-8">
-                Comprehensive support package for qualifying investments:
-              </p>
+                 {t('gscri.text.10')} </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {incentives.map((incentive) => (
                   <div key={incentive} className="flex items-start gap-3">
@@ -184,15 +177,12 @@ export default function GSCRI() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Strengthen Your Supply Chain
-              </h2>
+                 {t('gscri.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Partner with us to build resilient supply chains and access 
-                the growing Middle East and African markets.
-              </p>
+                 {t('gscri.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Apply for GSCRI</button>
-                <button className="btn-secondary">Download Program Details</button>
+                <button className="btn-primary"> {t('gscri.text.13')} </button>
+                <button className="btn-secondary"> {t('gscri.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Zap, Diamond, Globe2, MapPin, BookOpen, Anchor, Building2, TrendingUp, Target, Briefcase } from 'lucide-react';
+import { useTranslation } from "react-i18next";
+import { useParams } from 'react-router-dom';
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
@@ -17,77 +19,82 @@ const SECTORS = [
         id: 'energy',
         name: 'Energy',
         icon: Zap,
-        overview: 'Oman is rapidly transitioning to long-term energy sustainability, combining its strong oil and gas foundation with a massive focus on renewable energy.',
-        potential: 'Limitless potential in solar and wind farms, green hydrogen production, and energy storage solutions.',
-        future: 'Targeting zero carbon emissions by 2050 and becoming one of the world’s largest green hydrogen exporters.',
+        overview: 'keysectors.energy.overview',
+        potential: 'keysectors.energy.potential',
+        future: 'keysectors.energy.future',
         img: '/images/hero-energy.jpg'
     },
     {
         id: 'luxury',
         name: 'Luxury',
         icon: Diamond,
-        overview: 'High-end tourism, exclusive lifestyle projects, and premium lifestyle developments are reshaping Oman’s luxury sector.',
-        potential: 'Developing ultra-luxury resorts, exclusive mixed-use communities, and premium retail destinations.',
-        future: 'Attracting high-net-worth individuals and establishing Oman as the premier luxury destination in the region.',
-        img: '/images/hero-scientist.jpg' // Placeholder, imagine luxury imagery
+        overview: 'keysectors.luxury.overview',
+        potential: 'keysectors.luxury.potential',
+        future: 'keysectors.luxury.future',
+        img: '/images/luxury-oman.png'
     },
+
     {
         id: 'trade',
         name: 'Trade',
         icon: Globe2,
-        overview: 'Oman is a historic maritime powerhouse, now functioning as a modern regional trade hub with exceptional free zones.',
-        potential: 'Incentivized free zones (Sohar, Salalah, Duqm) providing 100% foreign ownership and zero customs duties.',
-        future: 'Expanding multi-modal connectivity to cement Oman’s position as the primary gateway linking Asia, Africa, and the MENA region.',
+        overview: 'keysectors.trade.overview',
+        potential: 'keysectors.trade.potential',
+        future: 'keysectors.trade.future',
         img: '/images/oman_tech.png'
     },
     {
         id: 'investments',
         name: 'Investments',
         icon: Briefcase,
-        overview: 'Oman’s robust financial services sector supports large-scale development projects and corporate growth.',
-        potential: 'Opportunities in wealth management, fintech, venture capital, and sovereign-backed infrastructure projects.',
-        future: 'A modernized, digitized financial ecosystem driving cross-border investments and massive sovereign wealth allocation.',
+        overview: 'keysectors.investments.overview',
+        potential: 'keysectors.investments.potential',
+        future: 'keysectors.investments.future',
         img: '/images/hero-engineers.jpg'
     },
     {
         id: 'tourism',
         name: 'Tourism & Hospitality',
         icon: MapPin,
-        overview: 'From diverse landscapes to deeply rooted heritage, Oman offers authentic and sustainable tourism experiences.',
-        potential: 'Developing eco-resorts, adventure tourism, heritage sites, and premium coastal developments.',
-        future: 'Vision 2040 aims for tourism to contribute significantly to the GDP, drawing millions of international visitors annually.',
+        overview: 'keysectors.tourism.overview',
+        potential: 'keysectors.tourism.potential',
+        future: 'keysectors.tourism.future',
         img: '/images/oman_hero.png'
     },
     {
         id: 'education',
         name: 'Education',
         icon: BookOpen,
-        overview: 'Building a knowledge-based economy requires top-tier educational institutions and vocational training centers.',
-        potential: 'Establishing international universities, specialized research centers, and future-ready vocational programs.',
-        future: 'A highly skilled, innovative local workforce driving Oman’s global competitiveness and knowledge export.',
+        overview: 'keysectors.education.overview',
+        potential: 'keysectors.education.potential',
+        future: 'keysectors.education.future',
         img: '/images/oman_industry.png'
     },
     {
         id: 'logistics',
         name: 'Logistics',
         icon: Anchor,
-        overview: 'Oman’s world-class ports and seamless shipping routes form the backbone of the nation’s logistics advantage.',
-        potential: 'Investing in port expansion, cold chain logistics, rail networks, and integrated warehousing facilities.',
-        future: 'Transforming into a top 10 global logistics hub, providing uninterrupted global supply chain connectivity.',
+        overview: 'keysectors.logistics.overview',
+        potential: 'keysectors.logistics.potential',
+        future: 'keysectors.logistics.future',
         img: '/images/hero-manufacturing.jpg'
     },
     {
         id: 'real-estate',
         name: 'Real Estate',
         icon: Building2,
-        overview: 'An expanding population and an influx of international investors are driving robust commercial and residential demand.',
-        potential: 'Commercial centers, sustainable residential communities, and futuristic smart-city developments (like Sultan Haitham City).',
-        future: 'A thriving, sustainable urban landscape meeting global standards of living and commercial operational excellence.',
+        overview: 'keysectors.realestate.overview',
+        potential: 'keysectors.realestate.potential',
+        future: 'keysectors.realestate.future',
         img: '/images/oman_landscape.png'
     }
 ];
 
 export default function KeySectors() {
+    const { t } = useTranslation();
+    const { lang } = useParams();
+    const displayLang = lang || 'en';
+
     return (
         <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans pt-24">
             {/* Hero Section */}
@@ -100,7 +107,7 @@ export default function KeySectors() {
                         transition={{ duration: 0.8 }}
                         className="text-5xl md:text-7xl font-bold mb-6 text-white"
                     >
-                        Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]">Investment Sectors</span>
+                        {t('keysectors.text.1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('keysectors.text.2')} </span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
@@ -108,8 +115,7 @@ export default function KeySectors() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto"
                     >
-                        Explore diverse high-growth sectors targeted for rapid expansion under Oman Vision 2040.
-                    </motion.p>
+                        {t('keysectors.text.3')} </motion.p>
                 </div>
             </section>
 
@@ -128,40 +134,41 @@ export default function KeySectors() {
                                 key={sector.id}
                                 id={sector.id}
                                 variants={fadeInUp}
-                                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
+                                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center scroll-mt-32`}
                             >
+
                                 <div className="lg:w-1/2 w-full space-y-6">
                                     <div className="flex items-center gap-4 border-b border-white/10 pb-6 mb-6">
                                         <div className="w-14 h-14 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center">
                                             <sector.icon className="w-7 h-7 text-[#00c2b5]" />
                                         </div>
-                                        <h2 className="text-3xl lg:text-5xl font-bold">{sector.name}</h2>
+                                        <h2 className="text-3xl lg:text-5xl font-bold">{t(sector.name)}</h2>
                                     </div>
 
                                     <div className="space-y-6 text-lg">
                                         <div>
-                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2">Overview</h4>
-                                            <p className="text-white/80 leading-relaxed">{sector.overview}</p>
+                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.4')} </h4>
+                                            <p className="text-white/80 leading-relaxed">{t(sector.overview)}</p>
                                         </div>
                                         <div>
-                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2">Investment Potential</h4>
+                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.5')} </h4>
                                             <p className="text-white/80 leading-relaxed flex items-start gap-2">
                                                 <TrendingUp className="w-5 h-5 text-white/50 shrink-0 mt-1" />
-                                                {sector.potential}
+                                                {t(sector.potential)}
                                             </p>
                                         </div>
                                         <div>
-                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2">Future Opportunities</h4>
+                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.6')} </h4>
                                             <p className="text-white/80 leading-relaxed flex items-start gap-2">
                                                 <Target className="w-5 h-5 text-white/50 shrink-0 mt-1" />
-                                                {sector.future}
+                                                {t(sector.future)}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <button className="mt-8 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-full font-medium flex items-center gap-2 transition-colors">
-                                        Explore {sector.name} Projects <TrendingUp className="w-4 h-4 text-[#00c2b5]" />
-                                    </button>
+                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-full font-medium inline-flex items-center gap-2 transition-colors">
+                                        {t('keysectors.text.7')} {t(sector.name)}  {t('keysectors.text.8')} <TrendingUp className="w-4 h-4 text-[#00c2b5]" />
+                                    </Link>
                                 </div>
 
                                 <div className="lg:w-1/2 w-full aspect-[4/3] rounded-[2rem] overflow-hidden relative group">

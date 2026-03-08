@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Download, TrendingUp, BarChart3, Globe } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const reportCategories = [
   {
@@ -60,6 +61,7 @@ const featuredReports = [
 ];
 
 export default function Reports() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -69,17 +71,14 @@ export default function Reports() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Knowledge</span>
+                <span className="text-sm font-medium"> {t('reports.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Reports & Insights</span>
+                <span className="text-sm text-white/60"> {t('reports.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Reports & Insights
-              </h1>
+                 {t('reports.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Access comprehensive reports, market analysis, and investment insights 
-                to inform your investment decisions in Oman.
-              </p>
+                 {t('reports.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -90,8 +89,7 @@ export default function Reports() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Featured Reports
-            </h2>
+               {t('reports.text.5')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -111,8 +109,7 @@ export default function Reports() {
                   <p className="text-white/60 text-sm mb-6">{report.description}</p>
                   <button className="flex items-center gap-2 text-primary text-sm hover:underline">
                     <Download className="w-4 h-4" />
-                    Download Report
-                  </button>
+                     {t('reports.text.6')} </button>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -125,8 +122,7 @@ export default function Reports() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Report Categories
-            </h2>
+               {t('reports.text.7')} </h2>
           </ScrollReveal>
 
           <div className="space-y-8">
@@ -173,19 +169,16 @@ export default function Reports() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Stay Updated
-              </h2>
+                 {t('reports.text.8')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Subscribe to our newsletter to receive the latest reports, 
-                market insights, and investment opportunities directly in your inbox.
-              </p>
+                 {t('reports.text.9')} </p>
               <div className="flex flex-wrap justify-center gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:border-primary"
                 />
-                <button className="btn-primary">Subscribe</button>
+                <button className="btn-primary"> {t('reports.text.10')} </button>
               </div>
             </div>
           </ScrollReveal>

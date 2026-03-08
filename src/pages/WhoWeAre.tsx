@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Target, Eye, Briefcase, BarChart3, Users2, Building, Ship } from 'lucide-react';
+import { useTranslation } from "react-i18next";
+import { useParams } from 'react-router-dom';
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
@@ -18,6 +20,10 @@ const popIn: Variants = {
 };
 
 export default function WhoWeAre() {
+    const { t } = useTranslation();
+    const { lang } = useParams();
+    const displayLang = lang || 'en';
+
     return (
         <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans pt-24">
             {/* Hero Section */}
@@ -34,7 +40,7 @@ export default function WhoWeAre() {
                         transition={{ duration: 0.8 }}
                         className="text-5xl md:text-7xl font-bold mb-6 text-white"
                     >
-                        Your Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]">Investment Partner</span>
+                        {t('whoweare.text.1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('whoweare.text.2')} </span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
@@ -42,8 +48,7 @@ export default function WhoWeAre() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-xl md:text-2xl text-white/80 leading-relaxed"
                     >
-                        Shomoukh International Investment is a premier investment facilitation partner, dedicated to guiding international and local investors through Oman's dynamic business landscape.
-                    </motion.p>
+                        {t('whoweare.text.3')} </motion.p>
                 </div>
             </section>
 
@@ -60,10 +65,9 @@ export default function WhoWeAre() {
                         >
                             <div className="absolute top-0 right-0 w-64 h-64 bg-[#00c2b5]/5 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
                             <Target className="w-16 h-16 text-[#00c2b5] mb-8 relative z-10" />
-                            <h2 className="text-3xl font-bold mb-6 relative z-10" id="mission">Our Mission</h2>
+                            <h2 className="text-3xl font-bold mb-6 relative z-10" id="mission"> {t('whoweare.text.4')} </h2>
                             <p className="text-lg text-white/70 leading-relaxed relative z-10">
-                                To proactively support investors and promote sustainable economic growth across the Sultanate. We strive to create value by identifying high-potential opportunities, fostering innovation, and simplifying the path to commercial success in alignment with Oman Vision 2040.
-                            </p>
+                                {t('whoweare.text.5')} </p>
                         </motion.div>
 
                         <motion.div
@@ -75,10 +79,9 @@ export default function WhoWeAre() {
                         >
                             <div className="absolute top-0 left-0 w-64 h-64 bg-[#00c2b5]/5 rounded-full blur-[80px] -ml-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
                             <Eye className="w-16 h-16 text-[#00c2b5] mb-8 relative z-10" />
-                            <h2 className="text-3xl font-bold mb-6 relative z-10" id="vision">Our Vision</h2>
+                            <h2 className="text-3xl font-bold mb-6 relative z-10" id="vision"> {t('whoweare.text.6')} </h2>
                             <p className="text-lg text-white/70 leading-relaxed relative z-10">
-                                Connecting global investors with exceptional opportunities in Oman. We envision a future where Oman is a globally recognized hub for innovation, sustainable industry, and premium living, catalyzed by our strategic facilitation and expert market insights.
-                            </p>
+                                {t('whoweare.text.7')} </p>
                         </motion.div>
                     </div>
                 </div>
@@ -94,10 +97,9 @@ export default function WhoWeAre() {
                         variants={staggerContainer}
                         className="text-center max-w-4xl mx-auto mb-20"
                     >
-                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6">Our Services</motion.h2>
+                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6"> {t('whoweare.text.8')} </motion.h2>
                         <motion.p variants={fadeInUp} className="text-lg text-white/70">
-                            We offer comprehensive, end-to-end support designed to ensure your investment journey in Oman is seamless, strategically sound, and highly profitable.
-                        </motion.p>
+                            {t('whoweare.text.9')} </motion.p>
                     </motion.div>
 
                     <motion.div
@@ -108,11 +110,11 @@ export default function WhoWeAre() {
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                     >
                         {[
-                            { icon: Briefcase, title: "Investment Consulting", desc: "Expert advisory services to help you build an optimal investment strategy tailored to Oman's market." },
-                            { icon: BarChart3, title: "Market Research", desc: "In-depth, data-driven analysis providing a clear picture of sector trends, risks, and ROI potential." },
-                            { icon: Users2, title: "Partnership Facilitation", desc: "Connecting you with reliable local partners, government entities, and industry leaders to fast-track success." },
-                            { icon: Building, title: "Business Setup Support", desc: "Comprehensive assistance navigating the regulatory environment, licensing, and facility acquisition." },
-                            { icon: Ship, title: "Export Market Assistance", desc: "Helping local enterprises and joint ventures seamlessly expand their reach into international markets." }
+                            { icon: Briefcase, title: "whoweare.service.title.1", desc: "whoweare.service.desc.1" },
+                            { icon: BarChart3, title: "whoweare.service.title.2", desc: "whoweare.service.desc.2" },
+                            { icon: Users2, title: "whoweare.service.title.3", desc: "whoweare.service.desc.3" },
+                            { icon: Building, title: "whoweare.service.title.4", desc: "whoweare.service.desc.4" },
+                            { icon: Ship, title: "whoweare.service.title.5", desc: "whoweare.service.desc.5" }
                         ].map((service, idx) => (
                             <motion.div
                                 key={idx}
@@ -122,9 +124,9 @@ export default function WhoWeAre() {
                                 <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6 group-hover:bg-[#00c2b5]/20 group-hover:scale-110 transition-all duration-300 transform">
                                     <service.icon className="w-8 h-8 text-[#00c2b5]" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                                <h3 className="text-xl font-bold mb-4">{t(service.title)}</h3>
                                 <p className="text-white/60 leading-relaxed text-sm">
-                                    {service.desc}
+                                    {t(service.desc)}
                                 </p>
                             </motion.div>
                         ))}

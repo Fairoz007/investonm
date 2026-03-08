@@ -11,13 +11,13 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#00B8A9",
-          dark: "#009688",
-          light: "#4DD0E1",
+          DEFAULT: "#8A6BCB",
+          dark: "#7A5BC0",
+          light: "#A78BFA",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#1A3A3A",
+          DEFAULT: "#666666",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -29,10 +29,11 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-          purple: "#6B46C1",
-          cyan: "#06B6D4",
+          DEFAULT: "#8A6BCB",
+          foreground: "#FFFFFF",
+          purple: "#8A6BCB",
+          blue: "#7FA8C5",
+          indigo: "#6A6AAE",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -52,23 +53,15 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        teal: {
-          DEFAULT: "#00B8A9",
-          50: "#E0F7F5",
-          100: "#B3EEE8",
-          200: "#80E4DA",
-          300: "#4DDACC",
-          400: "#26D3C2",
-          500: "#00B8A9",
-          600: "#009688",
-          700: "#007A6E",
-          800: "#005E54",
-          900: "#00423B",
-        },
-        dark: {
-          DEFAULT: "#0D1F1F",
-          light: "#1A3A3A",
-          lighter: "#2A4A4A",
+        brand: {
+          purple: "#4F3C8C",
+          indigo: "#6A6AAE",
+          blue: "#7FA8C5",
+          accent: "#8A6BCB",
+          divider: {
+            start: "#5C4FA3",
+            end: "#6E3DB5",
+          }
         },
       },
       fontFamily: {

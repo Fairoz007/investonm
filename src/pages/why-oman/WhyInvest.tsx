@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Users, Cpu, Building2, Award } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const reasons = [
   {
@@ -68,6 +69,7 @@ const additionalBenefits = [
 ];
 
 export default function WhyInvest() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -77,17 +79,14 @@ export default function WhyInvest() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Oman</span>
+                <span className="text-sm font-medium"> {t('whyinvest.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Why Invest</span>
+                <span className="text-sm text-white/60"> {t('whyinvest.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Why Invest in Oman
-              </h1>
+                 {t('whyinvest.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Discover why Oman is the world's most ambitious investment 
-                destination, offering unparalleled opportunities for growth and success.
-              </p>
+                 {t('whyinvest.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -98,8 +97,7 @@ export default function WhyInvest() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-              Top 5 Reasons to Invest
-            </h2>
+               {t('whyinvest.text.5')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -128,8 +126,7 @@ export default function WhyInvest() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-              Additional Benefits
-            </h2>
+               {t('whyinvest.text.6')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -151,15 +148,12 @@ export default function WhyInvest() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Ready to Start Your Investment Journey?
-              </h2>
+                 {t('whyinvest.text.7')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Connect with our team to learn more about investment opportunities 
-                and how we can support your business in Oman.
-              </p>
+                 {t('whyinvest.text.8')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Contact Us</button>
-                <button className="btn-secondary">Explore Sectors</button>
+                <button className="btn-primary"> {t('whyinvest.text.9')} </button>
+                <button className="btn-secondary"> {t('whyinvest.text.10')} </button>
               </div>
             </div>
           </ScrollReveal>

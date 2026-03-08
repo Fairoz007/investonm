@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Heart, GraduationCap, Stethoscope, Music, ShoppingBag, TreePine } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const lifestyleCategories = [
   {
@@ -65,6 +66,7 @@ const cities = [
 ];
 
 export default function QualityOfLife() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -74,17 +76,14 @@ export default function QualityOfLife() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Why Oman</span>
+                <span className="text-sm font-medium"> {t('qualityoflife.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Quality of Life</span>
+                <span className="text-sm text-white/60"> {t('qualityoflife.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Quality of Life in Oman
-              </h1>
+                 {t('qualityoflife.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                Experience a world-class lifestyle with modern amenities, rich culture, 
-                and endless opportunities for personal and professional growth.
-              </p>
+                 {t('qualityoflife.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -95,12 +94,9 @@ export default function QualityOfLife() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              World-Class Lifestyle Amenities
-            </h2>
+               {t('qualityoflife.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Oman offers a comprehensive range of lifestyle amenities 
-              designed to provide residents with comfort, convenience, and enjoyment.
-            </p>
+               {t('qualityoflife.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -135,12 +131,9 @@ export default function QualityOfLife() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Key Cities
-            </h2>
+               {t('qualityoflife.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              From bustling metropolises to futuristic developments, 
-              discover the perfect place to live and work.
-            </p>
+               {t('qualityoflife.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -175,13 +168,10 @@ export default function QualityOfLife() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Discover Your New Home
-              </h2>
+                 {t('qualityoflife.text.9')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Learn more about living in Oman and how we can help you 
-                and your family settle in comfortably.
-              </p>
-              <button className="btn-primary">Get Relocation Support</button>
+                 {t('qualityoflife.text.10')} </p>
+              <button className="btn-primary"> {t('qualityoflife.text.11')} </button>
             </div>
           </ScrollReveal>
         </div>

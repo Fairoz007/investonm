@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, HandshakeIcon, Building2, TrendingUp, Target } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { useTranslation } from "react-i18next";
 
 const programFeatures = [
   {
@@ -82,6 +83,7 @@ const partnershipProcess = [
 ];
 
 export default function Shareek() {
+    const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -91,17 +93,14 @@ export default function Shareek() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium">Programs & Incentives</span>
+                <span className="text-sm font-medium"> {t('shareek.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60">Shareek</span>
+                <span className="text-sm text-white/60"> {t('shareek.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Shareek Program
-              </h1>
+                 {t('shareek.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                A strategic partnership program that brings together the government and private sector 
-                to deliver large-scale projects that drive economic growth and diversification.
-              </p>
+                 {t('shareek.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -112,11 +111,9 @@ export default function Shareek() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Program Features
-            </h2>
+               {t('shareek.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Unique partnership model designed for large-scale strategic investments.
-            </p>
+               {t('shareek.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -143,11 +140,9 @@ export default function Shareek() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Target Investment Areas
-            </h2>
+               {t('shareek.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Priority sectors for Shareek partnerships aligned with national development goals.
-            </p>
+               {t('shareek.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -178,11 +173,9 @@ export default function Shareek() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-              Partnership Process
-            </h2>
+               {t('shareek.text.9')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              A structured approach to forming strategic partnerships.
-            </p>
+               {t('shareek.text.10')} </p>
           </ScrollReveal>
 
           <div className="max-w-3xl mx-auto">
@@ -214,15 +207,12 @@ export default function Shareek() {
           <ScrollReveal>
             <div className="glass-card p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Partner with the Government
-              </h2>
+                 {t('shareek.text.11')} </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Explore strategic partnership opportunities and join forces with the Oman government 
-                to deliver transformational projects.
-              </p>
+                 {t('shareek.text.12')} </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary">Submit Project Proposal</button>
-                <button className="btn-secondary">Learn More</button>
+                <button className="btn-primary"> {t('shareek.text.13')} </button>
+                <button className="btn-secondary"> {t('shareek.text.14')} </button>
               </div>
             </div>
           </ScrollReveal>
