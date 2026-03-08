@@ -104,7 +104,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-white/50 text-center md:text-left">
-            © 2025 Shomoukh International Investment LLC. All rights reserved.
+            © 2026 Shomoukh International Investment LLC. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#00c2b5] hover:text-[#111] transition-colors">
