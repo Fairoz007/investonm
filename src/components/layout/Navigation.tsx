@@ -276,9 +276,11 @@ export const Navigation = () => {
                   {/* Oman Emblem representing Logo icon */}
 
                   <div className="flex flex-col">
-                    <span className="text-xs text-white leading-tight font-arabic text-left">استثمر في عُمان</span>
-                    <span className="text-sm font-bold text-white leading-tight tracking-widest mt-0.5" style={{ fontFamily: 'sans-serif' }}>
+                    <span className="text-xl font-bold text-white leading-none tracking-widest" style={{ fontFamily: 'sans-serif' }}>
                       SHOMOUKH
+                    </span>
+                    <span className="text-[10px] text-white/80 leading-tight tracking-[0.2em] mt-0.5" style={{ fontFamily: 'sans-serif' }}>
+                      INTERNATIONAL INVESTMENT
                     </span>
                   </div>
                 </div>
@@ -367,7 +369,10 @@ export const Navigation = () => {
                         >
                           <path d="M16 4C12 4 8 7 8 11C8 13 9 15 11 16C9 16 7 15 5 14C5 18 8 21 12 22V28H20V22C24 21 27 18 27 14C25 15 23 16 21 16C23 15 24 13 24 11C24 7 20 4 16 4Z" />
                         </svg>
-                        <span className="text-sm font-bold text-white tracking-widest">SHOMOUKH</span>
+                        <div className="flex flex-col">
+                          <span className="text-lg font-bold text-white leading-none tracking-widest">SHOMOUKH</span>
+                          <span className="text-[10px] text-white/80 leading-tight tracking-[0.2em] mt-0.5">INTERNATIONAL INVESTMENT</span>
+                        </div>
                       </div>
                     </div>
 
