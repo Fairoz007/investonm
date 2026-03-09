@@ -76,7 +76,7 @@ export default function Contact() {
                                         <h3 className="text-xl font-bold mb-4 text-[#222222]"> {t('contact.text.10')} </h3>
                                         <p className="text-[#666666] leading-relaxed mb-4">
                                             {t('contact.text.11')} </p>
-                                        <a href="mailto:info@shomoukh.om" className="text-2xl font-bold text-[#8A6BCB] hover:text-[#7A5BC0] transition-colors break-all">
+                                        <a href="mailto:info@shomoukh.om" className="text-2xl font-bold font-poppins text-[#8A6BCB] hover:text-[#7A5BC0] transition-colors break-all">
                                             {t('contact.text.12')} </a>
                                     </div>
                                 </motion.div>
@@ -144,7 +144,7 @@ export default function Contact() {
                                         />
                                     </div>
 
-                                    <button className="w-full py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white font-bold rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] shadow-lg">
+                                    <button className="w-full py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white font-bold font-poppins rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] shadow-lg">
                                         {t('contact.text.18')} <Send className="w-5 h-5" />
                                     </button>
                                 </form>

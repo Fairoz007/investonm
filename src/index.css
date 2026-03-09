@@ -1,5 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
 
+/* Poppins Local Font Faces */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,7 +123,7 @@
 
   body {
     @apply bg-[#F5F5F5] text-[#222222] antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -62,6 +135,7 @@
   h5,
   h6 {
     @apply font-bold text-[#222222];
+    font-family: 'Poppins', sans-serif;
   }
 
   /* Language specific fonts */
@@ -98,6 +172,7 @@
 
   .nav-link {
     @apply relative text-sm font-medium text-[#222222]/80 hover:text-[#4F3C8C] transition-colors duration-300;
+    font-family: 'Poppins', sans-serif;
   }
 
   .nav-link::after {
@@ -111,10 +186,12 @@
 
   .btn-primary {
     @apply px-6 py-3 bg-[#8A6BCB] text-white font-medium rounded-full hover:bg-[#7A5BC0] hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg;
+    font-family: 'Poppins', sans-serif;
   }
 
   .btn-secondary {
     @apply px-6 py-3 bg-white text-[#4F3C8C] font-medium rounded-full border border-[#4F3C8C]/20 hover:bg-[#F5F5F5] transition-all duration-300;
+    font-family: 'Poppins', sans-serif;
   }
 
   .section-padding {
@@ -128,10 +205,12 @@
   /* Responsive Typography */
   .text-mobile-h1 {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight;
+    font-family: 'Poppins', sans-serif;
   }
 
   .text-mobile-h2 {
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    font-family: 'Poppins', sans-serif;
   }
 
   .text-mobile-body {

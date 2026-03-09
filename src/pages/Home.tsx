@@ -68,10 +68,10 @@ export default function Home() {
               {t('home.text.3')} </p>
 
             <div className="btn-mobile-stack">
-              <Link to={`/${displayLang}/key-sectors`} className="btn-full-mobile px-8 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold flex items-center gap-2 transition-transform duration-300 hover:scale-105 shadow-lg">
+              <Link to={`/${displayLang}/key-sectors`} className="btn-full-mobile px-8 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold font-poppins flex items-center gap-2 transition-transform duration-300 hover:scale-105 shadow-lg">
                 {t('home.text.4')} <ArrowUpRight className="w-5 h-5" />
               </Link>
-              <Link to={`/${displayLang}/contact`} className="btn-full-mobile px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md rounded-full font-bold text-white flex items-center gap-2 transition-all">
+              <Link to={`/${displayLang}/contact`} className="btn-full-mobile px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md rounded-full font-bold font-poppins text-white flex items-center gap-2 transition-all">
                 {t('home.text.5')} <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -122,7 +122,7 @@ export default function Home() {
                 <p className="text-lg text-[#666666] max-w-2xl">
                   {t('home.text.9')} </p>
               </div>
-              <Link to={`/${displayLang}/key-sectors`} className="px-6 py-3 border border-[#8A6BCB] text-[#8A6BCB] hover:bg-[#8A6BCB] hover:text-white rounded-full font-bold transition-all whitespace-nowrap">
+              <Link to={`/${displayLang}/key-sectors`} className="px-6 py-3 border border-[#8A6BCB] text-[#8A6BCB] hover:bg-[#8A6BCB] hover:text-white rounded-full font-bold font-poppins transition-all whitespace-nowrap">
                 {t('home.text.10')} </Link>
             </motion.div>
 
@@ -211,7 +211,7 @@ export default function Home() {
             </div>
 
             <motion.div variants={fadeInUp} className="mt-20">
-              <Link to={`/${displayLang}/who-we-are`} className="px-10 py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold inline-flex items-center gap-2 transition-transform duration-300 hover:scale-[1.05] shadow-lg">
+              <Link to={`/${displayLang}/who-we-are`} className="px-10 py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold font-poppins inline-flex items-center gap-2 transition-transform duration-300 hover:scale-[1.05] shadow-lg">
                 {t('home.text.15')} <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>

@@ -51,7 +51,7 @@ export const Footer = () => {
 
             {/* Useful Links */}
             <ScrollReveal delay={0.1}>
-              <h4 className="text-[#222222] font-bold mb-6 uppercase tracking-wider text-sm"> {t('footer.text.9')} </h4>
+              <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.9')} </h4>
               <ul className="space-y-4">
                 <li><Link to={`/${displayLang}`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.10')} </Link></li>
                 <li><Link to={`/${displayLang}/who-we-are`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.11')} </Link></li>
@@ -62,7 +62,7 @@ export const Footer = () => {
 
             {/* Key Sectors */}
             <ScrollReveal delay={0.2}>
-              <h4 className="text-[#222222] font-bold mb-6 uppercase tracking-wider text-sm"> {t('footer.text.14')} </h4>
+              <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.14')} </h4>
               <ul className="space-y-4">
                 {[
                   { label: 'Energy', href: '/key-sectors#energy' },
@@ -86,7 +86,7 @@ export const Footer = () => {
 
             {/* About Oman */}
             <ScrollReveal delay={0.3}>
-              <h4 className="text-[#222222] font-bold mb-6 uppercase tracking-wider text-sm"> {t('footer.text.15')} </h4>
+              <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.15')} </h4>
               <ul className="space-y-4">
                 {[
                   { label: 'Oman’s Infrastructure Advantage', href: '/about-oman#infrastructure' },

@@ -30,7 +30,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
       onMouseLeave={() => { setIsOpen(false); setActiveChildIndex(null); }}
       className="static h-full flex items-center"
     >
-      <button className={`nav-link flex items-center gap-1 py-8 text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap transition-colors relative ${isOpen ? 'text-[#8A6BCB]' : 'text-current hover:text-[#8A6BCB]'
+      <button className={`nav-link font-poppins flex items-center gap-1 py-8 text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap transition-colors relative ${isOpen ? 'text-[#8A6BCB]' : 'text-current hover:text-[#8A6BCB]'
         }`}>
         {t(item.label)}
         <span className={`text-[10px] transition-transform ${isOpen ? 'rotate-180 text-[#8A6BCB]' : 'opacity-70'} ml-0.5`}>▾</span>
@@ -163,7 +163,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
     return (
       <Link
         to={`/${lang}${item.href}`}
-        className="block py-4 px-2 text-lg font-bold text-[#222222] border-b border-[#4F3C8C]/5 hover:bg-[#8A6BCB]/5 transition-colors rounded-xl"
+        className="block py-4 px-2 text-lg font-bold text-[#222222] font-poppins border-b border-[#4F3C8C]/5 hover:bg-[#8A6BCB]/5 transition-colors rounded-xl"
       >
         {t(item.label)}
       </Link>
@@ -174,7 +174,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
     <div className="border-b border-[#4F3C8C]/5">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between w-full py-4 px-2 text-lg font-bold text-[#222222] hover:bg-[#8A6BCB]/5 transition-colors rounded-xl"
+        className="flex items-center justify-between w-full py-4 px-2 text-lg font-bold text-[#222222] font-poppins hover:bg-[#8A6BCB]/5 transition-colors rounded-xl"
       >
         {t(item.label)}
         <ChevronDown
@@ -298,7 +298,7 @@ export const Navigation = () => {
                 item.children ? (
                   <NavDropdown key={index} item={item} lang={displayLang} />
                 ) : (
-                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap text-current opacity-70 hover:opacity-100 hover:text-[#8A6BCB] transition-all relative">
+                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap font-poppins text-current opacity-70 hover:opacity-100 hover:text-[#8A6BCB] transition-all relative">
                     {t(item.label)}
                   </Link>
                 )
@@ -310,7 +310,7 @@ export const Navigation = () => {
               {/* Login Button */}
               <Link
                 to={`/${displayLang}/signin`}
-                className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[#8A6BCB] text-white text-xs font-bold rounded-full hover:bg-[#7A5BC0] transition-colors duration-300 tracking-wider shadow-md"
+                className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[#8A6BCB] text-white text-xs font-bold font-poppins rounded-full hover:bg-[#7A5BC0] transition-colors duration-300 tracking-wider shadow-md"
               >
                 {t('navigation.text.3')}
               </Link>
@@ -394,7 +394,7 @@ export const Navigation = () => {
                       <div className="pt-6 border-t border-[#4F3C8C]/10 space-y-4">
                         <Link
                           to={`/${displayLang}/signin`}
-                          className="w-full py-4 bg-[#8A6BCB] text-white font-bold rounded-full hover:bg-[#7A5BC0] transition-all tracking-wider text-center block shadow-lg"
+                          className="w-full py-4 bg-[#8A6BCB] text-white font-bold font-poppins rounded-full hover:bg-[#7A5BC0] transition-all tracking-wider text-center block shadow-lg"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {t('navigation.text.7')}
