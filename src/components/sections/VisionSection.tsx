@@ -94,7 +94,7 @@ export const VisionSection = () => {
                     <span className="text-2xl font-bold text-white">MS</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Mohammed bin Salman</div>
+                    <div className="font-semibold text-white font-poppins">Mohammed bin Salman</div>
                     <div className="text-sm text-white/60">
                       Crown Prince, Prime Minister, and Chairman of the Council of
                       Economic and Development Affairs
@@ -114,18 +114,16 @@ export const VisionSection = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full text-left px-6 py-4 flex items-center gap-3 transition-all duration-300 ${
-                      activeTab === tab.id
+                    className={`w-full text-left px-6 py-4 flex items-center gap-3 transition-all duration-300 ${activeTab === tab.id
                         ? 'bg-white/5 text-white border-l-2 border-primary'
                         : 'text-white/60 hover:text-white hover:bg-white/5 border-l-2 border-transparent'
-                    }`}
+                      }`}
                   >
                     <tab.icon
-                      className={`w-5 h-5 ${
-                        activeTab === tab.id ? 'text-primary' : 'text-white/40'
-                      }`}
+                      className={`w-5 h-5 ${activeTab === tab.id ? 'text-primary' : 'text-white/40'
+                        }`}
                     />
-                    <span className="text-sm font-medium">{tab.label}</span>
+                    <span className="text-sm font-medium font-poppins">{tab.label}</span>
                   </button>
                 ))}
               </div>

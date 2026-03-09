@@ -17,7 +17,7 @@ export const WhyInvestSection = () => {
 
         {/* Horizontal Scrolling Cards */}
         <div className="relative">
-          <StaggerContainer 
+          <StaggerContainer
             className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
             staggerDelay={0.1}
           >
@@ -41,7 +41,7 @@ export const WhyInvestSection = () => {
                     {/* Stat Badge */}
                     {card.stat && (
                       <div className="mb-4">
-                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold text-white">
+                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold text-white font-poppins">
                           {card.stat}
                         </span>
                       </div>
@@ -59,7 +59,7 @@ export const WhyInvestSection = () => {
 
                     {/* Arrow Link */}
                     <div className="mt-4 flex items-center gap-2 text-white/70 group-hover:text-white transition-colors">
-                      <span className="text-sm font-medium">Learn more</span>
+                      <span className="text-sm font-medium font-poppins">Learn more</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>

@@ -35,7 +35,7 @@ const StatCard = ({ value, label, icon }: { value: string; label: string; icon: 
       className="glass-card p-6 h-full"
     >
       <div className="mb-4 text-primary">{icon}</div>
-      <div className="text-3xl md:text-4xl font-bold text-white mb-2">{value}</div>
+      <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-poppins">{value}</div>
       <div className="text-sm text-white/60">{label}</div>
     </motion.div>
   </StaggerItem>

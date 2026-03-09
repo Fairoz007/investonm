@@ -166,7 +166,7 @@ export default function KeySectors() {
                                         </div>
                                     </div>
 
-                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold inline-flex items-center justify-center gap-2 transition-all shadow-md w-full sm:w-auto text-center">
+                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold font-poppins inline-flex items-center justify-center gap-2 transition-all shadow-md w-full sm:w-auto text-center">
                                         {t('keysectors.text.7')} {t(sector.name)}  {t('keysectors.text.8')} <TrendingUp className="w-4 h-4" />
                                     </Link>
                                 </div>

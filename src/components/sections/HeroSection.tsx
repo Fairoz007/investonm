@@ -65,15 +65,15 @@ export const HeroSection = () => {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3">
-                <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/80 hover:text-white hover:bg-black/60 transition-all font-medium text-xs tracking-wider">
+                <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/80 hover:text-white hover:bg-black/60 transition-all font-medium font-poppins text-xs tracking-wider">
                   Explore Sectors
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
                 </button>
-                <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/80 hover:text-white hover:bg-black/60 transition-all font-medium text-xs tracking-wider">
+                <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/80 hover:text-white hover:bg-black/60 transition-all font-medium font-poppins text-xs tracking-wider">
                   E-Services
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
                 </button>
-                <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/80 hover:text-white hover:bg-black/60 transition-all font-medium text-xs tracking-wider">
+                <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/80 hover:text-white hover:bg-black/60 transition-all font-medium font-poppins text-xs tracking-wider">
                   Contact Us
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
                 </button>
@@ -93,11 +93,11 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
         </div>
-        
+
         {/* Scroll to Explore CTA */}
         <div className="absolute bottom-12 right-12 z-20">
           <div className="relative w-20 h-20 flex items-center justify-center rounded-full border border-white cursor-pointer hover:scale-105 transition-transform duration-300">
-            <span className="text-[11px] font-bold text-white text-center leading-[1.1] tracking-wider">
+            <span className="text-[11px] font-bold text-white text-center leading-[1.1] tracking-wider font-poppins">
               Scroll to<br />Explore
             </span>
             {/* Outline spinning circle if any */}
