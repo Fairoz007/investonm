@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, Loader2, MinusCircle, Maximize2, RefreshCw, ChevronDown } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, MinusCircle, Maximize2, RefreshCw, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -38,7 +38,6 @@ export const ChatBot: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [showScrollButton, setShowScrollButton] = useState(false);
     const scrollAreaRef = useRef<HTMLDivElement>(null);
-    const viewportRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
         if (scrollAreaRef.current) {
