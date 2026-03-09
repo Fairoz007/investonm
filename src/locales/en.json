@@ -205,5 +205,10 @@
   "forgot.btn_send": "Send Reset Link",
   "forgot.back_to_login": "Back to Sign In",
   "forgot.success_title": "Check your email",
-  "forgot.success_message": "We've sent a password reset link to your email address."
+  "forgot.success_message": "We've sent a password reset link to your email address.",
+  "chatbot.title": "Shomoukh AI",
+  "chatbot.online": "Online now",
+  "chatbot.placeholder": "Type your message...",
+  "chatbot.initial": "Hello! I am your Shomoukh International Investment assistant. How can I help you today regarding investments in Oman?",
+  "chatbot.error": "I apologize, but I am having trouble connecting to my brain right now. Please try again in a moment."
 }

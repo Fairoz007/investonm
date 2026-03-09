@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Zap, Diamond, Globe2, MapPin, BookOpen, Anchor, Building2, TrendingUp, Target, Briefcase } from 'lucide-react';
 import { useTranslation } from "react-i18next";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
@@ -96,31 +96,31 @@ export default function KeySectors() {
     const displayLang = lang || 'en';
 
     return (
-        <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans pt-24">
+        <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans pt-24">
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 flex items-center justify-center border-b border-white/5 bg-[#041416]">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00c2b5]/10 rounded-full blur-[150px] pointer-events-none" />
+            <section className="relative py-24 md:py-32 flex items-center justify-center hero-gradient">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-10 rounded-full blur-[150px] pointer-events-none" />
                 <div className="container-custom relative z-10 text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-5xl md:text-7xl font-bold mb-6 text-white"
+                        className="text-mobile-h1 mb-6 text-white text-balance"
                     >
-                        {t('keysectors.text.1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('keysectors.text.2')} </span>
+                        {t('keysectors.text.1')} <span className="text-white/90"> {t('keysectors.text.2')} </span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto"
+                        className="text-mobile-body text-white/90 max-w-4xl mx-auto px-4"
                     >
                         {t('keysectors.text.3')} </motion.p>
                 </div>
             </section>
 
             {/* Sectors List */}
-            <section className="py-24">
+            <section className="py-12 md:py-24">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
@@ -138,36 +138,36 @@ export default function KeySectors() {
                             >
 
                                 <div className="lg:w-1/2 w-full space-y-6">
-                                    <div className="flex items-center gap-4 border-b border-white/10 pb-6 mb-6">
-                                        <div className="w-14 h-14 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center">
-                                            <sector.icon className="w-7 h-7 text-[#00c2b5]" />
+                                    <div className="flex items-center gap-4 border-b border-[#4F3C8C]/10 pb-6 mb-6">
+                                        <div className="w-14 h-14 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center">
+                                            <sector.icon className="w-7 h-7 text-[#8A6BCB]" />
                                         </div>
-                                        <h2 className="text-3xl lg:text-5xl font-bold">{t(sector.name)}</h2>
+                                        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#222222]">{t(sector.name)}</h2>
                                     </div>
 
                                     <div className="space-y-6 text-lg">
                                         <div>
-                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.4')} </h4>
-                                            <p className="text-white/80 leading-relaxed">{t(sector.overview)}</p>
+                                            <h4 className="text-[#8A6BCB] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.4')} </h4>
+                                            <p className="text-[#666666] leading-relaxed">{t(sector.overview)}</p>
                                         </div>
                                         <div>
-                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.5')} </h4>
-                                            <p className="text-white/80 leading-relaxed flex items-start gap-2">
-                                                <TrendingUp className="w-5 h-5 text-white/50 shrink-0 mt-1" />
+                                            <h4 className="text-[#8A6BCB] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.5')} </h4>
+                                            <p className="text-[#666666] leading-relaxed flex items-start gap-2">
+                                                <TrendingUp className="w-5 h-5 text-[#666666]/50 shrink-0 mt-1" />
                                                 {t(sector.potential)}
                                             </p>
                                         </div>
                                         <div>
-                                            <h4 className="text-[#00c2b5] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.6')} </h4>
-                                            <p className="text-white/80 leading-relaxed flex items-start gap-2">
-                                                <Target className="w-5 h-5 text-white/50 shrink-0 mt-1" />
+                                            <h4 className="text-[#8A6BCB] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.6')} </h4>
+                                            <p className="text-[#666666] leading-relaxed flex items-start gap-2">
+                                                <Target className="w-5 h-5 text-[#666666]/50 shrink-0 mt-1" />
                                                 {t(sector.future)}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-full font-medium inline-flex items-center gap-2 transition-colors">
-                                        {t('keysectors.text.7')} {t(sector.name)}  {t('keysectors.text.8')} <TrendingUp className="w-4 h-4 text-[#00c2b5]" />
+                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold inline-flex items-center justify-center gap-2 transition-all shadow-md w-full sm:w-auto text-center">
+                                        {t('keysectors.text.7')} {t(sector.name)}  {t('keysectors.text.8')} <TrendingUp className="w-4 h-4" />
                                     </Link>
                                 </div>
 

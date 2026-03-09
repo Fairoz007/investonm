@@ -71,24 +71,24 @@ const sectors = [
 ];
 
 export default function KeySectors() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-[#F5F5F5] pt-24 text-[#222222]">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/30 via-dark to-dark" />
+        <div className="absolute inset-0 hero-gradient" />
         <div className="container-custom relative z-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
+              <div className="flex items-center gap-2 text-white/80 mb-4">
                 <span className="text-sm font-medium"> {t('keysectors.text.1')} </span>
                 <ArrowRight className="w-4 h-4" />
                 <span className="text-sm text-white/60"> {t('keysectors.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('keysectors.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('keysectors.text.4')} </p>
+                {t('keysectors.text.3')} </h1>
+              <p className="text-xl text-white/90 leading-relaxed">
+                {t('keysectors.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -105,25 +105,25 @@ export default function KeySectors() {
                   className="glass-card p-8 h-full"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-4 bg-primary/20 rounded-2xl">
-                      <sector.icon className="w-8 h-8 text-primary" />
+                    <div className="p-4 bg-[#8A6BCB]/10 rounded-2xl">
+                      <sector.icon className="w-8 h-8 text-[#8A6BCB]" />
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-primary">{sector.growth}</div>
-                      <div className="text-xs text-white/50">{sector.growthLabel}</div>
+                      <div className="text-2xl font-bold text-[#8A6BCB]">{sector.growth}</div>
+                      <div className="text-xs text-[#666666]">{sector.growthLabel}</div>
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-3">{sector.name}</h3>
-                  <p className="text-white/60 mb-6">{sector.description}</p>
+                  <h3 className="text-2xl font-bold text-[#222222] mb-3">{sector.name}</h3>
+                  <p className="text-[#666666] mb-6">{sector.description}</p>
 
                   <div>
-                    <div className="text-sm text-white/50 mb-2"> {t('keysectors.text.5')} </div>
+                    <div className="text-sm text-[#666666] mb-2"> {t('keysectors.text.5')} </div>
                     <div className="flex flex-wrap gap-2">
                       {sector.opportunities.map((opp) => (
                         <span
                           key={opp}
-                          className="px-3 py-1 bg-white/5 text-white/70 text-sm rounded-full"
+                          className="px-3 py-1 bg-[#8A6BCB]/5 text-[#8A6BCB] text-sm rounded-full font-medium"
                         >
                           {opp}
                         </span>
@@ -141,11 +141,11 @@ export default function KeySectors() {
       <section className="py-20">
         <div className="container-custom">
           <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('keysectors.text.6')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('keysectors.text.7')} </p>
+            <div className="glass-card p-12 text-center bg-white shadow-xl">
+              <h2 className="text-3xl font-bold text-[#222222] mb-4">
+                {t('keysectors.text.6')} </h2>
+              <p className="text-[#666666] mb-8 max-w-2xl mx-auto">
+                {t('keysectors.text.7')} </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <button className="btn-primary"> {t('keysectors.text.8')} </button>
                 <button className="btn-secondary"> {t('keysectors.text.9')} </button>

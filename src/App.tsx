@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation, Outlet, useNavigate } from 'react-router-dom';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
+import { BottomNav } from '@/components/layout/BottomNav';
 import Home from '@/pages/Home';
 import AboutOman from '@/pages/AboutOman';
 import KeySectors from '@/pages/KeySectors';
@@ -11,6 +12,7 @@ import ForgotPassword from '@/pages/ForgotPassword';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { ChatBot } from '@/components/chat/ChatBot';
 
 const LANGUAGES = ['en', 'ar', 'ru', 'zh', 'fa', 'tr'];
 
@@ -43,7 +45,6 @@ const LanguageLayout = () => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     if (!lang) return;
@@ -75,6 +76,8 @@ const LanguageLayout = () => {
         <Outlet />
       </main>
       <Footer />
+      <BottomNav />
+      <ChatBot />
     </div>
   );
 };

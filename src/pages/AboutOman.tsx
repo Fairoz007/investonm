@@ -16,12 +16,12 @@ const staggerContainer: Variants = {
 export default function AboutOman() {
     const { t } = useTranslation();
     return (
-        <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans pt-24">
+        <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans pt-24">
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 flex items-center justify-center">
+            <section className="relative py-24 md:py-32 flex items-center justify-center hero-gradient">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-30" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#020b0d] via-transparent to-[#020b0d]" />
+                    <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+                    <div className="absolute inset-0 bg-white/10" />
                 </div>
                 <div className="container-custom relative z-10 text-center">
                     <motion.h1
@@ -30,13 +30,13 @@ export default function AboutOman() {
                         transition={{ duration: 0.8 }}
                         className="text-5xl md:text-7xl font-bold mb-6 text-white"
                     >
-                        {t('aboutoman.text.1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('aboutoman.text.2')} </span>
+                        {t('aboutoman.text.1')} <span className="text-white/90"> {t('aboutoman.text.2')} </span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto"
+                        className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
                     >
                         {t('aboutoman.text.3')} </motion.p>
                 </div>
@@ -56,11 +56,11 @@ export default function AboutOman() {
                         {/* Oman’s Strategic Location */}
                         <motion.div id="location" variants={fadeInUp} className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6">
-                                    <MapPin className="w-8 h-8 text-[#00c2b5]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
+                                    <MapPin className="w-8 h-8 text-[#8A6BCB]" />
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6"> {t('aboutoman.text.4')} </h2>
-                                <p className="text-lg text-white/70 leading-relaxed">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.4')} </h2>
+                                <p className="text-lg text-[#666666] leading-relaxed">
                                     {t('aboutoman.text.5')} </p>
                             </div>
                             <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative">
@@ -72,11 +72,11 @@ export default function AboutOman() {
                         {/* Economic Stability */}
                         <motion.div variants={fadeInUp} className="flex flex-col md:flex-row-reverse gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6">
-                                    <TrendingUp className="w-8 h-8 text-[#00c2b5]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
+                                    <TrendingUp className="w-8 h-8 text-[#8A6BCB]" />
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6"> {t('aboutoman.text.6')} </h2>
-                                <p className="text-lg text-white/70 leading-relaxed">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.6')} </h2>
+                                <p className="text-lg text-[#666666] leading-relaxed">
                                     {t('aboutoman.text.7')} </p>
                             </div>
                             <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative bg-white/5 border border-white/10 flex items-center justify-center">
@@ -87,11 +87,11 @@ export default function AboutOman() {
                         {/* Infrastructure Development */}
                         <motion.div id="infrastructure" variants={fadeInUp} className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6">
-                                    <Building2 className="w-8 h-8 text-[#00c2b5]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
+                                    <Building2 className="w-8 h-8 text-[#8A6BCB]" />
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6"> {t('aboutoman.text.9')} </h2>
-                                <p className="text-lg text-white/70 leading-relaxed">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.9')} </h2>
+                                <p className="text-lg text-[#666666] leading-relaxed">
                                     {t('aboutoman.text.10')} </p>
                             </div>
                             <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative">
@@ -102,11 +102,11 @@ export default function AboutOman() {
                         {/* Quality of Life */}
                         <motion.div variants={fadeInUp} className="flex flex-col md:flex-row-reverse gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6">
-                                    <Landmark className="w-8 h-8 text-[#00c2b5]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
+                                    <Landmark className="w-8 h-8 text-[#8A6BCB]" />
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6"> {t('aboutoman.text.11')} </h2>
-                                <p className="text-lg text-white/70 leading-relaxed">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.11')} </h2>
+                                <p className="text-lg text-[#666666] leading-relaxed">
                                     {t('aboutoman.text.12')} </p>
                             </div>
                             <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative">
@@ -117,15 +117,15 @@ export default function AboutOman() {
                         {/* Vision 2040 */}
                         <motion.div id="vision2040" variants={fadeInUp} className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6">
-                                    <Target className="w-8 h-8 text-[#00c2b5]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
+                                    <Target className="w-8 h-8 text-[#8A6BCB]" />
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6"> {t('aboutoman.text.13')} </h2>
-                                <p className="text-lg text-white/70 leading-relaxed">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.13')} </h2>
+                                <p className="text-lg text-[#666666] leading-relaxed">
                                     {t('aboutoman.text.14')} </p>
                             </div>
-                            <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative bg-white/5 border border-white/10 flex items-center justify-center">
-                                <img src="/images/Oman_Vision_2040_Logo.png" alt="Vision 2040" className="opacity-50 invert h-32" />
+                            <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative bg-white border border-[#4F3C8C]/10 flex items-center justify-center">
+                                <img src="/images/Oman_Vision_2040_Logo.png" alt="Vision 2040" className="opacity-90 h-32" />
                             </div>
                         </motion.div>
 

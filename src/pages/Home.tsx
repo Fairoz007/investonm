@@ -37,14 +37,14 @@ export default function Home() {
   const heroY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
 
   return (
-    <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans">
+    <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-[#00c2b5] z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-[#8A6BCB] z-[1001] origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
       {/* HERO SECTION */}
-      <section ref={heroRef} className="relative h-[100vh] flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative h-[85vh] md:h-[100vh] flex items-center overflow-hidden">
         <motion.div
           className="absolute inset-0 z-0 h-full w-full"
           initial={{ scale: 1 }}
@@ -55,23 +55,23 @@ export default function Home() {
             className="absolute inset-0 bg-cover bg-center h-[110%] w-[110%] -top-[5%] -left-[5%]"
             style={{ backgroundImage: 'url("/images/oman_hero.png")' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#020b0d] via-[#020b0d]/80 to-transparent opacity-90" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
         </motion.div>
 
         <motion.div style={{ opacity: heroOpacity, y: heroY }} className="container-custom relative z-10 w-full mt-12">
           <motion.div initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+            <h1 className="text-mobile-h1 mb-6 text-white text-balance">
               {t('home.text.1')} <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('home.text.2')} </span>
+              <span className="text-white/90"> {t('home.text.2')} </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 leading-relaxed max-w-3xl">
+            <p className="text-mobile-body text-white/90 mb-10 leading-relaxed max-w-3xl">
               {t('home.text.3')} </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Link to={`/${displayLang}/key-sectors`} className="px-8 py-4 bg-[#00c2b5] hover:bg-[#00a89d] text-[#111] rounded-full font-bold flex items-center gap-2 transition-transform duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,194,181,0.2)]">
+            <div className="btn-mobile-stack">
+              <Link to={`/${displayLang}/key-sectors`} className="btn-full-mobile px-8 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold flex items-center gap-2 transition-transform duration-300 hover:scale-105 shadow-lg">
                 {t('home.text.4')} <ArrowUpRight className="w-5 h-5" />
               </Link>
-              <Link to={`/${displayLang}/contact`} className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md rounded-full font-bold flex items-center gap-2 transition-all">
+              <Link to={`/${displayLang}/contact`} className="btn-full-mobile px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md rounded-full font-bold text-white flex items-center gap-2 transition-all">
                 {t('home.text.5')} <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -79,11 +79,14 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* SECTION DIVIDER GRADIENT */}
+      <div className="h-4 divider-gradient w-full" />
+
       {/* WHY INVEST IN OMAN */}
-      <section className="py-24 md:py-32 relative bg-[#020b0d]">
+      <section className="py-24 md:py-32 relative bg-[#F5F5F5] text-[#222222]">
         <div className="container-custom">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer}>
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-16 text-center">
+            <motion.h2 variants={fadeInUp} className="text-mobile-h2 mb-10 md:mb-16 text-center text-balance px-4">
               {t('home.text.6')} <span className="text-[#00c2b5]"> {t('home.text.7')} </span>
             </motion.h2>
 
@@ -96,12 +99,12 @@ export default function Home() {
                 { icon: Landmark, title: "home.why.title.5", desc: "home.why.desc.5" },
                 { icon: Truck, title: "home.why.title.6", desc: "home.why.desc.6" },
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors backdrop-blur-sm group">
-                  <div className="w-16 h-16 rounded-full bg-[#00c2b5]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <item.icon className="w-8 h-8 text-[#00c2b5]" />
+                <motion.div key={i} variants={fadeInUp} className="bg-white border border-[#4F3C8C]/10 rounded-3xl p-8 hover:shadow-xl transition-all group">
+                  <div className="w-16 h-16 rounded-full bg-[#8A6BCB]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <item.icon className="w-8 h-8 text-[#8A6BCB]" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{t(item.title)}</h3>
-                  <p className="text-white/60 leading-relaxed">{t(item.desc)}</p>
+                  <h3 className="text-xl font-bold mb-4 text-[#222222]">{t(item.title)}</h3>
+                  <p className="text-[#666666] leading-relaxed">{t(item.desc)}</p>
                 </motion.div>
               ))}
             </div>
@@ -110,20 +113,20 @@ export default function Home() {
       </section>
 
       {/* INVESTMENT OPPORTUNITIES */}
-      <section className="py-24 md:py-32 bg-[#041416] border-t border-white/5">
+      <section className="py-24 md:py-32 bg-white border-t border-[#4F3C8C]/5 text-[#222222]">
         <div className="container-custom">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer}>
             <motion.div variants={fadeInUp} className="flex justify-between items-end mb-16 flex-wrap gap-6">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6"> {t('home.text.8')} </h2>
-                <p className="text-lg text-white/70 max-w-2xl">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#222222]"> {t('home.text.8')} </h2>
+                <p className="text-lg text-[#666666] max-w-2xl">
                   {t('home.text.9')} </p>
               </div>
-              <Link to={`/${displayLang}/key-sectors`} className="px-6 py-3 border border-[#00c2b5] text-[#00c2b5] hover:bg-[#00c2b5] hover:text-[#111] rounded-full font-bold transition-all whitespace-nowrap">
+              <Link to={`/${displayLang}/key-sectors`} className="px-6 py-3 border border-[#8A6BCB] text-[#8A6BCB] hover:bg-[#8A6BCB] hover:text-white rounded-full font-bold transition-all whitespace-nowrap">
                 {t('home.text.10')} </Link>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
               {[
                 { icon: Zap, name: "home.sectors.energy" },
                 { icon: MapPin, name: "home.sectors.tourism" },
@@ -132,9 +135,9 @@ export default function Home() {
                 { icon: Laptop, name: "home.sectors.technology" },
                 { icon: Building2, name: "home.sectors.realestate" },
               ].map((sector, i) => (
-                <motion.div key={i} variants={popIn} whileHover={{ y: -8, backgroundColor: "rgba(255, 255, 255, 0.1)" }} className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center transition-colors group">
-                  <sector.icon className="w-12 h-12 text-[#00c2b5] mb-6 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="font-bold text-lg">{t(sector.name)}</h3>
+                <motion.div key={i} variants={popIn} whileHover={{ y: -8, backgroundColor: "#F9F9F9" }} className="bg-white border border-[#4F3C8C]/10 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center transition-all shadow-sm group">
+                  <sector.icon className="w-10 h-10 md:w-12 md:h-12 text-[#8A6BCB] mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="font-bold text-base md:text-lg text-[#222222]">{t(sector.name)}</h3>
                 </motion.div>
               ))}
             </div>
@@ -143,17 +146,17 @@ export default function Home() {
       </section>
 
       {/* VISION 2040 */}
-      <section className="relative py-32 overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 z-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#020b0d] via-[#020b0d]/90 to-transparent" />
+      <section className="relative py-32 overflow-hidden border-t border-[#4F3C8C]/10 bg-[#F5F5F5] text-[#222222]">
+        <div className="absolute inset-0 z-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 z-0 bg-white/40" />
 
         <div className="container-custom relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer} className="lg:w-1/2">
-              <motion.h2 variants={slideLeft} className="text-4xl md:text-6xl font-bold mb-8">
-                {t('home.text.11')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]">2040</span>
+              <motion.h2 variants={slideLeft} className="text-4xl md:text-6xl font-bold mb-8 text-[#222222]">
+                {t('home.text.11')} <span className="text-[#8A6BCB]">2040</span>
               </motion.h2>
-              <motion.div variants={slideLeft} className="text-xl text-white/80 mb-12 space-y-4 leading-relaxed">
+              <motion.div variants={slideLeft} className="text-xl text-[#666666] mb-12 space-y-4 leading-relaxed">
                 <p> {t('home.text.12')} </p>
               </motion.div>
 
@@ -164,30 +167,30 @@ export default function Home() {
                   { text: 'home.vision.3', icon: Laptop },
                   { text: 'home.vision.4', icon: Globe2 }
                 ].map((item, i) => (
-                  <motion.div key={i} variants={slideLeft} className="flex items-center gap-4 p-5 bg-white/5 border border-[#00c2b5]/20 rounded-2xl backdrop-blur-sm">
-                    <item.icon className="w-8 h-8 text-[#00c2b5] flex-shrink-0" />
-                    <span className="font-bold">{t(item.text)}</span>
+                  <motion.div key={i} variants={slideLeft} className="flex items-center gap-4 p-5 bg-white border border-[#8A6BCB]/20 rounded-2xl shadow-sm">
+                    <item.icon className="w-8 h-8 text-[#8A6BCB] flex-shrink-0" />
+                    <span className="font-bold text-[#222222]">{t(item.text)}</span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className="lg:w-1/2 flex justify-center">
-              <img src="/images/Oman_Vision_2040_Logo.png" alt="Vision 2040" className="w-full max-w-sm invert opacity-80" />
+              <img src="/images/Oman_Vision_2040_Logo.png" alt="Vision 2040" className="w-full max-w-sm opacity-90" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* INVESTOR SUPPORT */}
-      <section className="py-24 md:py-32 bg-[#020b0d] border-t border-white/5 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00c2b5] rounded-full blur-[200px] opacity-[0.05] pointer-events-none" />
+      <section className="py-24 md:py-32 bg-[#F5F5F5] border-t border-[#4F3C8C]/5 relative overflow-hidden text-[#222222]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8A6BCB] rounded-full blur-[200px] opacity-[0.03] pointer-events-none" />
 
         <div className="container-custom relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="text-center">
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-8">
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-8 text-[#222222]">
               {t('home.text.13')} </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-white/70 max-w-3xl mx-auto mb-16 leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-xl text-[#666666] max-w-3xl mx-auto mb-16 leading-relaxed">
               {t('home.text.14')} </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -197,18 +200,18 @@ export default function Home() {
                 { icon: Building2, name: "home.support.title.3", desc: "home.support.desc.3" },
                 { icon: Landmark, name: "home.support.title.4", desc: "home.support.desc.4" },
               ].map((service, i) => (
-                <motion.div key={i} variants={popIn} className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2rem] p-8 text-left hover:border-[#00c2b5]/50 transition-colors group">
-                  <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6 group-hover:bg-[#00c2b5] transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_rgba(0,194,181,0.2)]">
-                    <service.icon className="w-8 h-8 text-[#00c2b5] group-hover:text-[#111] transition-colors" />
+                <motion.div key={i} variants={popIn} className="bg-white border border-[#4F3C8C]/10 rounded-[2rem] p-8 text-left hover:border-[#8A6BCB]/50 hover:shadow-lg transition-all group">
+                  <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6 group-hover:bg-[#8A6BCB] transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_rgba(138,107,203,0.2)]">
+                    <service.icon className="w-8 h-8 text-[#8A6BCB] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{t(service.name)}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{t(service.desc)}</p>
+                  <h3 className="text-xl font-bold mb-3 text-[#222222]">{t(service.name)}</h3>
+                  <p className="text-[#666666] text-sm leading-relaxed">{t(service.desc)}</p>
                 </motion.div>
               ))}
             </div>
 
             <motion.div variants={fadeInUp} className="mt-20">
-              <Link to={`/${displayLang}/who-we-are`} className="px-10 py-5 bg-[#00c2b5] hover:bg-[#00a89d] text-[#111] rounded-full font-bold inline-flex items-center gap-2 transition-transform duration-300 hover:scale-[1.05] shadow-[0_0_30px_rgba(0,194,181,0.2)]">
+              <Link to={`/${displayLang}/who-we-are`} className="px-10 py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold inline-flex items-center gap-2 transition-transform duration-300 hover:scale-[1.05] shadow-lg">
                 {t('home.text.15')} <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>

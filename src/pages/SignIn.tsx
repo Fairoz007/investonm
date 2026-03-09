@@ -52,13 +52,13 @@ export default function SignIn() {
             >
                 {/* Logo/Brand */}
                 <motion.div variants={itemVariants} className="text-center mb-10">
-                    <div className="inline-block mb-4 p-4 rounded-2xl bg-gradient-to-br from-primary to-primary-hover shadow-lg shadow-primary/20">
+                    <div className="inline-block mb-4 p-4 rounded-2xl bg-gradient-to-br from-primary to-primary-dark shadow-lg shadow-primary/20">
                         <Landmark className="w-10 h-10 text-white" />
                     </div>
                     <h1 className="text-3xl font-bold tracking-tight mb-2 text-foreground">
                         {isLogin ? (t('signin.title', 'Welcome Back')) : (t('signin.signup_title', 'Join Us'))}
                     </h1>
-                    <p className="text-secondary">
+                    <p className="text-muted-foreground">
                         {isLogin
                             ? (t('signin.subtitle', 'Access your investment portal'))
                             : (t('signin.signup_subtitle', 'Start your investment journey in Oman'))}
@@ -73,37 +73,37 @@ export default function SignIn() {
                     <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                         {!isLogin && (
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-secondary ml-1">{t('signin.label_name', 'Full Name')}</label>
+                                <label className="text-sm font-medium text-muted-foreground ml-1">{t('signin.label_name', 'Full Name')}</label>
                                 <div className="relative group">
                                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <User className="h-5 w-5 text-secondary group-focus-within:text-primary transition-colors" />
+                                        <User className="h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                                     </div>
                                     <input
                                         type="text"
                                         placeholder="John Doe"
-                                        className="block w-full pl-11 pr-4 py-4 bg-background border border-border rounded-2xl text-foreground placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                                        className="block w-full pl-11 pr-4 py-4 bg-background border border-border rounded-2xl text-foreground placeholder:text-muted-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                                     />
                                 </div>
                             </div>
                         )}
 
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-secondary ml-1">{t('signin.label_email', 'Email Address')}</label>
+                            <label className="text-sm font-medium text-muted-foreground ml-1">{t('signin.label_email', 'Email Address')}</label>
                             <div className="relative group">
                                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <Mail className="h-5 w-5 text-secondary group-focus-within:text-primary transition-colors" />
+                                    <Mail className="h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                                 </div>
                                 <input
                                     type="email"
                                     placeholder="name@company.com"
-                                    className="block w-full pl-11 pr-4 py-4 bg-background border border-border rounded-2xl text-foreground placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                                    className="block w-full pl-11 pr-4 py-4 bg-background border border-border rounded-2xl text-foreground placeholder:text-muted-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                                 />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <div className="flex justify-between items-center ml-1">
-                                <label className="text-sm font-medium text-secondary">{t('signin.label_password', 'Password')}</label>
+                                <label className="text-sm font-medium text-muted-foreground">{t('signin.label_password', 'Password')}</label>
                                 {isLogin && (
                                     <Link
                                         to={`/${displayLang}/forgot-password`}
@@ -115,19 +115,19 @@ export default function SignIn() {
                             </div>
                             <div className="relative group">
                                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <Lock className="h-5 w-5 text-secondary group-focus-within:text-primary transition-colors" />
+                                    <Lock className="h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                                 </div>
                                 <input
                                     type="password"
                                     placeholder="••••••••"
-                                    className="block w-full pl-11 pr-4 py-4 bg-background border border-border rounded-2xl text-foreground placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                                    className="block w-full pl-11 pr-4 py-4 bg-background border border-border rounded-2xl text-foreground placeholder:text-muted-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                                 />
                             </div>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20"
+                            className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20"
                         >
                             {isLogin ? (t('signin.btn_login', 'Sign In')) : (t('signin.btn_signup', 'Create Account'))}
                         </button>

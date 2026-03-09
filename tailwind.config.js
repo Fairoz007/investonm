@@ -13,11 +13,11 @@ module.exports = {
         primary: {
           DEFAULT: "#8A6BCB",
           dark: "#7A5BC0",
-          light: "#A78BFA",
+          light: "#A086D6",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#666666",
+          DEFAULT: "#4F3C8C",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -29,11 +29,10 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#8A6BCB",
-          foreground: "#FFFFFF",
-          purple: "#8A6BCB",
-          blue: "#7FA8C5",
-          indigo: "#6A6AAE",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+          purple: "#6B46C1",
+          cyan: "#06B6D4",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -53,15 +52,23 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        brand: {
-          purple: "#4F3C8C",
-          indigo: "#6A6AAE",
-          blue: "#7FA8C5",
-          accent: "#8A6BCB",
-          divider: {
-            start: "#5C4FA3",
-            end: "#6E3DB5",
-          }
+        teal: {
+          DEFAULT: "#00B8A9",
+          50: "#E0F7F5",
+          100: "#B3EEE8",
+          200: "#80E4DA",
+          300: "#4DDACC",
+          400: "#26D3C2",
+          500: "#00B8A9",
+          600: "#009688",
+          700: "#007A6E",
+          800: "#005E54",
+          900: "#00423B",
+        },
+        dark: {
+          DEFAULT: "#0D1F1F",
+          light: "#1A3A3A",
+          lighter: "#2A4A4A",
         },
       },
       fontFamily: {
@@ -76,7 +83,7 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glow: "0 0 20px rgba(0, 184, 169, 0.3)",
+        glow: "0 0 20px rgba(138, 107, 203, 0.3)",
       },
       keyframes: {
         "accordion-down": {

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Target, Eye, Briefcase, BarChart3, Users2, Building, Ship } from 'lucide-react';
 import { useTranslation } from "react-i18next";
-import { useParams } from 'react-router-dom';
+
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
@@ -21,18 +21,16 @@ const popIn: Variants = {
 
 export default function WhoWeAre() {
     const { t } = useTranslation();
-    const { lang } = useParams();
-    const displayLang = lang || 'en';
 
     return (
-        <div className="bg-[#020b0d] min-h-screen text-white overflow-hidden font-sans pt-24">
+        <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans pt-24">
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 flex items-center justify-center border-b border-white/5 bg-[#041416]">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#020b0d] to-[#041416] opacity-80" />
-                <div className="absolute inset-0 opacity-20 bg-[url('/images/oman_hero.png')] bg-cover bg-center" />
+            <section className="relative py-24 md:py-32 flex items-center justify-center border-b border-[#4F3C8C]/5 hero-gradient">
+                <div className="absolute inset-0 bg-white/10 opacity-20" />
+                <div className="absolute inset-0 opacity-10 bg-[url('/images/oman_hero.png')] bg-cover bg-center" />
                 <div className="container-custom relative z-10 text-center max-w-4xl">
-                    <div className="w-20 h-20 rounded-full bg-[#00c2b5]/10 border border-[#00c2b5]/30 flex items-center justify-center mx-auto mb-8">
-                        <Building className="w-10 h-10 text-[#00c2b5]" />
+                    <div className="w-20 h-20 rounded-full bg-white/10 border border-white/30 flex items-center justify-center mx-auto mb-8">
+                        <Building className="w-10 h-10 text-white" />
                     </div>
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
@@ -40,7 +38,7 @@ export default function WhoWeAre() {
                         transition={{ duration: 0.8 }}
                         className="text-5xl md:text-7xl font-bold mb-6 text-white"
                     >
-                        {t('whoweare.text.1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c2b5] to-[#009288]"> {t('whoweare.text.2')} </span>
+                        {t('whoweare.text.1')} <span className="text-white/90"> {t('whoweare.text.2')} </span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
@@ -61,12 +59,12 @@ export default function WhoWeAre() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeInUp}
-                            className="bg-white/5 border border-white/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group"
+                            className="bg-white border border-[#4F3C8C]/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group shadow-sm"
                         >
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00c2b5]/5 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
-                            <Target className="w-16 h-16 text-[#00c2b5] mb-8 relative z-10" />
-                            <h2 className="text-3xl font-bold mb-6 relative z-10" id="mission"> {t('whoweare.text.4')} </h2>
-                            <p className="text-lg text-white/70 leading-relaxed relative z-10">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#8A6BCB]/5 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
+                            <Target className="w-16 h-16 text-[#8A6BCB] mb-8 relative z-10" />
+                            <h2 className="text-3xl font-bold mb-6 relative z-10 text-[#222222]" id="mission"> {t('whoweare.text.4')} </h2>
+                            <p className="text-lg text-[#666666] leading-relaxed relative z-10">
                                 {t('whoweare.text.5')} </p>
                         </motion.div>
 
@@ -75,12 +73,12 @@ export default function WhoWeAre() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeInUp}
-                            className="bg-white/5 border border-white/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group"
+                            className="bg-white border border-[#4F3C8C]/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group shadow-sm"
                         >
-                            <div className="absolute top-0 left-0 w-64 h-64 bg-[#00c2b5]/5 rounded-full blur-[80px] -ml-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
-                            <Eye className="w-16 h-16 text-[#00c2b5] mb-8 relative z-10" />
-                            <h2 className="text-3xl font-bold mb-6 relative z-10" id="vision"> {t('whoweare.text.6')} </h2>
-                            <p className="text-lg text-white/70 leading-relaxed relative z-10">
+                            <div className="absolute top-0 left-0 w-64 h-64 bg-[#8A6BCB]/5 rounded-full blur-[80px] -ml-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
+                            <Eye className="w-16 h-16 text-[#8A6BCB] mb-8 relative z-10" />
+                            <h2 className="text-3xl font-bold mb-6 relative z-10 text-[#222222]" id="vision"> {t('whoweare.text.6')} </h2>
+                            <p className="text-lg text-[#666666] leading-relaxed relative z-10">
                                 {t('whoweare.text.7')} </p>
                         </motion.div>
                     </div>
@@ -88,7 +86,7 @@ export default function WhoWeAre() {
             </section>
 
             {/* Services */}
-            <section className="py-24 bg-[#041416] border-t border-white/5" id="services">
+            <section className="py-24 bg-white border-t border-[#4F3C8C]/5" id="services">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
@@ -97,8 +95,8 @@ export default function WhoWeAre() {
                         variants={staggerContainer}
                         className="text-center max-w-4xl mx-auto mb-20"
                     >
-                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6"> {t('whoweare.text.8')} </motion.h2>
-                        <motion.p variants={fadeInUp} className="text-lg text-white/70">
+                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#222222]"> {t('whoweare.text.8')} </motion.h2>
+                        <motion.p variants={fadeInUp} className="text-lg text-[#666666]">
                             {t('whoweare.text.9')} </motion.p>
                     </motion.div>
 
@@ -119,13 +117,13 @@ export default function WhoWeAre() {
                             <motion.div
                                 key={idx}
                                 variants={popIn}
-                                className="bg-white/5 border border-white/10 hover:border-[#00c2b5]/30 rounded-3xl p-8 flex flex-col items-center text-center group transition-colors"
+                                className="bg-[#F5F5F5] border border-[#4F3C8C]/5 hover:border-[#8A6BCB]/30 rounded-3xl p-8 flex flex-col items-center text-center group transition-all shadow-sm hover:shadow-md"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-[#00c2b5]/10 flex items-center justify-center mb-6 group-hover:bg-[#00c2b5]/20 group-hover:scale-110 transition-all duration-300 transform">
-                                    <service.icon className="w-8 h-8 text-[#00c2b5]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6 group-hover:bg-[#8A6BCB] group-hover:scale-110 transition-all duration-300 transform">
+                                    <service.icon className="w-8 h-8 text-[#8A6BCB] group-hover:text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-4">{t(service.title)}</h3>
-                                <p className="text-white/60 leading-relaxed text-sm">
+                                <h3 className="text-xl font-bold mb-4 text-[#222222]">{t(service.title)}</h3>
+                                <p className="text-[#666666] leading-relaxed text-sm">
                                     {t(service.desc)}
                                 </p>
                             </motion.div>
