@@ -30,12 +30,12 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
       onMouseLeave={() => { setIsOpen(false); setActiveChildIndex(null); }}
       className="static h-full flex items-center"
     >
-      <button className={`nav-link font-poppins flex items-center gap-1 py-8 text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap transition-colors relative ${isOpen ? 'text-[#8A6BCB]' : 'text-current hover:text-[#8A6BCB]'
+      <button className={`nav-link font-poppins flex items-center gap-1 py-8 text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap transition-colors relative ${isOpen ? 'text-[var(--primary)]' : 'text-current hover:text-[var(--primary)]'
         }`}>
         {t(item.label)}
-        <span className={`text-[10px] transition-transform ${isOpen ? 'rotate-180 text-[#8A6BCB]' : 'opacity-70'} ml-0.5`}>▾</span>
+        <span className={`text-[10px] transition-transform ${isOpen ? 'rotate-180 text-[var(--primary)]' : 'opacity-70'} ml-0.5`}>▾</span>
         {/* Active underline indicator */}
-        {isOpen && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#8A6BCB]" />}
+        {isOpen && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[var(--primary)]" />}
       </button>
 
       <AnimatePresence>
@@ -55,18 +55,18 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
             <div className="relative h-full w-full max-w-[1400px] mx-auto p-[40px]">
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-10 right-10 text-[#666666] hover:text-[#4F3C8C] transition-colors"
+                className="absolute top-10 right-10 text-[#666666] hover:text-[var(--secondary)] transition-colors"
                 title="Close"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex flex-col mb-4">
-                <h2 className="text-[#8A6BCB] text-[11px] font-semibold tracking-widest uppercase mb-1">{t(item.label)}</h2>
+                <h2 className="text-[var(--primary)] text-[11px] font-semibold tracking-widest uppercase mb-1">{t(item.label)}</h2>
                 {item.subtitle && <p className="text-[#222222] text-sm font-medium">{t(item.subtitle)}</p>}
               </div>
 
-              <div className="w-full h-[1px] bg-[#8A6BCB] mb-6 opacity-30" />
+              <div className="w-full h-[1px] bg-[var(--primary)] mb-6 opacity-30" />
 
               <div className="flex h-[calc(100%-85px)]">
                 {/* Main list */}
@@ -76,7 +76,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                       key={index}
                       to={`/${lang}${child.href}`}
                       onMouseEnter={() => hasSidebar && setActiveChildIndex(index)}
-                      className={`flex items-center gap-4 py-1 transition-colors group ${hasSidebar ? 'w-full' : 'w-fit'} ${activeChildIndex === index ? 'text-[#8A6BCB]' : 'text-[#222222]/80 hover:text-[#8A6BCB]'}`}
+                      className={`flex items-center gap-4 py-1 transition-colors group ${hasSidebar ? 'w-full' : 'w-fit'} ${activeChildIndex === index ? 'text-[var(--primary)]' : 'text-[#222222]/80 hover:text-[var(--primary)]'}`}
                     >
                       <span className="text-[10px] font-mono opacity-60 w-4">{String(index + 1).padStart(2, '0')}</span>
                       <span className={`text-[12px] font-bold tracking-tight uppercase ${hasSidebar ? 'flex-1' : ''}`}>
@@ -105,7 +105,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                               {activeChild.submenu.columns.map((col, idx) => (
                                 <div key={idx} className="flex flex-col">
                                   {col.title && (
-                                    <h3 className="text-[#8A6BCB] text-[10px] font-semibold tracking-widest uppercase mb-3 border-b border-[#4F3C8C]/10 pb-2">
+                                    <h3 className="text-[var(--primary)] text-[10px] font-semibold tracking-widest uppercase mb-3 border-b border-[var(--secondary)]/10 pb-2">
                                       {t(col.title)}
                                     </h3>
                                   )}
@@ -114,7 +114,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                                       <Link
                                         key={sIdx}
                                         to={`/${lang}${subItem.href}`}
-                                        className="text-[11px] text-[#222222]/60 hover:text-[#8A6BCB] transition-colors"
+                                        className="text-[11px] text-[#222222]/60 hover:text-[var(--primary)] transition-colors"
                                       >
                                         {t(subItem.label)}
                                       </Link>
@@ -131,7 +131,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                                     <Link
                                       key={sIdx}
                                       to={`/${lang}${subItem.href}`}
-                                      className="text-[11px] text-[#222222]/60 hover:text-[#8A6BCB] transition-colors"
+                                      className="text-[11px] text-[#222222]/60 hover:text-[var(--primary)] transition-colors"
                                     >
                                       {t(subItem.label)}
                                     </Link>
@@ -163,7 +163,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
     return (
       <Link
         to={`/${lang}${item.href}`}
-        className="block py-4 px-2 text-lg font-bold text-[#222222] font-poppins border-b border-[#4F3C8C]/5 hover:bg-[#8A6BCB]/5 transition-colors rounded-xl"
+        className="block py-4 px-2 text-lg font-bold text-[#222222] font-poppins border-b border-[var(--secondary)]/5 hover:bg-[var(--primary)]/5 transition-colors rounded-xl"
       >
         {t(item.label)}
       </Link>
@@ -171,14 +171,14 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
   }
 
   return (
-    <div className="border-b border-[#4F3C8C]/5">
+    <div className="border-b border-[var(--secondary)]/5">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between w-full py-4 px-2 text-lg font-bold text-[#222222] font-poppins hover:bg-[#8A6BCB]/5 transition-colors rounded-xl"
+        className="flex items-center justify-between w-full py-4 px-2 text-lg font-bold text-[#222222] font-poppins hover:bg-[var(--primary)]/5 transition-colors rounded-xl"
       >
         {t(item.label)}
         <ChevronDown
-          className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#8A6BCB]' : 'text-[#666666]'}`}
+          className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[var(--primary)]' : 'text-[#666666]'}`}
         />
       </button>
       <AnimatePresence>
@@ -197,10 +197,10 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                     <div>
                       <button
                         onClick={() => setExpandedChildIndex(expandedChildIndex === index ? null : index)}
-                        className="flex items-center justify-between w-full py-2 text-sm font-semibold text-[#444444] hover:text-[#8A6BCB] transition-colors"
+                        className="flex items-center justify-between w-full py-2 text-sm font-semibold text-[#444444] hover:text-[var(--primary)] transition-colors"
                       >
                         {t(child.label)}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedChildIndex === index ? 'rotate-180 text-[#8A6BCB]' : ''}`} />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedChildIndex === index ? 'rotate-180 text-[var(--primary)]' : ''}`} />
                       </button>
                       <AnimatePresence>
                         {expandedChildIndex === index && (
@@ -211,15 +211,15 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-6 py-2 space-y-5 border-l-2 border-[#8A6BCB]/20 ml-2 mt-2">
+                            <div className="pl-6 py-2 space-y-5 border-l-2 border-[var(--primary)]/20 ml-2 mt-2">
                               {child.submenu.columns.map((col, idx) => (
                                 <div key={idx} className="space-y-3">
                                   {col.title && (
-                                    <h4 className="text-[11px] font-bold text-[#8A6BCB] uppercase tracking-wider">{t(col.title)}</h4>
+                                    <h4 className="text-[11px] font-bold text-[var(--primary)] uppercase tracking-wider">{t(col.title)}</h4>
                                   )}
                                   <div className="flex flex-col gap-3">
                                     {col.items.map((sub, sIdx) => (
-                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="text-sm text-[#666666] hover:text-[#8A6BCB] transition-colors">
+                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="text-sm text-[#666666] hover:text-[var(--primary)] transition-colors">
                                         {t(sub.label)}
                                       </Link>
                                     ))}
@@ -234,7 +234,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                   ) : (
                     <Link
                       to={`/${lang}${child.href}`}
-                      className="block py-2.5 text-sm font-medium text-[#444444] hover:text-[#8A6BCB] transition-colors"
+                      className="block py-2.5 text-sm font-medium text-[#444444] hover:text-[var(--primary)] transition-colors"
                     >
                       {t(child.label)}
                     </Link>
@@ -277,7 +277,7 @@ export const Navigation = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="sticky top-0 left-0 w-full z-[1000] bg-white/95 backdrop-blur-lg border-b border-[#4F3C8C]/10 shadow-sm"
+        className="sticky top-0 left-0 w-full z-[1000] bg-white/95 backdrop-blur-lg border-b border-[var(--secondary)]/10 shadow-sm"
       >
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center h-[80px] w-full justify-between text-[#222222]">
@@ -298,7 +298,7 @@ export const Navigation = () => {
                 item.children ? (
                   <NavDropdown key={index} item={item} lang={displayLang} />
                 ) : (
-                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap font-poppins text-current opacity-70 hover:opacity-100 hover:text-[#8A6BCB] transition-all relative">
+                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap font-poppins text-current opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-all relative">
                     {t(item.label)}
                   </Link>
                 )
@@ -310,7 +310,7 @@ export const Navigation = () => {
               {/* Login Button */}
               <Link
                 to={`/${displayLang}/signin`}
-                className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[#8A6BCB] text-white text-xs font-bold font-poppins rounded-full hover:bg-[#7A5BC0] transition-colors duration-300 tracking-wider shadow-md"
+                className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[var(--primary)] text-white text-xs font-bold font-poppins rounded-full hover:bg-[var(--primary-dark)] transition-colors duration-300 tracking-wider shadow-md"
               >
                 {t('navigation.text.3')}
               </Link>
@@ -321,10 +321,10 @@ export const Navigation = () => {
                 onMouseEnter={() => setIsLangMenuOpen(true)}
                 onMouseLeave={() => setIsLangMenuOpen(false)}
               >
-                <button className={`flex items-center gap-1 text-xs font-semibold tracking-wide py-2 transition-colors ${isLangMenuOpen ? 'text-[#8A6BCB]' : 'text-[#666666] hover:text-[#8A6BCB]'}`}>
+                <button className={`flex items-center gap-1 text-xs font-semibold tracking-wide py-2 transition-colors ${isLangMenuOpen ? 'text-[var(--primary)]' : 'text-[#666666] hover:text-[var(--primary)]'}`}>
                   <Globe className="w-3 h-3" />
                   <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180 text-[#8A6BCB]' : ''}`} />
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180 text-[var(--primary)]' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {isLangMenuOpen && (
@@ -335,12 +335,12 @@ export const Navigation = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-[100%] right-0 pt-2 w-32 z-50 pointer-events-auto"
                     >
-                      <div className="bg-white border border-[#4F3C8C]/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
+                      <div className="bg-white border border-[var(--secondary)]/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
                         {LANGUAGES.map((lang) => (
                           <button
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
-                            className={`flex justify-between items-center w-full text-left px-4 py-2.5 text-xs transition-colors group/lang ${displayLang === lang.code ? 'text-[#8A6BCB] bg-[#F5F5F5]' : 'text-[#666666] hover:text-[#8A6BCB] hover:bg-[#F5F5F5]'}`}
+                            className={`flex justify-between items-center w-full text-left px-4 py-2.5 text-xs transition-colors group/lang ${displayLang === lang.code ? 'text-[var(--primary)] bg-[#F5F5F5]' : 'text-[#666666] hover:text-[var(--primary)] hover:bg-[#F5F5F5]'}`}
                           >
                             <span>{lang.native}</span>
                             <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>
@@ -365,16 +365,16 @@ export const Navigation = () => {
               <div className="lg:hidden flex items-center">
                 <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                   <SheetTrigger asChild>
-                    <button className="p-2 text-[#222222] hover:text-[#8A6BCB] transition-colors">
+                    <button className="p-2 text-[#222222] hover:text-[var(--primary)] transition-colors">
                       <Menu className="w-6 h-6" />
                     </button>
                   </SheetTrigger>
                   <SheetContent
                     side="right"
-                    className="w-full sm:w-[400px] bg-white border-l border-[#4F3C8C]/10 p-0 z-[1100]"
+                    className="w-full sm:w-[400px] bg-white border-l border-[var(--secondary)]/10 p-0 z-[1100]"
                   >
                     <div className="flex flex-col h-full">
-                      <SheetHeader className="p-6 border-b border-[#4F3C8C]/5 bg-[#F5F5F5]/50 flex-row items-center justify-between">
+                      <SheetHeader className="p-6 border-b border-[var(--secondary)]/5 bg-[#F5F5F5]/50 flex-row items-center justify-between">
                         <SheetTitle className="sr-only">Menu</SheetTitle>
                         <img
                           src="/images/Logo-01.png"
@@ -391,10 +391,10 @@ export const Navigation = () => {
                         </div>
                       </div>
 
-                      <div className="pt-6 border-t border-[#4F3C8C]/10 space-y-4">
+                      <div className="pt-6 border-t border-[var(--secondary)]/10 space-y-4">
                         <Link
                           to={`/${displayLang}/signin`}
-                          className="w-full py-4 bg-[#8A6BCB] text-white font-bold font-poppins rounded-full hover:bg-[#7A5BC0] transition-all tracking-wider text-center block shadow-lg"
+                          className="w-full py-4 bg-[var(--primary)] text-white font-bold font-poppins rounded-full hover:bg-[var(--primary-dark)] transition-all tracking-wider text-center block shadow-lg"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {t('navigation.text.7')}
@@ -402,11 +402,11 @@ export const Navigation = () => {
                         <div className="flex flex-col w-full pb-4">
                           <button
                             onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
-                            className="flex items-center justify-center gap-2 w-full py-3 text-[#222222] hover:text-[#8A6BCB] transition-colors font-medium border border-[#4F3C8C]/10 rounded-full"
+                            className="flex items-center justify-center gap-2 w-full py-3 text-[#222222] hover:text-[var(--primary)] transition-colors font-medium border border-[var(--secondary)]/10 rounded-full"
                           >
                             <Globe className="w-5 h-5" />
                             <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
-                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-[#8A6BCB]' : ''}`} />
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-[var(--primary)]' : ''}`} />
                           </button>
                           <AnimatePresence>
                             {isMobileLangOpen && (
@@ -415,14 +415,14 @@ export const Navigation = () => {
                                 animate={{ height: 'auto', opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="overflow-hidden bg-[#F5F5F5] border border-[#4F3C8C]/10 rounded-2xl mt-2 mb-2"
+                                className="overflow-hidden bg-[#F5F5F5] border border-[var(--secondary)]/10 rounded-2xl mt-2 mb-2"
                               >
                                 <div className="flex flex-col py-2">
                                   {LANGUAGES.map((lang) => (
                                     <button
                                       key={lang.code}
                                       onClick={() => handleLanguageChange(lang.code)}
-                                      className={`flex flex-col items-center w-full text-center py-3 text-sm transition-colors ${displayLang === lang.code ? 'text-[#8A6BCB] bg-white' : 'text-[#666666] hover:text-[#8A6BCB]'}`}
+                                      className={`flex flex-col items-center w-full text-center py-3 text-sm transition-colors ${displayLang === lang.code ? 'text-[var(--primary)] bg-white' : 'text-[#666666] hover:text-[var(--primary)]'}`}
                                     >
                                       <span className="font-bold">{lang.native}</span>
                                       <span className="text-[10px] opacity-50 uppercase tracking-widest mt-0.5">{lang.name}</span>

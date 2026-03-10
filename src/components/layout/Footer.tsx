@@ -9,7 +9,7 @@ export const Footer = () => {
   const displayLang = lang || 'en';
 
   return (
-    <footer className="bg-white text-[#666666] border-t border-[#4F3C8C]/10 font-sans">
+    <footer className="bg-white text-[#666666] border-t border-[var(--secondary)]/10 font-sans">
       {/* Main Footer Content */}
       <div className="container-custom pt-20 pb-12">
         <div className="flex flex-col lg:flex-row gap-16 justify-between mb-16">
@@ -30,7 +30,7 @@ export const Footer = () => {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#8A6BCB] mt-0.5 shrink-0" />
+                  <MapPin className="w-5 h-5 text-[var(--primary)] mt-0.5 shrink-0" />
                   <span className="text-sm text-[#666666]">
                     {t('footer.text.4')} <br />
                     {t('footer.text.5')} <br />
@@ -38,8 +38,8 @@ export const Footer = () => {
                     {t('footer.text.7')} </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#8A6BCB] shrink-0" />
-                  <a href="mailto:info@shomoukh.om" className="text-sm text-[#666666] hover:text-[#8A6BCB] transition-colors">
+                  <Mail className="w-5 h-5 text-[var(--primary)] shrink-0" />
+                  <a href="mailto:info@shomoukh.om" className="text-sm text-[#666666] hover:text-[var(--primary)] transition-colors">
                     {t('footer.text.8')} </a>
                 </div>
               </div>
@@ -53,10 +53,10 @@ export const Footer = () => {
             <ScrollReveal delay={0.1}>
               <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.9')} </h4>
               <ul className="space-y-4">
-                <li><Link to={`/${displayLang}`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.10')} </Link></li>
-                <li><Link to={`/${displayLang}/who-we-are`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.11')} </Link></li>
-                <li><Link to={`/${displayLang}/contact`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.12')} </Link></li>
-                <li><Link to="#" className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.13')} </Link></li>
+                <li><Link to={`/${displayLang}`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.10')} </Link></li>
+                <li><Link to={`/${displayLang}/who-we-are`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.11')} </Link></li>
+                <li><Link to={`/${displayLang}/contact`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.12')} </Link></li>
+                <li><Link to="#" className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.13')} </Link></li>
               </ul>
             </ScrollReveal>
 
@@ -75,8 +75,8 @@ export const Footer = () => {
                   { label: 'Real Estate', href: '/key-sectors#real-estate' }
                 ].map((item) => (
                   <li key={item.label}>
-                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group">
-                      <span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group">
+                      <span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       {t(item.label)}
                     </Link>
                   </li>
@@ -98,8 +98,8 @@ export const Footer = () => {
                   { label: 'Incentives to Invest', href: '/about-oman#incentives' }
                 ].map((item) => (
                   <li key={item.label}>
-                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[#8A6BCB] transition-colors flex items-center gap-2 group">
-                      <span className="w-1 h-1 rounded-full bg-[#8A6BCB] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group">
+                      <span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       {t(item.label)}
                     </Link>
                   </li>
@@ -111,7 +111,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#4F3C8C]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-[var(--secondary)]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="text-sm text-[#666666]/50 text-center md:text-left">
               {t('footer.text.16')} </div>
@@ -122,10 +122,10 @@ export const Footer = () => {
             />
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-[#8A6BCB] hover:text-white transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors">
               <Linkedin className="w-4 h-4" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-[#8A6BCB] hover:text-white transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors">
               <Twitter className="w-4 h-4" />
             </a>
           </div>

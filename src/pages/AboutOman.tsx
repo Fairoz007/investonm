@@ -56,8 +56,8 @@ export default function AboutOman() {
                         {/* Oman’s Strategic Location */}
                         <motion.div id="location" variants={fadeInUp} className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
-                                    <MapPin className="w-8 h-8 text-[#8A6BCB]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6">
+                                    <MapPin className="w-8 h-8 text-[var(--theme-primary)]" />
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.4')} </h2>
                                 <p className="text-lg text-[#666666] leading-relaxed">
@@ -65,15 +65,15 @@ export default function AboutOman() {
                             </div>
                             <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative">
                                 <img src="/images/oman_industry.png" alt="Strategic Location" className="object-cover w-full h-full opacity-70" />
-                                <div className="absolute inset-0 bg-gradient-to-tr from-[#00c2b5]/20 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary)]/20 to-transparent" />
                             </div>
                         </motion.div>
 
                         {/* Economic Stability */}
                         <motion.div variants={fadeInUp} className="flex flex-col md:flex-row-reverse gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
-                                    <TrendingUp className="w-8 h-8 text-[#8A6BCB]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6">
+                                    <TrendingUp className="w-8 h-8 text-[var(--theme-primary)]" />
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.6')} </h2>
                                 <p className="text-lg text-[#666666] leading-relaxed">
@@ -87,8 +87,8 @@ export default function AboutOman() {
                         {/* Infrastructure Development */}
                         <motion.div id="infrastructure" variants={fadeInUp} className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
-                                    <Building2 className="w-8 h-8 text-[#8A6BCB]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6">
+                                    <Building2 className="w-8 h-8 text-[var(--theme-primary)]" />
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.9')} </h2>
                                 <p className="text-lg text-[#666666] leading-relaxed">
@@ -102,8 +102,8 @@ export default function AboutOman() {
                         {/* Quality of Life */}
                         <motion.div variants={fadeInUp} className="flex flex-col md:flex-row-reverse gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
-                                    <Landmark className="w-8 h-8 text-[#8A6BCB]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6">
+                                    <Landmark className="w-8 h-8 text-[var(--theme-primary)]" />
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.11')} </h2>
                                 <p className="text-lg text-[#666666] leading-relaxed">
@@ -117,14 +117,14 @@ export default function AboutOman() {
                         {/* Vision 2040 */}
                         <motion.div id="vision2040" variants={fadeInUp} className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
-                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6">
-                                    <Target className="w-8 h-8 text-[#8A6BCB]" />
+                                <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6">
+                                    <Target className="w-8 h-8 text-[var(--theme-primary)]" />
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#222222]"> {t('aboutoman.text.13')} </h2>
                                 <p className="text-lg text-[#666666] leading-relaxed">
                                     {t('aboutoman.text.14')} </p>
                             </div>
-                            <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative bg-white border border-[#4F3C8C]/10 flex items-center justify-center">
+                            <div className="md:w-1/2 aspect-video rounded-3xl overflow-hidden relative bg-white border border-[var(--theme-accent)]/10 flex items-center justify-center">
                                 <img src="/images/Oman_Vision_2040_Logo.png" alt="Vision 2040" className="opacity-90 h-32" />
                             </div>
                         </motion.div>

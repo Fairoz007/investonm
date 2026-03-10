@@ -105,11 +105,11 @@ export default function KeySectors() {
                   className="glass-card p-8 h-full"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-4 bg-[#8A6BCB]/10 rounded-2xl">
-                      <sector.icon className="w-8 h-8 text-[#8A6BCB]" />
+                    <div className="p-4 bg-[var(--theme-primary)]/10 rounded-2xl">
+                      <sector.icon className="w-8 h-8 text-[var(--theme-primary)]" />
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-[#8A6BCB]">{sector.growth}</div>
+                      <div className="text-2xl font-bold text-[var(--theme-primary)]">{sector.growth}</div>
                       <div className="text-xs text-[#666666]">{sector.growthLabel}</div>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export default function KeySectors() {
                       {sector.opportunities.map((opp) => (
                         <span
                           key={opp}
-                          className="px-3 py-1 bg-[#8A6BCB]/5 text-[#8A6BCB] text-sm rounded-full font-medium"
+                          className="px-3 py-1 bg-[var(--theme-primary)]/5 text-[var(--theme-primary)] text-sm rounded-full font-medium"
                         >
                           {opp}
                         </span>

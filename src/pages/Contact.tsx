@@ -18,7 +18,7 @@ export default function Contact() {
     return (
         <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans pt-24">
             {/* Hero Section */}
-            <section className="relative py-24 flex items-center justify-center border-b border-[#4F3C8C]/5 hero-gradient">
+            <section className="relative py-24 flex items-center justify-center border-b border-[var(--theme-accent)]/5 hero-gradient">
                 <div className="container-custom relative z-10 text-center max-w-4xl">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
@@ -52,9 +52,9 @@ export default function Contact() {
                             className="lg:w-1/2 space-y-12"
                         >
                             <div className="space-y-8">
-                                <motion.div variants={fadeInUp} className="flex items-start gap-6 bg-white p-8 rounded-3xl border border-[#4F3C8C]/10 shadow-sm">
-                                    <div className="w-14 h-14 rounded-full bg-[#8A6BCB]/10 flex items-center justify-center shrink-0">
-                                        <MapPin className="w-6 h-6 text-[#8A6BCB]" />
+                                <motion.div variants={fadeInUp} className="flex items-start gap-6 bg-white p-8 rounded-3xl border border-[var(--theme-accent)]/10 shadow-sm">
+                                    <div className="w-14 h-14 rounded-full bg-[var(--theme-primary)]/10 flex items-center justify-center shrink-0">
+                                        <MapPin className="w-6 h-6 text-[var(--theme-primary)]" />
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-bold mb-4 text-[#222222]"> {t('contact.text.4')} </h3>
@@ -68,15 +68,15 @@ export default function Contact() {
                                     </div>
                                 </motion.div>
 
-                                <motion.div variants={fadeInUp} className="flex items-start gap-6 bg-white p-8 rounded-3xl border border-[#4F3C8C]/10 shadow-sm">
-                                    <div className="w-14 h-14 rounded-full bg-[#8A6BCB]/10 flex items-center justify-center shrink-0">
-                                        <Mail className="w-6 h-6 text-[#8A6BCB]" />
+                                <motion.div variants={fadeInUp} className="flex items-start gap-6 bg-white p-8 rounded-3xl border border-[var(--theme-accent)]/10 shadow-sm">
+                                    <div className="w-14 h-14 rounded-full bg-[var(--theme-primary)]/10 flex items-center justify-center shrink-0">
+                                        <Mail className="w-6 h-6 text-[var(--theme-primary)]" />
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-bold mb-4 text-[#222222]"> {t('contact.text.10')} </h3>
                                         <p className="text-[#666666] leading-relaxed mb-4">
                                             {t('contact.text.11')} </p>
-                                        <a href="mailto:info@shomoukh.om" className="text-2xl font-bold font-poppins text-[#8A6BCB] hover:text-[#7A5BC0] transition-colors break-all">
+                                        <a href="mailto:info@shomoukh.om" className="text-2xl font-bold font-poppins text-[var(--theme-primary)] hover:text-[var(--theme-accent)] transition-colors break-all">
                                             {t('contact.text.12')} </a>
                                     </div>
                                 </motion.div>
@@ -105,14 +105,14 @@ export default function Contact() {
                             variants={staggerContainer}
                             className="lg:w-1/2"
                         >
-                            <motion.div variants={fadeInUp} className="bg-white border border-[#4F3C8C]/10 rounded-[2rem] p-10 lg:p-14 shadow-xl">
+                            <motion.div variants={fadeInUp} className="bg-white border border-[var(--theme-accent)]/10 rounded-[2rem] p-10 lg:p-14 shadow-xl">
                                 <h3 className="text-3xl font-bold mb-8 text-[#222222]"> {t('contact.text.13')} </h3>
                                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                                     <div className="space-y-2">
                                         <label className="text-sm text-[#666666] font-medium uppercase tracking-wider ml-2"> {t('contact.text.14')} </label>
                                         <input
                                             type="text"
-                                            className="w-full bg-[#F5F5F5] border border-[#4F3C8C]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[#8A6BCB]/50 focus:ring-1 focus:ring-[#8A6BCB]/50 transition-all font-medium"
+                                            className="w-full bg-[#F5F5F5] border border-[var(--theme-accent)]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[var(--theme-primary)]/50 focus:ring-1 focus:ring-[var(--theme-primary)]/50 transition-all font-medium"
                                             placeholder="John Doe"
                                         />
                                     </div>
@@ -121,7 +121,7 @@ export default function Contact() {
                                         <label className="text-sm text-[#666666] font-medium uppercase tracking-wider ml-2"> {t('contact.text.15')} </label>
                                         <input
                                             type="email"
-                                            className="w-full bg-[#F5F5F5] border border-[#4F3C8C]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[#8A6BCB]/50 focus:ring-1 focus:ring-[#8A6BCB]/50 transition-all font-medium"
+                                            className="w-full bg-[#F5F5F5] border border-[var(--theme-accent)]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[var(--theme-primary)]/50 focus:ring-1 focus:ring-[var(--theme-primary)]/50 transition-all font-medium"
                                             placeholder="john@company.com"
                                         />
                                     </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                                         <label className="text-sm text-[#666666] font-medium uppercase tracking-wider ml-2"> {t('contact.text.16')} </label>
                                         <input
                                             type="text"
-                                            className="w-full bg-[#F5F5F5] border border-[#4F3C8C]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[#8A6BCB]/50 focus:ring-1 focus:ring-[#8A6BCB]/50 transition-all font-medium"
+                                            className="w-full bg-[#F5F5F5] border border-[var(--theme-accent)]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[var(--theme-primary)]/50 focus:ring-1 focus:ring-[var(--theme-primary)]/50 transition-all font-medium"
                                             placeholder="Your Company LLC"
                                         />
                                     </div>
@@ -139,12 +139,12 @@ export default function Contact() {
                                         <label className="text-sm text-[#666666] font-medium uppercase tracking-wider ml-2"> {t('contact.text.17')} </label>
                                         <textarea
                                             rows={5}
-                                            className="w-full bg-[#F5F5F5] border border-[#4F3C8C]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[#8A6BCB]/50 focus:ring-1 focus:ring-[#8A6BCB]/50 transition-all font-medium resize-none custom-scrollbar"
+                                            className="w-full bg-[#F5F5F5] border border-[var(--theme-accent)]/10 rounded-2xl px-6 py-4 text-[#222222] placeholder:text-[#666666]/30 focus:outline-none focus:border-[var(--theme-primary)]/50 focus:ring-1 focus:ring-[var(--theme-primary)]/50 transition-all font-medium resize-none custom-scrollbar"
                                             placeholder="How can we assist you with your investment?"
                                         />
                                     </div>
 
-                                    <button className="w-full py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white font-bold font-poppins rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] shadow-lg">
+                                    <button className="w-full py-5 bg-[var(--theme-primary)] hover:bg-[var(--theme-accent)] text-white font-bold font-poppins rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] shadow-lg">
                                         {t('contact.text.18')} <Send className="w-5 h-5" />
                                     </button>
                                 </form>

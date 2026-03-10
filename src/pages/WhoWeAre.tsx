@@ -25,7 +25,7 @@ export default function WhoWeAre() {
     return (
         <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans pt-24">
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 flex items-center justify-center border-b border-[#4F3C8C]/5 hero-gradient">
+            <section className="relative py-24 md:py-32 flex items-center justify-center border-b border-[var(--theme-accent)]/5 hero-gradient">
                 <div className="absolute inset-0 bg-white/10 opacity-20" />
                 <div className="absolute inset-0 opacity-10 bg-[url('/images/oman_hero.png')] bg-cover bg-center" />
                 <div className="container-custom relative z-10 text-center max-w-4xl">
@@ -59,10 +59,10 @@ export default function WhoWeAre() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeInUp}
-                            className="bg-white border border-[#4F3C8C]/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group shadow-sm"
+                            className="bg-white border border-[var(--theme-accent)]/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group shadow-sm"
                         >
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#8A6BCB]/5 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
-                            <Target className="w-16 h-16 text-[#8A6BCB] mb-8 relative z-10" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--theme-primary)]/5 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
+                            <Target className="w-16 h-16 text-[var(--theme-primary)] mb-8 relative z-10" />
                             <h2 className="text-3xl font-bold mb-6 relative z-10 text-[#222222]" id="mission"> {t('whoweare.text.4')} </h2>
                             <p className="text-lg text-[#666666] leading-relaxed relative z-10">
                                 {t('whoweare.text.5')} </p>
@@ -73,10 +73,10 @@ export default function WhoWeAre() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeInUp}
-                            className="bg-white border border-[#4F3C8C]/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group shadow-sm"
+                            className="bg-white border border-[var(--theme-accent)]/10 rounded-3xl p-10 lg:p-16 relative overflow-hidden group shadow-sm"
                         >
-                            <div className="absolute top-0 left-0 w-64 h-64 bg-[#8A6BCB]/5 rounded-full blur-[80px] -ml-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
-                            <Eye className="w-16 h-16 text-[#8A6BCB] mb-8 relative z-10" />
+                            <div className="absolute top-0 left-0 w-64 h-64 bg-[var(--theme-primary)]/5 rounded-full blur-[80px] -ml-32 -mt-32 transition-transform duration-1000 group-hover:scale-150" />
+                            <Eye className="w-16 h-16 text-[var(--theme-primary)] mb-8 relative z-10" />
                             <h2 className="text-3xl font-bold mb-6 relative z-10 text-[#222222]" id="vision"> {t('whoweare.text.6')} </h2>
                             <p className="text-lg text-[#666666] leading-relaxed relative z-10">
                                 {t('whoweare.text.7')} </p>
@@ -86,7 +86,7 @@ export default function WhoWeAre() {
             </section>
 
             {/* Services */}
-            <section className="py-24 bg-white border-t border-[#4F3C8C]/5" id="services">
+            <section className="py-24 bg-white border-t border-[var(--theme-accent)]/5" id="services">
                 <div className="container-custom">
                     <motion.div
                         initial="hidden"
@@ -117,10 +117,10 @@ export default function WhoWeAre() {
                             <motion.div
                                 key={idx}
                                 variants={popIn}
-                                className="bg-[#F5F5F5] border border-[#4F3C8C]/5 hover:border-[#8A6BCB]/30 rounded-3xl p-8 flex flex-col items-center text-center group transition-all shadow-sm hover:shadow-md"
+                                className="bg-[#F5F5F5] border border-[var(--theme-accent)]/5 hover:border-[var(--theme-primary)]/30 rounded-3xl p-8 flex flex-col items-center text-center group transition-all shadow-sm hover:shadow-md"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6 group-hover:bg-[#8A6BCB] group-hover:scale-110 transition-all duration-300 transform">
-                                    <service.icon className="w-8 h-8 text-[#8A6BCB] group-hover:text-white" />
+                                <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6 group-hover:bg-[var(--theme-primary)] group-hover:scale-110 transition-all duration-300 transform">
+                                    <service.icon className="w-8 h-8 text-[var(--theme-primary)] group-hover:text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-4 text-[#222222]">{t(service.title)}</h3>
                                 <p className="text-[#666666] leading-relaxed text-sm">

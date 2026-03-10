@@ -138,27 +138,27 @@ export default function KeySectors() {
                             >
 
                                 <div className="lg:w-1/2 w-full space-y-6">
-                                    <div className="flex items-center gap-4 border-b border-[#4F3C8C]/10 pb-6 mb-6">
-                                        <div className="w-14 h-14 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center">
-                                            <sector.icon className="w-7 h-7 text-[#8A6BCB]" />
+                                    <div className="flex items-center gap-4 border-b border-[var(--theme-accent)]/10 pb-6 mb-6">
+                                        <div className="w-14 h-14 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center">
+                                            <sector.icon className="w-7 h-7 text-[var(--theme-primary)]" />
                                         </div>
                                         <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#222222]">{t(sector.name)}</h2>
                                     </div>
 
                                     <div className="space-y-6 text-lg">
                                         <div>
-                                            <h4 className="text-[#8A6BCB] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.4')} </h4>
+                                            <h4 className="text-[var(--theme-primary)] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.4')} </h4>
                                             <p className="text-[#666666] leading-relaxed">{t(sector.overview)}</p>
                                         </div>
                                         <div>
-                                            <h4 className="text-[#8A6BCB] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.5')} </h4>
+                                            <h4 className="text-[var(--theme-primary)] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.5')} </h4>
                                             <p className="text-[#666666] leading-relaxed flex items-start gap-2">
                                                 <TrendingUp className="w-5 h-5 text-[#666666]/50 shrink-0 mt-1" />
                                                 {t(sector.potential)}
                                             </p>
                                         </div>
                                         <div>
-                                            <h4 className="text-[#8A6BCB] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.6')} </h4>
+                                            <h4 className="text-[var(--theme-primary)] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.6')} </h4>
                                             <p className="text-[#666666] leading-relaxed flex items-start gap-2">
                                                 <Target className="w-5 h-5 text-[#666666]/50 shrink-0 mt-1" />
                                                 {t(sector.future)}
@@ -166,7 +166,7 @@ export default function KeySectors() {
                                         </div>
                                     </div>
 
-                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold font-poppins inline-flex items-center justify-center gap-2 transition-all shadow-md w-full sm:w-auto text-center">
+                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-4 bg-[var(--theme-primary)] hover:bg-[var(--theme-accent)] text-white rounded-full font-bold font-poppins inline-flex items-center justify-center gap-2 transition-all shadow-md w-full sm:w-auto text-center">
                                         {t('keysectors.text.7')} {t(sector.name)}  {t('keysectors.text.8')} <TrendingUp className="w-4 h-4" />
                                     </Link>
                                 </div>

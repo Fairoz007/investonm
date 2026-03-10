@@ -150,13 +150,13 @@ export const ChatBot: React.FC = () => {
                     >
                         <Card className="flex flex-col h-full shadow-2xl border-white/20 bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden ring-1 ring-black/5">
                             {/* Header - website aesthetic */}
-                            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#4F3C8C] via-[#6A6AAE] to-[#7FA8C5] text-white shrink-0 relative z-10">
+                            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[var(--theme-accent)] via-[#6A6AAE] to-[#7FA8C5] text-white shrink-0 relative z-10">
                                 <div className="flex items-center gap-3">
                                     <div className="relative">
                                         <div className="h-10 w-10 rounded-full border-2 border-white/30 overflow-hidden shadow-inner bg-white/10 flex items-center justify-center backdrop-blur-md">
                                             <img src="/oman-logo-white.png" alt="Oman" className="h-7 w-7 object-contain drop-shadow-sm" />
                                         </div>
-                                        <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-[#00B8A9] border-2 border-[#4F3C8C] shadow-sm" />
+                                        <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-[#00B8A9] border-2 border-[var(--theme-accent)] shadow-sm" />
                                     </div>
                                     <div>
                                         <h3 className="text-sm font-bold tracking-tight text-white leading-tight">
@@ -224,10 +224,10 @@ export const ChatBot: React.FC = () => {
                                                             "h-8 w-8 shrink-0 shadow-sm ring-1 ring-black/5",
                                                             m.role === 'user'
                                                                 ? "bg-white"
-                                                                : "bg-gradient-to-br from-[#4F3C8C] to-[#8A6BCB]"
+                                                                : "bg-gradient-to-br from-[var(--theme-accent)] to-[var(--theme-primary)]"
                                                         )}>
                                                             {m.role === 'user' ? (
-                                                                <User className="h-4 w-4 text-[#4F3C8C]" />
+                                                                <User className="h-4 w-4 text-[var(--theme-accent)]" />
                                                             ) : (
                                                                 <Bot className="h-4 w-4 text-white" />
                                                             )}
@@ -236,7 +236,7 @@ export const ChatBot: React.FC = () => {
                                                             className={cn(
                                                                 "relative px-4 py-3 rounded-2xl text-[13px] leading-relaxed shadow-[0_2px_10px_-4px_rgba(0,0,0,0.1)]",
                                                                 m.role === 'user'
-                                                                    ? "bg-[#4F3C8C] text-white rounded-tr-none"
+                                                                    ? "bg-[var(--theme-accent)] text-white rounded-tr-none"
                                                                     : "bg-white text-[#222222] border border-slate-200/50 rounded-tl-none"
                                                             )}
                                                         >
@@ -247,14 +247,14 @@ export const ChatBot: React.FC = () => {
 
                                                 {isLoading && (
                                                     <div className="flex gap-3 max-w-[85%]">
-                                                        <Avatar className="h-8 w-8 bg-gradient-to-br from-[#4F3C8C] to-[#8A6BCB] animate-pulse">
+                                                        <Avatar className="h-8 w-8 bg-gradient-to-br from-[var(--theme-accent)] to-[var(--theme-primary)] animate-pulse">
                                                             <Bot className="h-4 w-4 text-white" />
                                                         </Avatar>
                                                         <div className="bg-white border border-slate-200/50 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-3">
                                                             <div className="flex gap-1">
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[#4F3C8C]/40 animate-bounce [animation-delay:-0.3s]" />
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[#4F3C8C]/40 animate-bounce [animation-delay:-0.15s]" />
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[#4F3C8C]/40 animate-bounce" />
+                                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]/40 animate-bounce [animation-delay:-0.3s]" />
+                                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]/40 animate-bounce [animation-delay:-0.15s]" />
+                                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]/40 animate-bounce" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -269,7 +269,7 @@ export const ChatBot: React.FC = () => {
                                                                 variant="outline"
                                                                 size="sm"
                                                                 onClick={() => handleSend(s.label)}
-                                                                className="text-[11px] h-8 rounded-full border-[#4F3C8C]/20 text-[#4F3C8C] hover:bg-[#4F3C8C] hover:text-white transition-all shadow-sm"
+                                                                className="text-[11px] h-8 rounded-full border-[var(--theme-accent)]/20 text-[var(--theme-accent)] hover:bg-[var(--theme-accent)] hover:text-white transition-all shadow-sm"
                                                             >
                                                                 {s.label}
                                                             </Button>
@@ -287,7 +287,7 @@ export const ChatBot: React.FC = () => {
                                                     animate={{ opacity: 1, scale: 1 }}
                                                     exit={{ opacity: 0, scale: 0.8 }}
                                                     onClick={() => scrollToBottom()}
-                                                    className="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center text-[#4F3C8C] z-20 hover:bg-slate-50"
+                                                    className="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center text-[var(--theme-accent)] z-20 hover:bg-slate-50"
                                                 >
                                                     <ChevronDown className="h-4 w-4" />
                                                 </motion.button>
@@ -297,7 +297,7 @@ export const ChatBot: React.FC = () => {
 
                                     {/* Input Area */}
                                     <div className="p-4 bg-white/80 backdrop-blur-sm border-t border-slate-100 shrink-0">
-                                        <div className="flex items-center gap-2 bg-slate-100/80 rounded-xl p-1.5 transition-all focus-within:ring-2 focus-within:ring-[#4F3C8C]/20 border border-transparent focus-within:border-[#4F3C8C]/20">
+                                        <div className="flex items-center gap-2 bg-slate-100/80 rounded-xl p-1.5 transition-all focus-within:ring-2 focus-within:ring-[var(--theme-accent)]/20 border border-transparent focus-within:border-[var(--theme-accent)]/20">
                                             <Input
                                                 value={input}
                                                 onChange={(e) => setInput(e.target.value)}
@@ -311,7 +311,7 @@ export const ChatBot: React.FC = () => {
                                                 className={cn(
                                                     "h-9 w-9 rounded-lg transition-all shrink-0",
                                                     input.trim()
-                                                        ? "bg-[#4F3C8C] hover:bg-[#3D2E6D] text-white shadow-md"
+                                                        ? "bg-[var(--theme-accent)] hover:bg-[#3D2E6D] text-white shadow-md"
                                                         : "bg-slate-200 text-slate-400 cursor-not-allowed"
                                                 )}
                                                 onClick={() => handleSend()}
@@ -340,8 +340,8 @@ export const ChatBot: React.FC = () => {
                 className={cn(
                     "h-14 w-14 sm:h-16 sm:w-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-500 relative",
                     isOpen
-                        ? "bg-white text-[#4F3C8C] rotate-90"
-                        : "bg-gradient-to-br from-[#4F3C8C] to-[#8A6BCB] text-white"
+                        ? "bg-white text-[var(--theme-accent)] rotate-90"
+                        : "bg-gradient-to-br from-[var(--theme-accent)] to-[var(--theme-primary)] text-white"
                 )}
             >
                 {isOpen ? <X className="h-6 w-6 sm:h-7 sm:w-7" /> : <MessageCircle className="h-7 w-7 sm:h-8 sm:w-8" />}

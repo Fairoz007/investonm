@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-[#8A6BCB] z-[1001] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-[var(--theme-primary)] z-[1001] origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -68,7 +68,7 @@ export default function Home() {
               {t('home.text.3')} </p>
 
             <div className="btn-mobile-stack">
-              <Link to={`/${displayLang}/key-sectors`} className="btn-full-mobile px-8 py-4 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold font-poppins flex items-center gap-2 transition-transform duration-300 hover:scale-105 shadow-lg">
+              <Link to={`/${displayLang}/key-sectors`} className="btn-full-mobile px-8 py-4 bg-[var(--theme-primary)] hover:bg-[var(--theme-accent)] text-white rounded-full font-bold font-poppins flex items-center gap-2 transition-transform duration-300 hover:scale-105 shadow-lg">
                 {t('home.text.4')} <ArrowUpRight className="w-5 h-5" />
               </Link>
               <Link to={`/${displayLang}/contact`} className="btn-full-mobile px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md rounded-full font-bold font-poppins text-white flex items-center gap-2 transition-all">
@@ -87,7 +87,7 @@ export default function Home() {
         <div className="container-custom">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-mobile-h2 mb-10 md:mb-16 text-center text-balance px-4">
-              {t('home.text.6')} <span className="text-[#00c2b5]"> {t('home.text.7')} </span>
+              {t('home.text.6')} <span className="text-[var(--primary)]"> {t('home.text.7')} </span>
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,9 +99,9 @@ export default function Home() {
                 { icon: Landmark, title: "home.why.title.5", desc: "home.why.desc.5" },
                 { icon: Truck, title: "home.why.title.6", desc: "home.why.desc.6" },
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp} className="bg-white border border-[#4F3C8C]/10 rounded-3xl p-8 hover:shadow-xl transition-all group">
-                  <div className="w-16 h-16 rounded-full bg-[#8A6BCB]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <item.icon className="w-8 h-8 text-[#8A6BCB]" />
+                <motion.div key={i} variants={fadeInUp} className="bg-white border border-[var(--theme-accent)]/10 rounded-3xl p-8 hover:shadow-xl transition-all group">
+                  <div className="w-16 h-16 rounded-full bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <item.icon className="w-8 h-8 text-[var(--theme-primary)]" />
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-[#222222]">{t(item.title)}</h3>
                   <p className="text-[#666666] leading-relaxed">{t(item.desc)}</p>
@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* INVESTMENT OPPORTUNITIES */}
-      <section className="py-24 md:py-32 bg-white border-t border-[#4F3C8C]/5 text-[#222222]">
+      <section className="py-24 md:py-32 bg-white border-t border-[var(--theme-accent)]/5 text-[#222222]">
         <div className="container-custom">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer}>
             <motion.div variants={fadeInUp} className="flex justify-between items-end mb-16 flex-wrap gap-6">
@@ -122,7 +122,7 @@ export default function Home() {
                 <p className="text-lg text-[#666666] max-w-2xl">
                   {t('home.text.9')} </p>
               </div>
-              <Link to={`/${displayLang}/key-sectors`} className="px-6 py-3 border border-[#8A6BCB] text-[#8A6BCB] hover:bg-[#8A6BCB] hover:text-white rounded-full font-bold font-poppins transition-all whitespace-nowrap">
+              <Link to={`/${displayLang}/key-sectors`} className="px-6 py-3 border border-[var(--theme-primary)] text-[var(--theme-primary)] hover:bg-[var(--theme-primary)] hover:text-white rounded-full font-bold font-poppins transition-all whitespace-nowrap">
                 {t('home.text.10')} </Link>
             </motion.div>
 
@@ -135,8 +135,8 @@ export default function Home() {
                 { icon: Laptop, name: "home.sectors.technology" },
                 { icon: Building2, name: "home.sectors.realestate" },
               ].map((sector, i) => (
-                <motion.div key={i} variants={popIn} whileHover={{ y: -8, backgroundColor: "#F9F9F9" }} className="bg-white border border-[#4F3C8C]/10 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center transition-all shadow-sm group">
-                  <sector.icon className="w-10 h-10 md:w-12 md:h-12 text-[#8A6BCB] mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300" />
+                <motion.div key={i} variants={popIn} whileHover={{ y: -8, backgroundColor: "#F9F9F9" }} className="bg-white border border-[var(--theme-accent)]/10 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center transition-all shadow-sm group">
+                  <sector.icon className="w-10 h-10 md:w-12 md:h-12 text-[var(--theme-primary)] mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="font-bold text-base md:text-lg text-[#222222]">{t(sector.name)}</h3>
                 </motion.div>
               ))}
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* VISION 2040 */}
-      <section className="relative py-32 overflow-hidden border-t border-[#4F3C8C]/10 bg-[#F5F5F5] text-[#222222]">
+      <section className="relative py-32 overflow-hidden border-t border-[var(--theme-accent)]/10 bg-[#F5F5F5] text-[#222222]">
         <div className="absolute inset-0 z-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 z-0 bg-white/40" />
 
@@ -154,7 +154,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer} className="lg:w-1/2">
               <motion.h2 variants={slideLeft} className="text-4xl md:text-6xl font-bold mb-8 text-[#222222]">
-                {t('home.text.11')} <span className="text-[#8A6BCB]">2040</span>
+                {t('home.text.11')} <span className="text-[var(--theme-primary)]">2040</span>
               </motion.h2>
               <motion.div variants={slideLeft} className="text-xl text-[#666666] mb-12 space-y-4 leading-relaxed">
                 <p> {t('home.text.12')} </p>
@@ -167,8 +167,8 @@ export default function Home() {
                   { text: 'home.vision.3', icon: Laptop },
                   { text: 'home.vision.4', icon: Globe2 }
                 ].map((item, i) => (
-                  <motion.div key={i} variants={slideLeft} className="flex items-center gap-4 p-5 bg-white border border-[#8A6BCB]/20 rounded-2xl shadow-sm">
-                    <item.icon className="w-8 h-8 text-[#8A6BCB] flex-shrink-0" />
+                  <motion.div key={i} variants={slideLeft} className="flex items-center gap-4 p-5 bg-white border border-[var(--theme-primary)]/20 rounded-2xl shadow-sm">
+                    <item.icon className="w-8 h-8 text-[var(--theme-primary)] flex-shrink-0" />
                     <span className="font-bold text-[#222222]">{t(item.text)}</span>
                   </motion.div>
                 ))}
@@ -183,8 +183,8 @@ export default function Home() {
       </section>
 
       {/* INVESTOR SUPPORT */}
-      <section className="py-24 md:py-32 bg-[#F5F5F5] border-t border-[#4F3C8C]/5 relative overflow-hidden text-[#222222]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8A6BCB] rounded-full blur-[200px] opacity-[0.03] pointer-events-none" />
+      <section className="py-24 md:py-32 bg-[#F5F5F5] border-t border-[var(--theme-accent)]/5 relative overflow-hidden text-[#222222]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--theme-primary)] rounded-full blur-[200px] opacity-[0.03] pointer-events-none" />
 
         <div className="container-custom relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="text-center">
@@ -200,9 +200,9 @@ export default function Home() {
                 { icon: Building2, name: "home.support.title.3", desc: "home.support.desc.3" },
                 { icon: Landmark, name: "home.support.title.4", desc: "home.support.desc.4" },
               ].map((service, i) => (
-                <motion.div key={i} variants={popIn} className="bg-white border border-[#4F3C8C]/10 rounded-[2rem] p-8 text-left hover:border-[#8A6BCB]/50 hover:shadow-lg transition-all group">
-                  <div className="w-16 h-16 rounded-2xl bg-[#8A6BCB]/10 flex items-center justify-center mb-6 group-hover:bg-[#8A6BCB] transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_rgba(138,107,203,0.2)]">
-                    <service.icon className="w-8 h-8 text-[#8A6BCB] group-hover:text-white transition-colors" />
+                <motion.div key={i} variants={popIn} className="bg-white border border-[var(--theme-accent)]/10 rounded-[2rem] p-8 text-left hover:border-[var(--theme-primary)]/50 hover:shadow-lg transition-all group">
+                  <div className="w-16 h-16 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center mb-6 group-hover:bg-[var(--theme-primary)] transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_rgba(138,107,203,0.2)]">
+                    <service.icon className="w-8 h-8 text-[var(--theme-primary)] group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-[#222222]">{t(service.name)}</h3>
                   <p className="text-[#666666] text-sm leading-relaxed">{t(service.desc)}</p>
@@ -211,7 +211,7 @@ export default function Home() {
             </div>
 
             <motion.div variants={fadeInUp} className="mt-20">
-              <Link to={`/${displayLang}/who-we-are`} className="px-10 py-5 bg-[#8A6BCB] hover:bg-[#7A5BC0] text-white rounded-full font-bold font-poppins inline-flex items-center gap-2 transition-transform duration-300 hover:scale-[1.05] shadow-lg">
+              <Link to={`/${displayLang}/who-we-are`} className="px-10 py-5 bg-[var(--theme-primary)] hover:bg-[var(--theme-accent)] text-white rounded-full font-bold font-poppins inline-flex items-center gap-2 transition-transform duration-300 hover:scale-[1.05] shadow-lg">
                 {t('home.text.15')} <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>

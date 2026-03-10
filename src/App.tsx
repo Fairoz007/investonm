@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ChatBot } from '@/components/chat/ChatBot';
+import { ThemeSwitcher } from '@/components/layout/ThemeSwitcher';
 
 const LANGUAGES = ['en', 'ar', 'ru', 'zh', 'fa', 'tr'];
 
@@ -78,6 +79,7 @@ const LanguageLayout = () => {
       <Footer />
       <BottomNav />
       <ChatBot />
+      <ThemeSwitcher />
     </div>
   );
 };
