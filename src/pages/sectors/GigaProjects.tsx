@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Building2, TrendingUp, Zap, Leaf, Users } from 'lucide-react';
+import { Building2, TrendingUp, Zap, Leaf, Users } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const gigaProjects = [
   {
@@ -74,38 +75,57 @@ const impactStats = [
 ];
 
 export default function GigaProjects() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('gigaprojects.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('gigaprojects.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('gigaprojects.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('gigaprojects.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('gigaprojects.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              {t('gigaprojects.text.3')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white/90 leading-relaxed max-w-2xl"
+            >
+              {t('gigaprojects.text.4')}
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Impact Stats */}
-      <section className="py-12 border-y border-white/10">
+      <section className="py-12 border-y border-black/10 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {impactStats.map((stat, index) => (
               <ScrollReveal key={stat.label} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                  <div className="text-white/60 text-sm">{stat.label}</div>
+                  <div className="text-[32px] font-semibold text-[var(--primary)] mb-2">{stat.value}</div>
+                  <div className="text-[var(--text-paragraph)] text-sm">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}
@@ -117,10 +137,10 @@ export default function GigaProjects() {
       <section className="section-padding">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('gigaprojects.text.5')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('gigaprojects.text.6')} </p>
+            <h2 className="text-[32px] font-semibold text-[var(--heading-main)] mb-4 text-center">
+              {t('gigaprojects.text.5')} </h2>
+            <p className="text-[var(--text-paragraph)] text-center mb-12 max-w-2xl mx-auto">
+              {t('gigaprojects.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -140,7 +160,7 @@ export default function GigaProjects() {
                     </div>
                   </div>
 
-                  <p className="text-white/60 mb-6">{project.description}</p>
+                  <p className="text-[var(--text-paragraph)] mb-6 text-sm">{project.description}</p>
 
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="p-3 bg-white/5 rounded-lg">
@@ -187,23 +207,8 @@ export default function GigaProjects() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('gigaprojects.text.11')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('gigaprojects.text.12')} </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary"> {t('gigaprojects.text.13')} </button>
-                <button className="btn-secondary"> {t('gigaprojects.text.14')} </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

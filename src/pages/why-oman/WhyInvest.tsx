@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Users, Cpu, Building2, Award } from 'lucide-react';
+import { TrendingUp, Users, Cpu, Building2, Award } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const reasons = [
   {
@@ -9,35 +10,35 @@ const reasons = [
     title: 'Transformational Vision, Young Nation',
     stat: '70%',
     description: 'of Oman Population under 35, digitally native, globally connected',
-    gradient: 'from-teal-500 to-teal-700',
+    gradient: 'from-accent to-accent/80',
   },
   {
     icon: Award,
     title: 'A Trusted and Stable Destination',
     stat: '#1',
     description: 'Recognized as #1 in FDI Destination in MENA',
-    gradient: 'from-blue-500 to-blue-700',
+    gradient: 'from-[var(--primary)] to-[var(--primary-light)]',
   },
   {
     icon: Building2,
     title: 'World Class Services and Infrastructure',
     stat: 'Top 10',
     description: 'Global Excellence in Maritime, Education, Healthcare, and Logistics',
-    gradient: 'from-indigo-500 to-indigo-700',
+    gradient: 'from-accent/90 to-accent/60',
   },
   {
     icon: Cpu,
     title: 'State-of-the-Art Digital Infrastructure',
     stat: '#2',
     description: 'Ranked Globally #2 in Digital Government Maturity Index (DGOI)',
-    gradient: 'from-cyan-500 to-cyan-700',
+    gradient: 'from-[var(--primary)] to-[var(--primary-dark)]',
   },
   {
     icon: TrendingUp,
     title: 'Large Scale Transformational Investments',
     stat: '$3T+',
     description: 'USD 3T+ in investable opportunities across sectors',
-    gradient: 'from-purple-500 to-purple-700',
+    gradient: 'from-accent to-[var(--primary)]',
   },
 ];
 
@@ -69,25 +70,44 @@ const additionalBenefits = [
 ];
 
 export default function WhyInvest() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('whyinvest.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('whyinvest.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('whyinvest.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('whyinvest.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('whyinvest.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              {t('whyinvest.text.3')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white/90 leading-relaxed max-w-2xl"
+            >
+              {t('whyinvest.text.4')}
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
@@ -97,7 +117,7 @@ export default function WhyInvest() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-               {t('whyinvest.text.5')} </h2>
+              {t('whyinvest.text.5')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -108,7 +128,7 @@ export default function WhyInvest() {
                   className={`h-full p-8 rounded-2xl bg-gradient-to-br ${reason.gradient} relative overflow-hidden`}
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2" />
-                  
+
                   <div className="relative z-10">
                     <div className="text-5xl font-bold text-white mb-2">{reason.stat}</div>
                     <h3 className="text-xl font-semibold text-white mb-3">{reason.title}</h3>
@@ -126,7 +146,7 @@ export default function WhyInvest() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-               {t('whyinvest.text.6')} </h2>
+              {t('whyinvest.text.6')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -142,23 +162,8 @@ export default function WhyInvest() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('whyinvest.text.7')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('whyinvest.text.8')} </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary"> {t('whyinvest.text.9')} </button>
-                <button className="btn-secondary"> {t('whyinvest.text.10')} </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

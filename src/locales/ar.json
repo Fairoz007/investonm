@@ -206,5 +206,15 @@
   "chatbot.online": "متصل الآن",
   "chatbot.placeholder": "اكتب رسالتك...",
   "chatbot.initial": "مرحباً! أنا مساعد شموخ للاستثمار الدولي. كيف يمكنني مساعدتك اليوم بخصوص الاستثمارات في عمان؟",
-  "chatbot.error": "أعتذر، ولكنني أواجه صعوبة في الاتصال الآن. يرجى المحاولة مرة أخرى لاحقاً."
+  "chatbot.error": "أعتذر، ولكنني أواجه صعوبة في الاتصال الآن. يرجى المحاولة مرة أخرى لاحقاً.",
+  "leadership.chairman.name": "الشيخ سالم الهاشمي",
+  "leadership.chairman.title": "رئيس مجلس الإدارة",
+  "leadership.ceo.name": "الشيخة جنات",
+  "leadership.ceo.title": "الرئيس التنفيذي",
+  "leadership.vp.name": "الشيخ جولاندا",
+  "leadership.vp.title": "نائب الرئيس",
+  "leadership.md1.name": "الشيخ عبدالرحمن الجشمي",
+  "leadership.md1.title": "العضو المنتدب",
+  "leadership.md2.name": "الشيخة جنان",
+  "leadership.md2.title": "العضو المنتدب"
 }

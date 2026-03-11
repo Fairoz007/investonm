@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const themes = [
-    { id: 'default', color: '#8A6BCB', name: 'Original Purple', class: '' },
+    { id: 'purple', color: '#8A6BCB', name: 'Purple Gradient', class: 'theme-purple' },
     { id: 'gold', color: '#C8A45D', name: 'Royal Gold', class: 'theme-gold' },
     { id: 'midnight', color: '#0D2A5C', name: 'Midnight Blue', class: 'theme-midnight' },
     { id: 'emerald', color: '#198754', name: 'Emerald Wealth', class: 'theme-emerald' },
@@ -10,10 +10,10 @@ const themes = [
 ];
 
 export const ThemeSwitcher: React.FC = () => {
-    const [activeTheme, setActiveTheme] = useState<string>('default');
+    const [activeTheme, setActiveTheme] = useState<string>('purple');
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('shomoukh-theme') || 'default';
+        const savedTheme = localStorage.getItem('shomoukh-theme') || 'purple';
         applyTheme(savedTheme);
     }, []);
 

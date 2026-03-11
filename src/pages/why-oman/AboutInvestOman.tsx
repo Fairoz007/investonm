@@ -1,6 +1,8 @@
-import { ArrowRight, Target, Users, Globe, Award, Phone, Mail, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Target, Users, Globe, Award } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const services = [
   {
@@ -42,25 +44,44 @@ const stats = [
 ];
 
 export default function AboutInvestOman() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('aboutinvestoman.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('aboutinvestoman.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('aboutinvestoman.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('aboutinvestoman.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('nationalstrategy.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              {t('nationalstrategy.text.3')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white/90 leading-relaxed max-w-2xl"
+            >
+              {t('nationalstrategy.text.4')}
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
@@ -87,14 +108,14 @@ export default function AboutInvestOman() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <h2 className="text-3xl font-bold text-white mb-6">
-                 {t('aboutinvestoman.text.5')} </h2>
+                {t('aboutinvestoman.text.5')} </h2>
               <div className="space-y-4 text-white/70">
                 <p>
-                   {t('aboutinvestoman.text.6')} </p>
+                  {t('aboutinvestoman.text.6')} </p>
                 <p>
-                   {t('aboutinvestoman.text.7')} </p>
+                  {t('aboutinvestoman.text.7')} </p>
                 <p>
-                   {t('aboutinvestoman.text.8')} </p>
+                  {t('aboutinvestoman.text.8')} </p>
               </div>
             </ScrollReveal>
 
@@ -125,7 +146,7 @@ export default function AboutInvestOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-               {t('aboutinvestoman.text.10')} </h2>
+              {t('aboutinvestoman.text.10')} </h2>
           </ScrollReveal>
 
           <div className="max-w-3xl mx-auto">
@@ -150,56 +171,8 @@ export default function AboutInvestOman() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h2 className="text-3xl font-bold text-white mb-4">
-                     {t('aboutinvestoman.text.11')} </h2>
-                  <p className="text-white/70 mb-8">
-                     {t('aboutinvestoman.text.12')} </p>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-primary/20 rounded-xl">
-                        <Phone className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-white/50"> {t('aboutinvestoman.text.13')} </div>
-                        <div className="text-white">966115065777 / 8002449990</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-primary/20 rounded-xl">
-                        <Mail className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-white/50"> {t('aboutinvestoman.text.14')} </div>
-                        <div className="text-white"> {t('aboutinvestoman.text.15')} </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-primary/20 rounded-xl">
-                        <MapPin className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-white/50"> {t('aboutinvestoman.text.16')} </div>
-                        <div className="text-white"> {t('aboutinvestoman.text.17')} </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center">
-                  <button className="btn-primary text-lg px-8 py-4">
-                     {t('aboutinvestoman.text.18')} </button>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

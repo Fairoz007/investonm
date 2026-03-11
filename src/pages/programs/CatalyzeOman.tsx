@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Lightbulb, Users, Rocket, CheckCircle2 } from 'lucide-react';
+import { Lightbulb, Users, Rocket, CheckCircle2, Sparkles } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const programBenefits = [
   {
@@ -69,25 +70,44 @@ const eligibilityCriteria = [
 ];
 
 export default function CatalyzeOman() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('catalyzeoman.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('catalyzeoman.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('catalyzeoman.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('catalyzeoman.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('gscri.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              {t('gscri.text.3')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white/90 leading-relaxed max-w-2xl"
+            >
+              {t('gscri.text.4')}
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
@@ -97,9 +117,9 @@ export default function CatalyzeOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('catalyzeoman.text.5')} </h2>
+              {t('catalyzeoman.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('catalyzeoman.text.6')} </p>
+              {t('catalyzeoman.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -126,9 +146,9 @@ export default function CatalyzeOman() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('catalyzeoman.text.7')} </h2>
+              {t('catalyzeoman.text.7')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('catalyzeoman.text.8')} </p>
+              {t('catalyzeoman.text.8')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -160,9 +180,9 @@ export default function CatalyzeOman() {
           <ScrollReveal>
             <div className="glass-card p-8 max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-6 text-center">
-                 {t('catalyzeoman.text.9')} </h2>
+                {t('catalyzeoman.text.9')} </h2>
               <p className="text-white/60 text-center mb-8">
-                 {t('catalyzeoman.text.10')} </p>
+                {t('catalyzeoman.text.10')} </p>
               <div className="space-y-4">
                 {eligibilityCriteria.map((criterion) => (
                   <div key={criterion} className="flex items-start gap-3">
@@ -176,26 +196,8 @@ export default function CatalyzeOman() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <div className="p-6 bg-primary/20 rounded-full w-fit mx-auto mb-6">
-                <Sparkles className="w-12 h-12 text-primary" />
-              </div>
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('catalyzeoman.text.11')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('catalyzeoman.text.12')} </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary"> {t('catalyzeoman.text.13')} </button>
-                <button className="btn-secondary"> {t('catalyzeoman.text.14')} </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

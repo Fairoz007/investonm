@@ -1,6 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
-import { ScrollReveal } from '@/components/shared/ScrollReveal';
+import { Mail, Phone, Linkedin, Twitter, Youtube, Instagram } from 'lucide-react';
 import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
@@ -9,125 +8,122 @@ export const Footer = () => {
   const displayLang = lang || 'en';
 
   return (
-    <footer className="bg-white text-[#666666] border-t border-[var(--secondary)]/10 font-sans">
-      {/* Main Footer Content */}
-      <div className="container-custom pt-20 pb-12">
-        <div className="flex flex-col lg:flex-row gap-16 justify-between mb-16">
+    <footer className="footer-gradient text-[#222222] border-t border-black/5 font-sans pt-16 pb-8">
+      <div className="container-custom">
+        {/* Top Header Logos - Like the benchmark */}
+        <div className="flex flex-wrap items-center justify-between gap-8 mb-16 pb-8 border-b border-black/5">
+          <div className="flex items-center gap-6">
+            <img
+              src="/images/Logo-01.png"
+              alt="Shomoukh Investment"
+              className="h-14 w-auto object-contain"
+            />
+            <div className="h-10 w-[1px] bg-black/10 hidden sm:block" />
+            <div className="hidden sm:block">
 
-          {/* Company Info */}
-          <div className="lg:w-1/3 space-y-8">
-            <ScrollReveal>
-              <div className="flex items-center mb-6">
-                <img
-                  src="/images/Logo-01.png"
-                  alt="Shomoukh International Investment"
-                  className="h-12 w-auto object-contain"
-                />
-              </div>
-
-              <p className="text-[#666666] text-sm leading-relaxed mb-8 max-w-sm">
-                {t('footer.text.3')} </p>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[var(--primary)] mt-0.5 shrink-0" />
-                  <span className="text-sm text-[#666666]">
-                    {t('footer.text.4')} <br />
-                    {t('footer.text.5')} <br />
-                    {t('footer.text.6')} <br />
-                    {t('footer.text.7')} </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[var(--primary)] shrink-0" />
-                  <a href="mailto:info@shomoukh.om" className="text-sm text-[#666666] hover:text-[var(--primary)] transition-colors">
-                    {t('footer.text.8')} </a>
-                </div>
-              </div>
-            </ScrollReveal>
+            </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
+          <div className="flex items-center gap-8">
+            <img
+              src="/images/Oman_Vision_2040_Logo.png"
+              alt="Oman Vision 2040"
+              className="h-12 w-auto object-contain"
+            />
+          </div>
+        </div>
 
-            {/* Useful Links */}
-            <ScrollReveal delay={0.1}>
-              <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.9')} </h4>
-              <ul className="space-y-4">
-                <li><Link to={`/${displayLang}`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.10')} </Link></li>
-                <li><Link to={`/${displayLang}/who-we-are`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.11')} </Link></li>
-                <li><Link to={`/${displayLang}/contact`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.12')} </Link></li>
-                <li><Link to="#" className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span> {t('footer.text.13')} </Link></li>
-              </ul>
-            </ScrollReveal>
+        {/* Main 5-Column Navigation */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
+          {/* Column 1: Start Investing */}
+          <div className="space-y-6">
+            <h4 className="font-poppins font-bold text-[#222222] text-sm uppercase tracking-wider">{t('footer.text.14')}</h4>
+            <ul className="space-y-3">
+              <li><Link to={`/${displayLang}/key-sectors`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x1')}</Link></li>
+              <li><Link to={`/${displayLang}/key-sectors`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x2')}</Link></li>
+            </ul>
+          </div>
 
-            {/* Key Sectors */}
-            <ScrollReveal delay={0.2}>
-              <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.14')} </h4>
-              <ul className="space-y-4">
-                {[
-                  { label: 'Energy', href: '/key-sectors#energy' },
-                  { label: 'Luxury', href: '/key-sectors#luxury' },
-                  { label: 'Trade', href: '/key-sectors#trade' },
-                  { label: 'Investments', href: '/key-sectors#investments' },
-                  { label: 'Tourism & Hospitality', href: '/key-sectors#tourism' },
-                  { label: 'Education', href: '/key-sectors#education' },
-                  { label: 'Logistics', href: '/key-sectors#logistics' },
-                  { label: 'Real Estate', href: '/key-sectors#real-estate' }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group">
-                      <span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {t(item.label)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
+          {/* Column 2: Discover */}
+          <div className="space-y-6">
+            <h4 className="font-poppins font-bold text-[#222222] text-sm uppercase tracking-wider">{t('footer.text.15')}</h4>
+            <ul className="space-y-3">
+              <li><Link to={`/${displayLang}/about-oman`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x3')}</Link></li>
+              <li><Link to={`/${displayLang}/about-oman#incentives`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x4')}</Link></li>
+              <li><Link to={`/${displayLang}/resources#reports`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x5')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x6')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x7')}</Link></li>
+            </ul>
+          </div>
 
-            {/* About Oman */}
-            <ScrollReveal delay={0.3}>
-              <h4 className="text-[#222222] font-bold font-poppins mb-6 uppercase tracking-wider text-sm"> {t('footer.text.15')} </h4>
-              <ul className="space-y-4">
-                {[
-                  { label: 'Oman’s Infrastructure Advantage', href: '/about-oman#infrastructure' },
-                  { label: 'Legislation', href: '/about-oman#legislation' },
-                  { label: 'Business Ecosystem', href: '/about-oman#ecosystem' },
-                  { label: 'Strategic Location', href: '/about-oman#location' },
-                  { label: 'A Cost-Effective Business Hub', href: '/about-oman#hub' },
-                  { label: 'Friendly Business Environment', href: '/about-oman#environment' },
-                  { label: 'Incentives to Invest', href: '/about-oman#incentives' }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link to={`/${displayLang}${item.href}`} className="text-sm hover:text-[var(--primary)] transition-colors flex items-center gap-2 group">
-                      <span className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {t(item.label)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
+          {/* Column 3: About Invest Oman / Shomoukh */}
+          <div className="space-y-6">
+            <h4 className="font-poppins font-bold text-[#222222] text-sm uppercase tracking-wider">{t('footer.text.19')}</h4>
+            <ul className="space-y-3">
+              <li><Link to={`/${displayLang}/who-we-are`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.11')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x14')}</Link></li>
+              <li><Link to={`/${displayLang}/contact`} className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.12')}</Link></li>
+            </ul>
 
+            <h4 className="font-poppins font-bold text-[#222222] text-sm uppercase tracking-wider pt-4">Connect</h4>
+            <ul className="space-y-3">
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x8')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x9')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x10')}</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Resources & Tools */}
+          <div className="space-y-6">
+            <h4 className="font-poppins font-bold text-[#222222] text-sm uppercase tracking-wider">{t('footer.text.17')}</h4>
+            <ul className="space-y-3">
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x11')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x12')}</Link></li>
+              <li><Link to="#" className="text-sm text-black/60 hover:text-[var(--primary)] transition-colors">{t('footer.text.x13')}</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 5: Contact us */}
+          <div className="space-y-6 bg-white/30 p-6 rounded-2xl border border-white/50 backdrop-blur-sm">
+            <h4 className="font-poppins font-bold text-[#222222] text-sm uppercase tracking-wider">{t('footer.text.12')}</h4>
+
+            <div className="space-y-4">
+              <div className="flex gap-4 items-center">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                  <Mail className="w-5 h-5 text-[var(--primary)]" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-black/40 uppercase">Email:</p>
+                  <a href="mailto:info@shomoukh.om" className="text-xs font-bold hover:text-[var(--primary)] transition-colors">info@shomoukh.om</a>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-center">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                  <Phone className="w-5 h-5 text-[var(--primary)]" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-black/40 uppercase">Phone:</p>
+                  <a href="tel:+96880000777" className="text-xs font-bold hover:text-[var(--primary)] transition-colors">+968 80000777</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4">
+                <a href="#" className="text-black/60 hover:text-[var(--primary)] transition-colors"><Linkedin className="w-5 h-5" /></a>
+                <a href="#" className="text-black/60 hover:text-[var(--primary)] transition-colors"><Twitter className="w-5 h-5" /></a>
+                <a href="#" className="text-black/60 hover:text-[var(--primary)] transition-colors"><Youtube className="w-5 h-5" /></a>
+                <a href="#" className="text-black/60 hover:text-[var(--primary)] transition-colors"><Instagram className="w-5 h-5" /></a>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[var(--secondary)]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="text-sm text-[#666666]/50 text-center md:text-left">
-              {t('footer.text.16')} </div>
-            <img
-              src="/images/Oman_Vision_2040_Logo.png"
-              alt="Oman Vision 2040"
-              className="h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
-            />
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors">
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-[var(--primary)] hover:text-white transition-colors">
-              <Twitter className="w-4 h-4" />
-            </a>
+        <div className="pt-8 border-t border-black/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-medium text-black/40">
+          <p>{t('footer.text.16')}</p>
+          <div className="flex gap-6">
+            <Link to="#" className="hover:text-[var(--primary)] transition-colors">Terms & Conditions</Link>
+            <Link to="#" className="hover:text-[var(--primary)] transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </div>

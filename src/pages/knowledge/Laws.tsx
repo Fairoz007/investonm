@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Scale, FileText, Download, BookOpen, Gavel } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const lawCategories = [
   {
@@ -74,7 +75,7 @@ const recentUpdates = [
 ];
 
 export default function Laws() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -89,9 +90,9 @@ export default function Laws() {
                 <span className="text-sm text-white/60"> {t('laws.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('laws.text.3')} </h1>
+                {t('laws.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                 {t('laws.text.4')} </p>
+                {t('laws.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -102,7 +103,7 @@ export default function Laws() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-               {t('laws.text.5')} </h2>
+              {t('laws.text.5')} </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -131,7 +132,7 @@ export default function Laws() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-8">
-               {t('laws.text.6')} </h2>
+              {t('laws.text.6')} </h2>
           </ScrollReveal>
 
           <div className="space-y-8">
@@ -172,23 +173,8 @@ export default function Laws() {
         </div>
       </section>
 
-      {/* Legal Support CTA */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('laws.text.7')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('laws.text.8')} </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary"> {t('laws.text.9')} </button>
-                <button className="btn-secondary"> {t('laws.text.10')} </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

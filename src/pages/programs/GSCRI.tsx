@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Factory, Globe, CheckCircle2, TrendingUp, Shield } from 'lucide-react';
+import { Factory, Globe, CheckCircle2, TrendingUp, Shield } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const objectives = [
   {
@@ -65,51 +66,70 @@ const incentives = [
 ];
 
 export default function GSCRI() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('gscri.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('gscri.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('gscri.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('gscri.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('gscri.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              {t('gscri.text.3')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white leading-relaxed max-w-2xl"
+            >
+              {t('gscri.text.4')}
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Objectives */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('gscri.text.5')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('gscri.text.6')} </p>
+            <h2 className="text-[32px] font-semibold text-white mb-4 text-left">
+              {t('gscri.text.5')} </h2>
+            <p className="text-white/70 text-left mb-12 max-w-2xl">
+              {t('gscri.text.6')} </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {objectives.map((objective, index) => (
               <ScrollReveal key={objective.title} delay={index * 0.1}>
                 <motion.div
-                  whileHover={{ y: -4 }}
-                  className="glass-card p-6 text-center h-full"
+                  whileHover={{ y: -5 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl h-full transition-all duration-300 hover:bg-white/10 group text-left"
                 >
-                  <div className="p-4 bg-primary/20 rounded-2xl w-fit mx-auto mb-4">
+                  <div className="p-4 bg-primary/20 rounded-2xl w-fit mb-6 transition-transform duration-300 group-hover:scale-110">
                     <objective.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{objective.title}</h3>
-                  <p className="text-white/60 text-sm">{objective.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">{objective.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{objective.description}</p>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -118,25 +138,25 @@ export default function GSCRI() {
       </section>
 
       {/* Target Sectors */}
-      <section className="section-padding bg-dark-light/30">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('gscri.text.7')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('gscri.text.8')} </p>
+            <h2 className="text-[32px] font-semibold text-[var(--heading-main)] mb-4 text-left">
+              {t('gscri.text.7')} </h2>
+            <p className="text-[var(--text-paragraph)] text-left mb-12 max-w-2xl">
+              {t('gscri.text.8')} </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {targetSectors.map((sector, index) => (
               <ScrollReveal key={sector.name} delay={index * 0.1}>
-                <div className="glass-card p-6 h-full">
-                  <h3 className="text-lg font-bold text-white mb-4">{sector.name}</h3>
+                <div className="bg-white border border-black/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                  <h3 className="text-xl font-bold text-[var(--heading-main)] mb-4">{sector.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {sector.opportunities.map((opp) => (
                       <span
                         key={opp}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                        className="px-3 py-1.5 bg-primary/5 text-primary text-xs font-medium rounded-full"
                       >
                         {opp}
                       </span>
@@ -155,9 +175,9 @@ export default function GSCRI() {
           <ScrollReveal>
             <div className="glass-card p-8 max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-6 text-center">
-                 {t('gscri.text.9')} </h2>
+                {t('gscri.text.9')} </h2>
               <p className="text-white/60 text-center mb-8">
-                 {t('gscri.text.10')} </p>
+                {t('gscri.text.10')} </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {incentives.map((incentive) => (
                   <div key={incentive} className="flex items-start gap-3">
@@ -171,23 +191,8 @@ export default function GSCRI() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('gscri.text.11')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('gscri.text.12')} </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary"> {t('gscri.text.13')} </button>
-                <button className="btn-secondary"> {t('gscri.text.14')} </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

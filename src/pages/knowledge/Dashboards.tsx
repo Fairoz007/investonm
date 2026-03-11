@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, TrendingUp, PieChart, Globe, Users, DollarSign } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const dashboards = [
   {
@@ -50,7 +51,7 @@ const featuredMetrics = [
 ];
 
 export default function Dashboards() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero Section */}
@@ -65,9 +66,9 @@ export default function Dashboards() {
                 <span className="text-sm text-white/60"> {t('dashboards.text.2')} </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('dashboards.text.3')} </h1>
+                {t('dashboards.text.3')} </h1>
               <p className="text-xl text-white/70 leading-relaxed">
-                 {t('dashboards.text.4')} </p>
+                {t('dashboards.text.4')} </p>
             </div>
           </ScrollReveal>
         </div>
@@ -94,9 +95,9 @@ export default function Dashboards() {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('dashboards.text.5')} </h2>
+              {t('dashboards.text.5')} </h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('dashboards.text.6')} </p>
+              {t('dashboards.text.6')} </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -136,9 +137,9 @@ export default function Dashboards() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-4">
-                     {t('dashboards.text.7')} </h2>
+                    {t('dashboards.text.7')} </h2>
                   <p className="text-white/70 mb-6">
-                     {t('dashboards.text.8')} </p>
+                    {t('dashboards.text.8')} </p>
                   <ul className="space-y-3 mb-8">
                     {[
                       'Real-time data feeds',
@@ -159,7 +160,7 @@ export default function Dashboards() {
                     <BarChart3 className="w-24 h-24 text-primary mx-auto mb-4" />
                     <h3 className="text-xl font-bold text-white mb-2"> {t('dashboards.text.10')} </h3>
                     <p className="text-white/60 text-sm mb-4">
-                       {t('dashboards.text.11')} </p>
+                      {t('dashboards.text.11')} </p>
                     <button className="btn-secondary"> {t('dashboards.text.12')} </button>
                   </div>
                 </div>
@@ -168,6 +169,8 @@ export default function Dashboards() {
           </ScrollReveal>
         </div>
       </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

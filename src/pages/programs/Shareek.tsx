@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, HandshakeIcon, Building2, TrendingUp, Target } from 'lucide-react';
+import { HandshakeIcon, Building2, TrendingUp, Target } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const programFeatures = [
   {
@@ -83,51 +84,70 @@ const partnershipProcess = [
 ];
 
 export default function Shareek() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('shareek.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('shareek.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('shareek.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('shareek.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('startupoman.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              {t('startupoman.text.3')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white leading-relaxed max-w-2xl"
+            >
+              {t('startupoman.text.4')}
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Features */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('shareek.text.5')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('shareek.text.6')} </p>
+            <h2 className="text-[32px] font-semibold text-white mb-4 text-left">
+              {t('shareek.text.5')} </h2>
+            <p className="text-white/70 text-left mb-12 max-w-2xl">
+              {t('shareek.text.6')} </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {programFeatures.map((feature, index) => (
               <ScrollReveal key={feature.title} delay={index * 0.1}>
                 <motion.div
-                  whileHover={{ y: -4 }}
-                  className="glass-card p-6 text-center h-full"
+                  whileHover={{ y: -5 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl h-full transition-all duration-300 hover:bg-white/10 group text-left"
                 >
-                  <div className="p-4 bg-primary/20 rounded-2xl w-fit mx-auto mb-4">
+                  <div className="p-4 bg-primary/20 rounded-2xl w-fit mb-6 transition-transform duration-300 group-hover:scale-110">
                     <feature.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-white/60 text-sm">{feature.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -136,26 +156,26 @@ export default function Shareek() {
       </section>
 
       {/* Target Areas */}
-      <section className="section-padding bg-dark-light/30">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('shareek.text.7')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('shareek.text.8')} </p>
+            <h2 className="text-[32px] font-semibold text-[var(--heading-main)] mb-4 text-left">
+              {t('shareek.text.7')} </h2>
+            <p className="text-[var(--text-paragraph)] text-left mb-12 max-w-2xl">
+              {t('shareek.text.8')} </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {targetAreas.map((area, index) => (
               <ScrollReveal key={area.name} delay={index * 0.1}>
-                <div className="glass-card p-6 h-full">
-                  <h3 className="text-lg font-bold text-white mb-2">{area.name}</h3>
-                  <p className="text-white/60 text-sm mb-4">{area.description}</p>
+                <div className="bg-white border border-black/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                  <h3 className="text-xl font-bold text-[var(--heading-main)] mb-3">{area.name}</h3>
+                  <p className="text-[var(--text-paragraph)] text-sm mb-6 leading-relaxed">{area.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {area.examples.map((example) => (
                       <span
                         key={example}
-                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                        className="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full"
                       >
                         {example}
                       </span>
@@ -169,30 +189,30 @@ export default function Shareek() {
       </section>
 
       {/* Process */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('shareek.text.9')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('shareek.text.10')} </p>
+            <h2 className="text-[32px] font-semibold text-white mb-4 text-left">
+              {t('shareek.text.9')} </h2>
+            <p className="text-white/70 text-left mb-12 max-w-2xl">
+              {t('shareek.text.10')} </p>
           </ScrollReveal>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl">
             {partnershipProcess.map((step, index) => (
               <ScrollReveal key={step.step} delay={index * 0.1}>
-                <div className="flex gap-6 mb-8 last:mb-0">
+                <div className="flex gap-8 mb-12 last:mb-0 group">
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold">{step.step}</span>
+                    <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-[0_0_20px_color-mix(in_srgb,var(--primary),transparent_70%)] transition-transform duration-300 group-hover:scale-110">
+                      <span className="text-white text-xl font-bold">{step.step}</span>
                     </div>
                     {index < partnershipProcess.length - 1 && (
-                      <div className="w-0.5 h-full bg-primary/20 mt-2" />
+                      <div className="w-px h-full bg-gradient-to-b from-primary/50 to-transparent mt-4" />
                     )}
                   </div>
                   <div className="pb-8">
-                    <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-white/60">{step.description}</p>
+                    <h3 className="text-2xl font-semibold text-white mb-3">{step.title}</h3>
+                    <p className="text-white/60 text-base leading-relaxed max-w-2xl">{step.description}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -201,23 +221,8 @@ export default function Shareek() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('shareek.text.11')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('shareek.text.12')} </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn-primary"> {t('shareek.text.13')} </button>
-                <button className="btn-secondary"> {t('shareek.text.14')} </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

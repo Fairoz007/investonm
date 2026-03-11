@@ -7,6 +7,7 @@ import AboutOman from '@/pages/AboutOman';
 import KeySectors from '@/pages/KeySectors';
 import WhoWeAre from '@/pages/WhoWeAre';
 import Contact from '@/pages/Contact';
+import Resources from '@/pages/Resources';
 import SignIn from '@/pages/SignIn';
 import ForgotPassword from '@/pages/ForgotPassword';
 import { useEffect } from 'react';
@@ -99,6 +100,7 @@ function App() {
             <Route path="key-sectors" element={<KeySectors />} />
             <Route path="who-we-are" element={<WhoWeAre />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="resources" element={<Resources />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
           </Route>

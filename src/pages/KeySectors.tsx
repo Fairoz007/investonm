@@ -1,186 +1,186 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { Zap, Diamond, Globe2, MapPin, BookOpen, Anchor, Building2, TrendingUp, Target, Briefcase } from 'lucide-react';
+import { Target, TrendingUp, Zap, MapPin, Truck, Factory, Laptop, ArrowRight, CheckCircle2, Briefcase } from 'lucide-react';
 import { useTranslation } from "react-i18next";
-import { useParams, Link } from 'react-router-dom';
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
     visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: "easeOut" } }
 };
 
-const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
-};
-
 const SECTORS = [
     {
         id: 'energy',
-        name: 'Energy',
         icon: Zap,
-        overview: 'keysectors.energy.overview',
-        potential: 'keysectors.energy.potential',
-        future: 'keysectors.energy.future',
-        img: '/images/hero-energy.jpg'
+        image: '/images/hero-energy.jpg',
+        title: 'Energy',
+        key: 'energy'
     },
     {
-        id: 'luxury',
-        name: 'Luxury',
-        icon: Diamond,
-        overview: 'keysectors.luxury.overview',
-        potential: 'keysectors.luxury.potential',
-        future: 'keysectors.luxury.future',
-        img: '/images/luxury-oman.png'
-    },
-
-    {
-        id: 'trade',
-        name: 'Trade',
-        icon: Globe2,
-        overview: 'keysectors.trade.overview',
-        potential: 'keysectors.trade.potential',
-        future: 'keysectors.trade.future',
-        img: '/images/oman_tech.png'
+        id: 'technology',
+        icon: Laptop,
+        image: '/images/hero-scientist.jpg',
+        title: 'Technology',
+        key: 'technology'
     },
     {
-        id: 'investments',
-        name: 'Investments',
+        id: 'private-equity',
         icon: Briefcase,
-        overview: 'keysectors.investments.overview',
-        potential: 'keysectors.investments.potential',
-        future: 'keysectors.investments.future',
-        img: '/images/hero-engineers.jpg'
+        image: '/images/hero-manufacturing.jpg',
+        title: 'Private Equity',
+        key: 'privateequity'
     },
     {
         id: 'tourism',
-        name: 'Tourism & Hospitality',
         icon: MapPin,
-        overview: 'keysectors.tourism.overview',
-        potential: 'keysectors.tourism.potential',
-        future: 'keysectors.tourism.future',
-        img: '/images/oman_hero.png'
-    },
-    {
-        id: 'education',
-        name: 'Education',
-        icon: BookOpen,
-        overview: 'keysectors.education.overview',
-        potential: 'keysectors.education.potential',
-        future: 'keysectors.education.future',
-        img: '/images/oman_industry.png'
+        image: '/images/oman_landscape.png',
+        title: 'Tourism',
+        key: 'tourism'
     },
     {
         id: 'logistics',
-        name: 'Logistics',
-        icon: Anchor,
-        overview: 'keysectors.logistics.overview',
-        potential: 'keysectors.logistics.potential',
-        future: 'keysectors.logistics.future',
-        img: '/images/hero-manufacturing.jpg'
+        icon: Truck,
+        image: '/images/hero-energy.jpg',
+        title: 'Logistics',
+        key: 'logistics'
     },
     {
-        id: 'real-estate',
-        name: 'Real Estate',
-        icon: Building2,
-        overview: 'keysectors.realestate.overview',
-        potential: 'keysectors.realestate.potential',
-        future: 'keysectors.realestate.future',
-        img: '/images/oman_landscape.png'
+        id: 'manufacturing',
+        icon: Factory,
+        image: '/images/hero-manufacturing.jpg',
+        title: 'Manufacturing',
+        key: 'manufacturing'
     }
 ];
 
 export default function KeySectors() {
     const { t } = useTranslation();
-    const { lang } = useParams();
-    const displayLang = lang || 'en';
 
     return (
-        <div className="bg-[#F5F5F5] min-h-screen text-[#222222] overflow-hidden font-sans pt-24">
+        <div className="bg-background min-h-screen text-[var(--text-paragraph)] overflow-hidden font-sans pt-24">
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 flex items-center justify-center hero-gradient">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-10 rounded-full blur-[150px] pointer-events-none" />
-                <div className="container-custom relative z-10 text-center">
+            <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+                    <div className="absolute inset-0 hero-gradient opacity-90" />
+                </div>
+                <div className="container-custom relative z-10 text-left w-full text-white">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+                    >
+                        <span>Home</span>
+                        <span className="opacity-40">/</span>
+                        <span>{t('keysectors.text.1')}</span>
+                    </motion.div>
+
                     <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-mobile-h1 mb-6 text-white text-balance"
+                        className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
                     >
-                        {t('keysectors.text.1')} <span className="text-white/90"> {t('keysectors.text.2')} </span>
+                        {t('keysectors.text.1')}
                     </motion.h1>
+
                     <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-mobile-body text-white/90 max-w-4xl mx-auto px-4"
+                        className="text-[18px] text-white/90 leading-relaxed max-w-2xl"
                     >
-                        {t('keysectors.text.3')} </motion.p>
+                        {t('keysectors.text.3')}
+                    </motion.p>
                 </div>
             </section>
 
-            {/* Sectors List */}
-            <section className="py-12 md:py-24">
+            {/* Sectors Grid */}
+            <section className="py-24">
                 <div className="container-custom">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.05 }}
-                        variants={staggerContainer}
-                        className="space-y-16 lg:space-y-24"
-                    >
-                        {SECTORS.map((sector, index) => (
+                    <div className="space-y-32">
+                        {SECTORS.map((sector, idx) => (
                             <motion.div
                                 key={sector.id}
                                 id={sector.id}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.2 }}
                                 variants={fadeInUp}
-                                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center scroll-mt-32`}
+                                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-24 items-center`}
                             >
-
-                                <div className="lg:w-1/2 w-full space-y-6">
-                                    <div className="flex items-center gap-4 border-b border-[var(--theme-accent)]/10 pb-6 mb-6">
-                                        <div className="w-14 h-14 rounded-2xl bg-[var(--theme-primary)]/10 flex items-center justify-center">
-                                            <sector.icon className="w-7 h-7 text-[var(--theme-primary)]" />
-                                        </div>
-                                        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#222222]">{t(sector.name)}</h2>
-                                    </div>
-
-                                    <div className="space-y-6 text-lg">
-                                        <div>
-                                            <h4 className="text-[var(--theme-primary)] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.4')} </h4>
-                                            <p className="text-[#666666] leading-relaxed">{t(sector.overview)}</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-[var(--theme-primary)] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.5')} </h4>
-                                            <p className="text-[#666666] leading-relaxed flex items-start gap-2">
-                                                <TrendingUp className="w-5 h-5 text-[#666666]/50 shrink-0 mt-1" />
-                                                {t(sector.potential)}
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-[var(--theme-primary)] font-semibold uppercase tracking-wider text-sm mb-2"> {t('keysectors.text.6')} </h4>
-                                            <p className="text-[#666666] leading-relaxed flex items-start gap-2">
-                                                <Target className="w-5 h-5 text-[#666666]/50 shrink-0 mt-1" />
-                                                {t(sector.future)}
-                                            </p>
+                                <div className="lg:w-1/2">
+                                    <div className="mb-[6px]">
+                                        <div className="text-[#E2E2E2] font-semibold text-[48px] leading-none select-none">
+                                            0.{idx + 1}
                                         </div>
                                     </div>
 
-                                    <Link to={`/${displayLang}/contact`} className="mt-8 px-6 py-4 bg-[var(--theme-primary)] hover:bg-[var(--theme-accent)] text-white rounded-full font-bold font-poppins inline-flex items-center justify-center gap-2 transition-all shadow-md w-full sm:w-auto text-center">
-                                        {t('keysectors.text.7')} {t(sector.name)}  {t('keysectors.text.8')} <TrendingUp className="w-4 h-4" />
-                                    </Link>
+                                    <h2 className="text-[36px] font-bold text-[#1A1A1A] leading-tight mb-[18px]">
+                                        {sector.title}
+                                    </h2>
+
+                                    <div className="space-y-[24px]">
+                                        <div className="p-8 bg-neutral-50 rounded-[2.5rem] border border-black/5">
+                                            <h3 className="text-sm font-bold uppercase tracking-widest text-accent mb-4">Overview</h3>
+                                            <p className="text-lg text-[#666666] leading-relaxed">
+                                                {t(`keysectors.${sector.key}.overview`)}
+                                            </p>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="p-6 bg-white rounded-3xl border border-black/5 shadow-sm">
+                                                <div className="flex items-center gap-3 mb-4">
+                                                    <TrendingUp className="w-5 h-5 text-accent" />
+                                                    <h4 className="font-bold text-[#222222]">Potential</h4>
+                                                </div>
+                                                <p className="text-sm text-[#888888] leading-relaxed">
+                                                    {t(`keysectors.${sector.key}.potential`)}
+                                                </p>
+                                            </div>
+                                            <div className="p-6 bg-white rounded-3xl border border-black/5 shadow-sm">
+                                                <div className="flex items-center gap-3 mb-4">
+                                                    <Target className="w-5 h-5 text-accent" />
+                                                    <h4 className="font-bold text-[#222222]">Future</h4>
+                                                </div>
+                                                <p className="text-sm text-[#888888] leading-relaxed">
+                                                    {t(`keysectors.${sector.key}.future`)}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        {/* Strategic Goal Section if available */}
+                                        {t(`keysectors.${sector.key}.goal`) !== `keysectors.${sector.key}.goal` && (
+                                            <div className="flex items-center gap-3 p-4 bg-accent/5 rounded-2xl border border-accent/10">
+                                                <CheckCircle2 className="w-5 h-5 text-accent" />
+                                                <span className="text-sm font-bold text-accent/70">Goal: {t(`keysectors.${sector.key}.goal`)}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <button className="flex items-center gap-2 text-accent font-black uppercase tracking-widest text-sm group">
+                                        Exploration Guide <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                                    </button>
                                 </div>
 
-                                <div className="lg:w-1/2 w-full aspect-[4/3] rounded-[2rem] overflow-hidden relative group">
-                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url(${sector.img})` }} />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#020b0d] via-transparent to-transparent opacity-60" />
-                                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2rem]" />
+                                <div className="lg:w-1/2 w-full">
+                                    <div className="aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl relative group">
+                                        <div
+                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[2000ms] group-hover:scale-110"
+                                            style={{ backgroundImage: `url(${sector.image})` }}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent" />
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </section>
+
+            {/* Research CTA section */}
+            <ResearchDataCTA />
         </div>
     );
 }

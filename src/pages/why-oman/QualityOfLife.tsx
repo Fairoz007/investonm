@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Heart, GraduationCap, Stethoscope, Music, ShoppingBag, TreePine } from 'lucide-react';
+import { Heart, GraduationCap, Stethoscope, Music, ShoppingBag, TreePine } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { useTranslation } from "react-i18next";
+import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 
 const lifestyleCategories = [
   {
@@ -66,55 +67,76 @@ const cities = [
 ];
 
 export default function QualityOfLife() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-dark pt-24">
+    <div className="min-h-screen bg-background text-[var(--text-paragraph)] pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-dark to-dark" />
-        <div className="container-custom relative z-10">
+      <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 hero-gradient opacity-90" />
+        </div>
+        <div className="container-custom relative z-10 text-left w-full text-white">
           <ScrollReveal>
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <span className="text-sm font-medium"> {t('qualityoflife.text.1')} </span>
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm text-white/60"> {t('qualityoflife.text.2')} </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                 {t('qualityoflife.text.3')} </h1>
-              <p className="text-xl text-white/70 leading-relaxed">
-                 {t('qualityoflife.text.4')} </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
+            >
+              <span>Home</span>
+              <span className="opacity-40">/</span>
+              <span>{t('qol.text.2')}</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
+            >
+              Quality of Life
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[18px] text-white leading-relaxed max-w-2xl"
+            >
+              Oman offers a unique blend of heritage, nature, and modern living, making it the perfect destination for high-net-worth families.
+            </motion.p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Lifestyle Categories */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('qualityoflife.text.5')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('qualityoflife.text.6')} </p>
+            <h2 className="text-[32px] font-semibold text-white mb-4 text-left">
+              {t('qualityoflife.text.5')}
+            </h2>
+            <p className="text-white/70 text-left mb-12 max-w-2xl">
+              {t('qualityoflife.text.6')}
+            </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {lifestyleCategories.map((category, index) => (
               <ScrollReveal key={category.title} delay={index * 0.1}>
                 <motion.div
-                  whileHover={{ y: -4 }}
-                  className="glass-card p-6 h-full"
+                  whileHover={{ y: -5 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl h-full transition-all duration-300 hover:bg-white/10 group"
                 >
-                  <div className="p-3 bg-primary/20 rounded-xl w-fit mb-4">
-                    <category.icon className="w-6 h-6 text-primary" />
+                  <div className="p-4 bg-primary/20 rounded-2xl w-fit mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <category.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{category.title}</h3>
-                  <p className="text-white/60 text-sm mb-4">{category.description}</p>
-                  <ul className="space-y-2">
+                  <h3 className="text-2xl font-semibold text-white mb-4">{category.title}</h3>
+                  <p className="text-white/60 text-base mb-6 leading-relaxed">{category.description}</p>
+                  <ul className="space-y-3">
                     {category.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-white/70">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                      <li key={feature} className="flex items-center gap-3 text-sm text-white/70">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_8px_var(--primary)]" />
                         {feature}
                       </li>
                     ))}
@@ -127,29 +149,31 @@ export default function QualityOfLife() {
       </section>
 
       {/* Cities Section */}
-      <section className="section-padding bg-dark-light/30">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">
-               {t('qualityoflife.text.7')} </h2>
-            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-               {t('qualityoflife.text.8')} </p>
+            <h2 className="text-[32px] font-semibold text-[var(--heading-main)] mb-4 text-left">
+              {t('qualityoflife.text.7')}
+            </h2>
+            <p className="text-[var(--text-paragraph)] text-left mb-12 max-w-2xl">
+              {t('qualityoflife.text.8')}
+            </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {cities.map((city, index) => (
               <ScrollReveal key={city.name} delay={index * 0.1}>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="glass-card p-8"
+                  whileHover={{ scale: 1.01 }}
+                  className="bg-white border border-black/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <h3 className="text-2xl font-bold text-white mb-3">{city.name}</h3>
-                  <p className="text-white/60 mb-4">{city.description}</p>
+                  <h3 className="text-2xl font-bold text-[var(--heading-main)] mb-3">{city.name}</h3>
+                  <p className="text-[var(--text-paragraph)] mb-6 text-base leading-relaxed">{city.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {city.highlights.map((highlight) => (
                       <span
                         key={highlight}
-                        className="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full"
+                        className="px-4 py-1.5 bg-primary/5 text-primary text-sm font-medium rounded-full"
                       >
                         {highlight}
                       </span>
@@ -162,20 +186,8 @@ export default function QualityOfLife() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="glass-card p-12 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                 {t('qualityoflife.text.9')} </h2>
-              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                 {t('qualityoflife.text.10')} </p>
-              <button className="btn-primary"> {t('qualityoflife.text.11')} </button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Research CTA section */}
+      <ResearchDataCTA />
     </div>
   );
 }

@@ -30,12 +30,10 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
       onMouseLeave={() => { setIsOpen(false); setActiveChildIndex(null); }}
       className="static h-full flex items-center"
     >
-      <button className={`nav-link font-poppins flex items-center gap-1 py-8 text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap transition-colors relative ${isOpen ? 'text-[var(--primary)]' : 'text-current hover:text-[var(--primary)]'
+      <button className={`font-poppins flex items-center gap-1 py-8 text-[13px] font-bold tracking-[0.05em] uppercase whitespace-nowrap transition-colors relative ${isOpen ? 'text-[var(--primary)]' : 'text-current opacity-60 hover:opacity-100 hover:text-[var(--primary)]'
         }`}>
         {t(item.label)}
         <span className={`text-[10px] transition-transform ${isOpen ? 'rotate-180 text-[var(--primary)]' : 'opacity-70'} ml-0.5`}>▾</span>
-        {/* Active underline indicator */}
-        {isOpen && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[var(--primary)]" />}
       </button>
 
       <AnimatePresence>
@@ -277,7 +275,7 @@ export const Navigation = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="sticky top-0 left-0 w-full z-[1000] bg-white/95 backdrop-blur-lg border-b border-[var(--secondary)]/10 shadow-sm"
+        className="fixed top-0 left-0 w-full z-[1000] bg-transparent"
       >
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center h-[80px] w-full justify-between text-[#222222]">
@@ -293,12 +291,12 @@ export const Navigation = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center justify-center gap-[28px] h-full whitespace-nowrap flex-1 px-4">
+            <div className="hidden lg:flex items-center justify-center gap-[40px] h-full whitespace-nowrap flex-1 px-4">
               {NAV_ITEMS.map((item, index) =>
                 item.children ? (
                   <NavDropdown key={index} item={item} lang={displayLang} />
                 ) : (
-                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[14px] font-semibold tracking-[0.4px] whitespace-nowrap font-poppins text-current opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-all relative">
+                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[13px] font-bold tracking-[0.05em] uppercase font-poppins text-current opacity-60 hover:opacity-100 hover:text-[var(--primary)] transition-all relative">
                     {t(item.label)}
                   </Link>
                 )
