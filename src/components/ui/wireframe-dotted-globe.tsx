@@ -11,7 +11,6 @@ interface RotatingEarthProps {
 
 export default function RotatingEarth({ width = 800, height = 600, className = "" }: RotatingEarthProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
@@ -201,7 +200,6 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
 
         const loadWorldData = async () => {
             try {
-                setIsLoading(true)
 
                 const response = await fetch(
                     "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/110m/physical/ne_110m_land.json",
@@ -223,15 +221,13 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
                 console.log(`[v0] Total dots generated: ${totalDots} across ${landFeatures.features.length} land features`)
 
                 render()
-                setIsLoading(false)
             } catch (err) {
                 setError("Failed to load land map data")
-                setIsLoading(false)
             }
         }
 
         // Set up rotation and interaction
-        const rotation = [0, 0]
+        const rotation: [number, number, number] = [0, 0, 0]
         let autoRotate = true
         const rotationSpeed = 0.5
 
