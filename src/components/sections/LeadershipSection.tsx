@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useTranslation } from "react-i18next";
-import { User } from 'lucide-react';
+import { User, Quote } from 'lucide-react';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+    transition: { duration: 0.8, ease: "easeOut" } 
   }
 };
 
@@ -16,63 +16,8 @@ const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: { 
     opacity: 1, 
-    transition: { staggerChildren: 0.1 } 
+    transition: { staggerChildren: 0.2 } 
   }
-};
-
-interface Member {
-  name: string;
-  position: string;
-  photo: string | null;
-  key: string;
-  special?: boolean;
-}
-
-const ProfileCard = ({ member }: { member: Member }) => {
-  return (
-    <motion.div
-      variants={fadeInUp}
-      className={`group relative flex flex-col items-center bg-white p-[28px] rounded-[24px] border border-black/[0.05] transition-all duration-[0.35s] ease-in-out hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 ${
-        member.special 
-          ? 'scale-100 md:scale-[1.05] shadow-[0_12px_40px_rgba(0,0,0,0.1)] border-accent/20' 
-          : 'shadow-[0_10px_30px_rgba(0,0,0,0.08)]'
-      }`}
-    >
-      {/* Profile Image with soft glow shadow */}
-      <div className={`relative w-[140px] h-[140px] rounded-full overflow-hidden mb-6 bg-neutral-100 flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_30px_rgba(var(--accent-rgb),0.25)] ${
-        member.special ? 'ring-4 ring-accent/10 shadow-[0_12px_30px_rgba(0,0,0,0.15)]' : 'shadow-[0_12px_30px_rgba(0,0,0,0.12)]'
-      }`}>
-        {member.photo ? (
-          <img 
-            src={member.photo} 
-            alt={member.name}
-            className="w-full h-full object-cover transition-transform duration-[0.35s] ease-out group-hover:scale-110"
-          />
-        ) : (
-          <div className="w-full h-full bg-neutral-50 flex items-center justify-center text-neutral-300">
-            <User className="w-16 h-16 opacity-30" />
-          </div>
-        )}
-        
-        {/* Subtle glow overlay on hover */}
-        <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-      </div>
-      
-      <div className="text-center">
-        <h3 className="text-[18px] font-bold text-[#1a1a1a] mb-1 leading-tight transition-colors duration-[0.35s] group-hover:text-accent">
-          {member.name}
-        </h3>
-        <p className="text-[12px] font-semibold text-[#777] uppercase tracking-[1.5px]">
-          {member.position}
-        </p>
-      </div>
-
-      {/* Luxury highlight for chairman */}
-      {member.special && (
-        <div className="absolute inset-0 rounded-[24px] pointer-events-none border border-accent/5 group-hover:border-accent/20 transition-colors duration-300" />
-      )}
-    </motion.div>
-  );
 };
 
 export const LeadershipSection = () => {
@@ -82,93 +27,84 @@ export const LeadershipSection = () => {
     name: t("leadership.chairman.name"),
     position: t("leadership.chairman.title"),
     photo: "https://ges.om/assets/img/chirman.png",
-    key: "chairman",
-    special: true
   };
 
-  const otherMembers = [
-    {
-      name: t("leadership.ceo.name"),
-      position: t("leadership.ceo.title"),
-      photo: "https://ges.om/assets/img/members/Jannat.jpg",
-      key: "ceo"
-    },
-    {
-      name: t("leadership.vp.name"),
-      position: t("leadership.vp.title"),
-      photo: "https://ges.om/assets/img/members/julanda.jpg",
-      key: "vp"
-    },
-    {
-      name: t("leadership.md1.name"),
-      position: t("leadership.md1.title"),
-      photo: null,
-      key: "md1"
-    },
-    {
-      name: t("leadership.md2.name"),
-      position: t("leadership.md2.title"),
-      photo: "https://ges.om/assets/img/members/jinan.jpg",
-      key: "md2"
-    }
-  ];
-
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" 
-      style={{ background: 'linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%)' }}>
+    <section className="py-24 md:py-32 relative overflow-hidden bg-white">
+      {/* Decorative background gradients */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
       
       <div className="container-custom relative z-10">
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
-          className="text-center mb-16 md:mb-24"
-        >
-          <motion.h2 
-            variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold mb-6 text-[#1a1a1a] tracking-tight"
-          >
-            Our Leadership Team
-          </motion.h2>
-          <motion.p 
-            variants={fadeInUp}
-            className="text-[18px] text-[#666] max-w-2xl mx-auto leading-relaxed"
-          >
-            Meet the experienced leadership guiding Shomoukh International Investment.
-          </motion.p>
-        </motion.div>
-
-        {/* Chairman - Centered and Larger */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="flex justify-center mb-16 md:mb-20"
+          className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
         >
-          <div className="w-full max-w-[320px]">
-            <ProfileCard member={chairman} />
-          </div>
-        </motion.div>
+          {/* Chairman Image & Badge */}
+          <motion.div variants={fadeInUp} className="w-full lg:w-1/3 flex flex-col items-center lg:items-end">
+            <div className="relative group">
+              {/* Outer glow/border */}
+              <div className="absolute -inset-4 bg-accent/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <div className="relative w-[280px] md:w-[320px] aspect-[4/5] rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-black/5">
+                {chairman.photo ? (
+                  <img 
+                    src={chairman.photo} 
+                    alt={chairman.name}
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-neutral-50 flex items-center justify-center text-neutral-300">
+                    <User className="w-24 h-24 opacity-30" />
+                  </div>
+                )}
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                
+                {/* Info Overlay (Mobile Only or extra detail) */}
+                <div className="absolute bottom-8 left-8 right-8 text-white">
+                  <h3 className="text-2xl font-bold mb-1">{chairman.name}</h3>
+                  <p className="text-white/80 text-sm font-medium tracking-widest uppercase">{chairman.position}</p>
+                </div>
+              </div>
 
-        {/* Other Leadership - Row layout */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto"
-        >
-          {otherMembers.map((member, idx) => (
-            <ProfileCard key={idx} member={member} />
-          ))}
+              {/* Decorative Quote Icon Badge */}
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-xl transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                <Quote className="w-8 h-8 text-white fill-white" />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Message Content */}
+          <motion.div variants={fadeInUp} className="w-full lg:w-2/3">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-widest mb-6">
+              Executive Message
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#1a1a1a] tracking-tight leading-tight">
+              {t("leadership.chairman.message_title")}
+            </h2>
+            
+            <div className="space-y-6 text-lg text-[#555] leading-relaxed font-light">
+              {t("leadership.chairman.message_text").split('\n\n').map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-black/5 flex items-center gap-6">
+              <div className="w-16 h-px bg-accent/30" />
+              <div>
+                <p className="font-bold text-xl text-[#1a1a1a]">{chairman.name}</p>
+                <p className="text-accent font-semibold text-sm uppercase tracking-wider">{chairman.position}</p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-      
-      {/* Subtle decorative elements for luxury feel */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
     </section>
   );
 };

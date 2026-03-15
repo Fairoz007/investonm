@@ -3,15 +3,11 @@ import type { Variants } from 'framer-motion';
 import { Target, Eye, ShieldCheck, Heart, Award, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from "react-i18next";
 import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
+import { LeadershipSection } from '@/components/sections/LeadershipSection';
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
     visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: "easeOut" } }
-};
-
-const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
 };
 
 const popIn: Variants = {
@@ -190,56 +186,7 @@ export default function WhoWeAre() {
             </section>
 
             {/* Leadership Section */}
-            <section className="py-24 bg-[#F8FAFC]">
-                <div className="container-custom">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                        variants={staggerContainer}
-                        className="text-center max-w-4xl mx-auto mb-20"
-                    >
-                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#222222]">Our Leadership</motion.h2>
-                        <motion.p variants={fadeInUp} className="text-lg text-[#666666]">
-                            Guided by a team of visionary leaders dedicated to Oman's economic future.
-                        </motion.p>
-                    </motion.div>
-
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                        variants={staggerContainer}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
-                    >
-                        {[
-                            { name: "leadership.chairman.name", title: "leadership.chairman.title", img: "/images/hero-engineers.jpg" },
-                            { name: "leadership.ceo.name", title: "leadership.ceo.title", img: "/images/hero-scientist.jpg" },
-                            { name: "leadership.vp.name", title: "leadership.vp.title", img: "/images/hero-manufacturing.jpg" },
-                            { name: "leadership.md1.name", title: "leadership.md1.title", img: "/images/hero-energy.jpg" },
-                            { name: "leadership.md2.name", title: "leadership.md2.title", img: "/images/hero-scientist.jpg" }
-                        ].map((member, idx) => (
-                            <motion.div
-                                key={idx}
-                                variants={fadeInUp}
-                                className="group relative"
-                            >
-                                <div className="aspect-[3/4] rounded-[3rem] overflow-hidden mb-6 relative group shadow-lg">
-                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-[2000ms] group-hover:scale-110" style={{ backgroundImage: `url(${member.img})` }} />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    <div className="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                        <p className="text-white/80 text-sm leading-relaxed">
-                                            Dedicated to driving strategic growth and fostering long-term investment partnerships in the Sultanate.
-                                        </p>
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold text-[#222222] mb-1">{t(member.name)}</h3>
-                                <p className="text-accent font-semibold uppercase tracking-widest text-xs">{t(member.title)}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
+            <LeadershipSection />
 
             {/* Research CTA section */}
             <ResearchDataCTA />
