@@ -15,6 +15,8 @@ import { useTranslation } from 'react-i18next';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ChatBot } from '@/components/chat/ChatBot';
 import { ThemeSwitcher } from '@/components/layout/ThemeSwitcher';
+import { SmoothScroll } from '@/components/layout/SmoothScroll';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const LANGUAGES = ['en', 'ar', 'ru', 'zh', 'fa', 'tr'];
 
@@ -75,7 +77,17 @@ const LanguageLayout = () => {
       <SEO />
       <Navigation />
       <main className="flex-1">
-        <Outlet />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={useLocation().pathname}
+            initial={{ opacity: 0, scale: 0.99, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, scale: 1.01, filter: 'blur(10px)' }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Outlet />
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer />
       <BottomNav />
@@ -89,25 +101,27 @@ function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <Routes>
-          {/* Redirect root to /en */}
-          <Route path="/" element={<Navigate to="/en" replace />} />
+        <SmoothScroll>
+          <Routes>
+            {/* Redirect root to /en */}
+            <Route path="/" element={<Navigate to="/en" replace />} />
 
-          {/* Multilingual Wrapper */}
-          <Route path="/:lang" element={<LanguageLayout />}>
-            <Route index element={<Home />} />
-            <Route path="about-oman" element={<AboutOman />} />
-            <Route path="key-sectors" element={<KeySectors />} />
-            <Route path="who-we-are" element={<WhoWeAre />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="resources" element={<Resources />} />
-            <Route path="signin" element={<SignIn />} />
-            <Route path="forgot-password" element={<ForgotPassword />} />
-          </Route>
+            {/* Multilingual Wrapper */}
+            <Route path="/:lang" element={<LanguageLayout />}>
+              <Route index element={<Home />} />
+              <Route path="about-oman" element={<AboutOman />} />
+              <Route path="key-sectors" element={<KeySectors />} />
+              <Route path="who-we-are" element={<WhoWeAre />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="resources" element={<Resources />} />
+              <Route path="signin" element={<SignIn />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+            </Route>
 
-          {/* Catch-all redirect to /en */}
-          <Route path="*" element={<Navigate to="/en" replace />} />
-        </Routes>
+            {/* Catch-all redirect to /en */}
+            <Route path="*" element={<Navigate to="/en" replace />} />
+          </Routes>
+        </SmoothScroll>
       </BrowserRouter>
     </HelmetProvider>
   );

@@ -11,10 +11,31 @@ interface RotatingEarthProps {
 
 export default function RotatingEarth({ width = 800, height = 600, className = "" }: RotatingEarthProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     const [error, setError] = useState<string | null>(null)
+    const [isVisible, setIsVisible] = useState(false)
 
     useEffect(() => {
-        if (!canvasRef.current) return
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting)
+            },
+            { threshold: 0.1 }
+        )
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current)
+        }
+
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current)
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (!canvasRef.current || !isVisible) return
 
         const canvas = canvasRef.current
         const context = canvas.getContext("2d")
@@ -145,8 +166,8 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
             context.fill()
 
             // Outer glow for the globe outline
-            context.shadowColor = "rgba(255, 255, 255, 0.3)"
-            context.shadowBlur = 20
+            context.shadowColor = "rgba(255, 255, 255, 0.2)"
+            context.shadowBlur = 10
             context.strokeStyle = "rgba(255, 255, 255, 0.2)"
             context.lineWidth = 1.5 * scaleFactor
             context.stroke()
@@ -176,7 +197,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
                 // Draw halftone dots with glow - batching them for performance
                 context.fillStyle = "rgba(255, 255, 255, 0.8)"
                 context.shadowColor = "rgba(255, 255, 255, 0.8)"
-                context.shadowBlur = 6
+                context.shadowBlur = 4
 
                 context.beginPath()
                 allDots.forEach((dot) => {
@@ -284,7 +305,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
             rotationTimer.stop()
             canvas.removeEventListener("mousedown", handleMouseDown)
         }
-    }, [width, height])
+    }, [width, height, isVisible])
 
     if (error) {
         return (
@@ -298,7 +319,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
     }
 
     return (
-        <div className={`relative ${className} pointer-events-none`}>
+        <div ref={containerRef} className={`relative ${className} pointer-events-none`}>
             <canvas
                 ref={canvasRef}
                 className="w-full h-auto rounded-2xl pointer-events-auto"
