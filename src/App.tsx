@@ -14,7 +14,6 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ChatBot } from '@/components/chat/ChatBot';
-import { ThemeSwitcher } from '@/components/layout/ThemeSwitcher';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -84,6 +83,7 @@ const LanguageLayout = () => {
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             exit={{ opacity: 0, scale: 1.01, filter: 'blur(10px)' }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="will-change-transform gpu-accelerated"
           >
             <Outlet />
           </motion.div>
@@ -92,7 +92,6 @@ const LanguageLayout = () => {
       <Footer />
       <BottomNav />
       <ChatBot />
-      <ThemeSwitcher />
     </div>
   );
 };

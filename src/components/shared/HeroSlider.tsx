@@ -16,7 +16,7 @@ export const HeroSlider = ({ children }: HeroSliderProps) => {
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden will-change-transform gpu-accelerated"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -31,12 +31,13 @@ export const HeroSlider = ({ children }: HeroSliderProps) => {
             duration: ANIMATION.slider.transitionDuration,
             ease: 'easeInOut',
           }}
-          className="absolute inset-0"
+          className="absolute inset-0 will-change-transform gpu-accelerated"
         >
           <img
             src={HERO_SLIDES[currentIndex].image}
             alt={HERO_SLIDES[currentIndex].alt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover will-change-transform gpu-accelerated"
+            loading={currentIndex === 0 ? 'eager' : 'lazy'}
           />
         </motion.div>
       </AnimatePresence>

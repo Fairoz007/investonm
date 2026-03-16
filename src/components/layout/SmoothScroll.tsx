@@ -17,14 +17,19 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
       touchMultiplier: 2,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    let frameId: number | null = null;
 
-    requestAnimationFrame(raf);
+    const raf = (time: number) => {
+      lenis.raf(time);
+      frameId = window.requestAnimationFrame(raf);
+    };
+
+    frameId = window.requestAnimationFrame(raf);
 
     return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
       lenis.destroy();
     };
   }, []);
