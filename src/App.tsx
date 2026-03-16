@@ -76,6 +76,17 @@ const LanguageLayout = () => {
       <SEO />
       <Navigation />
       <main className="flex-1">
+        {/* Global company introduction banner for all pages */}
+        <div className="w-full border-b border-[var(--secondary)]/10 bg-[var(--background-custom)]/95">
+          <div className="container-custom py-4 text-xs sm:text-sm text-[var(--text-paragraph)] flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+            <p className="font-medium text-[var(--heading-sub)]">
+              Shomoukh International Investment is a dedicated investment company, owning and managing its own strategic portfolio while also welcoming investments through trusted third-party partners.
+            </p>
+            <p className="text-[11px] sm:text-xs text-[var(--text-paragraph)] sm:text-right">
+              We focus on building long-term value across key sectors in Oman and beyond.
+            </p>
+          </div>
+        </div>
         <AnimatePresence mode="wait">
           <motion.div
             key={useLocation().pathname}

@@ -79,27 +79,28 @@
 
 @layer base {
   :root {
-    --background: #F5F5F5;
+    /* Default Theme - Refined Gold Investment Palette */
+    --background: #F7F5F0;
     --foreground: 240 10% 10%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 10%;
-    
-    /* Theme 1 - Purple Gradient (Default) */
-    --primary: #8A6BCB;
-    --primary-dark: #7A5BC0;
-    --primary-light: #A086D6;
+
+    /* Primary brand colors */
+    --primary: #C8A45D;
+    --primary-dark: #8C6A2B;
+    --primary-light: #EAD9B0;
     --primary-foreground: #FFFFFF;
-    --secondary: #6A6AAE;
+    --secondary: #A88A44;
     --secondary-foreground: #FFFFFF;
-    --accent: #4F3C8C;
+    --accent: #6E5326;
     --accent-foreground: #FFFFFF;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5% 90%;
     --input: 240 5% 90%;
-    --ring: 259 49% 61%;
+    --ring: 41 51% 58%;
     --radius: 1.25rem;
 
     /* Text Colors */
@@ -109,15 +110,15 @@
     --link-highlight: #8A6BCB;
 
     /* Theme Specific */
-    --hero-gradient: linear-gradient(90deg, #000000, #4F3C8C, #8A6BCB);
-    --footer-gradient: linear-gradient(180deg, #F5F5F5 0%, #E8E8E8 100%);
-    --divider-gradient: linear-gradient(90deg, #8A6BCB, #4F3C8C);
+    --hero-gradient: linear-gradient(90deg, #3b2b12, #C8A45D, #EAD9B0);
+    --footer-gradient: linear-gradient(180deg, #F7F5F0 0%, #E8E8E8 100%);
+    --divider-gradient: linear-gradient(90deg, #C8A45D, #6E5326);
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
-    --btn-primary: #8A6BCB;
-    --btn-primary-hover: #7A5BC0;
-    --scrollbar-thumb: #8A6BCB;
-    --background-custom: #F5F5F5;
+    --btn-primary: #C8A45D;
+    --btn-primary-hover: #B3924E;
+    --scrollbar-thumb: #C8A45D;
+    --background-custom: #F7F5F0;
   }
 
   .theme-purple {

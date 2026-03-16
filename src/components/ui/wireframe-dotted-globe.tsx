@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
+import { feature } from "topojson-client"
 
 interface RotatingEarthProps {
     width?: number
@@ -41,6 +42,8 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         const context = canvas.getContext("2d")
         if (!context) return
 
+        let disposed = false
+
         // Set up responsive dimensions
         const containerWidth = Math.min(width, window.innerWidth - 40)
         const containerHeight = Math.min(height, window.innerHeight - 100)
@@ -51,7 +54,8 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         canvas.height = containerHeight * dpr
         canvas.style.width = `${containerWidth}px`
         canvas.style.height = `${containerHeight}px`
-        context.scale(dpr, dpr)
+        // Reset transform first (prevents scaling accumulating between renders)
+        context.setTransform(dpr, 0, 0, dpr, 0, 0)
 
         // Create projection and path generator for Canvas
         const projection = d3
@@ -219,28 +223,60 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
             }
         }
 
+        const yieldToBrowser = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+
+        const buildDotsForLand = async (geojson: any) => {
+            // Allocate a bounded total dot count for performance.
+            const TOTAL_DOTS = 2200
+            const areas = geojson.features.map((f: any) => d3.geoArea(f))
+            const totalArea = areas.reduce((a: number, b: number) => a + b, 0) || 1
+
+            let totalDots = 0
+
+            for (let i = 0; i < geojson.features.length; i++) {
+                if (disposed) return
+                const f = geojson.features[i]
+                const area = areas[i]
+                const target = Math.max(8, Math.round((area / totalArea) * TOTAL_DOTS))
+
+                const [[minLng, minLat], [maxLng, maxLat]] = d3.geoBounds(f)
+                let attempts = 0
+                let accepted = 0
+                const maxAttempts = target * 30
+
+                while (accepted < target && attempts < maxAttempts) {
+                    if (disposed) return
+                    attempts++
+
+                    const lng = minLng + Math.random() * (maxLng - minLng)
+                    const lat = minLat + Math.random() * (maxLat - minLat)
+                    if (d3.geoContains(f, [lng, lat])) {
+                        allDots.push({ lng, lat, visible: true })
+                        accepted++
+                        totalDots++
+                    }
+
+                    if (attempts % 400 === 0) {
+                        await yieldToBrowser()
+                    }
+                }
+            }
+
+            console.log(`[globe] Dots generated: ${totalDots}`)
+        }
+
         const loadWorldData = async () => {
             try {
+                setError(null)
 
-                const response = await fetch(
-                    "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/110m/physical/ne_110m_land.json",
-                )
+                // Prefer CDN topojson (smaller + faster + more reliable than raw GitHub).
+                const response = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json")
                 if (!response.ok) throw new Error("Failed to load land data")
 
-                landFeatures = await response.json()
+                const topo = await response.json()
+                landFeatures = feature(topo, topo.objects.land) as any
 
-                // Generate dots for all land features
-                let totalDots = 0
-                landFeatures.features.forEach((feature: any) => {
-                    const dots = generateDotsInPolygon(feature, 16)
-                    dots.forEach(([lng, lat]) => {
-                        allDots.push({ lng, lat, visible: true })
-                        totalDots++
-                    })
-                })
-
-                console.log(`[v0] Total dots generated: ${totalDots} across ${landFeatures.features.length} land features`)
-
+                await buildDotsForLand(landFeatures)
                 render()
             } catch (err) {
                 setError("Failed to load land map data")
@@ -302,6 +338,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
 
         // Cleanup
         return () => {
+            disposed = true
             rotationTimer.stop()
             canvas.removeEventListener("mousedown", handleMouseDown)
         }
