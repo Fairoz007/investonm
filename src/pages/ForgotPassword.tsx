@@ -89,7 +89,7 @@ export default function ForgotPassword() {
 
                             <button
                                 type="submit"
-                                className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--accent)] text-white font-bold font-poppins rounded-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[var(--primary)]/20"
+                                className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--accent)] text-white font-bold font-sans rounded-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[var(--primary)]/20"
                             >
                                 {t('forgot.btn_send', 'Send Reset Link')}
                             </button>

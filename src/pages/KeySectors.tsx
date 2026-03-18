@@ -58,129 +58,134 @@ export default function KeySectors() {
     const { t } = useTranslation();
 
     return (
-        <div className="bg-background min-h-screen text-[var(--text-paragraph)] overflow-hidden font-sans pt-24">
-            {/* Hero Section */}
-            <section className="relative h-[300px] flex items-center border-b border-black/5 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-10" />
-                    <div className="absolute inset-0 hero-gradient opacity-90" />
-                </div>
-                <div className="container-custom relative z-10 text-left w-full text-white">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="flex items-center justify-start gap-2 text-[12px] font-medium uppercase tracking-wider opacity-70 mb-[10px]"
-                    >
-                        <span>Home</span>
-                        <span className="opacity-40">/</span>
-                        <span>{t('keysectors.text.1')}</span>
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-[34px] font-semibold mb-[14px] leading-tight tracking-tight text-white"
-                    >
-                        {t('keysectors.text.1')}
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-[18px] text-white/90 leading-relaxed max-w-2xl"
-                    >
-                        {t('keysectors.text.3')}
-                    </motion.p>
-                </div>
-            </section>
-
-            {/* Sectors Grid */}
-            <section className="py-24">
-                <div className="container-custom">
-                    <div className="space-y-32">
-                        {SECTORS.map((sector, idx) => (
-                            <motion.div
-                                key={sector.id}
-                                id={sector.id}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.2 }}
-                                variants={fadeInUp}
-                                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-24 items-center`}
-                            >
-                                <div className="lg:w-1/2">
-                                    <div className="mb-[6px]">
-                                        <div className="text-[#E2E2E2] font-semibold text-[48px] leading-none select-none">
-                                            0.{idx + 1}
-                                        </div>
-                                    </div>
-
-                                    <h2 className="text-[36px] font-bold text-[#1A1A1A] leading-tight mb-[18px]">
-                                        {sector.title}
-                                    </h2>
-
-                                    <div className="space-y-[24px]">
-                                        <div className="p-8 bg-neutral-50 rounded-[2.5rem] border border-black/5">
-                                            <h3 className="text-sm font-bold uppercase tracking-widest text-accent mb-4">Overview</h3>
-                                            <p className="text-lg text-[#666666] leading-relaxed">
-                                                {t(`keysectors.${sector.key}.overview`)}
-                                            </p>
-                                        </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            <div className="p-6 bg-white rounded-3xl border border-black/5 shadow-sm">
-                                                <div className="flex items-center gap-3 mb-4">
-                                                    <TrendingUp className="w-5 h-5 text-accent" />
-                                                    <h4 className="font-bold text-[#222222]">Potential</h4>
-                                                </div>
-                                                <p className="text-sm text-[#888888] leading-relaxed">
-                                                    {t(`keysectors.${sector.key}.potential`)}
-                                                </p>
-                                            </div>
-                                            <div className="p-6 bg-white rounded-3xl border border-black/5 shadow-sm">
-                                                <div className="flex items-center gap-3 mb-4">
-                                                    <Target className="w-5 h-5 text-accent" />
-                                                    <h4 className="font-bold text-[#222222]">Future</h4>
-                                                </div>
-                                                <p className="text-sm text-[#888888] leading-relaxed">
-                                                    {t(`keysectors.${sector.key}.future`)}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        {/* Strategic Goal Section if available */}
-                                        {t(`keysectors.${sector.key}.goal`) !== `keysectors.${sector.key}.goal` && (
-                                            <div className="flex items-center gap-3 p-4 bg-accent/5 rounded-2xl border border-accent/10">
-                                                <CheckCircle2 className="w-5 h-5 text-accent" />
-                                                <span className="text-sm font-bold text-accent/70">Goal: {t(`keysectors.${sector.key}.goal`)}</span>
-                                            </div>
-                                        )}
-                                    </div>
-
-                                    <button className="flex items-center gap-2 text-accent font-black uppercase tracking-widest text-sm group">
-                                        Exploration Guide <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                                    </button>
-                                </div>
-
-                                <div className="lg:w-1/2 w-full">
-                                    <div className="aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl relative group">
-                                        <div
-                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[2000ms] group-hover:scale-110"
-                                            style={{ backgroundImage: `url(${sector.image})` }}
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent" />
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Research CTA section */}
-            <ResearchDataCTA />
+    <div className="bg-[#020617] min-h-screen text-white/90 overflow-hidden font-sans pt-24">
+      {/* Hero Section */}
+      <section className="relative h-[450px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-[#020617]/60 to-[#020617]" />
         </div>
-    );
+        <div className="container-custom relative z-10 text-left w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-start gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--primary-light)] mb-6"
+          >
+            <span className="opacity-50 text-white">Home</span>
+            <span className="opacity-20 text-white">/</span>
+            <span>{t('keysectors.text.1')}</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter text-white font-sans"
+          >
+            {t('keysectors.text.1')}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-3xl font-sans font-light"
+          >
+            {t('keysectors.text.3')}
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Sectors Grid */}
+      <section className="py-16 md:py-32 bg-gradient-to-b from-[#020617] to-[#0F172A] relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] pointer-events-none" />
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col gap-24 md:gap-48">
+            {SECTORS.map((sector, idx) => (
+              <motion.div
+                key={sector.id}
+                id={sector.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-16 lg:gap-32 items-center`}
+              >
+                <div className="lg:w-1/2 space-y-10">
+                  <div className="mb-2">
+                    <div className="text-[var(--primary-light)]/20 font-bold text-8xl md:text-9xl leading-none select-none font-sans tracking-tighter">
+                      0{idx + 1}
+                    </div>
+                  </div>
+
+                  <h2 className="text-4xl md:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-8 font-sans">
+                    {sector.title}
+                  </h2>
+
+                  <div className="space-y-8">
+                    <div className="p-10 bg-white/5 backdrop-blur-xl rounded-[3rem] border border-white/10 group hover:border-[var(--primary)]/50 transition-all shadow-2xl">
+                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary-light)] mb-6 font-sans">Strategic Overview</h3>
+                      <p className="text-xl text-white/50 leading-relaxed font-sans font-light">
+                        {t(`keysectors.${sector.key}.overview`)}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="p-8 bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 shadow-xl group hover:bg-white/10 transition-all">
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="p-3 bg-[var(--primary)]/10 rounded-xl">
+                            <TrendingUp className="w-6 h-6 text-[var(--primary-light)]" />
+                          </div>
+                          <h4 className="font-bold text-white font-sans">Potential</h4>
+                        </div>
+                        <p className="text-sm text-white/40 leading-relaxed font-sans font-light">
+                          {t(`keysectors.${sector.key}.potential`)}
+                        </p>
+                      </div>
+                      <div className="p-8 bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 shadow-xl group hover:bg-white/10 transition-all">
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="p-3 bg-[var(--primary)]/10 rounded-xl">
+                            <Target className="w-6 h-6 text-[var(--primary-light)]" />
+                          </div>
+                          <h4 className="font-bold text-white font-sans">Future</h4>
+                        </div>
+                        <p className="text-sm text-white/40 leading-relaxed font-sans font-light">
+                          {t(`keysectors.${sector.key}.future`)}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Strategic Goal Section if available */}
+                    {t(`keysectors.${sector.key}.goal`) !== `keysectors.${sector.key}.goal` && (
+                      <div className="flex items-center gap-4 p-6 bg-[var(--primary)]/5 rounded-2xl border border-[var(--primary)]/20 backdrop-blur-sm">
+                        <CheckCircle2 className="w-6 h-6 text-[var(--primary-light)]" />
+                        <span className="text-sm font-bold text-[var(--primary-light)]/80 font-sans tracking-wide">Goal: {t(`keysectors.${sector.key}.goal`)}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <button className="flex items-center justify-center sm:justify-start gap-3 text-[var(--primary-light)] font-bold uppercase tracking-[0.2em] text-xs group pt-4 w-full sm:w-auto min-h-[44px]">
+                    Sector Exploration Guide <ArrowRight className="w-5 h-5 group-hover:translate-x-3 transition-transform duration-500" />
+                  </button>
+                </div>
+
+                <div className="lg:w-1/2 w-full">
+                  <div className="aspect-[1.2] rounded-[4rem] overflow-hidden shadow-2xl relative group border border-white/10">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
+                      style={{ backgroundImage: `url(${sector.image})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research CTA section */}
+      <ResearchDataCTA />
+    </div>
+  );
 }

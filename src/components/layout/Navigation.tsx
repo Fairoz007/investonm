@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, Globe, X } from 'lucide-react';
@@ -30,7 +30,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
       onMouseLeave={() => { setIsOpen(false); setActiveChildIndex(null); }}
       className="static h-full flex items-center"
     >
-      <button className={`font-poppins flex items-center gap-1 py-8 text-[13px] font-bold tracking-[0.05em] uppercase whitespace-nowrap transition-colors relative ${isOpen ? 'text-[var(--primary)]' : 'text-current opacity-60 hover:opacity-100 hover:text-[var(--primary)]'
+      <button className={`font-sans flex items-center gap-1 py-8 text-[13px] font-bold tracking-[0.05em] uppercase whitespace-nowrap transition-colors relative ${isOpen ? 'text-[var(--primary)]' : 'text-white opacity-70 hover:opacity-100 hover:text-[var(--primary)]'
         }`}>
         {t(item.label)}
         <span className={`text-[10px] transition-transform ${isOpen ? 'rotate-180 text-[var(--primary)]' : 'opacity-70'} ml-0.5`}>▾</span>
@@ -42,18 +42,21 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute top-[100%] left-0 w-[100vw] shadow-2xl overflow-y-auto z-[45] rounded-b-[20px] glass-nav"
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-[100%] left-0 w-[100vw] shadow-2xl overflow-y-auto z-[45] rounded-b-[40px] glass-nav"
             style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              height: '360px',
-              maxHeight: '380px'
+              background: 'rgba(11, 15, 25, 0.98)',
+              height: 'auto',
+              minHeight: '340px',
+              maxHeight: '520px',
+              backdropFilter: 'blur(30px)',
+              WebkitBackdropFilter: 'blur(30px)',
             }}
           >
             <div className="relative h-full w-full max-w-[1400px] mx-auto p-[40px]">
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-10 right-10 text-[#666666] hover:text-[var(--secondary)] transition-colors"
+                className="absolute top-10 right-10 text-white/60 hover:text-[var(--primary)] transition-colors"
                 title="Close"
               >
                 <X className="w-5 h-5" />
@@ -61,7 +64,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
 
               <div className="flex flex-col mb-4">
                 <h2 className="text-[var(--primary)] text-[11px] font-semibold tracking-widest uppercase mb-1">{t(item.label)}</h2>
-                {item.subtitle && <p className="text-[#222222] text-sm font-medium">{t(item.subtitle)}</p>}
+                {item.subtitle && <p className="text-white text-sm font-medium">{t(item.subtitle)}</p>}
               </div>
 
               <div className="w-full h-[1px] bg-[var(--primary)] mb-6 opacity-30" />
@@ -74,7 +77,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                       key={index}
                       to={`/${lang}${child.href}`}
                       onMouseEnter={() => hasSidebar && setActiveChildIndex(index)}
-                      className={`flex items-center gap-4 py-1 transition-colors group ${hasSidebar ? 'w-full' : 'w-fit'} ${activeChildIndex === index ? 'text-[var(--primary)]' : 'text-[#222222]/80 hover:text-[var(--primary)]'}`}
+                      className={`flex items-center gap-4 py-1 transition-colors group ${hasSidebar ? 'w-full' : 'w-fit'} ${activeChildIndex === index ? 'text-[var(--primary)]' : 'text-white/80 hover:text-[var(--primary)]'}`}
                     >
                       <span className="text-[10px] font-mono opacity-60 w-4">{String(index + 1).padStart(2, '0')}</span>
                       <span className={`text-[12px] font-bold tracking-tight uppercase ${hasSidebar ? 'flex-1' : ''}`}>
@@ -112,7 +115,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                                       <Link
                                         key={sIdx}
                                         to={`/${lang}${subItem.href}`}
-                                        className="text-[11px] text-[#222222]/60 hover:text-[var(--primary)] transition-colors"
+                                        className="text-[11px] text-white/60 hover:text-[var(--primary)] transition-colors"
                                       >
                                         {t(subItem.label)}
                                       </Link>
@@ -129,7 +132,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                                     <Link
                                       key={sIdx}
                                       to={`/${lang}${subItem.href}`}
-                                      className="text-[11px] text-[#222222]/60 hover:text-[var(--primary)] transition-colors"
+                                      className="text-[11px] text-white/60 hover:text-[var(--primary)] transition-colors"
                                     >
                                       {t(subItem.label)}
                                     </Link>
@@ -161,7 +164,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
     return (
       <Link
         to={`/${lang}${item.href}`}
-        className="block py-4 px-2 text-lg font-bold text-[#222222] font-poppins border-b border-[var(--secondary)]/5 hover:bg-[var(--primary)]/5 transition-colors rounded-xl"
+        className="block py-4 px-4 text-base font-bold text-white font-sans border-b border-white/5 hover:bg-[var(--primary)]/5 transition-all duration-300 rounded-xl"
       >
         {t(item.label)}
       </Link>
@@ -169,14 +172,14 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
   }
 
   return (
-    <div className="border-b border-[var(--secondary)]/5">
+    <div className="border-b border-gray-50">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between w-full py-4 px-2 text-lg font-bold text-[#222222] font-poppins hover:bg-[var(--primary)]/5 transition-colors rounded-xl"
+        className="flex items-center justify-between w-full py-4 px-4 text-base font-bold text-white font-sans hover:bg-[var(--primary)]/10 transition-all duration-300 rounded-xl"
       >
         {t(item.label)}
         <ChevronDown
-          className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[var(--primary)]' : 'text-[#666666]'}`}
+          className={`w-4 h-4 transition-transform duration-500 ${isExpanded ? 'rotate-180 text-[var(--primary)]' : 'text-white/40'}`}
         />
       </button>
       <AnimatePresence>
@@ -195,7 +198,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                     <div>
                       <button
                         onClick={() => setExpandedChildIndex(expandedChildIndex === index ? null : index)}
-                        className="flex items-center justify-between w-full py-2 text-sm font-semibold text-[#444444] hover:text-[var(--primary)] transition-colors"
+                        className="flex items-center justify-between w-full py-2 text-sm font-semibold text-white/80 hover:text-[var(--primary)] transition-colors"
                       >
                         {t(child.label)}
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedChildIndex === index ? 'rotate-180 text-[var(--primary)]' : ''}`} />
@@ -206,7 +209,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                             className="overflow-hidden"
                           >
                             <div className="pl-6 py-2 space-y-5 border-l-2 border-[var(--primary)]/20 ml-2 mt-2">
@@ -217,7 +220,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                                   )}
                                   <div className="flex flex-col gap-3">
                                     {col.items.map((sub, sIdx) => (
-                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="text-sm text-[#666666] hover:text-[var(--primary)] transition-colors">
+                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="text-sm text-white/60 hover:text-[var(--primary)] transition-colors">
                                         {t(sub.label)}
                                       </Link>
                                     ))}
@@ -230,12 +233,12 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    <Link
-                      to={`/${lang}${child.href}`}
-                      className="block py-2.5 text-sm font-medium text-[#444444] hover:text-[var(--primary)] transition-colors"
-                    >
-                      {t(child.label)}
-                    </Link>
+                             <Link
+                              to={`/${lang}${child.href}`}
+                              className="block py-3 text-[13px] font-semibold text-white/70 hover:text-[var(--primary)] transition-colors px-4 border-l-2 border-transparent hover:border-[var(--primary)]"
+                            >
+                              {t(child.label)}
+                            </Link>
                   )}
                 </div>
               ))}
@@ -256,6 +259,16 @@ export const Navigation = () => {
   const navigate = useNavigate();
   const { lang: currentLang } = useParams();
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleLanguageChange = (langCode: string) => {
     const currentPath = location.pathname;
     const pathParts = currentPath.split('/');
@@ -274,30 +287,35 @@ export const Navigation = () => {
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 w-full z-[1000] bg-white border-b border-gray-100 shadow-sm will-change-transform gpu-accelerated"
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-700 ease-in-out will-change-[height,padding,background,backdrop-filter] ${
+          isScrolled 
+            ? 'bg-[#0b0f19]/95 backdrop-blur-2xl border-b border-white/10 shadow-[0_20px_80px_-15px_rgba(0,0,0,0.7)] py-1.5' 
+            : 'bg-gradient-to-b from-[#0b0f19]/90 via-[#0b0f19]/40 to-transparent py-5'
+        }`}
       >
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center h-[80px] w-full justify-between text-[#222222]">
+        <div className="w-full max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-12">
+          <nav className="flex items-center h-[70px] w-full justify-between text-white">
             {/* Logo */}
             <div className="flex shrink-0 justify-start">
-              <Link to={`/${displayLang}`} className="flex items-center gap-3 group">
+              <Link to={`/${displayLang}`} className="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]">
                 <img
                   src="/images/Logo-01.png"
                   alt="Shomoukh International Investment"
-                  className="h-12 w-auto object-contain brightness-100"
+                  className={`transition-all duration-500 ${isScrolled ? 'h-10' : 'h-14'} w-auto object-contain brightness-0 invert`}
                 />
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center justify-center gap-[40px] h-full whitespace-nowrap flex-1 px-4">
+            <div className="hidden lg:flex items-center justify-center gap-[35px] h-full whitespace-nowrap flex-1 px-8">
               {NAV_ITEMS.map((item, index) =>
                 item.children ? (
                   <NavDropdown key={index} item={item} lang={displayLang} />
                 ) : (
-                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[13px] font-bold tracking-[0.05em] uppercase font-poppins text-current opacity-60 hover:opacity-100 hover:text-[var(--primary)] transition-all relative">
+                  <Link key={index} to={`/${displayLang}${item.href}`} className="flex items-center h-full text-[13px] font-bold tracking-[0.06em] uppercase text-white opacity-70 hover:opacity-100 hover:text-blue-400 transition-all relative">
                     {t(item.label)}
+                    <span className="absolute bottom-6 left-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
                   </Link>
                 )
               )}
@@ -308,7 +326,7 @@ export const Navigation = () => {
               {/* Login Button */}
               <Link
                 to={`/${displayLang}/signin`}
-                className="hidden sm:flex items-center gap-2 px-6 py-2 bg-[var(--primary)] text-white text-xs font-bold font-poppins rounded-full hover:bg-[var(--primary-dark)] transition-colors duration-300 tracking-wider shadow-md"
+                className="hidden sm:flex items-center gap-2 px-8 py-3 bg-white/5 text-white text-[11px] font-bold rounded-full hover:bg-blue-600 border border-white/10 transition-all duration-500 tracking-widest shadow-lg hover:-translate-y-0.5 uppercase"
               >
                 {t('navigation.text.3')}
               </Link>
@@ -319,29 +337,29 @@ export const Navigation = () => {
                 onMouseEnter={() => setIsLangMenuOpen(true)}
                 onMouseLeave={() => setIsLangMenuOpen(false)}
               >
-                <button className={`flex items-center gap-1 text-xs font-semibold tracking-wide py-2 transition-colors ${isLangMenuOpen ? 'text-[var(--primary)]' : 'text-[#666666] hover:text-[var(--primary)]'}`}>
+                <button className={`flex items-center gap-1 text-xs font-semibold tracking-wide py-2 transition-colors ${isLangMenuOpen ? 'text-blue-400' : 'text-white/70 hover:text-blue-400'}`}>
                   <Globe className="w-3 h-3" />
                   <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180 text-[var(--primary)]' : ''}`} />
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180 text-blue-400' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {isLangMenuOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-[100%] right-0 pt-2 w-32 z-50 pointer-events-auto"
+                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute top-[120%] right-0 w-44 z-50"
                     >
-                      <div className="bg-white border border-[var(--secondary)]/10 rounded-lg shadow-xl overflow-hidden flex flex-col">
+                      <div className="bg-[#0b0f19]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col p-1.5">
                         {LANGUAGES.map((lang) => (
                           <button
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
-                            className={`flex justify-between items-center w-full text-left px-4 py-2.5 text-xs transition-colors group/lang ${displayLang === lang.code ? 'text-[var(--primary)] bg-[#F5F5F5]' : 'text-[#666666] hover:text-[var(--primary)] hover:bg-[#F5F5F5]'}`}
+                            className={`flex justify-between items-center w-full text-left px-4 py-3 text-[11px] font-bold rounded-xl transition-all duration-300 group/lang ${displayLang === lang.code ? 'text-blue-400 bg-white/10' : 'text-white/70 hover:text-blue-400 hover:bg-white/5'}`}
                           >
-                            <span>{lang.native}</span>
-                            <span className="text-[10px] opacity-50 group-hover/lang:opacity-100">{lang.name}</span>
+                            <span className="tracking-wide">{lang.native}</span>
+                            <span className="text-[9px] opacity-40 group-hover/lang:opacity-100 font-mono">{lang.code.toUpperCase()}</span>
                           </button>
                         ))}
                       </div>
@@ -350,12 +368,11 @@ export const Navigation = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Vision 2040 Logo */}
-              <div className="hidden lg:flex items-center text-right border-l border-current/20 pl-6 h-10">
+              <div className="hidden lg:flex items-center text-right border-l border-white/10 pl-8 h-10 ml-2">
                 <img
                   src="/images/Oman_Vision_2040_Logo.png"
                   alt="Vision 2040"
-                  className="h-10 w-auto object-contain brightness-100 opacity-90 hover:opacity-100"
+                  className="h-9 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert"
                 />
               </div>
 
@@ -363,25 +380,25 @@ export const Navigation = () => {
               <div className="lg:hidden flex items-center">
                 <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                   <SheetTrigger asChild>
-                    <button className="p-2 text-[#222222] hover:text-[var(--primary)] transition-colors">
+                    <button className="p-2 text-white hover:text-blue-400 transition-colors">
                       <Menu className="w-6 h-6" />
                     </button>
                   </SheetTrigger>
                   <SheetContent
                     side="right"
-                    className="w-full sm:w-[400px] bg-white border-l border-[var(--secondary)]/10 p-0 z-[1100]"
+                    className="w-full sm:w-[400px] bg-[#0b0f19] border-l border-white/10 p-0 z-[1100]"
                   >
                     <div className="flex flex-col h-full">
-                      <SheetHeader className="p-6 border-b border-[var(--secondary)]/5 bg-[#F5F5F5]/50 flex-row items-center justify-between">
+                      <SheetHeader className="p-8 border-b border-white/5 flex-row items-center justify-between">
                         <SheetTitle className="sr-only">Menu</SheetTitle>
                         <img
                           src="/images/Logo-01.png"
                           alt="Shomoukh"
-                          className="h-10 w-auto object-contain"
+                          className="h-10 w-auto object-contain brightness-0 invert"
                         />
                       </SheetHeader>
 
-                      <div className="flex-1 overflow-auto p-6 pb-32">
+                      <div className="flex-1 overflow-auto p-6 pb-6">
                         <div className="space-y-1">
                           {NAV_ITEMS.map((item, index) => (
                             <MobileNavItem key={index} item={item} lang={displayLang} />
@@ -389,10 +406,10 @@ export const Navigation = () => {
                         </div>
                       </div>
 
-                      <div className="pt-6 border-t border-[var(--secondary)]/10 space-y-4">
+                      <div className="p-8 border-t border-white/5 space-y-4">
                         <Link
                           to={`/${displayLang}/signin`}
-                          className="w-full py-4 bg-[var(--primary)] text-white font-bold font-poppins rounded-full hover:bg-[var(--primary-dark)] transition-all tracking-wider text-center block shadow-lg"
+                          className="w-full py-4 bg-blue-600 text-white font-bold rounded-full transition-all duration-300 tracking-widest text-center block shadow-xl uppercase text-xs"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {t('navigation.text.7')}
@@ -400,11 +417,11 @@ export const Navigation = () => {
                         <div className="flex flex-col w-full pb-4">
                           <button
                             onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
-                            className="flex items-center justify-center gap-2 w-full py-3 text-[#222222] hover:text-[var(--primary)] transition-colors font-medium border border-[var(--secondary)]/10 rounded-full"
+                            className="flex items-center justify-center gap-2 w-full py-3 text-white hover:text-blue-400 transition-colors font-medium border border-white/10 rounded-full"
                           >
                             <Globe className="w-5 h-5" />
                             <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
-                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-[var(--primary)]' : ''}`} />
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-blue-400' : ''}`} />
                           </button>
                           <AnimatePresence>
                             {isMobileLangOpen && (
@@ -413,14 +430,14 @@ export const Navigation = () => {
                                 animate={{ height: 'auto', opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="overflow-hidden bg-[#F5F5F5] border border-[var(--secondary)]/10 rounded-2xl mt-2 mb-2"
+                                className="overflow-hidden bg-white/5 border border-white/10 rounded-2xl mt-2 mb-2"
                               >
                                 <div className="flex flex-col py-2">
                                   {LANGUAGES.map((lang) => (
                                     <button
                                       key={lang.code}
                                       onClick={() => handleLanguageChange(lang.code)}
-                                      className={`flex flex-col items-center w-full text-center py-3 text-sm transition-colors ${displayLang === lang.code ? 'text-[var(--primary)] bg-white' : 'text-[#666666] hover:text-[var(--primary)]'}`}
+                                      className={`flex flex-col items-center w-full text-center py-3 text-sm transition-colors ${displayLang === lang.code ? 'text-blue-400 bg-white/10' : 'text-white/60 hover:text-blue-400'}`}
                                     >
                                       <span className="font-bold">{lang.native}</span>
                                       <span className="text-[10px] opacity-50 uppercase tracking-widest mt-0.5">{lang.name}</span>

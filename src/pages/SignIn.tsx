@@ -127,7 +127,7 @@ export default function SignIn() {
 
                         <button
                             type="submit"
-                            className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold font-poppins rounded-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20"
+                            className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold font-sans rounded-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20"
                         >
                             {isLogin ? (t('signin.btn_login', 'Sign In')) : (t('signin.btn_signup', 'Create Account'))}
                         </button>
@@ -145,11 +145,11 @@ export default function SignIn() {
 
                     {/* Social Logins */}
                     <div className="grid grid-cols-2 gap-4">
-                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-poppins group">
+                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-sans group">
                             <Chrome className="w-5 h-5 text-secondary group-hover:text-foreground transition-colors" />
                             <span className="text-sm font-medium">Google</span>
                         </button>
-                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-poppins group">
+                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-sans group">
                             <Apple className="w-5 h-5 text-secondary group-hover:text-foreground transition-colors" />
                             <span className="text-sm font-medium">Apple</span>
                         </button>

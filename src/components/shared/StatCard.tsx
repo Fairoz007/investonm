@@ -22,7 +22,7 @@ export const StatCard = ({ value, label, icon, delay = 0 }: StatCardProps) => {
       className="glass-card p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
     >
       {icon && <div className="mb-4 text-primary">{icon}</div>}
-      <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-poppins">{value}</div>
+      <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-sans">{value}</div>
       <div className="text-sm text-white/60">{label}</div>
     </motion.div>
   );

@@ -6,6 +6,15 @@ export const NAV_ITEMS: NavItem[] = [
     href: '/',
   },
   {
+    label: 'ABOUT US',
+    href: '/who-we-are',
+    children: [
+      { label: 'Our Story', href: '/who-we-are#story' },
+      { label: 'Mission & Vision', href: '/who-we-are#mission' },
+      { label: 'Our Experts', href: '/our-experts' },
+    ],
+  },
+  {
     label: 'DISCOVER OMAN',
     href: '/about-oman',
     subtitle: 'aboutoman.text.3',

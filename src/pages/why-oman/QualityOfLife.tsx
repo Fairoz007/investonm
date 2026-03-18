@@ -85,7 +85,7 @@ export default function QualityOfLife() {
             >
               <span>Home</span>
               <span className="opacity-40">/</span>
-              <span>{t('qol.text.2')}</span>
+              <span>Quality of Life</span>
             </motion.div>
 
             <motion.h1
@@ -103,7 +103,8 @@ export default function QualityOfLife() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[18px] text-white leading-relaxed max-w-2xl"
             >
-              Oman offers a unique blend of heritage, nature, and modern living, making it the perfect destination for high-net-worth families.
+              The Sultanate of Oman offers a high quality of life supported by safety, political stability, and a welcoming cultural environment.
+              Residents benefit from modern healthcare systems, internationally recognized educational institutions, and a high standard of living. Combined with the country’s rich cultural heritage and natural landscapes, these factors contribute to an environment that attracts investors, entrepreneurs, and international professionals.
             </motion.p>
           </ScrollReveal>
         </div>

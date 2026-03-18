@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, MinusCircle, Maximize2, RefreshCw, ChevronDown } from 'lucide-react';
+import { MessageCircle, X, Send, User, MinusCircle, Maximize2, RefreshCw, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Avatar } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -148,24 +147,24 @@ export const ChatBot: React.FC = () => {
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
                         className="mb-4 overflow-hidden origin-bottom-right"
                     >
-                        <Card className="flex flex-col h-full shadow-2xl border-white/20 bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden ring-1 ring-black/5">
+                        <Card className="flex flex-col h-full shadow-2xl border-white/10 bg-[#020617] backdrop-blur-3xl rounded-3xl overflow-hidden ring-1 ring-white/10">
                             {/* Header - website aesthetic */}
-                            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-accent via-accent/80 to-[var(--primary)] text-white shrink-0 relative z-10">
+                            <div className="flex items-center justify-between p-5 bg-gradient-to-br from-[#1E3A8A] via-[#0F172A] to-[#020617] text-white shrink-0 relative z-10 border-b border-white/10">
                                 <div className="flex items-center gap-3">
                                     <div className="relative">
-                                        <div className="h-10 w-10 rounded-full border-2 border-white/30 overflow-hidden shadow-inner bg-white/10 flex items-center justify-center backdrop-blur-md">
-                                            <img src="/oman-logo-white.png" alt="Oman" className="h-7 w-7 object-contain drop-shadow-sm" />
+                                        <div className="h-11 w-11 rounded-2xl border border-white/20 overflow-hidden bg-white/5 flex items-center justify-center p-2 backdrop-blur-md shadow-2xl">
+                                            <img src="/images/Logo-01.png" alt="Shomoukh" className="h-full w-full object-contain filter brightness-0 invert opacity-90" />
                                         </div>
-                                        <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-accent border-2 border-white shadow-sm" />
+                                        <span className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full bg-green-500 border-2 border-[#020617] shadow-lg shadow-green-500/20" />
                                     </div>
-                                    <div>
-                                        <h3 className="text-sm font-bold tracking-tight text-white leading-tight">
-                                            {t('chatbot.title', 'Shomoukh AI')}
+                                    <div className="flex flex-col">
+                                        <h3 className="text-[10px] sm:text-[11px] font-bold tracking-[0.1em] text-white leading-tight uppercase font-sans">
+                                            Shomoukh International Investment
                                         </h3>
-                                        <div className="flex items-center gap-1.5 mt-0.5">
-                                            <span className="flex h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-                                            <span className="text-[10px] text-white/80 font-medium uppercase tracking-wider">
-                                                {t('chatbot.online', 'Online Now')}
+                                        <div className="flex items-center gap-2 mt-1">
+                                            <span className="flex h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                                            <span className="text-[9px] text-white/50 font-bold uppercase tracking-[0.15em] font-sans">
+                                                {t('chatbot.online', 'Online Assistant')}
                                             </span>
                                         </div>
                                     </div>
@@ -202,42 +201,43 @@ export const ChatBot: React.FC = () => {
                             {!isMinimized && (
                                 <>
                                     {/* Chat Area with better scroll */}
-                                    <div className="flex-1 overflow-hidden relative bg-[#F8F9FA]/50">
+                                    <div className="flex-1 overflow-hidden relative bg-[#020617]/50">
+                                        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/5 via-transparent to-[#020617]/40 pointer-events-none" />
                                         <ScrollArea
                                             ref={scrollAreaRef}
-                                            className="h-full w-full custom-scrollbar"
+                                            className="h-full w-full custom-scrollbar relative z-10"
                                             onScrollCapture={handleScroll}
                                         >
-                                            <div className="p-4 space-y-6 pb-20">
+                                            <div className="p-5 space-y-8 pb-24">
                                                 {messages.map((m, idx) => (
                                                     <motion.div
-                                                        initial={{ opacity: 0, y: 10 }}
+                                                        initial={{ opacity: 0, y: 15 }}
                                                         animate={{ opacity: 1, y: 0 }}
-                                                        transition={{ duration: 0.3, delay: idx * 0.05 }}
+                                                        transition={{ duration: 0.4, delay: idx * 0.05, ease: "easeOut" }}
                                                         key={idx}
                                                         className={cn(
-                                                            "flex gap-3 max-w-[90%] group",
+                                                            "flex gap-4 max-w-[90%] group",
                                                             m.role === 'user' ? "ml-auto flex-row-reverse" : ""
                                                         )}
                                                     >
-                                                        <Avatar className={cn(
-                                                            "h-8 w-8 shrink-0 shadow-sm ring-1 ring-black/5",
+                                                        <div className={cn(
+                                                            "h-9 w-9 shrink-0 flex items-center justify-center rounded-2xl shadow-xl overflow-hidden backdrop-blur-xl border border-white/10",
                                                             m.role === 'user'
-                                                                ? "bg-white"
-                                                                : "bg-gradient-to-br from-[var(--accent)] to-[var(--primary)]"
+                                                                ? "bg-white/10"
+                                                                : "bg-gradient-to-br from-[#2563EB] to-[#1E40AF]"
                                                         )}>
                                                             {m.role === 'user' ? (
-                                                                <User className="h-4 w-4 text-[var(--accent)]" />
+                                                                <User className="h-5 w-5 text-white/70" />
                                                             ) : (
-                                                                <Bot className="h-4 w-4 text-white" />
+                                                                <img src="/images/Logo-01.png" alt="S" className="h-5 w-5 object-contain filter brightness-0 invert" />
                                                             )}
-                                                        </Avatar>
+                                                        </div>
                                                         <div
                                                             className={cn(
-                                                                "relative px-4 py-3 rounded-2xl text-[13px] leading-relaxed shadow-[0_2px_10px_-4px_rgba(0,0,0,0.1)]",
+                                                                "relative px-5 py-4 rounded-[2rem] text-[14px] leading-relaxed shadow-2xl font-sans",
                                                                 m.role === 'user'
-                                                                    ? "bg-[var(--accent)] text-white rounded-tr-none"
-                                                                    : "bg-white text-[#222222] border border-slate-200/50 rounded-tl-none"
+                                                                    ? "bg-[#2563EB] text-white rounded-tr-none hover:bg-[#1D4ED8] transition-colors"
+                                                                    : "bg-white/5 text-white/90 border border-white/10 rounded-tl-none backdrop-blur-md"
                                                             )}
                                                         >
                                                             {m.content}
@@ -246,15 +246,15 @@ export const ChatBot: React.FC = () => {
                                                 ))}
 
                                                 {isLoading && (
-                                                    <div className="flex gap-3 max-w-[85%]">
-                                                        <Avatar className="h-8 w-8 bg-gradient-to-br from-[var(--accent)] to-[var(--primary)] animate-pulse">
-                                                            <Bot className="h-4 w-4 text-white" />
-                                                        </Avatar>
-                                                        <div className="bg-white border border-slate-200/50 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-3">
-                                                            <div className="flex gap-1">
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]/40 animate-bounce [animation-delay:-0.3s]" />
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]/40 animate-bounce [animation-delay:-0.15s]" />
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]/40 animate-bounce" />
+                                                    <div className="flex gap-4 max-w-[85%]">
+                                                        <div className="h-9 w-9 bg-gradient-to-br from-[#2563EB] to-[#1E40AF] animate-pulse rounded-2xl border border-white/10 flex items-center justify-center shadow-xl">
+                                                            <img src="/images/Logo-01.png" alt="S" className="h-5 w-5 object-contain filter brightness-0 invert" />
+                                                        </div>
+                                                        <div className="bg-white/5 border border-white/10 px-5 py-4 rounded-[2rem] rounded-tl-none shadow-2xl backdrop-blur-md flex items-center gap-3">
+                                                            <div className="flex gap-1.5">
+                                                                <span className="w-2 h-2 rounded-full bg-[#2563EB]/60 animate-bounce [animation-delay:-0.3s]" />
+                                                                <span className="w-2 h-2 rounded-full bg-[#2563EB]/60 animate-bounce [animation-delay:-0.15s]" />
+                                                                <span className="w-2 h-2 rounded-full bg-[#2563EB]/60 animate-bounce" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -262,14 +262,14 @@ export const ChatBot: React.FC = () => {
 
                                                 {/* Suggestions when empty/at end */}
                                                 {!isLoading && messages.length < 5 && (
-                                                    <div className="flex flex-wrap gap-2 pt-2">
+                                                    <div className="flex flex-wrap gap-3 pt-4">
                                                         {SUGGESTIONS.map((s) => (
                                                             <Button
                                                                 key={s.id}
                                                                 variant="outline"
                                                                 size="sm"
                                                                 onClick={() => handleSend(s.label)}
-                                                                className="text-[11px] h-8 rounded-full border-[var(--accent)]/20 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all shadow-sm"
+                                                                className="text-[12px] font-bold h-9 px-5 rounded-full border-white/10 bg-white/5 text-white/70 hover:bg-[#2563EB] hover:text-white hover:border-[#2563EB] transition-all shadow-xl backdrop-blur-md uppercase tracking-wider"
                                                             >
                                                                 {s.label}
                                                             </Button>
@@ -296,33 +296,33 @@ export const ChatBot: React.FC = () => {
                                     </div>
 
                                     {/* Input Area */}
-                                    <div className="p-4 bg-white/80 backdrop-blur-sm border-t border-slate-100 shrink-0">
-                                        <div className="flex items-center gap-2 bg-slate-100/80 rounded-xl p-1.5 transition-all focus-within:ring-2 focus-within:ring-[var(--accent)]/20 border border-transparent focus-within:border-[var(--accent)]/20">
+                                    <div className="p-5 bg-[#020617] backdrop-blur-2xl border-t border-white/10 shrink-0">
+                                        <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-2 transition-all focus-within:ring-2 focus-within:ring-[#2563EB]/30 border border-white/10 focus-within:border-[#2563EB]/50 backdrop-blur-md">
                                             <Input
                                                 value={input}
                                                 onChange={(e) => setInput(e.target.value)}
                                                 onKeyDown={handleKeyPress}
                                                 placeholder={t('chatbot.placeholder', 'Ask about Oman...')}
-                                                className="bg-transparent border-none focus-visible:ring-0 shadow-none h-10 text-[13px] placeholder:text-slate-400"
+                                                className="bg-transparent border-none focus-visible:ring-0 shadow-none h-11 text-[14px] placeholder:text-white/30 text-white font-sans"
                                                 disabled={isLoading}
                                             />
                                             <Button
                                                 size="icon"
                                                 className={cn(
-                                                    "h-9 w-9 rounded-lg transition-all shrink-0",
+                                                    "h-10 w-10 rounded-xl transition-all shrink-0 shadow-2xl",
                                                     input.trim()
-                                                        ? "bg-[var(--accent)] hover:brightness-90 text-white shadow-md"
-                                                        : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                                        ? "bg-[#2563EB] hover:bg-[#1D4ED8] text-white"
+                                                        : "bg-white/5 text-white/20 cursor-not-allowed"
                                                 )}
                                                 onClick={() => handleSend()}
                                                 disabled={isLoading || !input.trim()}
                                             >
-                                                <Send className="h-3.5 w-3.5" />
+                                                <Send className="h-4 w-4" />
                                             </Button>
                                         </div>
-                                        <div className="flex justify-between items-center mt-2 px-1">
-                                            <span className="text-[9px] text-slate-400 font-medium">Shomoukh International Investment</span>
-                                            <span className="text-[9px] text-slate-400 uppercase tracking-tighter opacity-50">v1.2</span>
+                                        <div className="flex justify-between items-center mt-3 px-1">
+                                            <span className="text-[10px] text-white/20 font-bold uppercase tracking-widest font-sans">Shomoukh Intelligence</span>
+                                            <div className="flex h-1.5 w-1.5 rounded-full bg-green-500/50" />
                                         </div>
                                     </div>
                                 </>

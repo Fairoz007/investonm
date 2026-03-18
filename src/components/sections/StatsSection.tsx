@@ -35,7 +35,7 @@ const StatCard = ({ value, label, icon }: { value: string; label: string; icon: 
       className="glass-card p-6 h-full"
     >
       <div className="mb-4 text-primary">{icon}</div>
-      <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-poppins">{value}</div>
+      <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-sans">{value}</div>
       <div className="text-sm text-white/60">{label}</div>
     </motion.div>
   </StaggerItem>
@@ -43,40 +43,40 @@ const StatCard = ({ value, label, icon }: { value: string; label: string; icon: 
 
 export const StatsSection = () => {
   return (
-    <section className="section-padding bg-dark relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-light to-dark" />
+    <section className="py-24 bg-gradient-to-b from-[#020617] to-[#0F172A] relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <ScrollReveal delay={0} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Oman: Where Vision Becomes Investment
+        <ScrollReveal delay={0} className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-sans">
+            Oman: Where <span className="text-[var(--primary)]">Vision</span> Becomes Investment
           </h2>
-          <p className="text-white/60 text-lg">
-            The world's most trusted and future-ready investment destination
+          <p className="text-white/60 text-lg font-sans max-w-2xl mx-auto">
+            The Sultanate of Oman is a trusted and future-ready investment destination with a clear strategic roadmap.
           </p>
         </ScrollReveal>
 
         {/* Stats Grid */}
-        <div className="space-y-12">
+        <div className="space-y-16">
           {/* Economic Resilience */}
           <div>
             <ScrollReveal delay={0.1}>
-              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <TrendingUp className="w-5 h-5 text-primary" />
+              <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3 font-sans">
+                <div className="p-2.5 bg-[var(--primary)]/10 rounded-xl">
+                  <TrendingUp className="w-6 h-6 text-[var(--primary-light)]" />
                 </div>
                 Economic Resilience
               </h3>
             </ScrollReveal>
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.1}>
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
               {economicStats.map((stat, index) => (
                 <StatCard
                   key={index}
                   value={stat.value}
                   label={stat.label}
-                  icon={<stat.icon className="w-6 h-6" />}
+                  icon={<stat.icon className="w-6 h-6 text-[var(--primary-light)]" />}
                 />
               ))}
             </StaggerContainer>
@@ -85,20 +85,20 @@ export const StatsSection = () => {
           {/* Investment Attractiveness */}
           <div>
             <ScrollReveal delay={0.1}>
-              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                <div className="p-2 bg-accent-purple/20 rounded-lg">
-                  <Award className="w-5 h-5 text-accent-purple" />
+              <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3 font-sans">
+                <div className="p-2.5 bg-blue-500/10 rounded-xl">
+                  <Award className="w-6 h-6 text-blue-400" />
                 </div>
                 Investment Attractiveness
               </h3>
             </ScrollReveal>
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.1}>
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
               {investmentStats.map((stat, index) => (
                 <StatCard
                   key={index}
                   value={stat.value}
                   label={stat.label}
-                  icon={<stat.icon className="w-6 h-6" />}
+                  icon={<stat.icon className="w-6 h-6 text-blue-400" />}
                 />
               ))}
             </StaggerContainer>
@@ -107,20 +107,20 @@ export const StatsSection = () => {
           {/* Sovereign Ratings */}
           <div>
             <ScrollReveal delay={0.1}>
-              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                <div className="p-2 bg-accent-cyan/20 rounded-lg">
-                  <Zap className="w-5 h-5 text-accent-cyan" />
+              <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3 font-sans">
+                <div className="p-2.5 bg-cyan-500/10 rounded-xl">
+                  <Zap className="w-6 h-6 text-cyan-400" />
                 </div>
-                Sovereign Ratings
+                Sovereign Ratings (2024 Upgrades)
               </h3>
             </ScrollReveal>
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.1}>
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
               {sovereignRatings.map((stat, index) => (
                 <StatCard
                   key={index}
                   value={stat.value}
                   label={stat.label}
-                  icon={<stat.icon className="w-6 h-6" />}
+                  icon={<stat.icon className="w-6 h-6 text-cyan-400" />}
                 />
               ))}
             </StaggerContainer>
@@ -129,20 +129,20 @@ export const StatsSection = () => {
           {/* Competitiveness */}
           <div>
             <ScrollReveal delay={0.1}>
-              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                <div className="p-2 bg-teal-500/20 rounded-lg">
-                  <Globe className="w-5 h-5 text-teal-400" />
+              <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3 font-sans">
+                <div className="p-2.5 bg-teal-500/10 rounded-xl">
+                  <Globe className="w-6 h-6 text-teal-400" />
                 </div>
-                Competitiveness
+                Global Competitiveness
               </h3>
             </ScrollReveal>
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.1}>
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
               {competitivenessStats.map((stat, index) => (
                 <StatCard
                   key={index}
                   value={stat.value}
-                  label={stat.label}
-                  icon={<stat.icon className="w-6 h-6" />}
+                  label={stat.label.replace('KSA', 'Oman')}
+                  icon={<stat.icon className="w-6 h-6 text-teal-400" />}
                 />
               ))}
             </StaggerContainer>
@@ -150,5 +150,6 @@ export const StatsSection = () => {
         </div>
       </div>
     </section>
+
   );
 };
