@@ -9,6 +9,7 @@ import { LeadershipSection } from '@/components/sections/LeadershipSection';
 import { ThrivingSectors } from '@/components/sections/ThrivingSectors';
 import { WhyOmanSection } from '@/components/sections/WhyOmanSection';
 import { AboutCompanySection } from '@/components/sections/AboutCompanySection';
+import { WorldMap } from '@/components/ui/world-map';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 60, filter: 'blur(10px)' },
@@ -133,14 +134,34 @@ export default function Home() {
               transition={{ duration: 1.2, ease: "easeOut" }}
               className="lg:w-[45%] w-full relative"
             >
-              <div className="aspect-square rounded-3xl overflow-hidden border border-[#374151] shadow-2xl relative">
-                <img src="/images/oman_landscape.png" alt="Oman connectivity" className="w-full h-full object-cover opacity-60 grayscale-[30%]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center shadow-blue-500/20 animate-pulse">
-                     <Globe2 className="w-10 h-10 text-white" />
-                   </div>
-                </div>
+              <div className="rounded-3xl overflow-hidden border border-[#374151] shadow-2xl relative bg-[#0b0f19] flex items-center justify-center p-6 aspect-square sm:aspect-auto">
+                <WorldMap dots={[
+                  {
+                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
+                    end: { lat: 34.0522, lng: -118.2437 }, // Los Angeles
+                  },
+                  {
+                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
+                    end: { lat: -15.7975, lng: -47.8919 }, // Brasília
+                  },
+                  {
+                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
+                    end: { lat: 51.5074, lng: -0.1278 }, // London
+                  },
+                  {
+                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
+                    end: { lat: 28.6139, lng: 77.209 }, // New Delhi
+                  },
+                  {
+                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
+                    end: { lat: 39.9042, lng: 116.4074 }, // Beijing
+                  },
+                  {
+                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
+                    end: { lat: -1.2921, lng: 36.8219 }, // Nairobi
+                  },
+                ]} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19]/80 via-transparent to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </div>

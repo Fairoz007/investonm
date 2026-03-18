@@ -67,8 +67,7 @@ export default function ForgotPassword() {
 
                 {/* Form Container */}
                 <motion.div
-                    variants={itemVariants}
-                    className="bg-white border border-[var(--accent)]/10 rounded-[2.5rem] p-8 md:p-10 shadow-xl overflow-hidden"
+                    className="bg-white border border-[var(--accent)]/10 rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl overflow-hidden"
                 >
                     {!isSubmitted ? (
                         <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsSubmitted(true); }}>

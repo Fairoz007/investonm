@@ -68,7 +68,7 @@ export default function SignIn() {
                 {/* Form Container */}
                 <motion.div
                     variants={itemVariants}
-                    className="bg-white border border-border rounded-[2.5rem] p-8 md:p-10 shadow-xl"
+                    className="bg-white border border-border rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl"
                 >
                     <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                         {!isLogin && (
@@ -144,12 +144,12 @@ export default function SignIn() {
                     </div>
 
                     {/* Social Logins */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-sans group">
+                    <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 mt-4">
+                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-sans group w-full min-h-[44px]">
                             <Chrome className="w-5 h-5 text-secondary group-hover:text-foreground transition-colors" />
                             <span className="text-sm font-medium">Google</span>
                         </button>
-                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-sans group">
+                        <button className="flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-2xl hover:bg-border/50 transition-all font-sans group w-full min-h-[44px]">
                             <Apple className="w-5 h-5 text-secondary group-hover:text-foreground transition-colors" />
                             <span className="text-sm font-medium">Apple</span>
                         </button>

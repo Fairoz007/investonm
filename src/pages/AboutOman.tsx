@@ -97,7 +97,7 @@ export default function AboutOman() {
       </section>
 
       {/* Main Introduction */}
-      <section className="py-32 relative overflow-hidden border-t border-white/5">
+      <section className="py-16 md:py-32 relative overflow-hidden border-t border-white/5">
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-10">
             <motion.p
@@ -121,9 +121,9 @@ export default function AboutOman() {
       </section>
 
       {/* Detailed Sections Loop */}
-      <section className="pb-40 border-t border-white/5">
+      <section className="pb-16 md:pb-40 border-t border-white/5">
         <div className="container-custom">
-          <div className="space-y-48">
+          <div className="space-y-24 md:space-y-48">
             {SECTIONS.map((section, idx) => (
               <motion.div
                 key={section.id}
@@ -132,7 +132,7 @@ export default function AboutOman() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeInUp}
-                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-32 items-center`}
+                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-16 lg:gap-32 items-center`}
               >
                 <div className="lg:w-1/2 space-y-10">
                   <div className="flex items-center gap-6">
@@ -150,11 +150,11 @@ export default function AboutOman() {
                     {t(section.desc)}
                   </p>
 
-                  <div className="flex flex-wrap gap-5 pt-6">
-                    <button className="btn-premium">
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-5 pt-6 w-full">
+                    <button className="btn-premium w-full sm:w-auto">
                       Detailed Analysis
                     </button>
-                    <button className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-xl">
+                    <button className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-xl w-full sm:w-auto min-h-[44px] flex items-center justify-center">
                       Watch Video
                     </button>
                   </div>

@@ -50,6 +50,7 @@ export const LeadershipSection = () => {
                   <img 
                     src={chairman.photo} 
                     alt={chairman.name}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
                   />
                 ) : (

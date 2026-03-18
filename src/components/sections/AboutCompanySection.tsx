@@ -24,6 +24,7 @@ export const AboutCompanySection = () => {
                             <img 
                                 src="/images/about-shomoukh.png" 
                                 alt="Shomoukh Story" 
+                                loading="lazy"
                                 className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-1000"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19]/90 via-transparent to-transparent" />

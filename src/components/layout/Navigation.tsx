@@ -198,7 +198,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                     <div>
                       <button
                         onClick={() => setExpandedChildIndex(expandedChildIndex === index ? null : index)}
-                        className="flex items-center justify-between w-full py-2 text-sm font-semibold text-white/80 hover:text-[var(--primary)] transition-colors"
+                        className="flex items-center justify-between w-full py-3 px-2 text-sm font-semibold text-white/80 hover:text-[var(--primary)] transition-colors"
                       >
                         {t(child.label)}
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedChildIndex === index ? 'rotate-180 text-[var(--primary)]' : ''}`} />
@@ -220,7 +220,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                                   )}
                                   <div className="flex flex-col gap-3">
                                     {col.items.map((sub, sIdx) => (
-                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="text-sm text-white/60 hover:text-[var(--primary)] transition-colors">
+                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="block py-2 text-sm text-white/60 hover:text-[var(--primary)] transition-colors">
                                         {t(sub.label)}
                                       </Link>
                                     ))}

@@ -254,7 +254,7 @@ export const ThrivingSectors = () => {
                     onClick={() => setActiveIdx(idx)}
                   >
                     <div className={`relative rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 border border-white/10 ${isCenter ? 'w-[480px] h-[320px] shadow-[0_0_50px_rgba(30,58,138,0.3)]' : 'w-[350px] h-[240px]'}`}>
-                      <img src={sector.image} alt={sector.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img src={sector.image} alt={sector.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/95 via-[#020617]/30 to-transparent" />
                       
                       <div className="absolute inset-x-0 bottom-0 p-8 text-center">

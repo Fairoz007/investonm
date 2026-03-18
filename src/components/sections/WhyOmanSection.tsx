@@ -132,6 +132,7 @@ export const WhyOmanSection = () => {
                 <img 
                   src={card.image} 
                   alt={card.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-1000 ease-out"
                 />
                 <div className={`absolute inset-0 transition-opacity duration-700

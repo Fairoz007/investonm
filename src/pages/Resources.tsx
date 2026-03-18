@@ -60,7 +60,7 @@ export default function Resources() {
       </section>
 
       {/* Resources Grid */}
-      <section className="py-32 bg-gradient-to-b from-[#020617] to-[#0F172A] relative overflow-hidden">
+      <section className="py-16 md:py-32 bg-gradient-to-b from-[#020617] to-[#0F172A] relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] pointer-events-none" />
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -78,7 +78,7 @@ export default function Resources() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className="bg-white/5 backdrop-blur-xl p-12 rounded-[3.5rem] shadow-2xl border border-white/10 hover:border-[var(--primary)]/50 transition-all group"
+                className="bg-white/5 backdrop-blur-xl p-8 sm:p-12 rounded-[2rem] sm:rounded-[3.5rem] shadow-2xl border border-white/10 hover:border-[var(--primary)]/50 transition-all group"
               >
                 <div className="w-20 h-20 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center mb-10 group-hover:bg-[var(--primary)] transition-all duration-500 shadow-lg">
                   <res.icon className="w-10 h-10 text-[var(--primary-light)] group-hover:text-white" />
@@ -89,7 +89,7 @@ export default function Resources() {
                 <p className="text-xl text-white/50 mb-10 leading-relaxed font-sans font-light">
                   {t(res.desc)}
                 </p>
-                <button className="flex items-center gap-3 text-[var(--primary-light)] font-bold uppercase tracking-[0.2em] text-xs group">
+                <button className="flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto min-h-[44px] text-[var(--primary-light)] font-bold uppercase tracking-[0.2em] text-xs group">
                   {res.action} <res.actionIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
                 </button>
               </motion.div>
@@ -99,9 +99,9 @@ export default function Resources() {
       </section>
 
       {/* Help Desk Section */}
-      <section className="py-32 bg-[#020617]">
+      <section className="py-16 md:py-32 bg-[#020617]">
         <div className="container-custom">
-          <div className="bg-gradient-to-br from-[#0F172A] to-[#010307] rounded-[4rem] p-12 md:p-24 relative overflow-hidden border border-white/5 shadow-2xl">
+          <div className="bg-gradient-to-br from-[#0F172A] to-[#010307] rounded-[2rem] sm:rounded-[4rem] p-8 sm:p-12 md:p-24 relative overflow-hidden border border-white/5 shadow-2xl">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--primary)]/10 rounded-full blur-[150px] -mr-48 -mt-48 pointer-events-none" />
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 text-left">
               <div className="max-w-xl text-white space-y-8">
@@ -111,7 +111,7 @@ export default function Resources() {
                 <p className="text-xl text-white/60 font-sans font-light leading-relaxed">
                   Our research team can provide custom reports tailored to your unique investment requirements.
                 </p>
-                <button className="px-10 py-5 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white rounded-full font-bold font-sans transition-all transform hover:scale-105 shadow-2xl uppercase text-xs tracking-[0.2em]">
+                <button className="w-full sm:w-auto min-h-[44px] flex items-center justify-center px-10 py-5 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white rounded-full font-bold font-sans transition-all transform hover:scale-105 shadow-2xl uppercase text-xs tracking-[0.2em]">
                   Request Custom Report
                 </button>
               </div>
