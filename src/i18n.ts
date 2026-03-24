@@ -9,22 +9,22 @@ import fa from './locales/fa.json';
 import tr from './locales/tr.json';
 
 const resources = {
-    en: { translation: en },
-    ar: { translation: ar },
-    ru: { translation: ru },
-    zh: { translation: zh },
-    fa: { translation: fa },
-    tr: { translation: tr },
+ en: { translation: en },
+ ar: { translation: ar },
+ ru: { translation: ru },
+ zh: { translation: zh },
+ fa: { translation: fa },
+ tr: { translation: tr },
 };
 
 i18n
-    .use(initReactI18next)
-    .init({
-        resources,
-        fallbackLng: 'en',
-        interpolation: {
-            escapeValue: false,
-        },
-    });
+ .use(initReactI18next)
+ .init({
+ resources,
+ fallbackLng: 'en',
+ interpolation: {
+ escapeValue: false,
+ },
+ });
 
 export default i18n;

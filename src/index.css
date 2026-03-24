@@ -1,18 +1,18 @@
 /* Inter Local Font Faces */
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+ font-family: 'Inter';
+ src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+ font-weight: 100 900;
+ font-style: normal;
+ font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
+ font-family: 'Inter';
+ src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+ font-weight: 100 900;
+ font-style: italic;
+ font-display: swap;
 }
 
 @tailwind base;
@@ -21,127 +21,188 @@
 
 @layer base {
   :root {
-    /* Google-style Dark Theme */
-    --background-base: #0b0f19;
-    --background-gradient: linear-gradient(to bottom right, #0b0f19, #1e3a8a);
-    
-    --background: 222 47% 4%; /* #0b0f19 roughly */
+    /* Global cosmic blue theme */
+    --background: 236 58% 7%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 7%; /* #111827 */
-    --card-alt: 222 47% 12%; /* #1f2937 */
-    --card-foreground: 210 40% 98%;
+    --card: 236 45% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 4%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 236 45% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 213 100% 66%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 244 35% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --muted: 232 31% 20%;
+    --muted-foreground: 217 24% 75%;
 
-    --accent: 217.2 91.2% 59.8%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 273 84% 70%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 25%; /* #374151 */
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --border: 228 26% 28%;
+    --input: 228 26% 28%;
+    --ring: 213 100% 66%;
 
-    --radius: 1rem; /* rounded-xl */
-    --radius-lg: 1.5rem; /* rounded-2xl */
+    --radius: 1rem;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+ * {
+ @apply border-border;
+ }
 
-  html {
-    scroll-behavior: smooth;
-  }
+ html {
+ scroll-behavior: smooth;
+ }
 
-  body {
-    background-color: var(--background-base);
-    background-image: var(--background-gradient);
-    background-attachment: fixed;
-    color: hsl(var(--foreground));
-    font-family: 'Inter', sans-serif !important;
-    @apply antialiased min-h-screen overflow-x-hidden w-full;
-    margin: 0;
-    padding: 0;
-    max-width: 100vw;
-  }
+ body {
+ @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+ font-family: 'Inter', sans-serif !important;
+ @apply antialiased min-h-screen overflow-x-hidden w-full;
+ margin: 0;
+ padding: 0;
+ max-width: 100vw;
+ background-image:
+   radial-gradient(1200px 600px at 8% 12%, rgba(31, 95, 255, 0.18), transparent 45%),
+   radial-gradient(950px 520px at 88% 10%, rgba(183, 115, 255, 0.22), transparent 45%),
+   radial-gradient(900px 420px at 50% 95%, rgba(34, 197, 255, 0.1), transparent 60%),
+   linear-gradient(180deg, #07091f 0%, #08061b 55%, #050312 100%);
+ }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif !important;
-    @apply font-bold tracking-tight text-white;
-  }
+ h1, h2, h3, h4, h5, h6 {
+ font-family: 'Inter', sans-serif !important;
+ @apply font-bold tracking-tight text-foreground;
+ }
 
-  button, input, select, textarea {
-    font-family: 'Inter', sans-serif !important;
-  }
+ button, input, select, textarea {
+ font-family: 'Inter', sans-serif !important;
+ }
 
-  p {
-    @apply text-slate-400 leading-relaxed;
+ p {
+ @apply text-muted-foreground leading-relaxed;
+ }
+
+  a {
+    @apply transition-colors duration-200;
   }
 }
 
 @layer components {
-  .container-custom {
-    @apply w-full mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+ .container-custom {
+ @apply w-full mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+ }
+
+  /* Fallbacks for older flashy classes */
+  .card-premium, .card-premium-alt, .glass-card, .glass-modal, .glass-nav {
+    @apply bg-card border border-border shadow-sm;
   }
 
-  .card-premium {
-    background-color: #111827;
-    @apply border border-[#374151] rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300;
+ .btn-premium {
+    @apply px-6 py-3 min-h-[44px] bg-primary text-primary-foreground font-medium rounded-md transition-colors hover:opacity-90 active:scale-[0.98] flex items-center justify-center gap-2 w-full md:w-auto shadow-sm;
+ font-family: 'Inter', sans-serif !important;
+ }
+
+  .surface-panel {
+    @apply rounded-2xl border border-border/80 bg-card/75 backdrop-blur-md shadow-md;
   }
 
-  .card-premium-alt {
-    background-color: #1f2937;
-    @apply border border-[#374151] rounded-2xl shadow-sm;
-  }
-
-  .btn-premium {
-    @apply px-6 py-3 min-h-[44px] bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-blue-900/20 active:scale-95 flex items-center justify-center gap-2 w-full md:w-auto;
-    font-family: 'Inter', sans-serif !important;
-  }
-
-  .glass-modal {
-    background: rgba(11, 15, 25, 0.8);
-    backdrop-filter: blur(12px);
-    @apply border border-[#374151] rounded-2xl shadow-2xl;
+  .section-shell {
+    @apply container-custom py-14 md:py-20;
   }
 }
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    text-shadow: none;
+  }
+
+  .bg-grid-overlay {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
+
+@layer base {
+  #root {
+    @apply min-h-screen bg-background text-foreground;
+  }
+
+  main section {
+    @apply relative;
+  }
+
+  main section::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border/70 to-transparent;
+  }
+
+  main .container,
+  main .container-custom {
+    @apply relative;
+  }
+
+  main [class*='card'],
+  main .glass-card,
+  main .glass-modal,
+  main .glass-nav {
+    @apply rounded-2xl border border-border/80 bg-card/75 backdrop-blur-md shadow-md;
+  }
+
+  main input,
+  main textarea,
+  main select {
+    @apply rounded-xl border-border bg-card/70 text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-0;
+  }
+
+  main button {
+    @apply transition-all duration-200;
+  }
+
+  main table {
+    @apply rounded-xl border border-border/70 bg-card/60;
+  }
+
+  main th {
+    @apply bg-muted/70 text-foreground;
+  }
+
+  main td {
+    @apply text-muted-foreground;
+  }
+
+  main h1,
+  main h2 {
+    @apply tracking-tight;
+  }
+
+  main p {
+    @apply text-muted-foreground;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+ width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+ background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #374151;
-  border-radius: 4px;
+ background: hsl(var(--muted));
+ border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4b5563;
+ background: hsl(var(--muted-foreground));
 }
-

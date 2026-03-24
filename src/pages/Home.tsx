@@ -1,90 +1,100 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import type { Variants } from 'framer-motion';
-import { ArrowUpRight, TrendingUp, Globe2, Landmark, Building2, Laptop, ArrowRight, Anchor, Target, Briefcase } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import { useRef } from 'react';
-import { useTranslation } from "react-i18next";
 import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
-import { LeadershipSection } from '@/components/sections/LeadershipSection';
 import { ThrivingSectors } from '@/components/sections/ThrivingSectors';
 import { WhyOmanSection } from '@/components/sections/WhyOmanSection';
 import { AboutCompanySection } from '@/components/sections/AboutCompanySection';
-import { WorldMap } from '@/components/ui/world-map';
-
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 60, filter: 'blur(10px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: "easeOut" } }
-};
-
-const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
-};
-
-const popIn: Variants = {
-  hidden: { opacity: 0, scale: 0.8, filter: 'blur(8px)' },
-  visible: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 0.6, ease: "easeOut" } }
-};
-
-const slideLeft: Variants = {
-  hidden: { opacity: 0, x: 80, filter: 'blur(8px)' },
-  visible: { opacity: 1, x: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: "easeOut" } }
-};
 
 export default function Home() {
-  const { t } = useTranslation();
   const { lang } = useParams();
   const displayLang = lang || 'en';
-  const { scrollYProgress } = useScroll();
-  const heroRef = useRef(null);
-
-  const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroOpacity = useTransform(heroScroll, [0, 1], [1, 0]);
-  const heroY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
 
   return (
-    <div className="min-h-screen text-slate-300 overflow-hidden">
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-blue-600 z-[1001] origin-left"
-        style={{ scaleX: scrollYProgress }}
-      />
+    <div className="min-h-screen text-foreground bg-transparent flex flex-col pt-24 md:pt-32 relative overflow-hidden">
+      {/* Global Starry Background & Light Beam for Home Page */}
+      <div className="absolute inset-0 pointer-events-none -z-10 bg-[#050312]">
+        {/* CSS stars */}
+        <div 
+          className="absolute inset-0 opacity-50 mix-blend-screen" 
+          style={{ 
+             backgroundImage: 'radial-gradient(1px 1px at 10% 10%, white 100%, transparent), radial-gradient(1.5px 1.5px at 20% 40%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(2px 2px at 30% 80%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(1px 1px at 40% 20%, white 100%, transparent), radial-gradient(1.5px 1.5px at 50% 60%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(2px 2px at 60% 10%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(1px 1px at 70% 50%, white 100%, transparent), radial-gradient(1.5px 1.5px at 80% 90%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(2px 2px at 90% 30%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(1px 1px at 95% 70%, white 100%, transparent)',
+             backgroundSize: '200px 200px'
+          }} 
+        />
+        {/* Horizontal light beam */}
+        <div className="absolute top-[85px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#5A9CF8] to-transparent shadow-[0_0_25px_10px_rgba(90,156,248,0.3)] opacity-70" />
+        <div className="absolute top-[85px] left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_20px_4px_rgba(255,255,255,0.7)]" />
+        <div className="absolute top-[85px] left-[35%] right-[35%] h-[1px] bg-white shadow-[0_0_30px_15px_rgba(183,115,255,0.3)]" />
+        
+        {/* Colorful space glows */}
+        <div className="absolute left-[15%] top-[25%] h-[400px] w-[600px] rounded-full bg-[#12224A]/40 blur-[130px]" />
+        <div className="absolute right-[10%] top-[15%] h-[500px] w-[500px] rounded-full bg-[#201538]/50 blur-[140px]" />
+        <div className="absolute -bottom-[10%] left-[30%] h-[400px] w-[500px] rounded-full bg-[#0E153D]/60 blur-[120px]" />
+      </div>
 
       {/* HERO SECTION */}
-      <section ref={heroRef} className="relative h-[85vh] md:h-[100vh] flex items-center overflow-hidden">
-        <motion.div
-          className="absolute inset-0 z-0 h-full w-full"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.05 }}
-          transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center h-[110%] w-[110%] -top-[5%] -left-[5%]"
-            style={{ backgroundImage: 'url("/images/oman_hero.png")' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0b0f19]/90 via-[#0b0f19]/80 to-transparent opacity-90" />
-        </motion.div>
+      <section className="relative w-full py-16 md:py-20 flex-1 flex items-center">
+        <div className="container-custom relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              <div className="max-w-[600px] z-20">
+                <h1 className="text-balance text-5xl font-bold leading-[1.1] text-foreground sm:text-6xl md:text-[76px] tracking-tight">
+                  Investing in
+                  <br />
+                  <span className="text-[#89C5E0] font-normal tracking-tight">
+                    What's Next
+                  </span>
+                </h1>
+                <p className="mt-6 max-w-[420px] text-lg md:text-xl leading-relaxed text-[#A0A3B5]">
+                  Private investment and strategic development across Oman and global markets.
+                </p>
 
-        <motion.div style={{ opacity: heroOpacity, y: heroY }} className="container-custom relative z-10 w-full mt-12 text-left">
-          <motion.div initial={{ opacity: 0, x: -60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="max-w-4xl mr-auto">
-            <h1 className="text-white text-balance text-4xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
-              {t('home.text.1')}
-            </h1>
-            <h2 className="text-white/80 text-balance text-lg md:text-xl font-medium mb-8 leading-relaxed">
-              {t('home.text.2')}
-            </h2>
-            <p className="text-lg text-slate-300 mb-10 leading-relaxed max-w-3xl mr-auto">
-              {t('home.text.3')} </p>
+                <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
+                  <Link
+                    to={`/${displayLang}/key-sectors`}
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-3xl bg-gradient-to-r from-[#175CC0] to-[#2684FF] px-8 py-3.5 text-lg font-medium text-white transition-all hover:brightness-110 shadow-[0_0_20px_rgba(38,132,255,0.4)] border border-blue-400/30"
+                  >
+                    Start Investing <ArrowRight className="ml-2 h-5 w-5 opacity-90" />
+                  </Link>
+                  <Link
+                    to={`/${displayLang}/contact`}
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-3xl border border-white/20 bg-white/5 px-8 py-3.5 text-lg font-medium text-[#D1D5DB] transition-all hover:bg-white/10 backdrop-blur-md"
+                  >
+                    Explore <ArrowRight className="ml-2 h-5 w-5 opacity-90" />
+                  </Link>
+                </div>
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-start w-full">
-              <Link to={`/${displayLang}/key-sectors`} className="btn-premium w-full sm:w-auto">
-                {t('home.text.4')} <ArrowUpRight className="w-5 h-5 ml-2" />
-              </Link>
-              <Link to={`/${displayLang}/contact`} className="w-full sm:w-auto px-8 py-3 md:py-4 bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all min-h-[44px]">
-                {t('home.text.5')} <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+              <div className="relative mx-auto w-full max-w-[650px] lg:ml-auto select-none mt-10 md:mt-0" style={{ perspective: '1200px' }}>
+                <div 
+                  className="relative overflow-hidden rounded-[24px] shadow-[0_0_50px_rgba(38,132,255,0.25)] border border-white/20 transition-transform duration-700 hover:rotate-y-0"
+                  style={{ 
+                    transform: 'rotateY(-15deg) rotateX(5deg) translateZ(0)',
+                    transformStyle: 'preserve-3d',
+                  }}
+                >
+                  <img
+                    src="/images/oman_hero.png"
+                    alt="Muscat skyline and waterfront"
+                    className="h-[380px] w-full object-cover md:h-[480px] scale-[1.05]"
+                  />
+                  {/* Internal top glow */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+                  
+                  {/* Subtle noise/glass overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent mix-blend-overlay" />
+                </div>
+
+                {/* 2040 Vision Target Card */}
+                <div 
+                  className="absolute bottom-6 right-6 rounded-2xl border border-white/20 bg-black/40 px-6 py-4 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-30"
+                  style={{ transform: 'translateZ(30px)' }}
+                >
+                  <p className="text-[40px] font-semibold leading-none text-white tracking-tight">2040</p>
+                  <p className="mt-2 text-[15px] font-medium text-white/70 tracking-wide">Vision Target</p>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* WHY OMAN */}
@@ -93,157 +103,8 @@ export default function Home() {
       {/* ABOUT COMPANY */}
       <AboutCompanySection />
 
-      {/* LEADERSHIP TEAM */}
-      <LeadershipSection />
-
-      {/* GLOBAL REACH AND CONNECTIVITY */}
-      <section className="relative py-16 md:py-32 overflow-hidden border-t border-white/5">
-        <div className="container-custom relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer} className="lg:w-[50%] w-full">
-              <motion.h2 variants={slideLeft} className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                Global Network & <span className="text-blue-500">Connectivity</span>
-              </motion.h2>
-              <motion.div className="w-20 h-1.5 bg-blue-600 rounded-full mb-10" />
-              <motion.p variants={slideLeft} className="text-lg text-slate-400 mb-12 max-w-xl leading-relaxed">
-                Positioned at the crossroads of East and West, Oman provides unparalleled access to fast-growing global markets. Start your investment journey here to scale everywhere.
-              </motion.p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <motion.div variants={popIn} className="card-premium p-8 group">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                    <Globe2 className="w-7 h-7 text-blue-500 group-hover:text-white" />
-                  </div>
-                  <h4 className="font-bold text-4xl text-white mb-2">2.5B+</h4>
-                  <p className="text-[10px] text-slate-500 font-bold tracking-[0.2em] uppercase">Global Consumers Access</p>
-                </motion.div>
-                <motion.div variants={popIn} className="card-premium p-8 group">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                    <Anchor className="w-7 h-7 text-blue-500 group-hover:text-white" />
-                  </div>
-                  <h4 className="font-bold text-4xl text-white mb-2">80+</h4>
-                  <p className="text-[10px] text-slate-500 font-bold tracking-[0.2em] uppercase">Global Ports & Connectivity</p>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }} 
-              whileInView={{ opacity: 1, scale: 1 }} 
-              viewport={{ once: true }} 
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="lg:w-[45%] w-full relative"
-            >
-              <div className="rounded-3xl overflow-hidden border border-[#374151] shadow-2xl relative bg-[#0b0f19] flex items-center justify-center p-6 aspect-square sm:aspect-auto">
-                <WorldMap dots={[
-                  {
-                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
-                    end: { lat: 34.0522, lng: -118.2437 }, // Los Angeles
-                  },
-                  {
-                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
-                    end: { lat: -15.7975, lng: -47.8919 }, // Brasília
-                  },
-                  {
-                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
-                    end: { lat: 51.5074, lng: -0.1278 }, // London
-                  },
-                  {
-                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
-                    end: { lat: 28.6139, lng: 77.209 }, // New Delhi
-                  },
-                  {
-                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
-                    end: { lat: 39.9042, lng: 116.4074 }, // Beijing
-                  },
-                  {
-                    start: { lat: 23.5859, lng: 58.4059 }, // Muscat, Oman
-                    end: { lat: -1.2921, lng: 36.8219 }, // Nairobi
-                  },
-                ]} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19]/80 via-transparent to-transparent pointer-events-none" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* THRIVING SECTORS - CAROUSEL */}
+      {/* THRIVING SECTORS */}
       <ThrivingSectors />
-
-      {/* VISION 2040 */}
-      <section className="relative py-16 md:py-32 overflow-hidden border-t border-white/5">
-        <div className="container-custom relative z-10">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer} className="lg:w-1/2">
-              <motion.h2 variants={slideLeft} className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                {t('home.text.11')} <span className="text-blue-500">2040</span>
-              </motion.h2>
-              <motion.div variants={slideLeft} className="text-xl text-slate-400 mb-12 space-y-6 leading-relaxed">
-                <p> {t('home.text.12')} </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { text: 'home.vision.1', icon: TrendingUp },
-                  { text: 'home.vision.2', icon: Building2 },
-                  { text: 'home.vision.3', icon: Laptop },
-                  { text: 'home.vision.4', icon: Globe2 }
-                ].map((item, i) => (
-                  <motion.div key={i} variants={slideLeft} className="flex items-center gap-4 p-6 card-premium group">
-                    <div className="p-3 bg-blue-600/10 rounded-xl group-hover:bg-blue-600 transition-colors">
-                      <item.icon className="w-6 h-6 text-blue-500 group-hover:text-white" />
-                    </div>
-                    <span className="font-bold text-white text-sm">{t(item.text)}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className="lg:w-1/2 flex justify-center">
-              <div className="relative group p-12 card-premium-alt border border-white/10 shadow-2xl backdrop-blur-xl rounded-[3rem]">
-                 <div className="absolute -inset-4 bg-blue-600/10 rounded-[4rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                 <img src="/images/Oman_Vision_2040_Logo.png" alt="Vision 2040" className="w-full max-w-sm opacity-90 relative z-10 brightness-0 invert" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* INVESTOR SUPPORT */}
-      <section className="py-16 md:py-32 border-t border-white/5 relative overflow-hidden">
-        <div className="container-custom relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="text-center">
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-8">
-              {t('home.text.13')} </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-slate-400 max-w-3xl mx-auto mb-16 leading-relaxed">
-              {t('home.text.14')} </motion.p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: Briefcase, name: "home.support.title.1", desc: "home.support.desc.1" },
-                { icon: Target, name: "home.support.title.2", desc: "home.support.desc.2" },
-                { icon: Building2, name: "home.support.title.3", desc: "home.support.desc.3" },
-                { icon: Landmark, name: "home.support.title.4", desc: "home.support.desc.4" },
-              ].map((service, i) => (
-                <motion.div key={i} variants={popIn} className="card-premium p-10 text-left group">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-600/10 flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-all duration-300">
-                    <service.icon className="w-8 h-8 text-blue-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-white uppercase tracking-tight">{t(service.name)}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{t(service.desc)}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div variants={fadeInUp} className="mt-12 md:mt-20">
-              <Link to={`/${displayLang}/who-we-are`} className="btn-premium mx-auto uppercase text-xs tracking-[0.2em] w-full sm:w-fit">
-                {t('home.text.15')} <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Research CTA section */}
       <ResearchDataCTA />

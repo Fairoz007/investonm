@@ -1,204 +1,134 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, BarChart3, Check, Globe2, Heart } from 'lucide-react';
+import type { ComponentType } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-interface SubMetric {
-  label: string;
+interface CardMetric {
   value: string;
   description: string;
 }
 
 interface WhyOmanCard {
   id: string;
+  icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
-  image: string;
-  metrics: SubMetric[];
+  metrics: [CardMetric, CardMetric];
+  glowClass: string;
 }
 
 export const WhyOmanSection = () => {
   const { lang } = useParams();
   const displayLang = lang || 'en';
-  const [activeCard, setActiveCard] = useState<string | null>(null);
 
   const cards: WhyOmanCard[] = [
     {
       id: 'connectivity',
+      icon: Globe2,
       title: 'Global Connectivity',
-      description: 'Strategic location connecting East and West, making Oman a global business hub with world-class infrastructure.',
-      image: '/images/global_connectivity.png',
+      description: 'Strategic location bridging East and West with world-class infrastructure.',
       metrics: [
-        { label: 'Proximity to Major Markets', value: '60%', description: 'Of the worlds population within 8h flight' },
-        { label: 'Free Trade Agreements', value: '105', description: 'International agreements for global access' },
-        { label: 'Logistics Rank', value: 'Top 10', description: 'Most efficient ports globally (Sohar & Salalah)' }
-      ]
+        { value: '60%', description: 'of world population within 8h flight' },
+        { value: '105', description: 'international trade agreements' },
+      ],
+      glowClass: 'before:from-cyan-500/35 before:to-sky-500/10',
     },
     {
       id: 'economy',
+      icon: BarChart3,
       title: 'Stable & Diversified Economy',
-      description: 'Robust economy with diverse sectors and strong government support for sustainable growth and development.',
-      image: '/images/stable_economy.png',
+      description: 'Strong, robust economy with multi-sector growth opportunities.',
       metrics: [
-        { label: 'Credit Rating', value: 'BBB-', description: 'S&P Global Ratings raised showing fiscal health' },
-        { label: 'Vision 2040', value: '$50B+', description: 'Investment to diversify the economy' },
-        { label: 'Currency Stability', value: 'OMR', description: 'Omani Rial (OMR) pegged to the US dollar' }
-      ]
+        { value: 'BBB+', description: 'S&P Rating' },
+        { value: '$50B+', description: 'Investment to diversify' },
+      ],
+      glowClass: 'before:from-violet-400/35 before:to-fuchsia-400/10',
     },
     {
       id: 'business',
+      icon: Check,
       title: 'Business-Friendly Environment',
-      description: 'Streamlined regulations and supportive policies designed to facilitate international business operations.',
-      image: '/images/business_environment.png',
+      description: 'Streamlined regulations and incentives designed to facilitate international operations.',
       metrics: [
-        { label: 'Investment Appeal', value: '21st', description: 'Globally ranked for investment and business' },
-        { label: 'Tax Incentives', value: '0%', description: 'Corporate tax for 10+ years in free zones' },
-        { label: 'Digital Services', value: '95%', description: 'Government services integrated online' }
-      ]
+        { value: 'Top 10', description: 'most efficient ports worldwide' },
+        { value: '0% Tax', description: 'on personal income' },
+      ],
+      glowClass: 'before:from-blue-400/35 before:to-cyan-300/10',
     },
     {
       id: 'quality',
-      title: 'Unmatched Quality of Life',
-      description: 'Safe, modern lifestyle with world-class infrastructure, cultural richness, and natural beauty.',
-      image: '/images/quality_of_life.png',
+      icon: Heart,
+      title: 'High Quality of Life',
+      description: 'Safe, modern lifestyle with natural beauty and world-class amenities.',
       metrics: [
-        { label: 'Safety Index', value: '5th', description: 'Ranked globally in Safety Index (2024)' },
-        { label: 'Cultural Heritage', value: 'Vibrant', description: 'Blend of tradition and world-class modernity' },
-        { label: 'Life Quality', value: 'Top', description: 'Pristine beaches, mountains, and desert' }
-      ]
-    }
+        { value: 'Top 3', description: 'safest countries globally' },
+        { value: '1st', description: 'Gulf quality of life index rank' },
+      ],
+      glowClass: 'before:from-rose-400/35 before:to-orange-300/10',
+    },
   ];
 
   return (
-    <section id="why-oman" className="py-16 md:py-32 relative overflow-hidden">
-      <div className="container-custom relative z-10">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-3xl">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight"
-            >
+    <section id="why-oman" className="relative overflow-hidden py-24 md:py-28">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.10),transparent_45%),radial-gradient(circle_at_80%_15%,rgba(244,114,182,0.10),transparent_42%),radial-gradient(circle_at_50%_85%,rgba(59,130,246,0.10),transparent_40%)]" />
+        <div className="absolute left-[14%] top-10 h-64 w-64 rounded-full bg-primary/15 blur-[130px]" />
+        <div className="absolute right-[16%] top-[28%] h-60 w-60 rounded-full bg-violet-500/15 blur-[130px]" />
+        <div className="absolute bottom-0 left-1/2 h-56 w-[28rem] -translate-x-1/2 rounded-full bg-sky-500/15 blur-[130px]" />
+      </div>
+
+      <div className="container-custom relative z-10 max-w-[1200px]">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-semibold tracking-tight text-foreground md:text-[52px]">
               Why Oman?
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-slate-400 leading-relaxed"
-            >
-              Oman offers a dynamic and strategic environment for investors seeking growth and stability. Positioned as a hub of global trade and innovation, the Sultanate combines a forward-looking vision, business-friendly policies, and an unparalleled quality of life.
-            </motion.p>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="pb-2"
-          >
-            <Link 
-              to={`/${displayLang}/about-oman`}
-              className="btn-premium w-full sm:w-auto mt-4 md:mt-0"
-            >
-              Explore Why Invest in Oman
-              <ArrowUpRight className="w-5 h-5 ml-2" />
-            </Link>
-          </motion.div>
+          </h2>
+          <p className="mx-auto mt-5 max-w-[760px] text-base leading-relaxed text-muted-foreground/95 md:text-xl">
+            Oman offers a dynamic and strategic environment for investors seeking growth and stability.
+            Positioned as a premier global investment hub, the Sultanate combines connectivity, diversity,
+            and exceptional quality of life.
+          </p>
         </div>
 
-        {/* Expandable Cards Grid */}
-        <div className="flex flex-col lg:flex-row gap-6 h-[1600px] lg:h-[400px]">
-          {cards.map((card) => (
-            <motion.div
-              key={card.id}
-              layout
-              onMouseEnter={() => setActiveCard(card.id)}
-              onMouseLeave={() => setActiveCard(null)}
-              className={`relative cursor-pointer overflow-hidden rounded-2xl transition-all duration-700 ease-[0.23,1,0.32,1] h-full border border-white/5 shadow-2xl
-                ${activeCard === card.id ? 'flex-[4.5] border-blue-500/30' : 'flex-[1]'}
-                ${activeCard !== null && activeCard !== card.id ? 'opacity-40 grayscale' : 'opacity-100'}
-              `}
-            >
-              {/* Background Image */}
-              <motion.div 
-                layout
-                className="absolute inset-0"
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {cards.map((card) => {
+            const Icon = card.icon;
+            return (
+              <article
+                key={card.id}
+                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b1020]/80 p-8 shadow-[0_20px_44px_rgba(2,6,23,0.55)] backdrop-blur-md before:absolute before:inset-x-8 before:bottom-0 before:h-[2px] before:bg-gradient-to-r ${card.glowClass}`}
               >
-                <img 
-                  src={card.image} 
-                  alt={card.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-1000 ease-out"
-                />
-                <div className={`absolute inset-0 transition-opacity duration-700
-                  ${activeCard === card.id 
-                    ? 'bg-[#0b0f19]/80 backdrop-blur-sm' 
-                    : 'bg-[#0b0f19]/40 hover:bg-[#0b0f19]/20'}
-                `} />
-              </motion.div>
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_92%,rgba(56,189,248,0.08),transparent_40%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.06),transparent_35%)]" />
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/45 bg-primary/12 text-primary shadow-[0_0_18px_rgba(56,189,248,0.35)]">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-semibold leading-tight text-foreground">{card.title}</h3>
+                    <p className="mt-2 max-w-xl text-base leading-relaxed text-muted-foreground">{card.description}</p>
+                  </div>
+                </div>
 
-              {/* Content Integration */}
-              <div className="relative z-10 h-full w-full">
-                <AnimatePresence mode="wait">
-                  {activeCard === card.id ? (
-                    <motion.div
-                      key="expanded"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="absolute inset-0 p-12 flex flex-col justify-center"
-                    >
-                      <motion.div
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.1, duration: 0.5 }}
-                      >
-                        <h3 className="text-4xl font-bold text-white mb-6">{card.title}</h3>
-                        <p className="text-slate-300 text-lg mb-10 max-w-2xl leading-relaxed">{card.description}</p>
-                        
-                        {/* Metrics Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                          {card.metrics.map((metric, idx) => (
-                            <div 
-                              key={idx}
-                              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6 flex flex-col justify-center gap-1 shadow-2xl"
-                            >
-                              <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">{metric.label}</span>
-                              <div className="text-3xl font-bold text-white">{metric.value}</div>
-                              <p className="text-xs text-slate-500">{metric.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="collapsed"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="absolute inset-0 flex items-center justify-center"
-                    >
-                      <h3 className={`text-xl font-bold text-white whitespace-nowrap transition-all duration-700
-                        ${activeCard !== null ? 'opacity-0 scale-50' : 'rotate-[-90deg] lg:rotate-[-90deg]'}
-                      `}>
-                        {card.title}
-                      </h3>
-                    </motion.div>
-                  ) }
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          ))}
+                <div className="mt-6 grid grid-cols-2 gap-4 border-t border-white/12 pt-5">
+                  {card.metrics.map((metric, idx) => (
+                    <div key={idx} className={idx === 0 ? 'pr-4' : 'border-l border-white/12 pl-4'}>
+                      <p className="text-4xl font-semibold leading-none text-foreground">{metric.value}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{metric.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to={`/${displayLang}/about-oman`}
+            className="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-white/15 bg-[#10172a]/85 px-10 py-3 text-xl font-medium text-foreground shadow-[0_16px_40px_rgba(37,99,235,0.35)] backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-[#14203a]"
+          >
+            Explore Investment in Oman <ArrowRight className="ml-3 h-5 w-5" />
+          </Link>
         </div>
       </div>
     </section>
-
   );
 };
