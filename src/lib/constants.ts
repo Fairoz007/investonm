@@ -1,65 +1,46 @@
 import type { NavItem, Slide, InvestCard } from '@/types';
 
 export const NAV_ITEMS: NavItem[] = [
- {
- label: 'HOME',
- href: '/',
- },
- {
- label: 'ABOUT US',
- href: '/who-we-are',
- children: [
- { label: 'Our Story', href: '/who-we-are#story' },
- { label: 'Mission & Vision', href: '/who-we-are#mission' },
- { label: 'Our Experts', href: '/our-experts' },
- ],
- },
- {
- label: 'DISCOVER OMAN',
- href: '/about-oman',
- subtitle: 'aboutoman.text.3',
- children: [
- { label: 'Oman’s Infrastructure Advantage', href: '/about-oman#infrastructure' },
- { label: 'Legislation', href: '/about-oman#legislation' },
- { label: 'Business Ecosystem', href: '/about-oman#ecosystem' },
- { label: 'Strategic Location', href: '/about-oman#location' },
- { label: 'A Cost-Effective Business Hub', href: '/about-oman#hub' },
- { label: 'Friendly Business Environment', href: '/about-oman#environment' },
- { label: 'Incentives to Invest', href: '/about-oman#incentives' },
- ],
- },
- {
- label: 'START INVESTING',
- href: '/key-sectors',
- subtitle: 'keysectors.text.3',
- children: [
- { label: 'Energy', href: '/key-sectors#energy' },
- { label: 'Technology', href: '/key-sectors#technology' },
- { label: 'Private Equity', href: '/key-sectors#private-equity' },
- { label: 'Trade', href: '/key-sectors#trade' },
- { label: 'Investments', href: '/key-sectors#investments' },
- { label: 'Tourism & Hospitality', href: '/key-sectors#tourism' },
- { label: 'Education', href: '/key-sectors#education' },
- { label: 'Logistics', href: '/key-sectors#logistics' },
- { label: 'Real Estate', href: '/key-sectors#real-estate' },
- ],
- },
- {
- label: 'RESOURCES & TOOLS',
- href: '/resources',
- subtitle: 'footer.text.17',
- children: [
- { label: 'Investor Guide', href: '/resources#guide' },
- { label: 'Business Simulator', href: '/resources#simulator' },
- { label: 'Licenses Simulator', href: '/resources#licenses' },
- { label: 'Reports & Publications', href: '/resources#reports' },
- ],
- },
- {
- label: 'CONNECT WITH SHOMOUKH',
- href: '/contact',
- subtitle: 'Connect with Our Investment Team',
- },
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'About',
+    href: '/who-we-are',
+    children: [
+      { label: 'Our Story', href: '/who-we-are#story' },
+      { label: 'Mission & Vision', href: '/who-we-are#mission' },
+      { label: 'Our Experts', href: '/our-experts' },
+    ],
+  },
+  {
+    label: 'Discover Oman',
+    href: '/about-oman',
+    children: [
+      { label: 'Infrastructure', href: '/about-oman#infrastructure' },
+      { label: 'Legislation', href: '/about-oman#legislation' },
+      { label: 'Business Ecosystem', href: '/about-oman#ecosystem' },
+      { label: 'Strategic Location', href: '/about-oman#location' },
+    ],
+  },
+  {
+    label: 'Investing',
+    href: '/key-sectors',
+    children: [
+      { label: 'Energy', href: '/key-sectors#energy' },
+      { label: 'Technology', href: '/key-sectors#technology' },
+      { label: 'Private Equity', href: '/key-sectors#private-equity' },
+    ],
+  },
+  {
+    label: 'Resources',
+    href: '/resources',
+    children: [
+      { label: 'Investor Guide', href: '/resources#guide' },
+      { label: 'Reports', href: '/resources#reports' },
+    ],
+  },
 ];
 
 export const HERO_SLIDES: Slide[] = [
@@ -136,7 +117,7 @@ export const ANIMATION = {
  exit: [0.4, 0, 1, 1],
  },
  slider: {
- interval: 6000,
- transitionDuration: 1.0,
- },
+    interval: 8000,
+    transitionDuration: 1.5,
+  },
 };

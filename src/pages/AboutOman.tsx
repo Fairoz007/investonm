@@ -1,181 +1,148 @@
 import { motion } from 'framer-motion';
-import type { Variants } from 'framer-motion';
-import { Ship, Globe2, Landmark, ShieldCheck, Building2, Zap } from 'lucide-react';
-import { useTranslation } from"react-i18next";
+import { Ship, Globe2, Landmark, ShieldCheck, Building2, Zap, ArrowRight } from 'lucide-react';
+import { useTranslation } from "react-i18next";
 import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
-
-const fadeInUp: Variants = {
- hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
- visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease:"easeOut" } }
-};
+import { PageHeader } from '@/components/shared/PageHeader';
 
 const SECTIONS = [
- {
- id: 'infrastructure',
- icon: Ship,
- title: 'aboutoman.infra.title',
- desc: 'aboutoman.infra.desc',
- img: '/images/hero-energy.jpg'
- },
- {
- id: 'legislation',
- icon: ShieldCheck,
- title: 'aboutoman.legislation.title',
- desc: 'aboutoman.legislation.desc',
- img: '/images/hero-engineers.jpg'
- },
- {
- id: 'ecosystem',
- icon: Building2,
- title: 'aboutoman.ecosystem.title',
- desc: 'aboutoman.ecosystem.desc',
- img: '/images/hero-manufacturing.jpg'
- },
- {
- id: 'location',
- icon: Globe2,
- title: 'aboutoman.location.title',
- desc: 'aboutoman.location.desc',
- img: '/images/oman_hero.png'
- },
- {
- id: 'hub',
- icon: Zap,
- title: 'aboutoman.hub.title',
- desc: 'aboutoman.hub.desc',
- img: '/images/hero-scientist.jpg'
- },
- {
- id: 'incentives',
- icon: Landmark,
- title: 'aboutoman.incentives.title',
- desc: 'aboutoman.incentives.desc',
- img: '/images/hero-energy.jpg'
- }
+  {
+    id: 'location',
+    icon: Globe2,
+    title: 'aboutoman.location.title',
+    desc: 'aboutoman.location.desc',
+    img: '/images/oman_hero.png'
+  },
+  {
+    id: 'infrastructure',
+    icon: Ship,
+    title: 'aboutoman.infra.title',
+    desc: 'aboutoman.infra.desc',
+    img: '/images/hero-energy.jpg'
+  },
+  {
+    id: 'legislation',
+    icon: ShieldCheck,
+    title: 'aboutoman.legislation.title',
+    desc: 'aboutoman.legislation.desc',
+    img: '/images/hero-engineers.jpg'
+  },
+  {
+    id: 'ecosystem',
+    icon: Building2,
+    title: 'aboutoman.ecosystem.title',
+    desc: 'aboutoman.ecosystem.desc',
+    img: '/images/hero-manufacturing.jpg'
+  },
+  {
+    id: 'hub',
+    icon: Zap,
+    title: 'aboutoman.hub.title',
+    desc: 'aboutoman.hub.desc',
+    img: '/images/hero-scientist.jpg'
+  },
+  {
+    id: 'incentives',
+    icon: Landmark,
+    title: 'aboutoman.incentives.title',
+    desc: 'aboutoman.incentives.desc',
+    img: '/images/hero-energy.jpg'
+  }
 ];
 
 export default function AboutOman() {
- const { t } = useTranslation();
+  const { t } = useTranslation();
 
- return (
- <div className="min-h-screen text-slate-300 overflow-hidden pt-20">
- {/* Hero Section */}
- <section className="relative h-[400px] flex items-center overflow-hidden">
- <div className="absolute inset-0 z-0">
- <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
- <div className="absolute inset-0 ]" />
- </div>
- <div className="container-custom relative z-10 text-left w-full">
- <motion.div
- initial={{ opacity: 0, y: 10 }}
- animate={{ opacity: 1, y: 0 }}
- className="flex items-center justify-start gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-6"
->
- <span className="opacity-50">Home</span>
- <span className="opacity-20 text-white">/</span>
- <span>{t('aboutoman.text.1')}</span>
- </motion.div>
+  return (
+    <div className="min-h-screen bg-[#050812] text-slate-300 pb-24">
+      <PageHeader 
+        title={t('aboutoman.text.1')}
+        subtitle={t('aboutoman.text.2')}
+        breadcrumb={[{ label: t('aboutoman.text.1') }]}
+      />
 
- <motion.h1
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.8, ease:"easeOut" }}
- className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter text-white"
->
- {t('aboutoman.text.1')}
- </motion.h1>
+      {/* Main Introduction */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-8">
+              {t('aboutoman.text.3')}
+            </h2>
+            <div className="w-20 h-1.5 bg-blue-600 rounded-full mb-12" />
+          </motion.div>
+        </div>
+      </section>
 
- <motion.p
- initial={{ opacity: 0, x: -30 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.8, delay: 0.2, ease:"easeOut" }}
- className="text-xl md:text-2xl text-slate-400 leading-relaxed max-w-3xl font-light"
->
- {t('aboutoman.text.2')}
- </motion.p>
- </div>
- </section>
+      {/* Feature Sections */}
+      <section className="space-y-32">
+        {SECTIONS.map((section, idx) => (
+          <div key={section.id} className="relative">
+            <div className="container-custom">
+              <div className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 lg:gap-24 items-center`}>
+                <div className="lg:w-1/2 space-y-8">
+                  <motion.div
+                    initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="space-y-6"
+                  >
+                    <div className="inline-flex items-center gap-4 text-blue-400 font-bold tracking-[0.2em] uppercase text-sm">
+                       <div className="p-3 bg-blue-500/10 rounded-xl">
+                         <section.icon className="w-6 h-6" />
+                       </div>
+                       <span className="h-px w-8 bg-blue-500/30" />
+                       Strategic Advantage
+                    </div>
 
- {/* Main Introduction */}
- <section className="py-20 relative overflow-hidden border-t border-white/5">
- <div className="container-custom relative z-10">
- <div className="max-w-5xl mx-auto text-center space-y-10">
- <motion.p
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true }}
- variants={fadeInUp}
- className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
->
- {t('aboutoman.text.3')}
- </motion.p>
- <motion.div
- initial={{ width: 0, opacity: 0 }}
- whileInView={{ width:"120px", opacity: 1 }}
- viewport={{ once: true }}
- transition={{ duration: 1, delay: 0.5 }}
- className="h-2 bg-blue-600 mx-auto rounded-full"
- />
- </div>
- </div>
- </section>
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+                      {t(section.title)}
+                    </h3>
 
- {/* Detailed Sections Loop */}
- <section className="pb-20 border-t border-white/5">
- <div className="container-custom">
- <div className="space-y-16 md:space-y-24">
- {SECTIONS.map((section, idx) => (
- <motion.div
- key={section.id}
- id={section.id}
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true, amount: 0.2 }}
- variants={fadeInUp}
- className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 md:gap-16 lg:gap-20 items-center`}
->
- <div className="lg:w-1/2 space-y-6">
- <div className="flex items-center gap-6">
- <div className="w-20 h-20 rounded-2xl bg-blue-600/10 flex items-center justify-center border border-white/10 group transition-all hover:bg-blue-600">
- <section.icon className="w-10 h-10 text-blue-400 group-hover:text-white transition-colors" />
- </div>
- <div className="h-px flex-1 bg-white/10" />
- </div>
+                    <p className="text-lg md:text-xl text-[#94A3B8] leading-relaxed font-light whitespace-pre-wrap">
+                      {t(section.desc)}
+                    </p>
 
- <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
- {t(section.title)}
- </h2>
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      <button className="h-14 px-8 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 group">
+                        Explore Opportunities
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </button>
+                    </div>
+                  </motion.div>
+                </div>
 
- <p className="text-xl text-slate-400 leading-relaxed font-light">
- {t(section.desc)}
- </p>
+                <div className="lg:w-1/2 w-full">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="relative group cursor-pointer"
+                  >
+                    <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="relative aspect-[1.5] rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700">
+                      <img 
+                        src={section.img} 
+                        alt={t(section.title)}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050812] via-transparent to-transparent opacity-60" />
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
 
- <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-5 pt-6 w-full">
- <button className="btn-premium w-full sm:w-auto">
- Detailed Analysis
- </button>
- <button className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all w-full sm:w-auto min-h-[44px] flex items-center justify-center">
- Watch Video
- </button>
- </div>
- </div>
-
- <div className="lg:w-1/2 w-full">
- <div className="aspect-[1.6] rounded-3xl overflow-hidden border border-white/10 relative group">
- <div
- className="absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] group- grayscale-[20%] group-hover:grayscale-0"
- style={{ backgroundImage: `url(${section.img})` }}
- />
- <div className="absolute inset-0" />
- </div>
- </div>
- </motion.div>
- ))}
- </div>
- </div>
- </section>
-
- <ResearchDataCTA />
- </div>
- );
+      <div className="mt-32">
+        <ResearchDataCTA />
+      </div>
+    </div>
+  );
 }
+

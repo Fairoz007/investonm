@@ -50,7 +50,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        sans: ['Outfit', 'Inter', 'sans-serif'],
       },
       borderRadius: {
         xl: "var(--radius)",
@@ -65,6 +65,16 @@ module.exports = {
         DEFAULT: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
         md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
         lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.2s ease-out forwards",
+        "fade-out": "fade-out 0.2s ease-out forwards",
+        "slide-up": "slide-up 0.2s ease-out forwards",
+        "slide-down": "slide-down 0.2s ease-out forwards",
+        "pulse-slow": "pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-slow-reverse": "pulse-reverse 10s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         "accordion-down": {
@@ -91,14 +101,10 @@ module.exports = {
           "0%": { transform: "translateY(-10px)" },
           "100%": { transform: "translateY(0)" },
         },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.2s ease-out forwards",
-        "fade-out": "fade-out 0.2s ease-out forwards",
-        "slide-up": "slide-up 0.2s ease-out forwards",
-        "slide-down": "slide-down 0.2s ease-out forwards",
+        "pulse-reverse": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        }
       },
     },
   },

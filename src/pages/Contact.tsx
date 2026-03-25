@@ -1,252 +1,214 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { Mail, MapPin, Phone, Briefcase, ShieldCheck, Zap } from 'lucide-react';
-import { useTranslation } from"react-i18next";
+import { Mail, MapPin, Phone, Briefcase, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
+import { useTranslation } from "react-i18next";
 import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
+import { PageHeader } from '@/components/shared/PageHeader';
 
 const fadeInUp: Variants = {
- hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
- visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease:"easeOut" } }
-};
-
-const staggerContainer: Variants = {
- hidden: { opacity: 0 },
- visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
 };
 
 export default function Contact() {
- const { t } = useTranslation();
+  const { t } = useTranslation();
 
- return (
- <div className="min-h-screen text-slate-300 overflow-hidden pt-20">
- {/* Hero Section */}
- <section className="relative h-[350px] flex items-center overflow-hidden">
- <div className="absolute inset-0 z-0">
- <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale" />
- <div className="absolute inset-0 ]" />
- </div>
- <div className="container-custom relative z-10 text-left w-full text-white">
- <motion.div
- initial={{ opacity: 0 }}
- animate={{ opacity: 1 }}
- className="flex items-center justify-start gap-2 text-[10px] font-bold uppercase tracking-widest text-blue-400 mb-6"
->
- <span>Home</span>
- <span className="opacity-40">/</span>
- <span>{t('contact.text.1')}</span>
- </motion.div>
+  const contactPillars = [
+    { icon: Briefcase, title: "contact.help.1.title", desc: "contact.help.1.desc" },
+    { icon: MapPin, title: "contact.help.2.title", desc: "contact.help.2.desc" },
+    { icon: ShieldCheck, title: "contact.help.3.title", desc: "contact.help.3.desc" },
+    { icon: Zap, title: "contact.help.4.title", desc: "contact.help.4.desc" }
+  ];
 
- <motion.h1
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.8 }}
- className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-white"
->
- {t('contact.text.1')}
- </motion.h1>
+  const directChannels = [
+    { icon: Mail, label: "Inquiries", value: "info@shomoukh.om", href: "mailto:info@shomoukh.om" },
+    { icon: Phone, label: "Direct Line", value: "+968 71770077", href: "tel:+96871770077" },
+    { icon: MapPin, label: "Location", value: "Airport Heights, Muscat, Oman", subValue: "PO Box: 1756 | PC: 111" }
+  ];
 
- <motion.p
- initial={{ opacity: 0, y: 10 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.8, delay: 0.2 }}
- className="text-xl text-slate-400 max-w-2xl"
->
- {t('contact.text.2')}
- </motion.p>
- </div>
- </section>
+  return (
+    <div className="min-h-screen bg-[#050812] text-slate-300 pb-24">
+      <PageHeader 
+        title={t('contact.text.1')}
+        subtitle={t('contact.text.4')}
+        breadcrumb={[{ label: t('contact.text.1') }]}
+      />
 
- {/* How Can We Help Section */}
- <section className="py-20 relative overflow-hidden">
- <div className="container-custom">
- <div className="text-center max-w-4xl mx-auto mb-16">
- <motion.h2
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true }}
- variants={fadeInUp}
- className="text-4xl md:text-5xl font-bold text-white mb-6"
->
- {t('contact.help.title')}
- </motion.h2>
- <motion.p
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true }}
- variants={fadeInUp}
- className="text-lg text-slate-400 max-w-2xl mx-auto font-light"
->
- {t('contact.help.subtitle')}
- </motion.p>
- </div>
+      {/* Contact Pillars */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactPillars.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="group p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-blue-500/30 transition-all duration-500 shadow-xl"
+              >
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
+                  <item.icon className="w-6 h-6 text-blue-400 group-hover:text-white" />
+                </div>
+                <h3 className="text-xs font-black text-blue-400 uppercase tracking-[0.2em] mb-4">
+                  {t(item.title)}
+                </h3>
+                <p className="text-sm text-[#94A3B8] leading-relaxed font-light">
+                  {t(item.desc)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
- {[
- { icon: Briefcase, title:"contact.help.1.title", desc:"contact.help.1.desc" },
- { icon: MapPin, title:"contact.help.2.title", desc:"contact.help.2.desc" },
- { icon: ShieldCheck, title:"contact.help.3.title", desc:"contact.help.3.desc" },
- { icon: Zap, title:"contact.help.4.title", desc:"contact.help.4.desc" }
- ].map((item, idx) => (
- <motion.div
- key={idx}
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true, amount: 0.2 }}
- variants={fadeInUp}
- className="bg-card border border-border rounded-lg shadow-sm p-10 flex flex-col items-center text-center group"
->
- <div className="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center group-hover:bg-blue-600 transition-all duration-300 mb-8 shadow-inner">
- <item.icon className="w-6 h-6 text-blue-500 group-hover:text-white" />
- </div>
- <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">
- {t(item.title)}
- </h3>
- <p className="text-sm text-slate-400 leading-relaxed font-light">
- {t(item.desc)}
- </p>
- </motion.div>
- ))}
- </div>
- </div>
- </section>
+      {/* Form & Info Section */}
+      <section className="py-24 border-t border-white/5 bg-white/[0.01]">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+            
+            {/* Left: Contact Info */}
+            <div className="lg:col-span-4 space-y-12">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <h2 className="text-4xl font-bold text-white tracking-tight">Direct Channels</h2>
+                <div className="w-16 h-1 bg-blue-600 rounded-full" />
+                <p className="text-[#94A3B8] text-lg font-light leading-relaxed">
+                  Connect with our investment specialists for personalized advisory and strategic partnership opportunities.
+                </p>
+              </motion.div>
 
- {/* Get in Touch Form Section */}
- <section className="py-20 border-t border-white/5 relative bg-[#0b0f19]/30">
- <div className="container-custom">
- <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-20 items-start">
- <div className="lg:col-span-4 space-y-12">
- <div>
- <h2 className="text-4xl font-bold text-white mb-6">
- {t('contact.form.getInTouch')}
- </h2>
- <p className="text-slate-400 text-lg leading-relaxed font-light">
- {t('contact.form.subtitle')}
- </p>
- </div>
+              <div className="space-y-4">
+                {directChannels.map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group flex gap-6 items-center p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] transition-all"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                      <item.icon className="w-5 h-5 text-blue-400 group-hover:text-white" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-1">{item.label}</p>
+                      {item.href ? (
+                        <a href={item.href} className="text-lg font-bold text-white hover:text-blue-400 transition-colors tracking-tight">{item.value}</a>
+                      ) : (
+                        <div>
+                          <p className="text-lg font-bold text-white tracking-tight leading-tight">{item.value}</p>
+                          {item.subValue && <p className="text-xs text-[#94A3B8] mt-1 font-light">{item.subValue}</p>}
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
 
- <div className="space-y-8">
- <div className="flex gap-6 items-center group">
- <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600/20 transition-all border border-white/10 group-hover:border-blue-500/50">
- <Mail className="w-6 h-6 text-blue-500" />
- </div>
- <div>
- <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Inquiries</p>
- <a href="mailto:info@shomoukh.om" className="text-lg font-bold text-white hover:text-blue-400 transition-colors">info@shomoukh.om</a>
- </div>
- </div>
+            {/* Right: Form */}
+            <div className="lg:col-span-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="p-8 md:p-12 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl relative overflow-hidden"
+              >
+                <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => e.preventDefault()}>
+                  <div className="md:col-span-2 space-y-3">
+                    <label className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em] ml-2">Subject</label>
+                    <input
+                      type="text"
+                      placeholder={t('contact.form.subject')}
+                      className="w-full bg-[#0B1020] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white placeholder:text-[#94A3B8]/30 font-light"
+                    />
+                  </div>
 
- <div className="flex gap-6 items-center group">
- <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600/20 transition-all border border-white/10 group-hover:border-blue-500/50">
- <Phone className="w-6 h-6 text-blue-500" />
- </div>
- <div>
- <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Direct Line</p>
- <a href="tel:+96871770077" className="text-lg font-bold text-white hover:text-blue-400 transition-colors">+968 71770077</a>
- </div>
- </div>
+                  <div className="space-y-3">
+                    <label className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em] ml-2">First Name</label>
+                    <input
+                      type="text"
+                      placeholder={t('contact.form.firstName')}
+                      className="w-full bg-[#0B1020] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white placeholder:text-[#94A3B8]/30 font-light"
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em] ml-2">Last Name</label>
+                    <input
+                      type="text"
+                      placeholder={t('contact.form.lastName')}
+                      className="w-full bg-[#0B1020] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white placeholder:text-[#94A3B8]/30 font-light"
+                    />
+                  </div>
 
- <div className="flex gap-6 items-center group">
- <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600/20 transition-all border border-white/10 group-hover:border-blue-500/50">
- <MapPin className="w-6 h-6 text-blue-500" />
- </div>
- <div>
- <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Location</p>
- <p className="text-lg font-bold text-white leading-tight">PO Box: 1756 | PC: 111<br />Airport Heights, Muscat<br />The Sultanate of Oman</p>
- </div>
- </div>
- </div>
- </div>
+                  <div className="space-y-3">
+                    <label className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em] ml-2">Company</label>
+                    <input
+                      type="text"
+                      placeholder={t('contact.form.companyName')}
+                      className="w-full bg-[#0B1020] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white placeholder:text-[#94A3B8]/30 font-light"
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em] ml-2">Email</label>
+                    <input
+                      type="email"
+                      placeholder={t('contact.form.email')}
+                      className="w-full bg-[#0B1020] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white placeholder:text-[#94A3B8]/30 font-light"
+                    />
+                  </div>
 
- <div className="lg:col-span-8">
- <motion.form
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true }}
- variants={staggerContainer}
- className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-10 bg-card border border-border rounded-lg shadow-sm-alt"
- onSubmit={(e) => e.preventDefault()}
->
- <motion.div variants={fadeInUp} className="md:col-span-2">
- <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3 block">Inquiry Subject</label>
- <input
- type="text"
- placeholder={t('contact.form.subject')}
- className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-white placeholder:text-slate-600"
- />
- </motion.div>
+                  <div className="md:col-span-2 space-y-3">
+                    <label className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em] ml-2">Message</label>
+                    <textarea
+                      rows={5}
+                      placeholder={t('contact.form.message')}
+                      className="w-full bg-[#0B1020] border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-blue-500 transition-all text-white placeholder:text-[#94A3B8]/30 font-light resize-none"
+                    />
+                  </div>
 
- <motion.div variants={fadeInUp}>
- <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3 block">First Name</label>
- <input
- type="text"
- placeholder={t('contact.form.firstName')}
- className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-white placeholder:text-slate-600"
- />
- </motion.div>
- <motion.div variants={fadeInUp}>
- <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3 block">Last Name</label>
- <input
- type="text"
- placeholder={t('contact.form.lastName')}
- className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-white placeholder:text-slate-600"
- />
- </motion.div>
+                  <div className="md:col-span-2 pt-4">
+                    <button className="h-16 w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 group shadow-xl shadow-blue-900/20">
+                      {t('contact.form.submit')}
+                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </div>
+                </form>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
- <motion.div variants={fadeInUp}>
- <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3 block">Company Name</label>
- <input
- type="text"
- placeholder={t('contact.form.companyName')}
- className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-white placeholder:text-slate-600"
- />
- </motion.div>
- <motion.div variants={fadeInUp}>
- <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3 block">Email Address</label>
- <input
- type="email"
- placeholder={t('contact.form.email')}
- className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-white placeholder:text-slate-600"
- />
- </motion.div>
+      {/* Map Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-full h-[500px] rounded-[3rem] overflow-hidden border border-white/10 relative grayscale hover:grayscale-0 transition-all duration-1000"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.856002196652!2d58.3377!3d23.5755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM0JzMxLjgiTiA1OMKwMjAnMTUuNyJF!5e0!3m2!1sen!2som!4v1680000000000!5m2!1sen!2som"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+            />
+            <div className="absolute inset-0 pointer-events-none border border-white/10 rounded-[3rem]" />
+          </motion.div>
+        </div>
+      </section>
 
- <motion.div variants={fadeInUp} className="md:col-span-2">
- <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3 block">Detailed Message</label>
- <textarea
- rows={6}
- placeholder={t('contact.form.message')}
- className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-white placeholder:text-slate-600 resize-none"
- />
- </motion.div>
-
- <motion.div variants={fadeInUp} className="md:col-span-2 pt-4">
- <button className="btn-premium w-full text-sm uppercase tracking-widest py-5">
- {t('contact.form.submit')}
- <Zap className="w-4 h-4 fill-white" />
- </button>
- </motion.div>
- </motion.form>
- </div>
- </div>
- </div>
- </section>
-
- {/* Map Section */}
- <section className="py-20 border-t border-white/5">
- <div className="container-custom">
- <div className="w-full h-[500px] rounded-3xl overflow-hidden border border-white/10 relative grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000">
- <iframe
- src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.856002196652!2d58.3377!3d23.5755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM0JzMxLjgiTiA1OMKwMjAnMTUuNyJF!5e0!3m2!1sen!2som!4v1680000000000!5m2!1sen!2som"
- width="100%"
- height="100%"
- style={{ border: 0 }}
- allowFullScreen
- loading="lazy"
- />
- </div>
- </div>
- </section>
-
- <ResearchDataCTA />
- </div>
- );
+      <ResearchDataCTA />
+    </div>
+  );
 }
+

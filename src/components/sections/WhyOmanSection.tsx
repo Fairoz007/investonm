@@ -1,11 +1,7 @@
-import { ArrowRight, Globe2, BarChart3, Zap, ShieldCheck } from 'lucide-react';
-import { Link, useParams } from 'react-router-dom';
+import { Globe2, BarChart3, Zap, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const WhyOmanSection = () => {
-  const { lang } = useParams();
-  const displayLang = lang || 'en';
-
   const pillars = [
     {
       id: 'connectivity',
@@ -54,36 +50,34 @@ export const WhyOmanSection = () => {
   ];
 
   return (
-    <section id="why-oman" className="relative overflow-hidden py-20 bg-[#050812]">
-      {/* Background Dots/Grid */}
-      <div className="absolute inset-0 z-0 opacity-40 bg-grid-overlay pointer-events-none" />
-      
-      <div className="container-custom relative z-10 mx-auto w-full max-w-[1240px] px-6">
+    <section id="why-oman" className="relative overflow-hidden py-24 md:py-32 bg-transparent">
+      <div className="container-custom relative z-10 mx-auto w-full max-w-[1400px] px-6">
         {/* Section Heading */}
-        <div className="mx-auto max-w-3xl text-center mb-12 md:mb-16">
+        <div className="max-w-3xl mb-24">
+          <span className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold tracking-widest text-blue-400 uppercase mb-6">
+            Global Advantage
+          </span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl font-bold tracking-tight text-white md:text-[64px] mb-6"
+            className="text-5xl md:text-6xl font-black tracking-tighter text-white mb-8 leading-[1.05]"
           >
-            Why Oman?
+            Why Invest in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#8B5CF6]">Oman?</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[#94A3B8] text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"
+            className="text-slate-400 text-xl leading-relaxed max-w-2xl font-bold opacity-80"
           >
-            Oman offers a dynamic and strategic environment for investors seeking growth and stability. 
-            Positioned as a premier global investment hub, the Sultanate combines connectivity, diversity, 
-            and exceptional quality of life.
+            A strategic gateway connecting global markets with long-term growth opportunities and exceptional quality of life.
           </motion.p>
         </div>
 
         {/* Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -92,60 +86,40 @@ export const WhyOmanSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group relative flex flex-col rounded-3xl border border-white/5 bg-[#0A0D18]/90 p-8 md:p-10 transition-all duration-500 hover:border-white/10"
+                transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative flex flex-col glass-card-premium p-10 rounded-[48px] h-full"
               >
-                {/* Header Content */}
-                <div className="flex gap-4 items-start mb-8">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-[28px] font-bold text-white mb-2 leading-tight">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-[#94A3B8] text-base leading-relaxed">
-                      {pillar.subtitle}
-                    </p>
+                {/* Icon & Title */}
+                <div className="mb-12">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.05] text-blue-400 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                    <Icon className="h-8 w-8" />
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="h-px w-full bg-white/5 mb-8" />
+                <h3 className="text-2xl font-black text-white leading-tight mb-4 tracking-tight">
+                  {pillar.title}
+                </h3>
+                
+                <p className="text-slate-400 font-bold opacity-80 text-sm mb-12 flex-1">
+                   {pillar.subtitle}
+                </p>
 
-                {/* Stats Container */}
-                <div className="grid grid-cols-2 gap-8 relative">
-                  {/* Vertical Divider line */}
-                  <div className="absolute left-1/2 top-2 bottom-2 w-px bg-white/5 hidden sm:block" />
-                  
-                  {pillar.stats.map((stat, sIdx) => (
-                    <div key={sIdx} className="flex flex-col">
-                      <span className="text-3xl md:text-[38px] font-bold text-white mb-2">
-                        {stat.value}
-                      </span>
-                      <span className="text-[#94A3B8] text-sm leading-tight max-w-[160px]">
-                        {stat.label}
+                {/* Primary Stat */}
+                <div className="mt-auto pt-8 border-t border-white/5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-black text-white tracking-tighter">
+                        {pillar.stats[0].value}
                       </span>
                     </div>
-                  ))}
+                    <p className="mt-2 text-blue-400 text-xs font-black uppercase tracking-widest opacity-80">
+                       {pillar.stats[0].label}
+                    </p>
                 </div>
               </motion.article>
             );
           })}
         </div>
-
-        {/* CTA Button */}
-        <div className="mt-16 flex justify-center">
-          <Link
-            to={`/${displayLang}/about-oman`}
-            className="group flex min-h-[52px] items-center justify-center rounded-xl bg-white/5 border border-white/10 px-10 text-lg font-medium text-white transition-all hover:bg-white/10 hover:border-white/20 shadow-xl backdrop-blur-sm"
-          >
-            Explore Investment in Oman
-            <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
       </div>
     </section>
   );
 };
-

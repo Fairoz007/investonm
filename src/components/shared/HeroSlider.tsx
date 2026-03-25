@@ -20,27 +20,27 @@ export const HeroSlider = ({ children }: HeroSliderProps) => {
  onMouseEnter={() => setIsPaused(true)}
  onMouseLeave={() => setIsPaused(false)}
 >
- {/* Background Images with Crossfade */}
- <AnimatePresence mode="wait">
- <motion.div
- key={currentIndex}
- initial={{ opacity: 0 }}
- animate={{ opacity: 1 }}
- exit={{ opacity: 0 }}
- transition={{
- duration: ANIMATION.slider.transitionDuration,
- ease: 'easeInOut',
- }}
- className="absolute inset-0 will-change-transform gpu-accelerated"
->
- <img
- src={HERO_SLIDES[currentIndex].image}
- alt={HERO_SLIDES[currentIndex].alt}
- className="w-full h-full object-cover will-change-transform gpu-accelerated"
- loading={currentIndex === 0 ? 'eager' : 'lazy'}
- />
- </motion.div>
- </AnimatePresence>
+  {/* Background Images with Crossfade - Subtly layered on top of the Cosmic background */}
+  <AnimatePresence mode="wait">
+  <motion.div
+  key={currentIndex}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 0.2 }}
+  exit={{ opacity: 0 }}
+  transition={{
+  duration: ANIMATION.slider.transitionDuration,
+  ease: 'easeInOut',
+  }}
+  className="absolute inset-0 will-change-transform gpu-accelerated mix-blend-overlay"
+ >
+  <img
+  src={HERO_SLIDES[currentIndex].image}
+  alt={HERO_SLIDES[currentIndex].alt}
+  className="w-full h-full object-cover grayscale opacity-60"
+  loading={currentIndex === 0 ? 'eager' : 'lazy'}
+  />
+  </motion.div>
+  </AnimatePresence>
 
  {/* Dark Gradient Overlay */}
  <div className="absolute inset-0 gradient-overlay" />
