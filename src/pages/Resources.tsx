@@ -12,9 +12,9 @@ export default function Resources() {
  const { t } = useTranslation();
 
  return (
- <div className="bg-[#020617] min-h-screen text-white/90 overflow-hidden font-sans pt-24">
+ <div className="bg-[#020617] min-h-screen text-white/90 overflow-hidden font-sans pt-20">
  {/* Hero Section */}
- <section className="relative h-[400px] flex items-center overflow-hidden">
+ <section className="relative h-[350px] flex items-center overflow-hidden">
  <div className="absolute inset-0 z-0">
  <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
  <div className="absolute inset-0 ]" />
@@ -34,7 +34,7 @@ export default function Resources() {
  initial={{ opacity: 0, x: -20 }}
  animate={{ opacity: 1, x: 0 }}
  transition={{ duration: 0.8, ease:"easeOut" }}
- className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter text-white font-sans"
+ className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tighter text-white font-sans"
 >
  {t('resources.text.2')}
  </motion.h1>
@@ -60,10 +60,10 @@ export default function Resources() {
  </section>
 
  {/* Resources Grid */}
- <section className="py-16 md:py-32  relative overflow-hidden">
+ <section className="py-20  relative overflow-hidden">
  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 pointer-events-none" />
  <div className="container-custom relative z-10">
- <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
  {/* Resource Card Factory */}
  {[
  { id: 'guide', icon: BookOpen, title: 'resources.guide.title', desc: 'resources.guide.desc', action: 'Download PDF', actionIcon: Download },
@@ -99,9 +99,9 @@ export default function Resources() {
  </section>
 
  {/* Help Desk Section */}
- <section className="py-16 md:py-32 bg-[#020617]">
+ <section className="py-20 bg-[#020617]">
  <div className="container-custom">
- <div className=" rounded-[2rem] sm:rounded-[4rem] p-8 sm:p-12 md:p-24 relative overflow-hidden border border-white/5">
+ <div className=" rounded-[2rem] sm:rounded-[4rem] p-8 sm:p-12 md:p-16 relative overflow-hidden border border-white/5">
  <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--primary)]/10 rounded-full -mr-48 -mt-48 pointer-events-none" />
  <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 text-left">
  <div className="max-w-xl text-white space-y-8">

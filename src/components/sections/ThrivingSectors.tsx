@@ -195,85 +195,106 @@ export const ThrivingSectors = () => {
  return () => clearInterval(timer);
  }, [activeIdx]); // Reset timer when activeIdx changes manually (if applicable)
 
- return (
-    <section className="py-16 md:py-24 overflow-hidden relative bg-muted/50 border-t border-border">
-      <div className="container-custom relative z-10">
+  return (
+    <section className="py-20 overflow-hidden relative bg-[#050812] border-t border-white/5">
+      <div className="container-custom relative z-10 mx-auto max-w-[1400px]">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 px-4">
           <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight font-sans tracking-tight">
-              Thriving Sectors with <span className="text-primary">Exciting Incentives</span>
+            <h2 className="text-4xl md:text-[52px] font-bold text-white mb-5 leading-[1.1] font-sans tracking-tight">
+              Thriving Sectors with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#8B5CF6]">Exciting Incentives</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl font-sans">
+            <p className="text-lg text-[#A7B0C3] leading-relaxed max-w-2xl font-sans font-medium">
               Explore the vibrant investment opportunities in Oman, spanning essential sectors like technology, renewable energy, logistics, and manufacturing.
             </p>
           </div>
           <Link 
             to={`/${displayLang}/key-sectors`}
-            className="group px-7 py-3.5 bg-primary text-primary-foreground rounded-full font-bold font-sans flex items-center justify-center gap-2 hover:opacity-90 transition-all w-full sm:w-auto min-h-[44px] whitespace-nowrap"
+            className="group px-8 py-3.5 bg-white/5 border border-white/10 text-white rounded-full font-semibold font-sans flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/20 hover:-translate-y-0.5 shadow-[0_0_15px_rgba(0,0,0,0.2)] transition-all w-full sm:w-auto min-h-[56px] whitespace-nowrap backdrop-blur-md"
           >
-            Explore All Sectors <ArrowUpRight className="w-5 h-5 transition-transform ml-2" />
+            Explore All Sectors <ArrowUpRight className="w-5 h-5 transition-transform ml-2 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 
         {/* Minimal Tab Navigation */}
-        <div className="flex overflow-x-auto pb-4 mb-12 gap-3 scrollbar-hide snap-x">
-          {SECTORS.map((sector, idx) => (
-            <button
-              key={sector.id}
-              onClick={() => setActiveIdx(idx)}
-              className={`snap-start whitespace-nowrap px-6 py-3 rounded-full text-sm font-bold transition-all border ${
-                activeIdx === idx 
-                  ? 'bg-foreground text-background border-foreground shadow-sm' 
-                  : 'bg-card text-muted-foreground border-border hover:bg-muted'
-              }`}
-            >
-              {sector.title}
-            </button>
-          ))}
+        <div className="flex overflow-x-auto pb-6 gap-3 scrollbar-hide snap-x relative text-white">
+          {SECTORS.map((sector, idx) => {
+            const Icon = sector.icon;
+            return (
+              <button
+                key={sector.id}
+                onClick={() => setActiveIdx(idx)}
+                className={`flex-shrink-0 snap-start whitespace-nowrap px-6 py-3 rounded-full text-sm font-semibold transition-all border backdrop-blur-md flex items-center gap-2 ${
+                  activeIdx === idx 
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-500 border-blue-400/50 text-white shadow-[0_5px_15px_rgba(37,99,235,0.3)]' 
+                    : 'bg-white/[0.03] text-[#A7B0C3] border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20'
+                }`}
+              >
+                <Icon className={`h-4 w-4 ${activeIdx === idx ? 'opacity-100' : 'opacity-70'}`} />
+                {sector.title}
+              </button>
+            );
+          })}
         </div>
 
         {/* Detailed Info Section */}
-        <div className="bg-card rounded-[2rem] border border-border shadow-sm overflow-hidden flex flex-col lg:flex-row">
+        <div className="mt-8 bg-white/5 rounded-[32px] border border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row relative backdrop-blur-2xl">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.08)_0%,transparent_60%)] pointer-events-none" />
+          
           {/* Image Side */}
-          <div className="w-full lg:w-2/5 aspect-[4/3] lg:aspect-auto relative bg-muted">
-            <img 
-              src={activeSector.image} 
-              alt={activeSector.title} 
-              className="w-full h-full object-cover"
-            />
+          <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-auto relative bg-[#0B1020] overflow-hidden group p-4 lg:p-6 lg:border-r border-white/5 flex-shrink-0">
+            <div className="w-full h-full rounded-[24px] overflow-hidden relative">
+              <img 
+                src={activeSector.image} 
+                alt={activeSector.title} 
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050812]/90 via-transparent to-transparent mix-blend-multiply border-b border-white/5 lg:border-none" />
+              <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay" />
+            </div>
           </div>
           
           {/* Content Side */}
-          <div className="p-8 md:p-12 w-full lg:w-3/5">
-            <h3 className="text-3xl font-bold text-foreground mb-4 font-sans tracking-tight">{activeSector.title}</h3>
-            <p className="text-muted-foreground leading-relaxed text-lg font-sans mb-10 max-w-2xl">
+          <div className="p-8 md:p-12 w-full lg:w-[55%] flex flex-col relative z-10">
+            <div className="inline-flex items-center gap-4 mb-8">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0B1020] border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                <activeSector.icon className="h-6 w-6 text-blue-400" />
+              </div>
+              <h3 className="text-3xl font-bold text-white font-sans tracking-tight leading-tight">{activeSector.title}</h3>
+            </div>
+            
+            <p className="text-[#A7B0C3] leading-relaxed text-lg font-sans mb-12 max-w-2xl font-medium">
               {activeSector.description}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
               {activeSector.stats.slice(0, 4).map((stat, i) => (
-                <div key={i} className="group">
-                  <p className="text-[10px] text-primary font-bold mb-2 uppercase tracking-[0.2em] font-sans">{stat.label}</p>
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-3xl font-bold text-foreground font-sans">{stat.value.split(' ')[0]}</span>
-                    <span className="text-lg font-bold text-muted-foreground font-sans">{stat.value.split(' ').slice(1).join(' ')}</span>
+                <div key={i} className="group relative">
+                  <div className="absolute -inset-4 rounded-xl bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative">
+                    <p className="text-[11px] text-blue-400 font-bold mb-2 uppercase tracking-[0.2em] font-sans">{stat.label}</p>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="text-[32px] font-black text-white font-sans drop-shadow-sm">{stat.value.split(' ')[0]}</span>
+                      <span className="text-[16px] font-bold text-blue-400/80 font-sans">{stat.value.split(' ').slice(1).join(' ')}</span>
+                    </div>
+                    <p className="text-[14px] text-[#A7B0C3] leading-snug font-sans font-medium">{stat.subValue}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-snug font-sans">{stat.subValue}</p>
                 </div>
               ))}
             </div>
 
-            <Link 
-              to={`/${displayLang}/sectors/${activeSector.id}`}
-              className="inline-flex px-8 py-3 bg-secondary border border-border text-foreground rounded-full font-bold font-sans items-center justify-center gap-2 hover:bg-muted transition-colors w-full sm:w-auto"
-            >
-              Explore Opportunities <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            <div className="mt-auto pt-8 border-t border-white/10">
+              <Link 
+                to={`/${displayLang}/sectors/${activeSector.id}`}
+                className="group inline-flex min-h-[52px] items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-3.5 text-base font-semibold text-white transition-all hover:scale-[1.02] hover:brightness-110 shadow-[0_10px_30px_rgba(37,99,235,0.3)] border border-blue-400/30 w-full sm:w-auto"
+              >
+                Explore Opportunities <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
- );
+  );
 };

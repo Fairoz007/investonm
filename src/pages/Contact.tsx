@@ -57,9 +57,9 @@ export default function Contact() {
  </section>
 
  {/* How Can We Help Section */}
- <section className="py-16 md:py-24 relative overflow-hidden">
+ <section className="py-20 relative overflow-hidden">
  <div className="container-custom">
- <div className="text-center max-w-4xl mx-auto mb-20">
+ <div className="text-center max-w-4xl mx-auto mb-16">
  <motion.h2
  initial="hidden"
  whileInView="visible"
@@ -111,9 +111,9 @@ export default function Contact() {
  </section>
 
  {/* Get in Touch Form Section */}
- <section className="py-16 md:py-24 border-t border-white/5 relative bg-[#0b0f19]/30">
+ <section className="py-20 border-t border-white/5 relative bg-[#0b0f19]/30">
  <div className="container-custom">
- <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+ <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-20 items-start">
  <div className="lg:col-span-4 space-y-12">
  <div>
  <h2 className="text-4xl font-bold text-white mb-6">
@@ -141,7 +141,7 @@ export default function Contact() {
  </div>
  <div>
  <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Direct Line</p>
- <a href="tel:+96880000777" className="text-lg font-bold text-white hover:text-blue-400 transition-colors">+968 80000777</a>
+ <a href="tel:+96871770077" className="text-lg font-bold text-white hover:text-blue-400 transition-colors">+968 71770077</a>
  </div>
  </div>
 
@@ -151,7 +151,7 @@ export default function Contact() {
  </div>
  <div>
  <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Location</p>
- <p className="text-lg font-bold text-white leading-tight">Airport Heights, Area One<br/>Muscat, Sultanate of Oman</p>
+ <p className="text-lg font-bold text-white leading-tight">PO Box: 1756 | PC: 111<br />Airport Heights, Muscat<br />The Sultanate of Oman</p>
  </div>
  </div>
  </div>
@@ -231,7 +231,7 @@ export default function Contact() {
  </section>
 
  {/* Map Section */}
- <section className="py-16 md:py-24 border-t border-white/5">
+ <section className="py-20 border-t border-white/5">
  <div className="container-custom">
  <div className="w-full h-[500px] rounded-3xl overflow-hidden border border-white/10 relative grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000">
  <iframe

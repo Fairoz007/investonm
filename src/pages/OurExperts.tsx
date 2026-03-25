@@ -89,7 +89,7 @@ export default function OurExperts() {
  const yParallax = useSpring((mousePos.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) / 50, { stiffness: 100, damping: 30 });
 
  return (
- <div className="min-h-screen pt-24 md:pt-40 pb-16 md:pb-32 relative overflow-hidden">
+ <div className="min-h-screen pt-20 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
  {/* Decorative Parallax Shapes */}
  <motion.div 
  style={{ x: xParallax, y: yParallax }}
@@ -102,7 +102,7 @@ export default function OurExperts() {
 
  <div className="container-custom relative z-10">
  {/* Hero Header Section */}
- <div className="flex flex-col items-center text-center mb-16 md:mb-32 max-w-4xl mx-auto">
+ <div className="flex flex-col items-center text-center mb-12 md:mb-16 max-w-4xl mx-auto">
  <motion.div
  initial={{ opacity: 0, y: 20 }}
  animate={{ opacity: 1, y: 0 }}
@@ -233,8 +233,8 @@ export default function OurExperts() {
  </div>
 
  {/* Strategic Pillars Section */}
- <div className="mb-40">
- <div className="text-center mb-16">
+ <div className="mb-20">
+ <div className="text-center mb-12">
  <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Pillars</h2>
  <div className="w-12 h-1 bg-blue-500 mx-auto rounded-full" />
  </div>
@@ -263,7 +263,7 @@ export default function OurExperts() {
  </div>
 
  {/* leadership board Header */}
- <div id="leadership-grid" className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6 pt-20">
+ <div id="leadership-grid" className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6 pt-16">
  <div className="max-w-2xl">
  <div className="flex items-center gap-2 mb-4">
  <span className="w-10 h-[1px] bg-blue-500" />
@@ -276,7 +276,7 @@ export default function OurExperts() {
  </div>
 
  {/* Experts Grid */}
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 md:mb-40">
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 md:mb-24">
  {experts.filter(e => e.id !== 'chairman').map((expert, idx) => (
  <motion.div
  key={expert.id}
@@ -320,7 +320,7 @@ export default function OurExperts() {
  </div>
 
  {/* Global Impact Highlights */}
- <div className="mb-40 grid grid-cols-1 lg:grid-cols-2 gap-12">
+ <div className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
  <motion.div 
  initial={{ opacity: 0, x: -30 }}
  whileInView={{ opacity: 1, x: 0 }}
@@ -355,7 +355,7 @@ export default function OurExperts() {
  initial={{ opacity: 0, y: 40 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
- className="relative rounded-3xl bg-blue-900/10 border border-blue-500/10 p-12 lg:p-24 text-center overflow-hidden mb-32"
+ className="relative rounded-3xl bg-blue-900/10 border border-blue-500/10 p-12 lg:p-20 text-center overflow-hidden mb-20"
 >
  <div className="absolute inset-0 pointer-events-none" />
  <div className="relative z-10 max-w-3xl mx-auto">

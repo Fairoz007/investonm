@@ -21,7 +21,7 @@ export default function WhoWeAre() {
  return (
  <div className="min-h-screen text-slate-300 overflow-hidden pt-24">
  {/* Hero Section */}
- <section id="story" className="relative h-[450px] flex items-center overflow-hidden">
+ <section id="story" className="relative h-[350px] flex items-center overflow-hidden">
  <div className="absolute inset-0 z-0">
  <div className="absolute inset-0 bg-[url('/images/oman_hero.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
  <div className="absolute inset-0 ]" />
@@ -30,7 +30,7 @@ export default function WhoWeAre() {
  <motion.div
  initial={{ opacity: 0, y: 10 }}
  animate={{ opacity: 1, y: 0 }}
- className="flex items-center justify-start gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-6"
+ className="flex items-center justify-start gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-4"
 >
  <span className="opacity-50 text-white">Home</span>
  <span className="opacity-20 text-white">/</span>
@@ -41,7 +41,7 @@ export default function WhoWeAre() {
  initial={{ opacity: 0, x: -20 }}
  animate={{ opacity: 1, x: 0 }}
  transition={{ duration: 0.8, ease:"easeOut" }}
- className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter text-white"
+ className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[1.1] tracking-tighter text-white"
 >
  {t('whoweare.text.1')} <span className="text-blue-500"> {t('whoweare.text.2')} </span>
  </motion.h1>
@@ -58,9 +58,9 @@ export default function WhoWeAre() {
  </section>
 
  {/* Mission & Vision */}
- <section id="what-we-do" className="py-16 md:py-32 relative overflow-hidden border-t border-white/5">
+ <section id="what-we-do" className="py-20 relative overflow-hidden border-t border-white/5">
  <div className="container-custom relative z-10">
- <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
  <motion.div
  initial="hidden"
  whileInView="visible"
@@ -97,14 +97,14 @@ export default function WhoWeAre() {
  </section>
 
  {/* Core Values Section */}
- <section className="py-16 md:py-32 border-t border-white/5 relative">
+ <section className="py-20 border-t border-white/5 relative">
  <div className="container-custom text-center relative z-10">
  <motion.div
  initial="hidden"
  whileInView="visible"
  viewport={{ once: true }}
  variants={fadeInUp}
- className="max-w-4xl mx-auto mb-24 space-y-6"
+ className="max-w-4xl mx-auto mb-16 space-y-6"
 >
  <h2 className="text-4xl md:text-6xl font-bold text-white">{t('whoweare.values.title')}</h2>
  <p className="text-xl text-slate-400 font-light">{t('whoweare.values.subtitle')}</p>
@@ -136,7 +136,7 @@ export default function WhoWeAre() {
  </section>
 
  {/* Investor Success Stories */}
- <section id="success" className="py-16 md:py-32 border-t border-white/5 relative overflow-hidden">
+ <section id="success" className="py-20 border-t border-white/5 relative overflow-hidden">
  <div className="container-custom relative z-10">
  <div className="flex flex-col lg:flex-row gap-20 items-center">
  <div className="lg:w-1/2 space-y-12">

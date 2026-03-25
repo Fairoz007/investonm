@@ -58,9 +58,9 @@ export default function KeySectors() {
  const { t } = useTranslation();
 
  return (
- <div className="bg-[#020617] min-h-screen text-white/90 overflow-hidden font-sans pt-24">
+ <div className="bg-[#020617] min-h-screen text-white/90 overflow-hidden font-sans pt-20">
  {/* Hero Section */}
- <section className="relative h-[450px] flex items-center overflow-hidden">
+ <section className="relative h-[350px] flex items-center overflow-hidden">
  <div className="absolute inset-0 z-0">
  <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
  <div className="absolute inset-0 ]" />
@@ -80,7 +80,7 @@ export default function KeySectors() {
  initial={{ opacity: 0, x: -20 }}
  animate={{ opacity: 1, x: 0 }}
  transition={{ duration: 0.8, ease:"easeOut" }}
- className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter text-white font-sans"
+ className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tighter text-white font-sans"
 >
  {t('keysectors.text.1')}
  </motion.h1>
@@ -97,10 +97,10 @@ export default function KeySectors() {
  </section>
 
  {/* Sectors Grid */}
- <section className="py-16 md:py-32  relative overflow-hidden">
+ <section className="py-20  relative overflow-hidden">
  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 pointer-events-none" />
  <div className="container-custom relative z-10">
- <div className="flex flex-col gap-24 md:gap-48">
+ <div className="flex flex-col gap-16 md:gap-24">
  {SECTORS.map((sector, idx) => (
  <motion.div
  key={sector.id}
@@ -109,9 +109,9 @@ export default function KeySectors() {
  whileInView="visible"
  viewport={{ once: true, amount: 0.2 }}
  variants={fadeInUp}
- className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-16 lg:gap-32 items-center`}
+ className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 md:gap-16 lg:gap-20 items-center`}
 >
- <div className="lg:w-1/2 space-y-10">
+ <div className="lg:w-1/2 space-y-6">
  <div className="mb-2">
  <div className="text-[var(--primary-light)]/20 font-bold text-8xl md:text-9xl leading-none select-none font-sans tracking-tighter">
  0{idx + 1}

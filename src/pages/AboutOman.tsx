@@ -58,9 +58,9 @@ export default function AboutOman() {
  const { t } = useTranslation();
 
  return (
- <div className="min-h-screen text-slate-300 overflow-hidden pt-24">
+ <div className="min-h-screen text-slate-300 overflow-hidden pt-20">
  {/* Hero Section */}
- <section className="relative h-[450px] flex items-center overflow-hidden">
+ <section className="relative h-[400px] flex items-center overflow-hidden">
  <div className="absolute inset-0 z-0">
  <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
  <div className="absolute inset-0 ]" />
@@ -97,7 +97,7 @@ export default function AboutOman() {
  </section>
 
  {/* Main Introduction */}
- <section className="py-16 md:py-32 relative overflow-hidden border-t border-white/5">
+ <section className="py-20 relative overflow-hidden border-t border-white/5">
  <div className="container-custom relative z-10">
  <div className="max-w-5xl mx-auto text-center space-y-10">
  <motion.p
@@ -121,9 +121,9 @@ export default function AboutOman() {
  </section>
 
  {/* Detailed Sections Loop */}
- <section className="pb-16 md:pb-40 border-t border-white/5">
+ <section className="pb-20 border-t border-white/5">
  <div className="container-custom">
- <div className="space-y-24 md:space-y-48">
+ <div className="space-y-16 md:space-y-24">
  {SECTIONS.map((section, idx) => (
  <motion.div
  key={section.id}
@@ -132,9 +132,9 @@ export default function AboutOman() {
  whileInView="visible"
  viewport={{ once: true, amount: 0.2 }}
  variants={fadeInUp}
- className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-16 lg:gap-32 items-center`}
+ className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 md:gap-16 lg:gap-20 items-center`}
 >
- <div className="lg:w-1/2 space-y-10">
+ <div className="lg:w-1/2 space-y-6">
  <div className="flex items-center gap-6">
  <div className="w-20 h-20 rounded-2xl bg-blue-600/10 flex items-center justify-center border border-white/10 group transition-all hover:bg-blue-600">
  <section.icon className="w-10 h-10 text-blue-400 group-hover:text-white transition-colors" />
@@ -142,7 +142,7 @@ export default function AboutOman() {
  <div className="h-px flex-1 bg-white/10" />
  </div>
 
- <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+ <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
  {t(section.title)}
  </h2>
 

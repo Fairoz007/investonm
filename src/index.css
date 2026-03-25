@@ -1,19 +1,5 @@
-/* Inter Local Font Faces */
-@font-face {
- font-family: 'Inter';
- src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
- font-weight: 100 900;
- font-style: normal;
- font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-@font-face {
- font-family: 'Inter';
- src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
- font-weight: 100 900;
- font-style: italic;
- font-display: swap;
-}
 
 @tailwind base;
 @tailwind components;
@@ -21,74 +7,68 @@
 
 @layer base {
   :root {
-    /* Global cosmic blue theme */
-    --background: 236 58% 7%;
+    /* Global cosmic blue theme - Professional & Modern */
+    --background: 230 50% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 236 45% 12%;
+    --card: 230 50% 6%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 236 45% 12%;
+    --popover: 230 50% 6%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 213 100% 66%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 244 35% 18%;
+    --secondary: 230 40% 10%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 232 31% 20%;
-    --muted-foreground: 217 24% 75%;
+    --muted: 230 30% 15%;
+    --muted-foreground: 217 20% 70%;
 
-    --accent: 273 84% 70%;
+    --accent: 260 80% 70%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 228 26% 28%;
-    --input: 228 26% 28%;
-    --ring: 213 100% 66%;
+    --border: 228 20% 18%;
+    --input: 228 20% 18%;
+    --ring: 217 91% 60%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
   }
 }
 
 @layer base {
- * {
- @apply border-border;
- }
+  * {
+    @apply border-border;
+  }
 
- html {
- scroll-behavior: smooth;
- }
+  html {
+    scroll-behavior: auto; /* Handle by Lenis */
+  }
 
- body {
- @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
- font-family: 'Inter', sans-serif !important;
- @apply antialiased min-h-screen overflow-x-hidden w-full;
- margin: 0;
- padding: 0;
- max-width: 100vw;
- background-image:
-   radial-gradient(1200px 600px at 8% 12%, rgba(31, 95, 255, 0.18), transparent 45%),
-   radial-gradient(950px 520px at 88% 10%, rgba(183, 115, 255, 0.22), transparent 45%),
-   radial-gradient(900px 420px at 50% 95%, rgba(34, 197, 255, 0.1), transparent 60%),
-   linear-gradient(180deg, #07091f 0%, #08061b 55%, #050312 100%);
- }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    @apply min-h-screen overflow-x-hidden w-full m-0 p-0;
+    max-width: 100vw;
+    background: radial-gradient(circle at 50% -20%, rgba(37, 99, 235, 0.1) 0%, rgba(5, 8, 18, 1) 100%);
+  }
 
- h1, h2, h3, h4, h5, h6 {
- font-family: 'Inter', sans-serif !important;
- @apply font-bold tracking-tight text-foreground;
- }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+  }
 
- button, input, select, textarea {
- font-family: 'Inter', sans-serif !important;
- }
+  button, input, select, textarea {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+  }
 
- p {
- @apply text-muted-foreground leading-relaxed;
- }
+  p {
+    @apply text-muted-foreground/90 leading-relaxed;
+  }
 
   a {
     @apply transition-colors duration-200;
@@ -105,10 +85,9 @@
     @apply bg-card border border-border shadow-sm;
   }
 
- .btn-premium {
-    @apply px-6 py-3 min-h-[44px] bg-primary text-primary-foreground font-medium rounded-md transition-colors hover:opacity-90 active:scale-[0.98] flex items-center justify-center gap-2 w-full md:w-auto shadow-sm;
- font-family: 'Inter', sans-serif !important;
- }
+  .btn-premium {
+     @apply px-6 py-3 min-h-[44px] bg-primary text-primary-foreground font-medium rounded-md transition-colors hover:opacity-90 active:scale-[0.98] flex items-center justify-center gap-2 w-full md:w-auto shadow-sm;
+  }
 
   .surface-panel {
     @apply rounded-2xl border border-border/80 bg-card/75 backdrop-blur-md shadow-md;
@@ -117,17 +96,16 @@
   .section-shell {
     @apply container-custom py-14 md:py-20;
   }
+
+  .bg-grid-overlay {
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
 }
 
 @layer utilities {
   .text-glow {
     text-shadow: none;
-  }
-
-  .bg-grid-overlay {
-    background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-    background-size: 48px 48px;
   }
 }
 

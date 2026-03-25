@@ -8,90 +8,97 @@ export const AboutCompanySection = () => {
   const displayLang = lang || 'en';
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-24">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_40%,rgba(14,165,233,0.14),transparent_48%),radial-gradient(circle_at_76%_24%,rgba(56,189,248,0.10),transparent_42%)]" />
-      </div>
-      <div className="container-custom relative z-10">
-        <div className="mx-auto max-w-[1120px] rounded-[24px] border border-white/10 bg-[#070d1f]/85 p-6 shadow-[0_18px_50px_rgba(2,6,23,0.6)] backdrop-blur-xl md:p-9">
-          <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-14">
+    <section className="relative overflow-hidden py-20 bg-[#050812] border-t border-white/5">
+      <div className="container-custom relative z-10 mx-auto max-w-[1400px]">
+        <div className="mx-auto rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl md:p-10 relative overflow-hidden">
+          {/* Subtle noise inside the box */}
+          <div className="pointer-events-none absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_10%_20%,rgba(255,255,255,0.05)_0%,transparent_50%)]" />
+
+          <div className="relative z-10 flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-14">
           
-          {/* Left side: Image/Visual */}
-          <div className="w-full lg:w-[44%]">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] border border-white/12 bg-card/40 shadow-[0_16px_38px_rgba(2,6,23,0.55)]">
-              <img 
-                src="/images/about-shomoukh.png" 
-                alt="Shomoukh Story" 
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              
-              {/* Floating Stats */}
-              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/15 bg-slate-900/75 p-4 text-foreground backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/50 bg-primary/15 shadow-[0_0_18px_rgba(56,189,248,0.4)]">
-                    <History className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-base font-semibold leading-none text-foreground">18+ Years</h4>
-                    <p className="mt-1 text-xs text-muted-foreground">Investment Excellence</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right side: Content */}
-          <div className="w-full lg:w-[56%]">
-            <div>
-              <span className="mb-4 block text-[11px] font-semibold tracking-[0.2em] text-primary uppercase">
-                {t('footer.text.11')}
-              </span>
-              <h2 className="mb-6 text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl">
-                Defining the Future of <span className="text-primary">Strategic Investment</span> in Oman
-              </h2>
-              <p className="mb-8 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-                Shomoukh International Investment is a privately held investment company established in
-                the Sultanate of Oman in 2006 by the Al Hashmi family. The firm operates as both an
-                investment company and a strategic development platform focused on identifying and
-                developing high-value opportunities across strategic sectors. Through its diversified
-                portfolio and international partnerships, Shomoukh connects capital, expertise, and
-                opportunities across Oman and global markets.
-              </p>
-
-              <div className="mb-8 flex flex-col gap-4">
-                <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-3">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-primary/50 bg-primary/12">
-                    <Target className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="mb-1 text-base font-semibold text-foreground">Our Mission</h4>
-                    <p className="text-xs leading-relaxed text-muted-foreground">{t('whoweare.text.5')}</p>
-                  </div>
-                </div>
+            {/* Left side: Image/Visual */}
+            <div className="w-full lg:w-1/2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10 bg-black/40 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group">
+                <img 
+                  src="/images/about-shomoukh.png" 
+                  alt="Shomoukh Story" 
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 
-                <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-3">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-primary/50 bg-primary/12">
-                    <Users className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="mb-1 text-base font-semibold text-foreground">Our Leadership</h4>
-                    <p className="text-xs leading-relaxed text-muted-foreground">Led by the Al Hashmi family and world-class experts.</p>
+                {/* Cinematic gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050812]/90 via-[#050812]/20 to-transparent mix-blend-multiply" />
+                
+                {/* Floating Stats */}
+                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-[#0B1020]/80 p-5 text-white backdrop-blur-2xl shadow-xl">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-[#0B1020] shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                      <History className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold leading-none text-white tracking-tight">18+ Years</h4>
+                      <p className="mt-1 text-sm font-medium text-[#A7B0C3]">Investment Excellence</p>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <Link 
-                to={`/${displayLang}/who-we-are`}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-primary/60 bg-primary/90 px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
-              >
-                Learn Our Story <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
             </div>
+
+            {/* Right side: Content */}
+            <div className="w-full lg:w-1/2">
+              <div>
+                <span className="mb-4 inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-blue-400 uppercase shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+                  {t('footer.text.11')}
+                </span>
+                
+                <h2 className="mb-6 text-4xl font-bold leading-[1.1] text-white md:text-[52px] tracking-tight">
+                  Defining the Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#8B5CF6]">Strategic Investment</span> in Oman
+                </h2>
+                
+                <p className="mb-10 text-lg leading-relaxed text-[#A7B0C3]">
+                  Shomoukh International Investment is a privately held investment company established in
+                  the Sultanate of Oman in 2006 by the Al Hashmi family. The firm operates as both an
+                  investment company and a strategic development platform focused on identifying and
+                  developing high-value opportunities.
+                </p>
+
+                <div className="mb-10 flex flex-col gap-6">
+                  {/* Mission */}
+                  <div className="group flex items-start gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04] hover:border-white/10">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#0B1020] border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:border-blue-500/40 transition-colors">
+                      <Target className="h-6 w-6 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-semibold text-white tracking-tight">Our Mission</h4>
+                      <p className="text-[#A7B0C3] leading-relaxed">{t('whoweare.text.5')}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Leadership */}
+                  <div className="group flex items-start gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04] hover:border-white/10">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#0B1020] border border-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.1)] group-hover:border-purple-500/40 transition-colors">
+                      <Users className="h-6 w-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-semibold text-white tracking-tight">Our Leadership</h4>
+                      <p className="text-[#A7B0C3] leading-relaxed">Led by the Al Hashmi family and world-class experts.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <Link 
+                  to={`/${displayLang}/who-we-are`}
+                  className="group inline-flex min-h-[56px] items-center justify-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#3B82F6] px-8 py-3.5 text-base font-semibold text-white transition-all hover:scale-[1.02] hover:brightness-110 shadow-[0_0_25px_rgba(59,130,246,0.4)] border border-[#60A5FA]/30"
+                >
+                  Learn Our Story <ArrowRight className="ml-2.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
       </div>
     </section>
   );
 };
+
