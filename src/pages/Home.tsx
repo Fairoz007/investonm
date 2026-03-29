@@ -10,21 +10,17 @@ export default function Home() {
   const displayLang = lang || 'en';
 
   return (
-    <div className="min-h-screen text-foreground bg-transparent flex flex-col pt-24 md:pt-32 relative overflow-hidden">
+    <div className="min-h-screen text-foreground bg-transparent flex flex-col relative overflow-hidden">
       {/* Global Starry Background & Light Beam for Home Page */}
       <div className="absolute inset-0 pointer-events-none -z-10 bg-[#050312]">
         {/* CSS stars */}
         <div 
           className="absolute inset-0 opacity-50 mix-blend-screen" 
           style={{ 
-             backgroundImage: 'radial-gradient(1px 1px at 10% 10%, white 100%, transparent), radial-gradient(1.5px 1.5px at 20% 40%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(2px 2px at 30% 80%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(1px 1px at 40% 20%, white 100%, transparent), radial-gradient(1.5px 1.5px at 50% 60%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(2px 2px at 60% 10%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(1px 1px at 70% 50%, white 100%, transparent), radial-gradient(1.5px 1.5px at 80% 90%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(2px 2px at 90% 30%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(1px 1px at 95% 70%, white 100%, transparent)',
+             backgroundImage: 'radial-gradient(0.2px 0.2px at 10% 10%, white 100%, transparent), radial-gradient(0.5px 0.5px at 20% 40%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.8px 0.8px at 30% 80%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.2px 0.2px at 40% 20%, white 100%, transparent), radial-gradient(0.5px 0.5px at 50% 60%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.8px 0.8px at 60% 10%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.2px 0.2px at 70% 50%, white 100%, transparent), radial-gradient(0.5px 0.5px at 80% 90%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.8px 0.8px at 90% 30%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.2px 0.2px at 95% 70%, white 100%, transparent)',
              backgroundSize: '200px 200px'
           }} 
         />
-        {/* Horizontal light beam */}
-        <div className="absolute top-[85px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#5A9CF8] to-transparent shadow-[0_0_25px_10px_rgba(90,156,248,0.3)] opacity-70" />
-        <div className="absolute top-[85px] left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_20px_4px_rgba(255,255,255,0.7)]" />
-        <div className="absolute top-[85px] left-[35%] right-[35%] h-[1px] bg-white shadow-[0_0_30px_15px_rgba(183,115,255,0.3)]" />
         
         {/* Colorful space glows */}
         <div className="absolute left-[15%] top-[25%] h-[400px] w-[600px] rounded-full bg-[#12224A]/40 blur-[130px]" />

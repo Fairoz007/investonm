@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { Mail, Phone, Linkedin, Twitter, Youtube, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
@@ -8,122 +8,163 @@ export const Footer = () => {
   const displayLang = lang || 'en';
 
   return (
-    <footer className="relative overflow-hidden bg-background/90 text-foreground border-t border-border/80 font-sans pt-16 pb-8">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-overlay opacity-20" />
-      <div className="container-custom">
-        {/* Top Header Logos */}
-        <div className="flex flex-wrap items-center justify-between gap-8 mb-16 pb-8 border-b border-border">
-          <div className="flex items-center gap-6">
-            <img
-              src="/images/Logo-01.png"
-              alt="Shomoukh Investment"
-              className="h-14 w-auto object-contain brightness-0 invert"
-            />
-            <div className="h-10 w-[1px] bg-border hidden sm:block" />
-            <div className="hidden sm:block">
-            </div>
+    <footer className="relative overflow-hidden bg-transparent text-foreground border-t border-white/5 font-sans pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12">
+      <div className="container-custom relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6">
+        {/* Top Section: Branding & Vision */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 mb-16 sm:mb-20 lg:mb-24 pb-10 sm:pb-12 border-b border-white/5">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 text-center sm:text-left">
+            <Link to={`/${displayLang}/`} className="transition-transform hover:scale-105">
+              <img
+                src="/images/Logo-01.png"
+                alt="Shomoukh Investment"
+                className="h-14 w-auto object-contain brightness-0 invert"
+              />
+            </Link>
+            <div className="hidden sm:block h-12 w-[1px] bg-white/10" />
+            <p className="text-sm text-slate-400 font-bold max-w-[300px] leading-relaxed opacity-80 uppercase tracking-widest">
+              Strategic development and private investment across the Sultanate of Oman.
+            </p>
           </div>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center">
             <img
-              src="/images/Oman_Vision_2040_Logo.png"
+              src="https://www.oman2040.om/assets/img/logo-oman2040.png"
               alt="Oman Vision 2040"
-              className="h-12 w-auto object-contain brightness-0 invert opacity-80"
+              className="h-12 w-auto object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-500"
             />
           </div>
         </div>
 
-        {/* Main 5-Column Navigation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
-          {/* Column 1: Start Investing */}
-          <div className="space-y-6">
-            <h4 className="font-sans font-bold text-foreground text-sm uppercase tracking-wider">{t('footer.text.14')}</h4>
-            <ul className="space-y-3">
-              <li><Link to={`/${displayLang}/key-sectors`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x1')}</Link></li>
-              <li><Link to={`/${displayLang}/key-sectors`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x2')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 2: Discover */}
-          <div className="space-y-6">
-            <h4 className="font-sans font-bold text-foreground text-sm uppercase tracking-wider">{t('footer.text.15')}</h4>
-            <ul className="space-y-3">
-              <li><Link to={`/${displayLang}/about-oman`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x3')}</Link></li>
-              <li><Link to={`/${displayLang}/about-oman#incentives`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x4')}</Link></li>
-              <li><Link to={`/${displayLang}/resources#reports`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x5')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x6')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x7')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 3: About Invest Oman / Shomoukh */}
-          <div className="space-y-6">
-            <h4 className="font-sans font-bold text-foreground text-sm uppercase tracking-wider">{t('footer.text.19')}</h4>
-            <ul className="space-y-3">
-              <li><Link to={`/${displayLang}/who-we-are`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.11')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x14')}</Link></li>
-              <li><Link to={`/${displayLang}/contact`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.12')}</Link></li>
-            </ul>
-
-            <h4 className="font-sans font-bold text-foreground text-sm uppercase tracking-wider pt-4">Connect</h4>
-            <ul className="space-y-3">
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x8')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x9')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x10')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Resources & Tools */}
-          <div className="space-y-6">
-            <h4 className="font-sans font-bold text-foreground text-sm uppercase tracking-wider">{t('footer.text.17')}</h4>
-            <ul className="space-y-3">
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x11')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x12')}</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.text.x13')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 5: Contact us */}
-          <div className="space-y-6 bg-card/80 p-6 rounded-2xl border border-border/80 backdrop-blur-md shadow-md">
-            <h4 className="font-sans font-bold text-foreground text-sm uppercase tracking-wider">{t('footer.text.12')}</h4>
-
-            <div className="space-y-4">
-              <div className="flex gap-4 items-center">
-                <div className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center shadow-sm">
-                  <Mail className="w-5 h-5 text-primary" />
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 sm:gap-x-12 gap-y-12 sm:gap-y-16 mb-16 sm:mb-20 lg:mb-24">
+          {/* Navigation & Newsletter - 8 Columns Span */}
+          <div className="lg:col-span-8 space-y-12 sm:space-y-16 lg:space-y-20">
+            {/* Navigation Links */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+              {[
+                {
+                  title: t('footer.text.14'), links: [
+                    { to: `/${displayLang}/key-sectors`, label: t('footer.text.x1') },
+                    { to: `/${displayLang}/key-sectors`, label: t('footer.text.x2') }
+                  ]
+                },
+                {
+                  title: t('footer.text.15'), links: [
+                    { to: `/${displayLang}/about-oman`, label: t('footer.text.x3') },
+                    { to: `/${displayLang}/about-oman#incentives`, label: t('footer.text.x4') },
+                    { to: `/${displayLang}/resources#reports`, label: t('footer.text.x5') }
+                  ]
+                },
+                {
+                  title: t('footer.text.19'), links: [
+                    { to: `/${displayLang}/who-we-are`, label: t('footer.text.11') },
+                    { to: `/${displayLang}/our-experts`, label: 'Our Experts' },
+                    { to: `/${displayLang}/contact`, label: t('footer.text.12') }
+                  ]
+                },
+                {
+                  title: t('footer.text.17'), links: [
+                    { to: `/${displayLang}/resources#guide`, label: 'Investor Guide' },
+                    { to: `/${displayLang}/resources#simulator`, label: 'Business Simulator' }
+                  ]
+                }
+              ].map((col, idx) => (
+                <div key={idx} className="space-y-8">
+                  <h4 className="text-[11px] font-black text-white uppercase tracking-[0.3em] opacity-50">{col.title}</h4>
+                  <ul className="space-y-5">
+                    {col.links.map((link, lIdx) => (
+                      <li key={lIdx}>
+                        <Link to={link.to} className="text-[14px] text-slate-400 font-bold hover:text-blue-400 transition-all flex items-center group">
+                          <span className="w-2 h-2 rounded-full border border-blue-500/30 mr-3 scale-0 group-hover:scale-100 transition-transform bg-blue-500/20" />
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div>
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase">Email:</p>
-                  <a href="mailto:info@shomoukh.om" className="text-xs font-bold text-foreground hover:text-primary transition-colors">info@shomoukh.om</a>
+              ))}
+            </div>
+
+            {/* Newsletter Section */}
+            <div className="relative overflow-hidden p-6 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[48px] bg-white/[0.02] border border-white/5 group transition-all duration-700 hover:bg-white/[0.04]">
+              {/* Background Glow */}
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] group-hover:bg-blue-500/10 transition-colors" />
+
+              <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 sm:gap-12">
+                <div className="max-w-md text-center sm:text-left">
+                  <h4 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-3">
+                    {t('footer.newsletter.title')}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-400 font-bold leading-relaxed opacity-70 uppercase tracking-widest">
+                    {t('footer.newsletter.description')}
+                  </p>
                 </div>
+
+                <form className="relative w-full lg:max-w-md group/form" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="email"
+                    placeholder={t('footer.newsletter.placeholder')}
+                    className="w-full bg-[#0A0F1E] border border-white/10 rounded-full py-4 sm:py-5 px-6 sm:px-10 text-[13px] font-bold text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-500 pr-32 sm:pr-40"
+                  />
+                  <button className="absolute right-2 top-2 bottom-2 px-5 sm:px-8 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 shadow-xl">
+                    {t('footer.newsletter.button')}
+                  </button>
+                </form>
               </div>
+            </div>
+          </div>
 
-              <div className="flex gap-4 items-center">
-                <div className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center shadow-sm">
-                  <Phone className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase">Phone:</p>
-                  <a href="tel:+96880000777" className="text-xs font-bold text-foreground hover:text-primary transition-colors">+968 80000777</a>
-                </div>
-              </div>
+          {/* Contact Card */}
+          <div className="lg:col-span-4 lg:pl-12">
+            <div className="relative glass-card-premium p-6 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[48px] overflow-hidden group">
+              <div className="relative z-10 space-y-8">
+                <h4 className="text-[11px] font-black text-white uppercase tracking-[0.3em] opacity-50">{t('footer.text.12')}</h4>
 
-              <div className="flex items-center gap-3 pt-4">
-                <a href="#" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-muted-foreground hover:text-primary hover:border-primary/60 transition-colors"><Linkedin className="w-5 h-5" /></a>
-                <a href="#" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-muted-foreground hover:text-primary hover:border-primary/60 transition-colors"><Twitter className="w-5 h-5" /></a>
-                <a href="#" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-muted-foreground hover:text-primary hover:border-primary/60 transition-colors"><Youtube className="w-5 h-5" /></a>
-                <a href="#" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-muted-foreground hover:text-primary hover:border-primary/60 transition-colors"><Instagram className="w-5 h-5" /></a>
+                <div className="space-y-8">
+                  {[
+                    { icon: Mail, label: 'Email Inquiry', value: 'info@shomoukh.om', href: 'mailto:info@shomoukh.om' },
+                    { icon: Phone, label: 'Direct Line', value: '+968 71770077', href: 'tel:+96871770077' }
+                  ].map((contact, idx) => (
+                    <div key={idx} className="flex gap-6 items-center group/item">
+                      <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center shrink-0 group-hover/item:border-blue-500/30 group-hover/item:bg-blue-500/10 transition-all duration-500 shadow-xl">
+                        <contact.icon className="w-6 h-6 text-blue-400" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1.5">{contact.label}</p>
+                        <a href={contact.href} className="text-base font-black text-white hover:text-blue-400 transition-colors tracking-tight">{contact.value}</a>
+                      </div>
+                    </div>
+                  ))}
+
+                  <div className="flex gap-6 items-start group/item">
+                    <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center shrink-0 group-hover/item:border-purple-500/30 group-hover/item:bg-purple-500/10 transition-all duration-500 shadow-xl">
+                      <MapPin className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1.5">HQ Address</p>
+                      <p className="text-base font-black text-white leading-relaxed tracking-tight">
+                        PO Box: 1756 | PC: 111<br />
+                        Airport Heights, Muscat<br />
+                        The Sultanate of Oman
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-medium text-muted-foreground">
-          <p>{t('footer.text.16')}</p>
-          <div className="flex gap-6">
-            <Link to="#" className="hover:text-primary transition-colors">Terms & Conditions</Link>
-            <Link to="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8 py-8 sm:py-10 border-t border-white/5 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-center sm:text-left opacity-60">
+            &copy; {new Date().getFullYear()} Shomoukh Investment. {t('footer.text.16')}
+          </p>
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
+            {['Terms of Service', 'Privacy Policy', 'Site Map'].map((label, idx) => (
+              <Link key={idx} to="#" className="hover:text-blue-400 transition-colors opacity-60 hover:opacity-100">{label}</Link>
+            ))}
           </div>
         </div>
       </div>

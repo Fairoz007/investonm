@@ -1,136 +1,137 @@
-import { motion } from 'framer-motion';
-import type { Variants } from 'framer-motion';
-import { BookOpen, Calculator, FileText, Download, ArrowRight, BarChart3, Globe, ShieldCheck } from 'lucide-react';
-import { useTranslation } from"react-i18next";
-
-const fadeInUp: Variants = {
- hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
- visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease:"easeOut" } }
-};
+import React from 'react';
+import { motion } from 'motion/react';
+import { FileText, Download, Lock, ShieldCheck, ArrowRight, FileSignature, Presentation, BarChart3 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useParams, Link } from 'react-router-dom';
 
 export default function Resources() {
- const { t } = useTranslation();
+  const { t } = useTranslation();
+  const { lang } = useParams();
+  const currentLang = lang || 'en';
 
- return (
- <div className="bg-[#020617] min-h-screen text-white/90 overflow-hidden font-sans pt-24">
- {/* Hero Section */}
- <section className="relative h-[400px] flex items-center overflow-hidden">
- <div className="absolute inset-0 z-0">
- <div className="absolute inset-0 bg-[url('/images/oman_landscape.png')] bg-cover bg-center opacity-20 grayscale-[50%]" />
- <div className="absolute inset-0 ]" />
- </div>
- <div className="container-custom relative z-10 text-left w-full">
- <motion.div
- initial={{ opacity: 0, y: 10 }}
- animate={{ opacity: 1, y: 0 }}
- className="flex items-center justify-start gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--primary-light)] mb-6"
->
- <span className="opacity-50 text-white">Home</span>
- <span className="opacity-20 text-white">/</span>
- <span>{t('resources.text.2')}</span>
- </motion.div>
+  const resources = [
+    { 
+      type: 'PDF', 
+      title: 'Annual Investment Report 2023', 
+      size: '4.2 MB', 
+      icon: <BarChart3 size={24} className="text-primary" />,
+      tag: 'Public' 
+    },
+    { 
+      type: 'PDF', 
+      title: 'Oman Vision 2040 Strategic Framework', 
+      size: '5.8 MB', 
+      icon: <Presentation size={24} className="text-primary" />,
+      tag: 'National' 
+    },
+    { 
+      type: 'DOC', 
+      title: 'Strategic Partnership Guidelines', 
+      size: '1.2 MB', 
+      icon: <FileSignature size={24} className="text-primary" />,
+      tag: 'Investor' 
+    },
+    { 
+      type: 'PDF', 
+      title: 'Sector Performance Overview Q3', 
+      size: '3.5 MB', 
+      icon: <FileText size={24} className="text-primary" />,
+      tag: 'Confidential',
+      locked: true 
+    },
+  ];
 
- <motion.h1
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.8, ease:"easeOut" }}
- className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter text-white font-sans"
->
- {t('resources.text.2')}
- </motion.h1>
+  return (
+    <div className="bg-dark text-white">
+      {/* Hero */}
+      <section className="relative min-h-[75vh] lg:min-h-[80vh] flex items-center py-16 lg:py-24 overflow-hidden">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 h-full flex flex-col justify-center relative z-20">
+          <div className="max-w-3xl">
+            <div className="as-subtitle-2 mb-8 border-primary/20 text-primary uppercase tracking-widest">{t('resources.heroSubtitle')}</div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-6 leading-[0.95] tracking-tight whitespace-pre-line">
+              {t('resources.heroTitle')}
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-white/60 max-w-2xl leading-relaxed mb-8">
+              {t('resources.heroDesc')}
+            </p>
+          </div>
+        </div>
+      </section>
 
- <motion.p
- initial={{ opacity: 0, x: -30 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.8, delay: 0.2, ease:"easeOut" }}
- className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-3xl font-sans font-light"
->
- {t('resources.text.3')}
- </motion.p>
- 
- <motion.div
- initial={{ opacity: 0, scale: 0.9 }}
- animate={{ opacity: 1, scale: 1 }}
- transition={{ duration: 0.8, delay: 0.4 }}
- className="inline-block px-6 py-2.5 rounded-full bg-[var(--primary)]/20 border border-[var(--primary)]/30 text-[11px] font-bold tracking-[0.1em] uppercase text-[var(--primary-light)] mt-10"
->
- {t('resources.text.1')}
- </motion.div>
- </div>
- </section>
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 pb-20">
+        {/* Resources Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {resources.map((res, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1 }}
+              className={`p-6 md:p-8 lg:p-10 bg-dark-card border border-white/5 rounded-[40px] group hover:border-primary/30 transition-all ${res.locked ? 'opacity-80' : ''}`}
+            >
+              <div className="flex items-start justify-between mb-10">
+                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+                  {res.locked ? <Lock className="text-white/20 group-hover:text-dark transition-colors" size={24} /> : res.icon}
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30 px-3 py-1 bg-white/5 rounded-full">{res.type}</span>
+                  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${res.locked ? 'bg-red-500/10 text-red-500' : 'bg-primary/10 text-primary'}`}>{res.tag}</span>
+                </div>
+              </div>
 
- {/* Resources Grid */}
- <section className="py-16 md:py-32  relative overflow-hidden">
- <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 pointer-events-none" />
- <div className="container-custom relative z-10">
- <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
- {/* Resource Card Factory */}
- {[
- { id: 'guide', icon: BookOpen, title: 'resources.guide.title', desc: 'resources.guide.desc', action: 'Download PDF', actionIcon: Download },
- { id: 'simulator', icon: Calculator, title: 'resources.simulator.title', desc: 'resources.simulator.desc', action: 'Open Simulator', actionIcon: ArrowRight },
- { id: 'licenses', icon: FileText, title: 'resources.licenses.title', desc: 'resources.licenses.desc', action: 'Start Inquiry', actionIcon: ArrowRight },
- { id: 'reports', icon: BarChart3, title: 'resources.reports.title', desc: 'resources.reports.desc', action: 'View Library', actionIcon: ArrowRight }
- ].map((res) => (
- <motion.div
- key={res.id}
- id={res.id}
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true }}
- variants={fadeInUp}
- className="bg-white/5 p-8 sm:p-12 rounded-[2rem] sm:rounded-[3.5rem] border border-white/10 hover:border-[var(--primary)]/50 transition-all group"
->
- <div className="w-20 h-20 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center mb-10 group-hover:bg-[var(--primary)] transition-all duration-500 shadow-lg">
- <res.icon className="w-10 h-10 text-[var(--primary-light)] group-hover:text-white" />
- </div>
- <h3 className="text-4xl font-bold mb-6 text-white font-sans leading-tight">
- {t(res.title)}
- </h3>
- <p className="text-xl text-white/50 mb-10 leading-relaxed font-sans font-light">
- {t(res.desc)}
- </p>
- <button className="flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto min-h-[44px] text-[var(--primary-light)] font-bold uppercase tracking-[0.2em] text-xs group">
- {res.action} <res.actionIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
- </button>
- </motion.div>
- ))}
- </div>
- </div>
- </section>
+              <div className="space-y-4 mb-10">
+                <h3 className="text-2xl font-display font-bold leading-tight group-hover:text-primary transition-colors">{res.title}</h3>
+                <p className="text-sm text-white/40">{res.size}</p>
+              </div>
 
- {/* Help Desk Section */}
- <section className="py-16 md:py-32 bg-[#020617]">
- <div className="container-custom">
- <div className=" rounded-[2rem] sm:rounded-[4rem] p-8 sm:p-12 md:p-24 relative overflow-hidden border border-white/5">
- <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--primary)]/10 rounded-full -mr-48 -mt-48 pointer-events-none" />
- <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 text-left">
- <div className="max-w-xl text-white space-y-8">
- <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] font-sans">
- Need specific <span className="text-[var(--primary)]">data</span> for your sector?
- </h2>
- <p className="text-xl text-white/60 font-sans font-light leading-relaxed">
- Our research team can provide custom reports tailored to your unique investment requirements.
- </p>
- <button className="w-full sm:w-auto min-h-[44px] flex items-center justify-center px-10 py-5 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white rounded-full font-bold font-sans transition-all transform uppercase text-xs tracking-[0.2em]">
- Request Custom Report
- </button>
- </div>
- <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full lg:w-auto">
- <div className="p-10 bg-white/5 rounded-[2.5rem] border border-white/10 text-white transition-all hover:bg-white/10 group">
- <Globe className="w-12 h-12 mb-8 text-[var(--primary-light)] group-hover:translate-x-1 transition-transform duration-500" />
- <h4 className="font-bold text-2xl mb-4 font-sans text-white">Global Data</h4>
- <p className="text-sm text-white/50 font-sans font-light">Access worldwide market trends and benchmarks.</p>
- </div>
- <div className="p-10 bg-white/5 rounded-[2.5rem] border border-white/10 text-white transition-all hover:bg-white/10 group">
- <ShieldCheck className="w-12 h-12 mb-8 text-[var(--primary-light)] group-hover:translate-x-1 transition-transform duration-500" />
- <h4 className="font-bold text-2xl mb-4 font-sans text-white">Trusted Source</h4>
- <p className="text-sm text-white/50 font-sans font-light">Verified government and institutional data.</p>
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
- </div>
- );
+              <div className="pt-8 border-t border-white/5 flex items-center justify-between">
+                {res.locked ? (
+                  <Link to={`/${currentLang}/signin`} className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors font-display font-bold uppercase tracking-widest text-xs">
+                    Login to Access <ArrowRight size={16} className="rtl:rotate-180" />
+                  </Link>
+                ) : (
+                  <button className="flex items-center gap-3 text-primary hover:text-white transition-colors font-display font-bold uppercase tracking-widest text-xs">
+                    Download Resource <Download size={16} />
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Support Section */}
+        <div className="mt-16 lg:mt-24 p-6 md:p-8 lg:p-10 bg-primary rounded-[60px] relative overflow-hidden text-dark">
+           {/* Decorative elements */}
+           <div className="absolute top-0 right-0 p-12 opacity-5">
+              <ShieldCheck size={200} />
+           </div>
+           
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+              <div className="space-y-8">
+                 <div className="space-y-6">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold leading-tight">Investor <br /> Support Portal</h2>
+                    <p className="text-base sm:text-lg lg:text-xl font-medium opacity-80">Our dedicated support team is available to assist international investors with specialized data requests and documentation requirements.</p>
+                 </div>
+                 
+                 <div className="flex flex-wrap gap-8">
+                    <Link to={`/${currentLang}/contact`} className="px-10 py-5 bg-dark text-white rounded-full font-display font-bold hover:scale-105 transition-all shadow-xl shadow-dark/20 flex items-center gap-3">
+                       Contact Support <ArrowRight size={18} className="rtl:rotate-180" />
+                    </Link>
+                 </div>
+              </div>
+              
+              <div className="hidden lg:block">
+                 <div className="aspect-video bg-dark/5 rounded-[40px] border-4 border-dark/10 p-8 flex flex-col justify-end">
+                    <div className="space-y-4">
+                       <div className="w-12 h-1 bg-dark/20 rounded-full" />
+                       <div className="w-3/4 h-6 bg-dark/10 rounded-lg" />
+                       <div className="w-1/2 h-6 bg-dark/10 rounded-lg" />
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  );
 }

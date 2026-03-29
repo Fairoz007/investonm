@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "aboutUs": "关于我们",
+    "ourStory": "我们的故事",
+    "whoWeAre": "我们是谁",
+    "ourExperts": "我们的专家",
+    "whyOman": "为什么选择阿曼",
+    "overview": "概述",
+    "keyBenefits": "主要优势",
+    "sectors": "行业",
+    "tourism": "旅游业",
+    "logistics": "物流",
+    "energy": "能源",
+    "resources": "资源",
+    "investorIntelligence": "投资者情报",
+    "marketReports": "市场报告",
+    "connect": "联系我们",
+    "login": "登录",
+    "investorLogin": "投资者登录",
+    "explore": "探索",
+    "languageSelection": "选择语言"
+  },
+  "footer": {
+    "contact": "联系",
+    "directInquiry": "直接查询",
+    "address": "地址"
+  }
+}

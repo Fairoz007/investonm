@@ -1,176 +1,138 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, BarChart3, TrendingUp, PieChart, Globe, Users, DollarSign } from 'lucide-react';
-import { ScrollReveal } from '@/components/shared/ScrollReveal';
-import { useTranslation } from"react-i18next";
-import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { BarChart3, TrendingUp, Globe2, Banknote, ArrowUpRight, Activity, PieChart, Lock, ArrowRight } from 'lucide-react';
+import { Link, useParams } from 'react-router-dom';
 
-const dashboards = [
- {
- icon: TrendingUp,
- name: 'Economic Indicators',
- description: 'Real-time data on GDP growth, inflation, employment, and other key economic metrics.',
- metrics: ['GDP Growth', 'Inflation Rate', 'Unemployment', 'FDI Inflows'],
- },
- {
- icon: DollarSign,
- name: 'Investment Tracker',
- description: 'Track investment flows, sector performance, and regional distribution of investments.',
- metrics: ['FDI by Sector', 'Investment by Region', 'License Issuance', 'Project Pipeline'],
- },
- {
- icon: Users,
- name: 'Labor Market Dashboard',
- description: 'Comprehensive view of employment trends, workforce composition, and labor market dynamics.',
- metrics: ['Employment Growth', 'Sectoral Distribution', 'Omanzation Rates', 'Wage Trends'],
- },
- {
- icon: Globe,
- name: 'Trade Statistics',
- description: 'Monitor import, export, and trade balance data with detailed commodity breakdowns.',
- metrics: ['Total Exports', 'Total Imports', 'Trade Balance', 'Top Trading Partners'],
- },
- {
- icon: PieChart,
- name: 'Sector Performance',
- description: 'Analyze performance across key economic sectors and track growth trends.',
- metrics: ['Sectoral GDP', 'Growth Rates', 'Market Size', 'Competitive Index'],
- },
- {
- icon: BarChart3,
- name: 'Business Environment',
- description: 'Indicators measuring the ease of doing business and investment climate.',
- metrics: ['Business Registration', 'Permit Approvals', 'Regulatory Changes', 'Competitiveness Rank'],
- },
+const kpis = [
+  { label: 'Total Portfolio Value', value: 'OMR 2.4B+', change: '+12.4%', icon: <Banknote size={22} />, up: true },
+  { label: 'Active Investments', value: '38', change: '+3 this quarter', icon: <Activity size={22} />, up: true },
+  { label: 'Sectors Covered', value: '10+', change: 'Across Oman', icon: <PieChart size={22} />, up: true },
+  { label: 'Global Partners', value: '60+', change: '+8 YoY', icon: <Globe2 size={22} />, up: true },
 ];
 
-const featuredMetrics = [
- { label: 'GDP Growth Q3 2025', value: '4.8%', trend: 'up' },
- { label: 'FDI Inflows 2024', value: '$28.5B', trend: 'up' },
- { label: 'New Licenses Q3 2025', value: '2,847', trend: 'up' },
- { label: 'Unemployment Rate', value: '7.5%', trend: 'down' },
+const charts = [
+  { title: 'Portfolio Growth (5-Year)', subtitle: 'Annual compounded returns across all sectors', locked: false },
+  { title: 'Sector Allocation', subtitle: 'Distribution of capital by industry vertical', locked: false },
+  { title: 'Regional Breakdown', subtitle: 'Investment presence across Oman and international markets', locked: true },
+  { title: 'FDI Inflow Tracker', subtitle: 'Foreign direct investment flows — quarterly', locked: true },
 ];
 
 export default function Dashboards() {
- const { t } = useTranslation();
- return (
- <div className="min-h-screen bg-dark pt-24">
- {/* Hero Section */}
- <section className="relative py-20 overflow-hidden">
- <div className="absolute inset-0" />
- <div className="container-custom relative z-10">
- <ScrollReveal>
- <div className="max-w-3xl">
- <div className="flex items-center gap-2 text-primary mb-4">
- <span className="text-sm font-medium"> {t('dashboards.text.1')} </span>
- <ArrowRight className="w-4 h-4" />
- <span className="text-sm text-white/60"> {t('dashboards.text.2')} </span>
- </div>
- <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
- {t('dashboards.text.3')} </h1>
- <p className="text-xl text-white/70 leading-relaxed">
- {t('dashboards.text.4')} </p>
- </div>
- </ScrollReveal>
- </div>
- </section>
+  const { lang } = useParams();
+  const currentLang = lang || 'en';
 
- {/* Featured Metrics */}
- <section className="py-12 border-y border-white/10">
- <div className="container-custom">
- <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
- {featuredMetrics.map((metric, index) => (
- <ScrollReveal key={metric.label} delay={index * 0.1}>
- <div className="text-center">
- <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{metric.value}</div>
- <div className="text-white/60 text-sm">{metric.label}</div>
- </div>
- </ScrollReveal>
- ))}
- </div>
- </div>
- </section>
+  return (
+    <div className="bg-dark text-white min-h-screen">
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex items-center py-16 lg:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-violet-600/10 pointer-events-none" />
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+          <div className="max-w-3xl">
+            <div className="as-subtitle-2 mb-8 border-primary/20 text-primary uppercase tracking-widest">
+              Investor Intelligence
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-6 leading-[0.95] tracking-tight">
+              Investment{' '}
+              <span className="gradient-text">Dashboards</span>
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-white/60 max-w-2xl leading-relaxed">
+              Real-time analytics and portfolio intelligence across Shomoukh's strategic investment clusters.
+            </p>
+          </div>
+        </div>
+      </section>
 
- {/* Dashboards Grid */}
- <section className="section-padding">
- <div className="container-custom">
- <ScrollReveal>
- <h2 className="text-3xl font-bold text-white mb-4 text-center">
- {t('dashboards.text.5')} </h2>
- <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
- {t('dashboards.text.6')} </p>
- </ScrollReveal>
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 pb-24">
+        {/* KPI Row */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          {kpis.map((kpi, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.08 }}
+              className="bg-dark-card border border-white/5 rounded-3xl p-6 group hover:border-primary/30 transition-all"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  {kpi.icon}
+                </div>
+                <TrendingUp size={14} className="text-emerald-400 opacity-70" />
+              </div>
+              <p className="text-2xl font-display font-bold mb-1">{kpi.value}</p>
+              <p className="text-xs text-white/40 mb-1">{kpi.label}</p>
+              <p className="text-xs text-emerald-400 font-semibold">{kpi.change}</p>
+            </motion.div>
+          ))}
+        </div>
 
- <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
- {dashboards.map((dashboard, index) => (
- <ScrollReveal key={dashboard.name} delay={index * 0.1}>
- <motion.div
- whileHover={{ y: -4 }}
- className="bg-card border border-border rounded-lg p-6 shadow-sm p-6 h-full cursor-pointer hover:bg-white/10 transition-colors"
->
- <div className="p-4 bg-primary/20 rounded-2xl w-fit mb-6">
- <dashboard.icon className="w-8 h-8 text-primary" />
- </div>
- <h3 className="text-xl font-bold text-white mb-3">{dashboard.name}</h3>
- <p className="text-white/60 text-sm mb-4">{dashboard.description}</p>
- <div className="flex flex-wrap gap-2">
- {dashboard.metrics.map((metric) => (
- <span
- key={metric}
- className="px-2 py-1 bg-white/5 text-white/70 text-xs rounded-full"
->
- {metric}
- </span>
- ))}
- </div>
- </motion.div>
- </ScrollReveal>
- ))}
- </div>
- </div>
- </section>
+        {/* Chart Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {charts.map((chart, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-dark-card border border-white/5 rounded-[40px] p-8 group hover:border-primary/20 transition-all relative overflow-hidden"
+            >
+              {chart.locked && (
+                <div className="absolute inset-0 bg-dark/80 backdrop-blur-sm z-10 flex flex-col items-center justify-center rounded-[40px]">
+                  <Lock size={32} className="text-white/20 mb-3" />
+                  <p className="text-sm text-white/50 font-semibold mb-4">Investor Access Required</p>
+                  <Link
+                    to={`/${currentLang}/signin`}
+                    className="px-6 py-3 bg-primary text-dark rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all flex items-center gap-2"
+                  >
+                    Sign In <ArrowRight size={14} />
+                  </Link>
+                </div>
+              )}
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-lg font-display font-bold mb-1">{chart.title}</h3>
+                  <p className="text-xs text-white/40">{chart.subtitle}</p>
+                </div>
+                <BarChart3 size={20} className="text-primary/60" />
+              </div>
+              {/* Chart placeholder */}
+              <div className="h-40 flex items-end gap-2 px-2">
+                {[55, 70, 45, 80, 65, 90, 72, 85, 60, 95, 78, 88].map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 rounded-t-md bg-gradient-to-t from-primary/40 to-primary/80 transition-all group-hover:from-primary/60 group-hover:to-primary"
+                    style={{ height: `${h}%` }}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center justify-between mt-6 pt-5 border-t border-white/5">
+                <span className="text-xs text-white/30 font-mono">Last updated: Q1 2026</span>
+                <button className="flex items-center gap-2 text-xs text-primary font-bold hover:text-white transition-colors">
+                  Full Report <ArrowUpRight size={12} />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
- {/* API Access */}
- <section className="section-padding bg-dark-light/30">
- <div className="container-custom">
- <ScrollReveal>
- <div className="bg-card border border-border rounded-lg p-6 shadow-sm p-12">
- <div className="grid md:grid-cols-2 gap-12 items-center">
- <div>
- <h2 className="text-3xl font-bold text-white mb-4">
- {t('dashboards.text.7')} </h2>
- <p className="text-white/70 mb-6">
- {t('dashboards.text.8')} </p>
- <ul className="space-y-3 mb-8">
- {[
- 'Real-time data feeds',
- 'Historical data access',
- 'Custom data exports',
- 'Automated reporting',
- ].map((feature) => (
- <li key={feature} className="flex items-center gap-3 text-white/70">
- <div className="w-1.5 h-1.5 bg-primary rounded-full" />
- {feature}
- </li>
- ))}
- </ul>
- <button className="btn-primary"> {t('dashboards.text.9')} </button>
- </div>
- <div className="bg-card border border-border rounded-lg p-6 shadow-sm p-6">
- <div className="text-center">
- <BarChart3 className="w-24 h-24 text-primary mx-auto mb-4" />
- <h3 className="text-xl font-bold text-white mb-2"> {t('dashboards.text.10')} </h3>
- <p className="text-white/60 text-sm mb-4">
- {t('dashboards.text.11')} </p>
- <button className="btn-secondary"> {t('dashboards.text.12')} </button>
- </div>
- </div>
- </div>
- </div>
- </ScrollReveal>
- </div>
- </section>
- {/* Research CTA section */}
- <ResearchDataCTA />
- </div>
- );
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mt-16 p-8 lg:p-12 bg-primary rounded-[60px] text-dark flex flex-col lg:flex-row items-center justify-between gap-8"
+        >
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-display font-bold mb-2">Access Full Analytics Suite</h2>
+            <p className="text-sm opacity-70 max-w-lg">Sign in to your investor portal to unlock advanced dashboards, custom filters, and downloadable reports.</p>
+          </div>
+          <Link
+            to={`/${currentLang}/signin`}
+            className="flex-shrink-0 px-10 py-5 bg-dark text-white rounded-full font-display font-bold hover:scale-105 transition-all flex items-center gap-3 shadow-xl"
+          >
+            Investor Login <ArrowRight size={18} />
+          </Link>
+        </motion.div>
+      </div>
+    </div>
+  );
 }

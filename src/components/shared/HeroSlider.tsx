@@ -1,93 +1,52 @@
-// HeroSlider component
-import { motion, AnimatePresence } from 'framer-motion';
-import { useSlider } from '@/hooks/useSlider';
-import { HERO_SLIDES, ANIMATION } from '@/lib/constants';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
-interface HeroSliderProps {
- children?: React.ReactNode;
-}
+export const HeroSlider = ({ children }: { children: React.ReactNode }) => {
+  const images = [
+    '/images/hero-energy.jpg',
+    '/images/hero-engineers.jpg',
+    '/images/hero-scientist.jpg',
+    '/images/hero-manufacturing.jpg'
+  ];
 
-export const HeroSlider = ({ children }: HeroSliderProps) => {
- const { currentIndex, goTo, setIsPaused } = useSlider({
- slideCount: HERO_SLIDES.length,
- autoPlayInterval: ANIMATION.slider.interval,
- autoPlay: true,
- });
-
- return (
- <div
- className="relative w-full h-screen overflow-hidden will-change-transform gpu-accelerated"
- onMouseEnter={() => setIsPaused(true)}
- onMouseLeave={() => setIsPaused(false)}
->
- {/* Background Images with Crossfade */}
- <AnimatePresence mode="wait">
- <motion.div
- key={currentIndex}
- initial={{ opacity: 0 }}
- animate={{ opacity: 1 }}
- exit={{ opacity: 0 }}
- transition={{
- duration: ANIMATION.slider.transitionDuration,
- ease: 'easeInOut',
- }}
- className="absolute inset-0 will-change-transform gpu-accelerated"
->
- <img
- src={HERO_SLIDES[currentIndex].image}
- alt={HERO_SLIDES[currentIndex].alt}
- className="w-full h-full object-cover will-change-transform gpu-accelerated"
- loading={currentIndex === 0 ? 'eager' : 'lazy'}
- />
- </motion.div>
- </AnimatePresence>
-
- {/* Dark Gradient Overlay */}
- <div className="absolute inset-0 gradient-overlay" />
-
- {/* Content */}
- <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
- {children}
- </div>
-
- {/* Navigation and Controls */}
- <div className="absolute inset-x-0 bottom-12 z-20">
- <div className="container-custom flex justify-between items-end">
- 
- {/* Progress Lines Pagination */}
- <div className="flex items-center gap-2 mb-2">
- {HERO_SLIDES.map((_, index) => (
- <button
- key={index}
- onClick={() => goTo(index)}
- className="group relative w-12 md:w-20 lg:w-28 h-6 flex items-center"
- aria-label={`Go to slide ${index + 1}`}
->
- <div
- className="w-full h-[3px] bg-white/20 overflow-hidden transition-all duration-300 group-hover:bg-white/40"
->
- {index === currentIndex && (
- <motion.div
- className="h-full bg-white"
- initial={{ width: '0%' }}
- animate={{ width: '100%' }}
- transition={{
- duration: ANIMATION.slider.interval / 1000,
- ease: 'linear',
- }}
- key={currentIndex}
- />
- )}
- {index < currentIndex && (
- <div className="w-full h-full bg-white" />
- )}
- </div>
- </button>
- ))}
- </div>
-
- </div>
- </div>
- </div>
- );
+  return (
+    <div className="relative h-screen w-full overflow-hidden bg-[#02040a]">
+      {/* Background Image Slider */}
+      <div className="absolute inset-0 z-0 scale-110">
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          className="h-full w-full"
+        >
+          {images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative h-full w-full">
+                <img
+                  src={img}
+                  alt={`Slide ${index + 1}`}
+                  className="h-full w-full object-cover opacity-50"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/80 to-transparent" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="relative z-10 h-full">
+        {children}
+      </div>
+    </div>
+  );
 };
+

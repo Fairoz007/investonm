@@ -20,7 +20,7 @@ export const AboutCompanySection = () => {
           <div className="w-full lg:w-[44%]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] border border-white/12 bg-card/40 shadow-[0_16px_38px_rgba(2,6,23,0.55)]">
               <img 
-                src="/images/about-shomoukh.png" 
+                src="/images/about-shomoukh-new.png" 
                 alt="Shomoukh Story" 
                 loading="lazy"
                 className="w-full h-full object-cover"

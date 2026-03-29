@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "aboutUs": "О нас",
+    "ourStory": "Наша история",
+    "whoWeAre": "Кто мы",
+    "ourExperts": "Наши эксперты",
+    "whyOman": "Почему Оман",
+    "overview": "Обзор",
+    "keyBenefits": "Ключевые преимущества",
+    "sectors": "Секторы",
+    "tourism": "Туризм",
+    "logistics": "Логистика",
+    "energy": "Энергетика",
+    "resources": "Ресурсы",
+    "investorIntelligence": "Инвесторская разведка",
+    "marketReports": "Отчеты рынка",
+    "connect": "Связаться",
+    "login": "Войти",
+    "investorLogin": "Вход для инвесторов",
+    "explore": "Исследовать",
+    "languageSelection": "Выбор языка"
+  },
+  "footer": {
+    "contact": "Контакт",
+    "directInquiry": "Прямой запрос",
+    "address": "Адрес"
+  }
+}

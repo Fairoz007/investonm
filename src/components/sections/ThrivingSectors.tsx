@@ -36,7 +36,7 @@ const SECTORS: Sector[] = [
  id: 'tourism',
  title: 'Tourism',
  icon: Palmtree,
- image: '/images/luxury-oman.png',
+ image: '/images/oman_villas_1.jpg',
  description:"Oman's tourism sector is a key driver of economic diversification, offering world-class experiences from luxury coastal resorts to ancient heritage sites. The Sultanate is positioning itself as a premier destination for high-end, sustainable tourism in the region.",
  stats: [
  { label: 'Visitors Revenue', value: '1.1 bn', subValue: 'Riyal Omani (RO)', year: '2023' },
@@ -49,7 +49,7 @@ const SECTORS: Sector[] = [
  id: 'ict',
  title: 'ICT',
  icon: Laptop,
- image: '/images/oman_tech.png',
+ image: '/images/hero-engineers.jpg',
  description:"The Information and Communications Technology (ICT) sector is the backbone of Oman's digital transformation. With massive investments in 5G, data centers, and AI infrastructure, Oman is building an agile digital economy to compete globally.",
  stats: [
  { label: 'Employment', value: '45 k+', subValue: 'In ICT sector', year: '2023' },
@@ -101,7 +101,7 @@ const SECTORS: Sector[] = [
  id: 'agriculture',
  title: 'Agriculture',
  icon: Trees,
- image: '/images/oman_landscape.png',
+ image: '/images/oman_coast_1.jpg',
  description:"Modern agriculture in Oman focuses on food security and sustainable farming practices. Leveraging technology like hydroponics and smart irrigation, the sector is increasing domestic production and export potential.",
  stats: [
  { label: 'Fodder Yield', value: '123 k', subValue: 'Tons produced', year: '2023' },
@@ -127,7 +127,7 @@ const SECTORS: Sector[] = [
  id: 'circular-economy',
  title: 'Circular Economy',
  icon: Recycle,
- image: '/images/oman_industry.png',
+ image: '/images/oman_harbor_1.jpg',
  description:"Oman is pioneering circular economy practices to ensure sustainable development. This involves waste- projects, advanced recycling facilities, and sustainable resource management.",
  stats: [
  { label: 'Recycling Rate', value: '31 %', subValue: 'National target', year: 'Vision' },

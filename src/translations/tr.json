@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "aboutUs": "Hakkımızda",
+    "ourStory": "Hikayemiz",
+    "whoWeAre": "Biz Kimiz",
+    "ourExperts": "Uzmanlarımız",
+    "whyOman": "Neden Umman",
+    "overview": "Genel Bakış",
+    "keyBenefits": "Temel Avantajlar",
+    "sectors": "Sektörler",
+    "tourism": "Turizm",
+    "logistics": "Lojistik",
+    "energy": "Enerji",
+    "resources": "Kaynaklar",
+    "investorIntelligence": "Yatırımcı İstihbaratı",
+    "marketReports": "Pazar Raporları",
+    "connect": "İletişim",
+    "login": "Giriş",
+    "investorLogin": "Yatırımcı Girişi",
+    "explore": "Keşfet",
+    "languageSelection": "Dil Seçimi"
+  },
+  "footer": {
+    "contact": "İletişim",
+    "directInquiry": "Doğrudan Sorgulama",
+    "address": "Adres"
+  }
+}

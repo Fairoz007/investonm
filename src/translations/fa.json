@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "aboutUs": "درباره ما",
+    "ourStory": "داستان ما",
+    "whoWeAre": "ما کی هستیم",
+    "ourExperts": "کارشناسان ما",
+    "whyOman": "چرا عمان",
+    "overview": "بررسی اجمالی",
+    "keyBenefits": "مزایای کلیدی",
+    "sectors": "بخش‌ها",
+    "tourism": "گردشگری",
+    "logistics": "لجستیک",
+    "energy": "انرژی",
+    "resources": "منابع",
+    "investorIntelligence": "هوش سرمایه‌گذار",
+    "marketReports": "گزارش‌های بازار",
+    "connect": "تماس با ما",
+    "login": "ورود",
+    "investorLogin": "ورود سرمایه‌گذار",
+    "explore": "کشف کنید",
+    "languageSelection": "انتخاب زبان"
+  },
+  "footer": {
+    "contact": "تماس",
+    "directInquiry": "استعلام مستقیم",
+    "address": "آدرس"
+  }
+}

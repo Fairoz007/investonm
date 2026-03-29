@@ -1,133 +1,171 @@
-/* Inter Local Font Faces */
-@font-face {
- font-family: 'Inter';
- src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
- font-weight: 100 900;
- font-style: normal;
- font-display: swap;
-}
-
-@font-face {
- font-family: 'Inter';
- src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
- font-weight: 100 900;
- font-style: italic;
- font-display: swap;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   :root {
-    /* Global cosmic blue theme */
-    --background: 236 58% 7%;
+    /* Premium Deep Navy Theme */
+    --background: 228 52% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 236 45% 12%;
+    --card: 228 45% 7%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 236 45% 12%;
+    --popover: 228 45% 7%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 213 100% 66%;
+    --primary: 218 92% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 244 35% 18%;
+    --secondary: 228 30% 11%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 232 31% 20%;
-    --muted-foreground: 217 24% 75%;
+    --muted: 228 22% 14%;
+    --muted-foreground: 220 15% 68%;
 
-    --accent: 273 84% 70%;
+    --accent: 270 78% 68%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 228 26% 28%;
-    --input: 228 26% 28%;
-    --ring: 213 100% 66%;
+    --border: 228 18% 16%;
+    --input: 228 18% 16%;
+    --ring: 218 92% 60%;
+    --radius: 0.75rem;
+  }
+}
 
-    --radius: 1rem;
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.8rem;
+  --font-size-base: 0.9375rem; /* ~15px instead of 16px */
+  --font-size-lg: 1.0625rem;  /* ~17px instead of 18px */
+  --font-size-xl: 1.1875rem;  /* ~19px instead of 20px */
+  --font-size-2xl: 1.35rem;   /* ~21.6px instead of 24px */
+  --font-size-3xl: 1.75rem;   /* ~28px instead of 30px */
+  --font-size-4xl: 2.125rem;  /* ~34px instead of 36px */
+  --font-size-5xl: 2.75rem;   /* ~44px instead of 48px */
+  --font-size-6xl: 3.25rem;   /* ~52px instead of 60px */
+  --font-size-7xl: 3.75rem;   /* ~60px instead of 72px */
+  --font-size-8xl: 4.5rem;    /* ~72px instead of 96px */
+  --font-size-9xl: 6rem;      /* ~96px instead of 128px */
+
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --animate-gradient: gradient 8s ease infinite;
+  --animate-dash: dash 3s ease-in-out forwards;
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }
 
 @layer base {
- * {
- @apply border-border;
- }
+  * {
+    @apply border-border;
+  }
 
- html {
- scroll-behavior: smooth;
- }
+  body {
+    @apply bg-background text-foreground antialiased font-sans min-h-screen overflow-x-hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
 
- body {
- @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
- font-family: 'Inter', sans-serif !important;
- @apply antialiased min-h-screen overflow-x-hidden w-full;
- margin: 0;
- padding: 0;
- max-width: 100vw;
- background-image:
-   radial-gradient(1200px 600px at 8% 12%, rgba(31, 95, 255, 0.18), transparent 45%),
-   radial-gradient(950px 520px at 88% 10%, rgba(183, 115, 255, 0.22), transparent 45%),
-   radial-gradient(900px 420px at 50% 95%, rgba(34, 197, 255, 0.1), transparent 60%),
-   linear-gradient(180deg, #07091f 0%, #08061b 55%, #050312 100%);
- }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+  }
 
- h1, h2, h3, h4, h5, h6 {
- font-family: 'Inter', sans-serif !important;
- @apply font-bold tracking-tight text-foreground;
- }
+  p {
+    @apply text-muted-foreground/90 leading-relaxed;
+  }
 
- button, input, select, textarea {
- font-family: 'Inter', sans-serif !important;
- }
+  /* Ensure all images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
- p {
- @apply text-muted-foreground leading-relaxed;
- }
-
-  a {
-    @apply transition-colors duration-200;
+  /* Prevent long words from breaking layout */
+  * {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 
 @layer components {
- .container-custom {
- @apply w-full mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
- }
-
-  /* Fallbacks for older flashy classes */
-  .card-premium, .card-premium-alt, .glass-card, .glass-modal, .glass-nav {
-    @apply bg-card border border-border shadow-sm;
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12;
   }
 
- .btn-premium {
-    @apply px-6 py-3 min-h-[44px] bg-primary text-primary-foreground font-medium rounded-md transition-colors hover:opacity-90 active:scale-[0.98] flex items-center justify-center gap-2 w-full md:w-auto shadow-sm;
- font-family: 'Inter', sans-serif !important;
- }
-
-  .surface-panel {
-    @apply rounded-2xl border border-border/80 bg-card/75 backdrop-blur-md shadow-md;
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20 xl:py-24;
   }
 
-  .section-shell {
-    @apply container-custom py-14 md:py-20;
-  }
-}
-
-@layer utilities {
-  .text-glow {
-    text-shadow: none;
+  .glass-card-premium {
+    @apply rounded-3xl border border-white/5 bg-white/[0.02] p-5 sm:p-6 lg:p-7 transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
   }
 
-  .bg-grid-overlay {
-    background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-    background-size: 48px 48px;
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-200 to-purple-500 pb-1;
+  }
+
+  .gradient-text-alt {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-gradient pb-1;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 30px -5px rgba(var(--primary), 0.2);
+  }
+
+  /* Scrollbar hide utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Touch-friendly minimum target size */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Responsive section spacing */
+  .section-py {
+    @apply py-14 sm:py-20 lg:py-28;
   }
 }
 
@@ -136,73 +174,14 @@
     @apply min-h-screen bg-background text-foreground;
   }
 
-  main section {
-    @apply relative;
-  }
-
   main section::before {
     content: '';
     @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border/70 to-transparent;
   }
 
-  main .container,
-  main .container-custom {
-    @apply relative;
+  .dash-offset-anim {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    @apply animate-dash;
   }
-
-  main [class*='card'],
-  main .glass-card,
-  main .glass-modal,
-  main .glass-nav {
-    @apply rounded-2xl border border-border/80 bg-card/75 backdrop-blur-md shadow-md;
-  }
-
-  main input,
-  main textarea,
-  main select {
-    @apply rounded-xl border-border bg-card/70 text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-0;
-  }
-
-  main button {
-    @apply transition-all duration-200;
-  }
-
-  main table {
-    @apply rounded-xl border border-border/70 bg-card/60;
-  }
-
-  main th {
-    @apply bg-muted/70 text-foreground;
-  }
-
-  main td {
-    @apply text-muted-foreground;
-  }
-
-  main h1,
-  main h2 {
-    @apply tracking-tight;
-  }
-
-  main p {
-    @apply text-muted-foreground;
-  }
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
- width: 8px;
-}
-
-::-webkit-scrollbar-track {
- background: hsl(var(--background));
-}
-
-::-webkit-scrollbar-thumb {
- background: hsl(var(--muted));
- border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
- background: hsl(var(--muted-foreground));
 }
