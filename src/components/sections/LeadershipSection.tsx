@@ -96,7 +96,7 @@ export const LeadershipSection = () => {
 
                                 {/* Subtle corner accent */}
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#FF7300]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                                
+
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
 
                                 {/* Floating Detail */}
@@ -106,7 +106,7 @@ export const LeadershipSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {/* Decorative elements behind image */}
                             <div className="absolute -bottom-6 -right-6 w-full h-full border border-white/5 rounded-[2rem] -z-10 group-hover:border-amber-500/20 transition-colors duration-1000" />
                         </div>

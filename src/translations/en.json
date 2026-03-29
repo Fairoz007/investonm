@@ -264,6 +264,20 @@
     "noAccount": "Don't have an account?",
     "contactSupport": "Contact support"
   },
+  "contactCTA": {
+    "badge": "Connect",
+    "title": "Ready to connect with <span class=\"gradient-text\">our team</span>?",
+    "description": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
+    "button": "Contact Us",
+    "card1": {
+      "title": "Strategic Advisory",
+      "description": "Tailored investment strategies and direct market entry consultation."
+    },
+    "card2": {
+      "title": "Institutional Support",
+      "description": "Direct access to government entities and world-class infrastructure."
+    }
+  },
   "footer": {
     "contact": "Contact",
     "directInquiry": "Direct Inquiry",
