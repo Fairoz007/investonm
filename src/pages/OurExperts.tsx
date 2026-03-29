@@ -27,7 +27,7 @@ export default function OurExperts() {
   const chairman: Expert = {
     name: t('ourExperts.chairman.name', 'The Honorable Sheikh Salim Hamood Said Al Hashmi'),
     role: t('ourExperts.chairman.role', 'CHAIRMAN'),
-    image: 'https://ges.om/assets/img/chirman.png',
+    image: '/images/chairman.jpg',
     messageTitle: t('ourExperts.chairman.messageTitle', "Chairman's Message"),
     message: t('ourExperts.chairman.message'),
     isChairman: true,

@@ -29,7 +29,7 @@ export const LeadershipSection = () => {
     const chairman = {
         name: t("leadership.chairman.name"),
         position: t("leadership.chairman.title"),
-        photo: "https://ges.om/assets/img/chirman.png",
+        photo: "/images/chairman.jpg",
     };
 
     const leaders = [

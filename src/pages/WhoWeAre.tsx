@@ -16,20 +16,20 @@ export default function WhoWeAre() {
   ];
 
   const values = [
-    { 
-      icon: <Shield className="text-primary" />, 
-      title: 'Integrity', 
-      description: 'We maintain the highest ethical standards in all our investment activities and partnerships.' 
+    {
+      icon: <Shield className="text-primary" />,
+      title: 'Integrity',
+      description: 'We maintain the highest ethical standards in all our investment activities and partnerships.'
     },
-    { 
-      icon: <Lightbulb className="text-primary" />, 
-      title: 'Innovation', 
-      description: "We embrace forward-thinking strategies to drive Oman's economic transformation." 
+    {
+      icon: <Lightbulb className="text-primary" />,
+      title: 'Innovation',
+      description: "We embrace forward-thinking strategies to drive Oman's economic transformation."
     },
-    { 
-      icon: <TrendingUp className="text-primary" />, 
-      title: 'Excellence', 
-      description: 'We strive for superior performance and value creation in every sector we enter.' 
+    {
+      icon: <TrendingUp className="text-primary" />,
+      title: 'Excellence',
+      description: 'We strive for superior performance and value creation in every sector we enter.'
     },
   ];
 
@@ -58,18 +58,18 @@ export default function WhoWeAre() {
       {/* Hero Section */}
       <section className="relative min-h-[75vh] lg:min-h-[80vh] flex items-center py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/oman_investment_hero_1774498622347.png" 
-            alt="Shomoukh International Investment" 
+          <img
+            src="/images/oman_investment_hero_1774498622347.png"
+            alt="Shomoukh International Investment"
             className="w-full h-full object-cover scale-110 opacity-40 blur-[2px]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/40 to-dark" />
-          
+
           {/* Decorative Elements */}
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-dark to-transparent" />
         </div>
-        
+
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10 w-full text-center lg:text-left">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -84,7 +84,7 @@ export default function WhoWeAre() {
               <p className="text-sm sm:text-base lg:text-lg text-white/60 max-w-xl leading-relaxed mb-8 mx-auto lg:mx-0">
                 {t('whoWeAre.heroDesc')}
               </p>
-              
+
               <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <a href="#about" className="as-pr-btn-2 group">
                   <span className="icon">
@@ -95,26 +95,23 @@ export default function WhoWeAre() {
               </div>
             </motion.div>
 
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.9 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 1, delay: 0.2 }}
-               className="hidden lg:block relative"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="hidden lg:block relative"
             >
-               <div className="aspect-square w-full max-w-[500px] ml-auto rounded-[60px] overflow-hidden border border-white/10 p-4 bg-white/5 backdrop-blur-sm">
-                  <div className="w-full h-full rounded-[40px] overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=2070&auto=format&fit=crop" 
-                      alt="Investment Strategy" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Floating badge */}
-                  <div className="absolute -bottom-10 -left-10 bg-primary p-8 rounded-3xl shadow-2xl">
-                    <div className="text-4xl font-display font-bold text-white mb-1 tracking-tighter">18+</div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-white/80">{t('whoWeAre.yearsOfGrowth')}</div>
-                  </div>
-               </div>
+              <div className="aspect-square w-full max-w-[500px] ml-auto rounded-[60px] overflow-hidden border border-white/10 p-4 bg-white/5 backdrop-blur-sm">
+                <div className="w-full h-full rounded-[40px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=2070&auto=format&fit=crop"
+                    alt="Investment Strategy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Floating badge */}
+
+              </div>
             </motion.div>
           </div>
         </div>
@@ -125,7 +122,7 @@ export default function WhoWeAre() {
         <div className="as-container-2">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +147,7 @@ export default function WhoWeAre() {
                 <div className="as-subtitle-2 border-primary/20 text-primary">{t('whoWeAre.aboutSubtitle')}</div>
                 <h2 className="as-sec-title-2">{t('whoWeAre.aboutTitle')}</h2>
               </div>
-              
+
               <div className="space-y-6 text-sm sm:text-base text-white/50 leading-relaxed font-light">
                 <p>
                   {t('ourStory.intro1')}
@@ -169,11 +166,11 @@ export default function WhoWeAre() {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {industries.slice(0, 12).map((item, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     whileHover={{ scale: 1.02 }}
                     className="bg-white/[0.02] border border-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-primary/30 transition-all group backdrop-blur-sm"
@@ -195,11 +192,11 @@ export default function WhoWeAre() {
         <div className="absolute inset-0 bg-transparent" />
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div 
-               initial={{ opacity: 0, x: -30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               className="p-6 lg:p-10 rounded-[40px] bg-dark-card border border-white/5 hover:border-primary/20 transition-all group relative overflow-hidden"
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-6 lg:p-10 rounded-[40px] bg-dark-card border border-white/5 hover:border-primary/20 transition-all group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Target size={120} />
@@ -213,11 +210,11 @@ export default function WhoWeAre() {
               </p>
             </motion.div>
 
-            <motion.div 
-               initial={{ opacity: 0, x: 30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               className="p-6 lg:p-10 rounded-[40px] bg-dark-card border border-white/5 hover:border-primary/20 transition-all group relative overflow-hidden"
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-6 lg:p-10 rounded-[40px] bg-dark-card border border-white/5 hover:border-primary/20 transition-all group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Eye size={120} />
@@ -242,10 +239,10 @@ export default function WhoWeAre() {
             <h2 className="as-sec-title-2 mb-6">Our Core Values</h2>
             <p className="text-lg text-white/40">The fundamental principles that guide every decision we make and every partnership we build.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((v, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
                 className="bg-white/[0.02] border border-white/5 rounded-[32px] p-12 group hover:border-primary/50 transition-all duration-700 backdrop-blur-md"
@@ -264,14 +261,14 @@ export default function WhoWeAre() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="bg-primary/90 backdrop-blur-xl p-6 md:p-10 lg:p-12 rounded-[60px] relative overflow-hidden text-dark">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/30 rounded-full blur-[100px] -mr-20 -mt-20" />
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
               <div className="space-y-12">
                 <div className="space-y-6">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight">Investor Success & Transformation</h2>
                   <p className="text-lg font-medium opacity-80 max-w-md">How we're actively transforming the economic landscape through strategic vision.</p>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   {highlights.map((h, i) => (
                     <div key={i} className="space-y-6 bg-dark/5 p-8 rounded-3xl border border-dark/10">
@@ -284,13 +281,13 @@ export default function WhoWeAre() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="relative group">
                 <div className="aspect-[4/5] rounded-[40px] overflow-hidden rotate-2 group-hover:rotate-0 transition-transform duration-1000">
-                  <img 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
-                    alt="Success" 
-                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" 
+                  <img
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                    alt="Success"
+                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -310,7 +307,7 @@ export default function WhoWeAre() {
               <div className="space-y-10 sm:space-y-12 order-first">
                 <div className="relative">
                   <div className="aspect-[4/5] rounded-[32px] sm:rounded-[40px] overflow-hidden transition-all duration-1000 border-4 border-white/5 p-1.5 sm:p-2">
-                    <img src="https://ges.om/assets/img/chirman.png" alt="Chairman" className="w-full h-full object-cover rounded-[24px] sm:rounded-[32px]" />
+                    <img src="/images/chairman.jpg" alt="Chairman" className="w-full h-full object-cover rounded-[24px] sm:rounded-[32px]" />
                   </div>
                   {/* Signature or Title Badge */}
                   <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white text-dark px-6 sm:px-10 py-4 sm:py-6 rounded-xl sm:rounded-2xl shadow-2xl whitespace-nowrap text-center">
@@ -319,13 +316,13 @@ export default function WhoWeAre() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="space-y-10 sm:space-y-12 lg:pl-10 order-last mt-8 sm:mt-10 lg:mt-0">
                 <div className="space-y-4 sm:space-y-6">
                   <Quote size={60} className="text-primary/20 -ml-4 sm:-ml-10" />
                   <h2 className="text-lg sm:text-xl lg:text-3xl font-display font-bold leading-tight">Building Bridges, Creating Legacy.</h2>
                 </div>
-                
+
                 <div className="space-y-6 sm:space-y-8 text-base sm:text-lg text-white/50 leading-relaxed font-light italic">
                   <p>
                     "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants and travelers connected the great regions of the world, shaping a legacy of openness and peaceful exchange."
@@ -356,23 +353,23 @@ export default function WhoWeAre() {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
-           <div className="text-center space-y-8 sm:space-y-12">
-             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-[1.1]">
-               Ready to Join Our <br />
-               <span className="gradient-text italic">Success Story?</span>
-             </h2>
-             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
-               <Link to={`/${currentLang}/contact`} className="as-pr-btn-2 bg-white text-dark hover:bg-primary hover:text-white transition-all group">
-                 <span className="icon bg-dark text-white">
-                    <ArrowRight size={20} />
-                 </span>
-                 <span className="text">Inquire Now</span>
-               </Link>
-               <Link to={`/${currentLang}/resources`} className="px-8 sm:px-12 py-5 rounded-full border border-white/10 hover:border-white/40 transition-all font-medium text-sm sm:text-base">
-                 Investor Resources
-               </Link>
-             </div>
-           </div>
+          <div className="text-center space-y-8 sm:space-y-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-[1.1]">
+              Ready to Join Our <br />
+              <span className="gradient-text italic">Success Story?</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
+              <Link to={`/${currentLang}/contact`} className="as-pr-btn-2 bg-white text-dark hover:bg-primary hover:text-white transition-all group">
+                <span className="icon bg-dark text-white">
+                  <ArrowRight size={20} />
+                </span>
+                <span className="text">Inquire Now</span>
+              </Link>
+              <Link to={`/${currentLang}/resources`} className="px-8 sm:px-12 py-5 rounded-full border border-white/10 hover:border-white/40 transition-all font-medium text-sm sm:text-base">
+                Investor Resources
+              </Link>
+            </div>
+          </div>
         </div>
         {/* Abstract shapes */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] -z-10" />
