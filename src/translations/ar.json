@@ -1,4 +1,12 @@
 {
+  "languages": {
+    "en": "الإنجليزية",
+    "ar": "العربية",
+    "ru": "الروسية",
+    "zh": "الصينية",
+    "fa": "الفارسية",
+    "tr": "التركية"
+  },
   "nav": {
     "aboutUs": "حولنا",
     "ourStory": "قصتنا",
@@ -18,7 +26,11 @@
     "login": "تسجيل الدخول",
     "investorLogin": "دخول المستثمر",
     "explore": "استكشف",
-    "languageSelection": "اختيار اللغة"
+    "languageSelection": "اختيار اللغة",
+    "opportunities": "الفرص",
+    "activeProjects": "المشاريع الحالية",
+    "investmentZones": "المناطق الاستثمارية",
+    "selectLanguage": "اختر اللغة"
   },
   "hero": {
     "slide1": {
@@ -176,31 +188,28 @@
       "button": "تواصل مع فريقنا"
     },
     "chairman": {
-      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
-      "role": "CHAIRMAN",
-      "messageTitle": "Chairman's Message",
-      "message": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+      "name": "سعادة الشيخ سالم بن حمود بن سعيد الهاشمي",
+      "role": "رئيس مجلس الإدارة",
+      "messageTitle": "رسالة رئيس مجلس الإدارة",
+      "message": "على مر القرون، ظلت سلطنة عمان بمثابة جسر بين الحضارات. ومن شواطئها، قام التجار والعلماء والمسافرون بربط مناطق كبيرة في آسيا وأفريقيا وأوروبا والأمريكتين، مما شكل إرثاً من الانفتاح والحوار والتبادل السلمي."
     },
     "ceo": {
-      "name": "Sheikha Janat Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – CHIEF EXECUTIVE OFFICER",
-      "messageTitle": "Message from the Chief Executive Officer",
-      "message": "Our ambition is to develop strategic investment platforms that contribute to long-term economic growth and sustainable development. Today, our investment activities span more than 10 strategic sectors, including education, energy, manufacturing, natural resources, and international markets.\n\nWorking with global partners and institutions, we continue to expand our investment footprint across regional and international markets, supporting ventures that strengthen innovation, economic diversification, and sustainable industries.\n\nUnder the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said and guided by the aspirations of Oman Vision 2040, Oman is emerging as a competitive destination for international investment.\n\nOur long-term ambition is to build investment platforms that connect global capital with high-impact opportunities, positioning Oman as a gateway to regional markets and a hub for responsible and future-focused investment.",
-      "bio": "Sheikha Janat Al Hashmi is an Omani entrepreneur and strategic leader with experience spanning the energy, education, and investment sectors. She holds a Bachelor of Science in Geosciences with honors and a minor in Astronomy and Astrophysics from Pennsylvania State University. She began her professional career as a Geophysicist with Occidental Petroleum Corporation, where she developed expertise in energy exploration and resource management.\n\nAs Co-Founder and Chief Executive Officer of Shomoukh International Investment, she oversees strategic investment clusters across education, energy, manufacturing, mining and natural resources, international markets, and circular economy initiatives. Through these platforms, she leads ventures that support economic diversification, innovation, and sustainable development in alignment with Oman’s national priorities."
+      "name": "الشيخة جانات بنت سالم بن حمود الهاشمي",
+      "role": "المؤسس الشريك - الرئيس التنفيذي",
+      "messageTitle": "رسالة من الرئيس التنفيذي",
+      "message": "طموحنا هو تطوير منصات استثمار استراتيجية تساهم في النمو الاقتصادي طويل الأجل والتنمية المستدامة."
     },
     "vp": {
-      "name": "Sheikh Julanda Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – VICE PRESIDENT",
-      "messageTitle": "Message from the Vice President",
-      "message": "Strategic investment plays a critical role in shaping the future of economies. At Shomoukh International Investment, we focus on developing partnerships that facilitate foreign direct investment and connect international capital with opportunities in the Sultanate of Oman. Our investment activities extend across multiple industries including energy, logistics, tourism, technology, manufacturing, agriculture, real estate, and private equity, supporting ventures designed to strengthen long-term economic diversification.\n\nThrough our global partnerships and investment platforms, we aim to expand access to regional and international markets, enabling investors to participate in emerging sectors and high-growth industries.\n\nOur objective is to contribute to the development of investment ecosystems that encourage innovation, sustainable growth, and long-term economic resilience.",
-      "bio": "Sheikh Julanda bin Salim Hamood Al Hashmi is an Omani investor and public policy advisor engaged in strategic investment and national economic development.\n\nAs Co-Founder of Shomoukh International Investment he works with international partners, institutions, and investors to advance strategic ventures and facilitate foreign direct investment into the Sultanate of Oman.\n\nHe oversees several strategic investment clusters across sectors including energy, real estate, logistics, tourism, information technology, manufacturing, agriculture and fisheries, strategic private equity investments, and circular economy and sustainable ventures. Through these platforms, he supports initiatives that strengthen economic diversification, investment development, and long-term sustainable growth.\n\nSheikh Julanda holds a Bachelor’s degree in International Affairs from The George Washington University and a Master’s degree in Government and Public Policy from Harvard University."
+      "name": "الشيخ جلندى بن سالم بن حمود الهاشمي",
+      "role": "المؤسس الشريك - نائب الرئيس",
+      "messageTitle": "رسالة من نائب الرئيس",
+      "message": "يلعب الاستثمار الاستراتيجي دوراً حاسماً في تشكيل مستقبل الاقتصادات."
     },
     "md": {
-      "name": "Sheikha Jinan Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – MANAGING DIRECTOR",
-      "messageTitle": "Message from the Managing Director",
-      "message": "Our focus is to ensure that our investments generate meaningful long-term impact. Through our strategic investment platforms, we oversee initiatives designed to support sustainable development across sectors including energy, tourism, real estate, education, and responsible investment initiatives.\n\nOur approach emphasizes sustainable growth, innovation, and responsible capital deployment. By integrating sustainability principles across our investment strategy, we aim to support industries that contribute to economic development while creating lasting value for communities.\n\nAs Oman continues to strengthen its position within global markets under Oman Vision 2040, our goal is to support ventures that align with these national ambitions and expand the reach of Omani investment platforms into regional and international markets.",
-      "bio": "Sheikha Jinan Salim Hamood Al Hashmi is an Omani education leader and entrepreneur dedicated to advancing international education and strategic investment initiatives. She is the Co-Founder of Shomoukh International Investment and plays an active role in guiding its long-term investment strategy. She holds a Bachelor of Arts with honors in International Development and a minor in Business Administration from The George Washington University’s Elliott School of International Affairs, as well as an MBA in Global Management.\n\nHer professional experience includes work with the Embassy of Oman in Washington, the Ministry of Foreign Affairs, and investment promotion initiatives supporting Oman’s Vision 2040. She oversees strategic investment clusters focused on sustainability across sectors including energy, tourism, real estate, and education, ensuring long-term impact and responsible development."
+      "name": "الشيخة جنان بنت سالم بن حمود الهاشمي",
+      "role": "المؤسس الشريك - العضو المنتدب",
+      "messageTitle": "رسالة من العضو المنتدب",
+      "message": "ينصب تركيزنا على ضمان أن تحقق استثماراتنا تأثيراً ذا مغزى على المدى الطويل."
     }
   },
   "contact": {
@@ -266,12 +275,36 @@
     "addressLine1": "صندوق بريد: ١٧٥٦ | الرمز البريدي: ١١١",
     "addressLine2": "مرتفعات المطار، مسقط",
     "addressLine3": "سلطنة عمان",
-    "rights": "© ٢٠٢٦ شموخ للاستثمار. جميع الحقوق محفوظة.",
+    "rights": "جميع الحقوق محفوظة.",
+    "termsOfService": "شروط الخدمة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "siteMap": "خريطة الموقع",
+    "text": {
+      "11": "من نحن",
+      "12": "تواصل معنا",
+      "14": "القطاعات الاستراتيجية",
+      "15": "لماذا عمان",
+      "17": "الموارد",
+      "19": "الشركة",
+      "x1": "القطاعات الرئيسية",
+      "x2": "مجالات الاستثمار",
+      "x3": "نظرة عامة",
+      "x4": "الحوافز",
+      "x5": "تقارير السوق"
+    },
     "newsletter": {
       "title": "ابق على اطلاع",
       "description": "اشترك في نشرتنا الإخبارية للحصول على أحدث الرؤى الاستثمارية والفرص في عمان.",
       "placeholder": "عنوان البريد الإلكتروني",
       "button": "اشترك"
+    }
+  },
+  "leadership": {
+    "chairman": {
+      "name": "سعادة الشيخ سالم بن حمود بن سعيد الهاشمي",
+      "title": "رئيس مجلس الإدارة",
+      "message_title": "رسالة رئيس مجلس الإدارة",
+      "message_text": "على مر القرون، ظلت سلطنة عمان بمثابة جسر بين الحضارات. ومن شواطئها، قام التجار والعلماء والمسافرون بربط مناطق كبيرة في آسيا وأفريقيا وأوروبا والأمريكتين، مما شكل إرثاً من الانفتاح والحوار والتبادل السلمي.\n\nمن خلال هذا الروح الراسخة تأسست شركة شموخ الدولية للاستثمار. لقد كان هدفنا دائماً مسترشداً بالاعتقاد بأن الاستثمار يجب ألا يساهم في التقدم الاقتصادي فحسب، بل وأيضاً في تطوير مجتمعات حيوية وفرص مستدامة للأجيال القادمة.\n\nاليوم، تحت القيادة الرؤية لحضرة صاحب الجلالة السلطان هيثم بن طارق المعظم، تواصل السلطنة دفع أجندة تطلعية تعزز التنويع الاقتصادي والابتكار والشراكة العالمية. عمان تحتل موقعاً فريداً في العالم - جغرافياً وتاريخياً وثقافياً. وبوجودها عند ملتقى طرق التجارة العالمية، تواصل الدولة تعزيز دورها كمركز للتعاون والاستثمار والتنمية المسؤولين.\n\nمن خلال استثماراتنا وشراكاتنا الاستراتيجية، نسعى لدعم هذه الرحلة الوطنية من خلال تطوير مشاريع تعزز الابتكار وتقوي الصناعات وتساهم في الازدهار على المدى الطويل. نحن لا نزال ملتزمين ببناء شراكات عبر الحدود والاستثمار في الفرص التي تعكس قيم التعاون والتقدم والرخاء المشترك.\n\nوبينما نتطلع إلى المستقبل، يظل طموحنا واضحاً: المساهمة في عالم تتوسع فيه الفرص وتزدهر فيه المجتمعات وتستمر فيه عمان كمكان تلتقي فيه الثقافات والأفكار والأسواق."
     }
   }
 }

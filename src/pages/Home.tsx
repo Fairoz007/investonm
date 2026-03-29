@@ -1,25 +1,27 @@
 import { ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ResearchDataCTA } from '@/components/shared/ResearchDataCTA';
 import { ThrivingSectors } from '@/components/sections/ThrivingSectors';
 import { WhyOmanSection } from '@/components/sections/WhyOmanSection';
 import { AboutCompanySection } from '@/components/sections/AboutCompanySection';
-import { LeadershipSection } from '@/components/sections/LeadershipSection';
 
 export default function Home() {
   const { lang } = useParams();
+  const { t } = useTranslation();
   const displayLang = lang || 'en';
 
   return (
-    <div className="min-h-screen text-foreground bg-transparent flex flex-col relative overflow-hidden">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-transparent text-foreground">
       {/* Global Starry Background & Light Beam for Home Page */}
       <div className="absolute inset-0 pointer-events-none -z-10 bg-[#050312]">
         {/* CSS stars */}
         <div
           className="absolute inset-0 opacity-50 mix-blend-screen"
           style={{
-            backgroundImage: 'radial-gradient(0.2px 0.2px at 10% 10%, white 100%, transparent), radial-gradient(0.5px 0.5px at 20% 40%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.8px 0.8px at 30% 80%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.2px 0.2px at 40% 20%, white 100%, transparent), radial-gradient(0.5px 0.5px at 50% 60%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.8px 0.8px at 60% 10%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.2px 0.2px at 70% 50%, white 100%, transparent), radial-gradient(0.5px 0.5px at 80% 90%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.8px 0.8px at 90% 30%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.2px 0.2px at 95% 70%, white 100%, transparent)',
-            backgroundSize: '200px 200px'
+            backgroundImage:
+              'radial-gradient(0.2px 0.2px at 10% 10%, white 100%, transparent), radial-gradient(0.5px 0.5px at 20% 40%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.8px 0.8px at 30% 80%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.2px 0.2px at 40% 20%, white 100%, transparent), radial-gradient(0.5px 0.5px at 50% 60%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.8px 0.8px at 60% 10%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.2px 0.2px at 70% 50%, white 100%, transparent), radial-gradient(0.5px 0.5px at 80% 90%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.8px 0.8px at 90% 30%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.2px 0.2px at 95% 70%, white 100%, transparent)',
+            backgroundSize: '200px 200px',
           }}
         />
 
@@ -30,64 +32,60 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-      <section className="relative w-full py-16 md:py-20 flex-1 flex items-center">
-        <div className="container-custom relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="max-w-[600px] z-20">
-              <h1 className="text-balance text-5xl font-bold leading-[1.1] text-foreground sm:text-6xl md:text-[76px] tracking-tight">
-                Investing in
-                <br />
-                <span className="text-[#89C5E0] font-normal tracking-tight">
-                  What's Next
-                </span>
+      <section className="relative flex flex-1 items-center w-full py-16 md:py-20">
+        <div className="container-custom relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-12">
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+            {/* Left Content */}
+            <div className="z-20 max-w-[600px]">
+              <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-[76px] whitespace-pre-line">
+                {t('hero.slide1.title')}
               </h1>
-              <p className="mt-6 max-w-[420px] text-lg md:text-xl leading-relaxed text-[#A0A3B5]">
-                Private investment and strategic development across Oman and global markets.
+
+              <p className="mt-6 max-w-[430px] text-lg leading-relaxed text-[#A0A3B5] md:text-xl">
+                {t('hero.slide1.description')}
               </p>
 
               <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
                 <Link
                   to={`/${displayLang}/key-sectors`}
-                  className="inline-flex min-h-[52px] items-center justify-center rounded-3xl bg-gradient-to-r from-[#175CC0] to-[#2684FF] px-8 py-3.5 text-lg font-medium text-white transition-all hover:brightness-110 shadow-[0_0_20px_rgba(38,132,255,0.4)] border border-blue-400/30"
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-3xl border border-blue-400/30 bg-gradient-to-r from-[#175CC0] to-[#2684FF] px-8 py-3.5 text-lg font-medium text-white shadow-[0_0_20px_rgba(38,132,255,0.4)] transition-all hover:brightness-110"
                 >
-                  Start Investing <ArrowRight className="ml-2 h-5 w-5 opacity-90" />
+                  {t('hero.cta.startInvesting')} <ArrowRight className="ml-2 h-5 w-5 opacity-90" />
                 </Link>
+
                 <Link
                   to={`/${displayLang}/contact`}
-                  className="inline-flex min-h-[52px] items-center justify-center rounded-3xl border border-white/20 bg-white/5 px-8 py-3.5 text-lg font-medium text-[#D1D5DB] transition-all hover:bg-white/10 backdrop-blur-md"
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-3xl border border-white/20 bg-white/5 px-8 py-3.5 text-lg font-medium text-[#D1D5DB] backdrop-blur-md transition-all hover:bg-white/10"
                 >
-                  Explore <ArrowRight className="ml-2 h-5 w-5 opacity-90" />
+                  {t('hero.cta.explore')} <ArrowRight className="ml-2 h-5 w-5 opacity-90" />
                 </Link>
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[650px] lg:ml-auto select-none mt-10 md:mt-0" style={{ perspective: '1200px' }}>
-              <div
-                className="relative overflow-hidden rounded-[24px] shadow-[0_0_50px_rgba(38,132,255,0.25)] border border-white/20 transition-transform duration-700 hover:rotate-y-0"
-                style={{
-                  transform: 'rotateY(-15deg) rotateX(5deg) translateZ(0)',
-                  transformStyle: 'preserve-3d',
-                }}
-              >
+            {/* Right Hero Image */}
+            <div className="relative mx-auto mt-8 w-full max-w-[560px] lg:ml-auto lg:mt-10 select-none">
+              <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-[0_20px_70px_rgba(20,40,120,0.28)]">
                 <img
-                  src="/images/oman_hero.png"
+                  src="/images/oman_hero.jpg"
                   alt="Muscat skyline and waterfront"
-                  className="h-[380px] w-full object-cover md:h-[480px] scale-[1.05]"
+                  className="block h-[420px] w-full object-cover md:h-[500px]"
                 />
-                {/* Internal top glow */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
 
-                {/* Subtle noise/glass overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent mix-blend-overlay" />
+                {/* Top edge highlight */}
+                <div className="absolute left-0 right-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+
+                {/* Soft cinematic overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent" />
               </div>
 
               {/* 2040 Vision Target Card */}
-              <div
-                className="absolute bottom-6 right-6 rounded-2xl border border-white/20 bg-black/40 px-6 py-4 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-30"
-                style={{ transform: 'translateZ(30px)' }}
-              >
-                <p className="text-[40px] font-semibold leading-none text-white tracking-tight">2040</p>
-                <p className="mt-2 text-[15px] font-medium text-white/70 tracking-wide">Vision Target</p>
+              <div className="absolute bottom-6 right-6 z-30 rounded-2xl border border-white/15 bg-[#1A1625]/75 px-6 py-4 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
+                <p className="text-[42px] font-semibold leading-none tracking-tight text-white">
+                  2040
+                </p>
+                <p className="mt-2 text-[14px] font-medium tracking-[0.08em] text-white/70 uppercase">
+                  {t('hero.vision')}
+                </p>
               </div>
             </div>
           </div>
@@ -102,12 +100,10 @@ export default function Home() {
 
       {/* THRIVING SECTORS */}
       <ThrivingSectors />
-      <LeadershipSection />
+
 
       {/* Research CTA section */}
       <ResearchDataCTA />
-
-
     </div>
   );
 }

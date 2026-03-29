@@ -1,6 +1,7 @@
 import { ArrowRight, BarChart3, Check, Globe2, Heart } from 'lucide-react';
 import type { ComponentType } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface CardMetric {
   value: string;
@@ -17,6 +18,7 @@ interface WhyOmanCard {
 }
 
 export const WhyOmanSection = () => {
+  const { t } = useTranslation();
   const { lang } = useParams();
   const displayLang = lang || 'en';
 
@@ -24,44 +26,44 @@ export const WhyOmanSection = () => {
     {
       id: 'connectivity',
       icon: Globe2,
-      title: 'Global Connectivity',
-      description: 'Strategic location bridging East and West with world-class infrastructure.',
+      title: t('trust.pillars.connectivity.title'),
+      description: t('trust.pillars.connectivity.desc'),
       metrics: [
-        { value: '60%', description: 'of world population within 8h flight' },
-        { value: '105', description: 'international trade agreements' },
+        { value: '60%', description: t('trust.pillars.connectivity.stat1') },
+        { value: '105', description: t('trust.pillars.connectivity.stat2') },
       ],
       glowClass: 'before:from-cyan-500/35 before:to-sky-500/10',
     },
     {
       id: 'economy',
       icon: BarChart3,
-      title: 'Stable & Diversified Economy',
-      description: 'Strong, robust economy with multi-sector growth opportunities.',
+      title: t('trust.pillars.economy.title'),
+      description: t('trust.pillars.economy.desc'),
       metrics: [
-        { value: 'BBB+', description: 'S&P Rating' },
-        { value: '$50B+', description: 'Investment to diversify' },
+        { value: 'BBB+', description: t('trust.pillars.economy.stat1') },
+        { value: '$50B+', description: t('trust.pillars.economy.stat2') },
       ],
       glowClass: 'before:from-violet-400/35 before:to-fuchsia-400/10',
     },
     {
       id: 'business',
       icon: Check,
-      title: 'Business-Friendly Environment',
-      description: 'Streamlined regulations and incentives designed to facilitate international operations.',
+      title: t('trust.pillars.business.title'),
+      description: t('trust.pillars.business.desc'),
       metrics: [
-        { value: 'Top 10', description: 'most efficient ports worldwide' },
-        { value: '0% Tax', description: 'on personal income' },
+        { value: 'Top 10', description: t('trust.pillars.business.stat1') },
+        { value: '0% Tax', description: t('trust.pillars.business.stat2') },
       ],
       glowClass: 'before:from-blue-400/35 before:to-cyan-300/10',
     },
     {
       id: 'quality',
       icon: Heart,
-      title: 'High Quality of Life',
-      description: 'Safe, modern lifestyle with natural beauty and world-class amenities.',
+      title: t('trust.pillars.lifestyle.title'),
+      description: t('trust.pillars.lifestyle.desc'),
       metrics: [
-        { value: 'Top 3', description: 'safest countries globally' },
-        { value: '1st', description: 'Gulf quality of life index rank' },
+        { value: 'Top 3', description: t('trust.pillars.lifestyle.stat1') },
+        { value: '1st', description: t('trust.pillars.lifestyle.stat2') },
       ],
       glowClass: 'before:from-rose-400/35 before:to-orange-300/10',
     },
@@ -79,12 +81,10 @@ export const WhyOmanSection = () => {
       <div className="container-custom relative z-10 max-w-[1200px]">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-semibold tracking-tight text-foreground md:text-[52px]">
-              Why Oman?
+              {t('trust.subtitle')}
           </h2>
           <p className="mx-auto mt-5 max-w-[760px] text-base leading-relaxed text-muted-foreground/95 md:text-xl">
-            Oman offers a dynamic and strategic environment for investors seeking growth and stability.
-            Positioned as a premier global investment hub, the Sultanate combines connectivity, diversity,
-            and exceptional quality of life.
+            {t('trust.title')}
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export const WhyOmanSection = () => {
             to={`/${displayLang}/about-oman`}
             className="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-white/15 bg-[#10172a]/85 px-10 py-3 text-xl font-medium text-foreground shadow-[0_16px_40px_rgba(37,99,235,0.35)] backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-[#14203a]"
           >
-            Explore Investment in Oman <ArrowRight className="ml-3 h-5 w-5" />
+            {t('aboutOman.exploreAdvantages')} <ArrowRight className="ml-3 h-5 w-5" />
           </Link>
         </div>
       </div>

@@ -20,9 +20,275 @@
     "explore": "کشف کنید",
     "languageSelection": "انتخاب زبان"
   },
+  "hero": {
+    "slide1": {
+      "title": "Investing in\nWhat's Next.",
+      "description": "Private investment and strategic development across Oman and global markets."
+    },
+    "slide2": {
+      "title": "Strategic\nDevelopment\nPlatform.",
+      "description": "Identifying and developing high-value opportunities in the Sultanate of Oman."
+    },
+    "cta": {
+      "startInvesting": "Start Investing",
+      "explore": "Explore Opportunities"
+    },
+    "vision": "Oman Vision 2040"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "contact": "Contact Us",
+    "readMore": "Read More"
+  },
+  "ourStory": {
+    "subtitle": "Shomoukh Story",
+    "years": "18+ Years",
+    "excellence": "Investment Excellence",
+    "label": "WHO WE ARE",
+    "title": "Defining the Future of Strategic Investment in Oman.",
+    "intro1": "Shomoukh International Investment is a privately held investment company established in the Sultanate of Oman in 2006 by the Al Hashmi family.",
+    "intro2": "The firm operates as both an investment company and a strategic development platform focused on identifying and developing high-value opportunities.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "To develop strategic investments that shape industries, strengthen economies, and create lasting value.",
+    "leadershipTitle": "Our Leadership",
+    "leadershipDesc": "Led by the Al Hashmi family and world-class experts.",
+    "cta": "Learn Our Story"
+  },
+  "services": {
+    "subtitle": "Investment Areas",
+    "label": "OUR SECTORS",
+    "title": "Excellence Across High-Value Growth Verticals.",
+    "tourism": {
+      "title": "Tourism & Leisure",
+      "desc": "Developing iconic destinations and world-class hospitality across the Sultanate."
+    },
+    "logistics": {
+      "title": "Logistics & Supply Chain",
+      "desc": "Strengthening Oman's position as a global logistical hub."
+    },
+    "energy": {
+      "title": "Energy & Sustainability",
+      "desc": "Investing in renewable energy and sustainable development."
+    },
+    "labels": {
+      "thriving": "Thriving Sectors",
+      "incentives": "Exciting Incentives in Oman",
+      "exploreAll": "Explore All Sectors",
+      "description": "Explore the vibrant investment opportunities in Oman, spanning essential sectors like technology, renewable energy, logistics, and manufacturing."
+    },
+    "items": {
+      "healthcare": "Healthcare",
+      "tourism": "Tourism",
+      "ict": "ICT",
+      "mining": "Mining",
+      "manufacturing": "Manufacturing",
+      "renewableEnergy": "Renewable Energy",
+      "agriculture": "Agriculture",
+      "fisheries": "Fisheries",
+      "education": "Education",
+      "sport": "Sport"
+    }
+  },
+  "trust": {
+    "subtitle": "Why Oman?",
+    "title": "Oman offers a dynamic and strategic environment for investors seeking growth and stability.",
+    "pillars": {
+      "connectivity": {
+        "title": "Global Connectivity",
+        "desc": "Strategic location bridging East and West with world-class infrastructure.",
+        "stat1": "of world population within 8h flight",
+        "stat2": "international trade agreements"
+      },
+      "economy": {
+        "title": "Stable & Diversified Economy",
+        "desc": "Strong, robust economy with multi-sector growth opportunities.",
+        "stat1": "S&P Rating",
+        "stat2": "Investment to diversify"
+      },
+      "business": {
+        "title": "Business-Friendly Environment",
+        "desc": "Streamlined regulations and incentives designed to facilitate international operations.",
+        "stat1": "most efficient ports worldwide",
+        "stat2": "on personal income"
+      },
+      "lifestyle": {
+        "title": "High Quality of Life",
+        "desc": "Safe, modern lifestyle with natural beauty and world-class amenities.",
+        "stat1": "safest countries globally",
+        "stat2": "Gulf quality of life index rank"
+      }
+    }
+  },
+  "success": {
+    "subtitle": "Tourism",
+    "title": "A Key Driver of Economic Diversification.",
+    "description": "Oman's tourism sector offers world-class experiences from luxury coastal resorts to ancient heritage sites. The Sultanate is positioning itself as a premier destination for high-end, sustainable tourism.",
+    "stats": {
+      "visitors": {
+        "title": "Visitors Revenue",
+        "sub": "Riyal Omani (RO)"
+      },
+      "employment": {
+        "title": "Employment",
+        "sub": "Jobs in tourism"
+      },
+      "gdp": {
+        "title": "GDP Contribution",
+        "sub": "Of Oman's Total GDP"
+      },
+      "investment": {
+        "title": "Total Investment",
+        "sub": "Riyal Omani (RO)"
+      }
+    }
+  },
+  "whoWeAre": {
+    "heroSubtitle": "Establishment 2006",
+    "heroTitle": "Architects of \nEconomic legacy.",
+    "heroDesc": "A premier private investment house dedicated to shaping Oman’s future through strategic development and global partnerships.",
+    "discoverMore": "Discover More",
+    "yearsOfGrowth": "Years of Growth",
+    "stats": {
+      "founded": "Founded",
+      "sectors": "Sectors",
+      "portfolio": "Investment Portfolio",
+      "global": "Global Presence"
+    },
+    "aboutSubtitle": "Our Foundation",
+    "aboutTitle": "Shomoukh International Investment",
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To develop strategic investments that shape industries, strengthen economies, and create lasting value for our partners and the Sultanate."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To be a pioneering investment house that transforms opportunity into legacy, positioning Oman as a global hub for excellence."
+    }
+  },
+  "aboutOman": {
+    "heroSubtitle": "Sultanate of Oman",
+    "heroTitle": "A Strategic \nGlobal Gateway.",
+    "heroDesc": "The Sultanate of Oman offers a stable and attractive environment for long-term investment, connecting the world's fastest-growing markets.",
+    "exploreAdvantages": "Explore Advantages",
+    "stats": {
+      "location": "Strategic Location",
+      "vision": "Oman Vision",
+      "freeZones": "Free Zones",
+      "market": "Market Access"
+    },
+    "whyInvest": {
+      "title": "Why Invest in Oman?",
+      "desc": "A unique combination of stability, infrastructure, and progressive policies designed to foster international business growth."
+    }
+  },
+  "ourExperts": {
+    "heroSubtitle": "Shomoukh Excellence",
+    "heroTitle": "Our Experts",
+    "heroDesc": "Guided by a legacy of leadership and strategic foresight, our team drives long-term value and sustainable growth across the Sultanate and beyond.",
+    "leadership": "Leadership",
+    "readFullMessage": "Read Full Message",
+    "viewProfile": "View Profile",
+    "expertProfile": "Expert Profile",
+    "biography": "Biography",
+    "advisory": {
+      "title": "Strategic Advisory \n Inquiries",
+      "desc": "Connect with our leadership team for institutional partnerships, strategic investments, and market entry consultation.",
+      "button": "Connect with Our Team"
+    },
+    "chairman": {
+      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
+      "role": "CHAIRMAN",
+      "messageTitle": "Chairman's Message",
+      "message": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+    },
+    "ceo": {
+      "name": "Sheikha Janat Salim Hamood Al Hashmi",
+      "role": "CO-FOUNDER – CHIEF EXECUTIVE OFFICER",
+      "messageTitle": "Message from the Chief Executive Officer",
+      "message": "Our ambition is to develop strategic investment platforms that contribute to long-term economic growth and sustainable development. Today, our investment activities span more than 10 strategic sectors, including education, energy, manufacturing, natural resources, and international markets.\n\nWorking with global partners and institutions, we continue to expand our investment footprint across regional and international markets, supporting ventures that strengthen innovation, economic diversification, and sustainable industries.\n\nUnder the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said and guided by the aspirations of Oman Vision 2040, Oman is emerging as a competitive destination for international investment.\n\nOur long-term ambition is to build investment platforms that connect global capital with high-impact opportunities, positioning Oman as a gateway to regional markets and a hub for responsible and future-focused investment.",
+      "bio": "Sheikha Janat Al Hashmi is an Omani entrepreneur and strategic leader with experience spanning the energy, education, and investment sectors. She holds a Bachelor of Science in Geosciences with honors and a minor in Astronomy and Astrophysics from Pennsylvania State University. She began her professional career as a Geophysicist with Occidental Petroleum Corporation, where she developed expertise in energy exploration and resource management.\n\nAs Co-Founder and Chief Executive Officer of Shomoukh International Investment, she oversees strategic investment clusters across education, energy, manufacturing, mining and natural resources, international markets, and circular economy initiatives. Through these platforms, she leads ventures that support economic diversification, innovation, and sustainable development in alignment with Oman’s national priorities."
+    },
+    "vp": {
+      "name": "Sheikh Julanda Salim Hamood Al Hashmi",
+      "role": "CO-FOUNDER – VICE PRESIDENT",
+      "messageTitle": "Message from the Vice President",
+      "message": "Strategic investment plays a critical role in shaping the future of economies. At Shomoukh International Investment, we focus on developing partnerships that facilitate foreign direct investment and connect international capital with opportunities in the Sultanate of Oman. Our investment activities extend across multiple industries including energy, logistics, tourism, technology, manufacturing, agriculture, real estate, and private equity, supporting ventures designed to strengthen long-term economic diversification.\n\nThrough our global partnerships and investment platforms, we aim to expand access to regional and international markets, enabling investors to participate in emerging sectors and high-growth industries.\n\nOur objective is to contribute to the development of investment ecosystems that encourage innovation, sustainable growth, and long-term economic resilience.",
+      "bio": "Sheikh Julanda bin Salim Hamood Al Hashmi is an Omani investor and public policy advisor engaged in strategic investment and national economic development.\n\nAs Co-Founder of Shomoukh International Investment he works with international partners, institutions, and investors to advance strategic ventures and facilitate foreign direct investment into the Sultanate of Oman.\n\nHe oversees several strategic investment clusters across sectors including energy, real estate, logistics, tourism, information technology, manufacturing, agriculture and fisheries, strategic private equity investments, and circular economy and sustainable ventures. Through these platforms, he supports initiatives that strengthen economic diversification, investment development, and long-term sustainable growth.\n\nSheikh Julanda holds a Bachelor’s degree in International Affairs from The George Washington University and a Master’s degree in Government and Public Policy from Harvard University."
+    },
+    "md": {
+      "name": "Sheikha Jinan Salim Hamood Al Hashmi",
+      "role": "CO-FOUNDER – MANAGING DIRECTOR",
+      "messageTitle": "Message from the Managing Director",
+      "message": "Our focus is to ensure that our investments generate meaningful long-term impact. Through our strategic investment platforms, we oversee initiatives designed to support sustainable development across sectors including energy, tourism, real estate, education, and responsible investment initiatives.\n\nOur approach emphasizes sustainable growth, innovation, and responsible capital deployment. By integrating sustainability principles across our investment strategy, we aim to support industries that contribute to economic development while creating lasting value for communities.\n\nAs Oman continues to strengthen its position within global markets under Oman Vision 2040, our goal is to support ventures that align with these national ambitions and expand the reach of Omani investment platforms into regional and international markets.",
+      "bio": "Sheikha Jinan Salim Hamood Al Hashmi is an Omani education leader and entrepreneur dedicated to advancing international education and strategic investment initiatives. She is the Co-Founder of Shomoukh International Investment and plays an active role in guiding its long-term investment strategy. She holds a Bachelor of Arts with honors in International Development and a minor in Business Administration from The George Washington University’s Elliott School of International Affairs, as well as an MBA in Global Management.\n\nHer professional experience includes work with the Embassy of Oman in Washington, the Ministry of Foreign Affairs, and investment promotion initiatives supporting Oman’s Vision 2040. She oversees strategic investment clusters focused on sustainability across sectors including energy, tourism, real estate, and education, ensuring long-term impact and responsible development."
+    }
+  },
+  "contact": {
+    "heroTitle": "Connect with \n Shomoukh",
+    "heroSubtitle": "Global Reach, Local Impact",
+    "heroDesc": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
+    "form": {
+      "title": "Send a Message",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Submit Inquiry"
+    },
+    "info": {
+      "address": "Address",
+      "muscat": "Muscat, Oman",
+      "phone": "Phone",
+      "email": "Email"
+    }
+  },
+  "keySectors": {
+    "heroTitle": "Transforming \n Industries",
+    "heroSubtitle": "Strategic Sectors",
+    "heroDesc": "We invest in high-growth sectors that are critical to Oman's national development and global competitiveness."
+  },
+  "resources": {
+    "heroTitle": "Investor \n Resources",
+    "heroSubtitle": "Knowledge Hub",
+    "heroDesc": "Access key documents, reports, and insights into Oman's investment landscape and our portfolio performance."
+  },
+  "signIn": {
+    "title": "Investor Portal",
+    "desc": "Access your personalized dashboard and portfolio reports.",
+    "email": "Email",
+    "password": "Password",
+    "button": "Sign In",
+    "forgot": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "contactSupport": "Contact support"
+  },
+  "contactCTA": {
+    "badge": "Connect",
+    "title": "Ready to connect with <span class=\"gradient-text\">our team</span>?",
+    "description": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
+    "button": "Contact Us",
+    "card1": {
+      "title": "Strategic Advisory",
+      "description": "Tailored investment strategies and direct market entry consultation."
+    },
+    "card2": {
+      "title": "Institutional Support",
+      "description": "Direct access to government entities and world-class infrastructure."
+    }
+  },
   "footer": {
     "contact": "تماس",
     "directInquiry": "استعلام مستقیم",
     "address": "آدرس"
+  },
+  "leadership": {
+    "chairman": {
+      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
+      "title": "Chairman",
+      "message_title": "Chairman's Message",
+      "message_text": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+    }
   }
 }

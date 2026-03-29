@@ -22,7 +22,7 @@ export const Footer = () => {
             </Link>
             <div className="hidden sm:block h-12 w-[1px] bg-white/10" />
             <p className="text-sm text-slate-400 font-bold max-w-[300px] leading-relaxed opacity-80 uppercase tracking-widest">
-              Strategic development and private investment across the Sultanate of Oman.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -58,14 +58,14 @@ export const Footer = () => {
                 {
                   title: t('footer.text.19'), links: [
                     { to: `/${displayLang}/who-we-are`, label: t('footer.text.11') },
-                    { to: `/${displayLang}/our-experts`, label: 'Our Experts' },
+                    { to: `/${displayLang}/our-experts`, label: t('ourExperts.heroTitle') },
                     { to: `/${displayLang}/contact`, label: t('footer.text.12') }
                   ]
                 },
                 {
                   title: t('footer.text.17'), links: [
-                    { to: `/${displayLang}/resources#guide`, label: 'Investor Guide' },
-                    { to: `/${displayLang}/resources#simulator`, label: 'Business Simulator' }
+                    { to: `/${displayLang}/resources#guide`, label: t('resources.heroTitle') },
+                    { to: `/${displayLang}/resources#simulator`, label: t('common.readMore') }
                   ]
                 }
               ].map((col, idx) => (
@@ -75,7 +75,7 @@ export const Footer = () => {
                     {col.links.map((link, lIdx) => (
                       <li key={lIdx}>
                         <Link to={link.to} className="text-[14px] text-slate-400 font-bold hover:text-blue-400 transition-all flex items-center group">
-                          <span className="w-2 h-2 rounded-full border border-blue-500/30 mr-3 scale-0 group-hover:scale-100 transition-transform bg-blue-500/20" />
+                          <span className={`w-2 h-2 rounded-full border border-blue-500/30 ${displayLang === 'ar' || displayLang === 'fa' ? 'ml-3' : 'mr-3'} scale-0 group-hover:scale-100 transition-transform bg-blue-500/20`} />
                           {link.label}
                         </Link>
                       </li>
@@ -91,7 +91,7 @@ export const Footer = () => {
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] group-hover:bg-blue-500/10 transition-colors" />
 
               <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 sm:gap-12">
-                <div className="max-w-md text-center sm:text-left">
+                <div className={`max-w-md ${displayLang === 'ar' || displayLang === 'fa' ? 'text-right' : 'text-left'}`}>
                   <h4 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-3">
                     {t('footer.newsletter.title')}
                   </h4>
@@ -104,9 +104,9 @@ export const Footer = () => {
                   <input
                     type="email"
                     placeholder={t('footer.newsletter.placeholder')}
-                    className="w-full bg-[#0A0F1E] border border-white/10 rounded-full py-4 sm:py-5 px-6 sm:px-10 text-[13px] font-bold text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-500 pr-32 sm:pr-40"
+                    className={`w-full bg-[#0A0F1E] border border-white/10 rounded-full py-4 sm:py-5 px-6 sm:px-10 text-[13px] font-bold text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-500 ${displayLang === 'ar' || displayLang === 'fa' ? 'pl-32 sm:pl-40 pr-6 sm:pr-10' : 'pr-32 sm:pr-40 pl-6 sm:pl-10'}`}
                   />
-                  <button className="absolute right-2 top-2 bottom-2 px-5 sm:px-8 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 shadow-xl">
+                  <button className={`absolute ${displayLang === 'ar' || displayLang === 'fa' ? 'left-2' : 'right-2'} top-2 bottom-2 px-5 sm:px-8 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 shadow-xl`}>
                     {t('footer.newsletter.button')}
                   </button>
                 </form>
@@ -115,21 +115,21 @@ export const Footer = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="lg:col-span-4 lg:pl-12">
+          <div className={`lg:col-span-4 ${displayLang === 'ar' || displayLang === 'fa' ? 'lg:pr-12' : 'lg:pl-12'}`}>
             <div className="relative glass-card-premium p-6 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[48px] overflow-hidden group">
               <div className="relative z-10 space-y-8">
                 <h4 className="text-[11px] font-black text-white uppercase tracking-[0.3em] opacity-50">{t('footer.text.12')}</h4>
 
                 <div className="space-y-8">
                   {[
-                    { icon: Mail, label: 'Email Inquiry', value: 'info@shomoukh.om', href: 'mailto:info@shomoukh.om' },
-                    { icon: Phone, label: 'Direct Line', value: '+968 71770077', href: 'tel:+96871770077' }
+                    { icon: Mail, label: t('contact.form.email'), value: 'info@shomoukh.om', href: 'mailto:info@shomoukh.om' },
+                    { icon: Phone, label: t('contact.info.phone'), value: '+968 71770077', href: 'tel:+96871770077' }
                   ].map((contact, idx) => (
                     <div key={idx} className="flex gap-6 items-center group/item">
                       <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center shrink-0 group-hover/item:border-blue-500/30 group-hover/item:bg-blue-500/10 transition-all duration-500 shadow-xl">
                         <contact.icon className="w-6 h-6 text-blue-400" />
                       </div>
-                      <div>
+                      <div className={displayLang === 'ar' || displayLang === 'fa' ? 'text-right' : 'text-left'}>
                         <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1.5">{contact.label}</p>
                         <a href={contact.href} className="text-base font-black text-white hover:text-blue-400 transition-colors tracking-tight">{contact.value}</a>
                       </div>
@@ -140,12 +140,12 @@ export const Footer = () => {
                     <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center shrink-0 group-hover/item:border-purple-500/30 group-hover/item:bg-purple-500/10 transition-all duration-500 shadow-xl">
                       <MapPin className="w-6 h-6 text-purple-400" />
                     </div>
-                    <div>
-                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1.5">HQ Address</p>
+                    <div className={displayLang === 'ar' || displayLang === 'fa' ? 'text-right' : 'text-left'}>
+                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1.5">{t('footer.address')}</p>
                       <p className="text-base font-black text-white leading-relaxed tracking-tight">
-                        PO Box: 1756 | PC: 111<br />
-                        Airport Heights, Muscat<br />
-                        The Sultanate of Oman
+                        {t('footer.addressLine1')}<br />
+                        {t('footer.addressLine2')}<br />
+                        {t('footer.addressLine3')}
                       </p>
                     </div>
                   </div>
@@ -159,11 +159,15 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8 py-8 sm:py-10 border-t border-white/5 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
           <p className="text-center sm:text-left opacity-60">
-            &copy; {new Date().getFullYear()} Shomoukh Investment. {t('footer.text.16')}
+            &copy; {new Date().getFullYear()} Shomoukh Investment. {t('footer.rights')}
           </p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
-            {['Terms of Service', 'Privacy Policy', 'Site Map'].map((label, idx) => (
-              <Link key={idx} to="#" className="hover:text-blue-400 transition-colors opacity-60 hover:opacity-100">{label}</Link>
+            {[
+              { label: t('footer.termsOfService'), href: 'terms' },
+              { label: t('footer.privacyPolicy'), href: 'privacy' },
+              { label: t('footer.siteMap'), href: 'sitemap' }
+            ].map((link, idx) => (
+              <Link key={idx} to={`/${displayLang}/${link.href}`} className="hover:text-blue-400 transition-colors opacity-60 hover:opacity-100">{link.label}</Link>
             ))}
           </div>
         </div>

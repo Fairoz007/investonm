@@ -21,7 +21,7 @@ export const AboutCompanySection = () => {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] border border-white/12 bg-card/40 shadow-[0_16px_38px_rgba(2,6,23,0.55)]">
               <img 
                 src="/images/about-shomoukh-new.png" 
-                alt="Shomoukh Story" 
+                alt={t('ourStory.subtitle')} 
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -33,8 +33,8 @@ export const AboutCompanySection = () => {
                     <History className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-base font-semibold leading-none text-foreground">18+ Years</h4>
-                    <p className="mt-1 text-xs text-muted-foreground">Investment Excellence</p>
+                    <h4 className="text-base font-semibold leading-none text-foreground">{t('ourStory.years')}</h4>
+                    <p className="mt-1 text-xs text-muted-foreground">{t('ourStory.excellence')}</p>
                   </div>
                 </div>
               </div>
@@ -45,18 +45,13 @@ export const AboutCompanySection = () => {
           <div className="w-full lg:w-[56%]">
             <div>
               <span className="mb-4 block text-[11px] font-semibold tracking-[0.2em] text-primary uppercase">
-                {t('footer.text.11')}
+                {t('ourStory.label')}
               </span>
               <h2 className="mb-6 text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl">
-                Defining the Future of <span className="text-primary">Strategic Investment</span> in Oman
+                {t('ourStory.title')}
               </h2>
               <p className="mb-8 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-                Shomoukh International Investment is a privately held investment company established in
-                the Sultanate of Oman in 2006 by the Al Hashmi family. The firm operates as both an
-                investment company and a strategic development platform focused on identifying and
-                developing high-value opportunities across strategic sectors. Through its diversified
-                portfolio and international partnerships, Shomoukh connects capital, expertise, and
-                opportunities across Oman and global markets.
+                {t('ourStory.intro1')} {t('ourStory.intro2')}
               </p>
 
               <div className="mb-8 flex flex-col gap-4">
@@ -65,8 +60,8 @@ export const AboutCompanySection = () => {
                     <Target className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="mb-1 text-base font-semibold text-foreground">Our Mission</h4>
-                    <p className="text-xs leading-relaxed text-muted-foreground">{t('whoweare.text.5')}</p>
+                    <h4 className="mb-1 text-base font-semibold text-foreground">{t('ourStory.missionTitle')}</h4>
+                    <p className="text-xs leading-relaxed text-muted-foreground">{t('ourStory.missionDesc')}</p>
                   </div>
                 </div>
                 
@@ -75,8 +70,8 @@ export const AboutCompanySection = () => {
                     <Users className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="mb-1 text-base font-semibold text-foreground">Our Leadership</h4>
-                    <p className="text-xs leading-relaxed text-muted-foreground">Led by the Al Hashmi family and world-class experts.</p>
+                    <h4 className="mb-1 text-base font-semibold text-foreground">{t('ourStory.leadershipTitle')}</h4>
+                    <p className="text-xs leading-relaxed text-muted-foreground">{t('ourStory.leadershipDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -85,7 +80,7 @@ export const AboutCompanySection = () => {
                 to={`/${displayLang}/who-we-are`}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-primary/60 bg-primary/90 px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
               >
-                Learn Our Story <ArrowRight className="ml-2 h-4 w-4" />
+                {t('ourStory.cta')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>

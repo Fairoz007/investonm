@@ -3,20 +3,20 @@ import { NavItem } from '@/types';
 export const NAV_ITEMS: NavItem[] = [
 
   {
-    label: 'ABOUT US',
+    label: 'nav.aboutUs',
     href: '/who-we-are',
     children: [
-      { label: 'Our Story', href: '/learn-our-story' },
-      { label: 'Mission & Vision', href: '/who-we-are' },
-      { label: 'Our Experts', href: '/our-experts' }
+      { label: 'nav.ourStory', href: '/learn-our-story' },
+      { label: 'nav.whoWeAre', href: '/who-we-are' },
+      { label: 'nav.ourExperts', href: '/our-experts' }
     ]
   },
   {
-    label: 'DISCOVER OMAN',
+    label: 'nav.whyOman',
     href: '/about-oman',
     children: [
       { 
-        label: 'WHY OMAN', 
+        label: 'nav.whyOman', 
         href: '/about-oman',
         hasSubmenu: true,
         submenu: {
@@ -24,15 +24,15 @@ export const NAV_ITEMS: NavItem[] = [
             {
               title: '',
               items: [
-                { label: 'Overview', href: '/about-oman' },
-                { label: 'Key Benefits', href: '/key-sectors' }
+                { label: 'nav.overview', href: '/about-oman' },
+                { label: 'nav.keyBenefits', href: '/key-sectors' }
               ]
             }
           ]
         }
       },
       {
-        label: 'SECTORS',
+        label: 'nav.sectors',
         href: '/key-sectors',
         hasSubmenu: true,
         submenu: {
@@ -40,16 +40,16 @@ export const NAV_ITEMS: NavItem[] = [
             {
               title: '',
               items: [
-                { label: 'Tourism', href: '/key-sectors' },
-                { label: 'Logistics', href: '/key-sectors' },
-                { label: 'Energy', href: '/key-sectors' }
+                { label: 'nav.tourism', href: '/key-sectors' },
+                { label: 'nav.logistics', href: '/key-sectors' },
+                { label: 'nav.energy', href: '/key-sectors' }
               ]
             }
           ]
         }
       },
       {
-        label: 'OPPORTUNITIES',
+        label: 'nav.opportunities',
         href: '/about-oman',
         hasSubmenu: true,
         submenu: {
@@ -57,8 +57,8 @@ export const NAV_ITEMS: NavItem[] = [
             {
               title: '',
               items: [
-                { label: 'Active Projects', href: '/about-oman' },
-                { label: 'Investment Zones', href: '/key-sectors' }
+                { label: 'nav.activeProjects', href: '/about-oman' },
+                { label: 'nav.investmentZones', href: '/key-sectors' }
               ]
             }
           ]
@@ -67,22 +67,20 @@ export const NAV_ITEMS: NavItem[] = [
     ]
   },
   {
-    label: 'Start Investing',
+    label: 'hero.cta.startInvesting',
     href: '/key-sectors',
     children: [
-      { label: 'Energy', href: '/key-sectors' },
-      { label: 'Technology', href: '/key-sectors' },
-      { label: 'Private Equity', href: '/key-sectors' },
-      { label: 'Trade', href: '/key-sectors' },
-      { label: 'Investments', href: '/key-sectors' },
-      { label: 'Tourism & Hospitality', href: '/key-sectors' },
-      { label: 'Education', href: '/key-sectors' },
-      { label: 'Logistics', href: '/key-sectors' },
-      { label: 'Real Estate', href: '/key-sectors' }
+      { label: 'services.energy.title', href: '/key-sectors' },
+      { label: 'services.items.ict', href: '/key-sectors' },
+      { label: 'services.items.manufacturing', href: '/key-sectors' },
+      { label: 'services.items.agriculture', href: '/key-sectors' },
+      { label: 'services.tourism.title', href: '/key-sectors' },
+      { label: 'services.items.education', href: '/key-sectors' },
+      { label: 'services.logistics.title', href: '/key-sectors' }
     ]
   },
   {
-    label: 'Resources & Tools',
+    label: 'resources.heroSubtitle',
     href: '/resources',
   },
   {
@@ -94,42 +92,34 @@ export const NAV_ITEMS: NavItem[] = [
 export const WHY_INVEST_CARDS = [
   {
     id: 1,
-    title: 'Transformational Vision, Young Nation',
-    description: "Majority of Oman's Population under 35, digitally native, globally connected",
+    title: 'trust.pillars.connectivity.title',
+    description: "trust.pillars.connectivity.desc",
     stat: '70%',
     icon: 'Users',
     image: '/images/why-invest/young-nation.png'
   },
   {
     id: 2,
-    title: 'A Trusted and Stable Destination',
-    description: 'Recognized as #1 in FDI Destination in MENA',
+    title: 'trust.pillars.economy.title',
+    description: 'trust.pillars.economy.desc',
     stat: '#1',
     icon: 'ShieldCheck',
     image: '/images/why-invest/trusted-stable.png'
   },
   {
     id: 3,
-    title: 'World Class Services and Infrastructure',
-    description: 'Global Excellence in Maritime, Education, Healthcare, and Logistics',
+    title: 'trust.pillars.business.title',
+    description: 'trust.pillars.business.desc',
     stat: 'Top 10',
     icon: 'Globe2',
     image: '/images/why-invest/world-class.png'
   },
   {
     id: 4,
-    title: 'State-of-the-Art Digital Infrastructure',
-    description: 'Ranked Globally #2 in Digital Government Maturity Index (DGOI)',
+    title: 'trust.pillars.lifestyle.title',
+    description: 'trust.pillars.lifestyle.desc',
     stat: '#2',
     icon: 'Cpu',
     image: '/images/why-invest/digital-infra.png'
-  },
-  {
-    id: 5,
-    title: 'Large Scale Transformational Investments',
-    description: 'USD 3T+ in investable opportunities across sectors',
-    stat: '$3T+',
-    icon: 'TrendingUp',
-    image: '/images/why-invest/large-investments.png'
   }
 ];

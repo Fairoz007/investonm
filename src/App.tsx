@@ -37,6 +37,7 @@ const SEO = () => {
   const { lang } = useParams();
   const location = useLocation();
   const baseUrl = window.location.origin;
+  const { t } = useTranslation();
 
   // Get current path without lang prefix
   const pathParts = location.pathname.split('/');
@@ -44,6 +45,8 @@ const SEO = () => {
 
   return (
     <Helmet>
+      <title>{t('common.siteTitle')}</title>
+      <meta name="description" content={t('footer.description')} />
       <html lang={lang || 'en'} dir={lang === 'ar' || lang === 'fa' ? 'rtl' : 'ltr'} />
       {LANGUAGES.map((l) => (
         <link

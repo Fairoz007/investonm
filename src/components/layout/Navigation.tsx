@@ -8,12 +8,12 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/co
 import { useTranslation } from "react-i18next";
 
 const LANGUAGES = [
-  { name: 'English', native: 'English', code: 'en' },
-  { name: 'Arabic', native: 'العربية', code: 'ar' },
-  { name: 'Russian', native: 'Русский', code: 'ru' },
-  { name: 'Chinese', native: '中文', code: 'zh' },
-  { name: 'Persian', native: 'فارسی', code: 'fa' },
-  { name: 'Turkish', native: 'Türkçe', code: 'tr' }
+  { name: 'English', native: 'English', code: 'en', full: 'English — EN' },
+  { name: 'Arabic', native: 'العربية', code: 'ar', full: 'العربية — AR' },
+  { name: 'Russian', native: 'Русский', code: 'ru', full: 'Русский — RU' },
+  { name: 'Chinese', native: '中文', code: 'zh', full: '中文 — ZH' },
+  { name: 'Persian', native: 'فارسی', code: 'fa', full: 'فارسی — FA' },
+  { name: 'Turkish', native: 'Türkçe', code: 'tr', full: 'Türkçe — TR' }
 ];
 
 const discoverMenuItems = [
@@ -50,11 +50,17 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
   const activeChild = activeChildIndex !== null && item.children ? item.children[activeChildIndex] : null;
   const isDiscoverOman = item.label === 'DISCOVER OMAN';
 
-  const prettyLabel = (label: string) =>
-    label
+  const prettyLabel = (label: string) => {
+    // If it's a translation key or we're not in English, return as is
+    if (label.includes('.') || lang !== 'en') return t(label);
+    
+    return t(label)
       .toLowerCase()
       .replace(/\b\w/g, (char) => char.toUpperCase())
       .replace('Us', 'US');
+  };
+
+  const isRtl = lang === 'ar' || lang === 'fa';
 
   return (
     <div
@@ -64,8 +70,8 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
     >
       <button className={`font-sans flex items-center gap-1.5 py-6 text-[15px] font-normal tracking-wide whitespace-nowrap transition-colors relative cursor-pointer ${isOpen ? 'text-white' : 'text-[#A7B0C3] hover:text-white'
         }`}>
-        {prettyLabel(t(item.label))}
-        <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : 'opacity-70'} ml-0.5`} />
+        {prettyLabel(item.label)}
+        <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : 'opacity-70'} ${isRtl ? 'mr-0.5' : 'ml-0.5'}`} />
       </button>
 
       <AnimatePresence>
@@ -75,12 +81,35 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className={`absolute top-[100%] z-[60] bg-[#0A0F1E]/80 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5),auto_auto_30px_rgba(139,92,246,0.15)] rounded-2xl overflow-hidden ${isDiscoverOman ? 'left-0 w-[260px]' : hasSidebar ? 'left-0 w-[600px] p-6' : 'left-0 w-[220px] p-4'
+            className={`absolute top-[100%] z-[60] bg-[#0A0F1E]/80 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5),auto_auto_30px_rgba(139,92,246,0.15)] rounded-2xl overflow-hidden ${isDiscoverOman ? (isRtl ? 'right-0' : 'left-0') + ' w-[260px]' : hasSidebar ? (isRtl ? 'right-0' : 'left-0') + ' w-[600px] p-6' : (isRtl ? 'right-0' : 'left-0') + ' w-[220px] p-4'
               }`}
           >
             {isDiscoverOman ? (
               <div className="flex flex-col py-4 px-2">
-                {discoverMenuItems.map((group, groupIdx) => (
+                {[
+                  {
+                    category: t('nav.whyOman'),
+                    items: [
+                      { label: t('nav.overview'), href: '/about-oman' },
+                      { label: t('nav.keyBenefits'), href: '/key-sectors' },
+                    ]
+                  },
+                  {
+                    category: t('nav.sectors'),
+                    items: [
+                      { label: t('nav.tourism'), href: '/key-sectors' },
+                      { label: t('nav.logistics'), href: '/key-sectors' },
+                      { label: t('nav.energy'), href: '/key-sectors' },
+                    ]
+                  },
+                  {
+                    category: t('nav.opportunities'),
+                    items: [
+                      { label: t('nav.activeProjects'), href: '/about-oman' },
+                      { label: t('nav.investmentZones'), href: '/key-sectors' },
+                    ]
+                  }
+                ].map((group, groupIdx) => (
                   <div key={groupIdx} className={`flex flex-col ${groupIdx !== 0 ? 'mt-4 pt-4 border-t border-white/5' : ''}`}>
                     <span className="text-[11px] font-medium tracking-widest text-white/50 px-4 mb-2 uppercase">{group.category}</span>
                     {group.items.map((menuItem, itemIdx) => (
@@ -89,8 +118,8 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                         to={`/${lang}${menuItem.href}`}
                         className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[14px] text-[#D1D5DB] hover:text-white hover:bg-white/5 transition-all group"
                       >
-                        <span className="relative z-10 transition-transform group-hover:translate-x-1">{menuItem.label}</span>
-                        <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#3B82F6]" />
+                        <span className={`relative z-10 transition-transform ${isRtl ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}>{menuItem.label}</span>
+                        <ChevronRight className={`w-3.5 h-3.5 opacity-0 transition-all text-[#3B82F6] ${isRtl ? 'rotate-180 translate-x-2 group-hover:translate-x-0 group-hover:opacity-100' : '-translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
                       </Link>
                     ))}
                   </div>
@@ -99,7 +128,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
             ) : hasSidebar ? (
               <div className="flex w-full h-full gap-6">
                 {/* Main list */}
-                <div className="flex flex-col gap-1 w-1/3 border-r border-white/10 pr-6">
+                <div className={`flex flex-col gap-1 w-1/3 ${isRtl ? 'border-l pl-6' : 'border-r pr-6'} border-white/10`}>
                   <h2 className="text-[#3B82F6] text-[11px] font-semibold tracking-widest uppercase mb-4 px-2">{t(item.label)}</h2>
                   {item.children?.map((child, index) => (
                     <Link
@@ -110,19 +139,19 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
                         }`}
                     >
                       <span className="text-[13px] font-medium">{t(child.label)}</span>
-                      {child.hasSubmenu && <ChevronRight className={`w-3.5 h-3.5 transition-colors ${activeChildIndex === index ? 'text-white' : 'opacity-50 group-hover:opacity-100'}`} />}
+                      {child.hasSubmenu && <ChevronRight className={`w-3.5 h-3.5 transition-colors ${isRtl ? 'rotate-180' : ''} ${activeChildIndex === index ? 'text-white' : 'opacity-50 group-hover:opacity-100'}`} />}
                     </Link>
                   ))}
                 </div>
                 {/* Sidebar */}
-                <div className="w-2/3 pl-2">
+                <div className={`w-2/3 ${isRtl ? 'pr-2' : 'pl-2'}`}>
                   <AnimatePresence mode="wait">
                     {activeChild?.hasSubmenu && activeChild.submenu && (
                       <motion.div
                         key={activeChild.label}
-                        initial={{ opacity: 0, x: 10 }}
+                        initial={{ opacity: 0, x: isRtl ? -10 : 10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -10 }}
+                        exit={{ opacity: 0, x: isRtl ? 10 : -10 }}
                         transition={{ duration: 0.2 }}
                         className="h-full"
                       >
@@ -180,6 +209,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [expandedChildIndex, setExpandedChildIndex] = useState<number | null>(null);
   const { t } = useTranslation();
+  const isRtl = lang === 'ar' || lang === 'fa';
 
   if (!item.children) {
     return (
@@ -212,7 +242,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pb-4 pl-4 space-y-2">
+            <div className={`pb-4 ${isRtl ? 'pr-4' : 'pl-4'} space-y-2`}>
               {item.children.map((child, index) => (
                 <div key={index}>
                   {child.hasSubmenu && child.submenu ? (
@@ -233,7 +263,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-4 py-2 space-y-4 border-l border-white/10 ml-2 mt-1">
+                            <div className={`${isRtl ? 'pr-4 border-r' : 'pl-4 border-l'} py-2 space-y-4 border-white/10 ${isRtl ? 'mr-2' : 'ml-2'} mt-1`}>
                               {child.submenu.columns.map((col, idx) => (
                                 <div key={idx} className="space-y-2">
                                   {col.title && (
@@ -256,7 +286,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                   ) : (
                     <Link
                       to={`/${lang}${child.href}`}
-                      className="block py-3 text-[14px] font-medium text-[#A7B0C3] hover:text-white transition-colors px-4 border-l border-transparent hover:border-[#3B82F6]"
+                      className={`block py-3 text-[14px] font-medium text-[#A7B0C3] hover:text-white transition-colors px-4 border-transparent hover:border-[#3B82F6] ${isRtl ? 'border-r' : 'border-l'}`}
                     >
                       {t(child.label)}
                     </Link>
@@ -299,11 +329,15 @@ export const Navigation = () => {
   };
 
   const displayLang = currentLang || 'en';
-  const prettyLabel = (label: string) =>
-    label
+  const prettyLabel = (label: string) => {
+    if (label.includes('.') || displayLang !== 'en') return t(label);
+    return t(label)
       .toLowerCase()
       .replace(/\b\w/g, (char) => char.toUpperCase())
       .replace('Us', 'US');
+  };
+
+  const isRtl = displayLang === 'ar' || displayLang === 'fa';
 
   return (
     <>
@@ -316,7 +350,7 @@ export const Navigation = () => {
         <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10">
           <nav className="flex items-center h-[80px] w-full justify-between">
             {/* Logo */}
-            <div className="flex shrink-0 items-center justify-start min-w-[200px]">
+            <div className={`flex shrink-0 items-center min-w-[200px] ${isRtl ? 'justify-end' : 'justify-start'}`}>
               <Link to={`/${displayLang}`} className="flex items-center justify-center transition-opacity hover:opacity-90">
                 <img src="/images/Logo-01.png" alt="Shomoukh" className="h-10 w-auto object-contain brightness-0 invert" />
               </Link>
@@ -333,7 +367,7 @@ export const Navigation = () => {
                     to={`/${displayLang}${item.href}`}
                     className="flex items-center h-full text-[15px] font-normal text-[#A7B0C3] hover:text-white transition-all relative group tracking-wide"
                   >
-                    {prettyLabel(t(item.label))}
+                    {prettyLabel(item.label)}
                     <span className="absolute bottom-6 left-0 w-0 h-[2px] bg-[#3B82F6] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#3B82F6]" />
                   </Link>
                 )
@@ -341,37 +375,59 @@ export const Navigation = () => {
             </div>
 
             {/* Right Side Actions */}
-            <div className="flex shrink-0 items-center justify-end gap-6 min-w-[200px]">
+            <div className={`flex shrink-0 items-center gap-6 min-w-[200px] ${isRtl ? 'justify-start' : 'justify-end'}`}>
               {/* Language Selector */}
               <div
-                className="hidden md:flex relative items-center h-full"
+                className="hidden md:flex relative items-center h-full group/langwrapper"
                 onMouseEnter={() => setIsLangMenuOpen(true)}
                 onMouseLeave={() => setIsLangMenuOpen(false)}
               >
-                <button className={`flex items-center gap-1.5 text-[14px] font-normal h-full transition-colors cursor-pointer ${isLangMenuOpen ? 'text-white' : 'text-[#A7B0C3] hover:text-white'
-                  }`}>
-                  <span>{LANGUAGES.find(l => l.code === displayLang)?.code?.toUpperCase() || 'EN'}</span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 opacity-70 ${isLangMenuOpen ? 'rotate-180 text-white' : ''}`} />
+                <button 
+                  className={`flex items-center gap-2 text-[13px] font-medium h-fit py-2 px-3 rounded-full border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 ${isLangMenuOpen ? 'text-white border-white/30' : 'text-[#A7B0C3]'} `}
+                >
+                  <Globe className={`w-3.5 h-3.5 transition-transform duration-500 ${isLangMenuOpen ? 'rotate-180 text-blue-400' : 'text-[#A7B0C3]'}`} />
+                  <span className="tracking-widest uppercase">{LANGUAGES.find(l => l.code === displayLang)?.code || 'EN'}</span>
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 opacity-70 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
+                
                 <AnimatePresence>
                   {isLangMenuOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute top-[80px] right-0 w-36 z-50 pt-2"
+                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 10, scale: 1 }}
+                      exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                      transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+                      className={`absolute top-[100%] ${isRtl ? 'left-0' : 'right-0'} w-48 z-50 pt-2`}
                     >
-                      <div className="bg-[#0A0F1E]/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-2xl overflow-hidden flex flex-col p-2">
+                      <div className="bg-[#050816]/90 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_20px_rgba(59,130,246,0.1)] rounded-2xl overflow-hidden flex flex-col p-2">
+                        <div className="px-3 py-2 mb-1 border-b border-white/5">
+                          <span className="text-[10px] font-semibold text-white/30 uppercase tracking-[2px]">{t('nav.selectLanguage')}</span>
+                        </div>
                         {LANGUAGES.map((lang) => (
                           <button
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
-                            className={`flex justify-between items-center w-full text-left px-4 py-2.5 text-[13px] rounded-lg transition-all duration-200 group/lang ${displayLang === lang.code ? 'text-white bg-white/10' : 'text-[#A7B0C3] hover:text-white hover:bg-white/5'
-                              }`}
+                            className={`flex justify-between items-center w-full text-left px-3 py-2.5 text-[13px] rounded-xl transition-all duration-300 group/item relative overflow-hidden ${
+                              displayLang === lang.code 
+                                ? 'text-white bg-blue-600/20' 
+                                : 'text-[#A7B0C3] hover:text-white hover:bg-white/5'
+                            }`}
                           >
-                            <span className="font-medium tracking-wide">{lang.native}</span>
-                            <span className="text-[10px] opacity-40 group-hover/lang:opacity-100 font-mono">{lang.code.toUpperCase()}</span>
+                            <span className="font-medium tracking-wide z-10">{t(`languages.${lang.code}`)} — {lang.code.toUpperCase()}</span>
+                            <div className="flex items-center gap-2 z-10">
+                              <span className={`text-[10px] uppercase font-mono transition-opacity duration-300 ${displayLang === lang.code ? 'opacity-100 text-blue-400' : 'opacity-30 group-hover/item:opacity-80'}`}>
+                                {lang.code}
+                              </span>
+                              {displayLang === lang.code && (
+                                <motion.div 
+                                  layoutId="activeLang"
+                                  className="w-1 h-1 rounded-full bg-blue-400"
+                                />
+                              )}
+                            </div>
+                            {displayLang === lang.code && (
+                              <div className="absolute inset-0 bg-blue-500/5 blur-xl pointer-events-none" />
+                            )}
                           </button>
                         ))}
                       </div>
@@ -394,11 +450,11 @@ export const Navigation = () => {
                     </button>
                   </SheetTrigger>
                   <SheetContent
-                    side="right"
+                    side={isRtl ? "left" : "right"}
                     className="w-full sm:w-[400px] bg-[#0A0F1E]/95 backdrop-blur-2xl border-l border-white/10 p-0 z-[1100]"
                   >
                     <div className="flex flex-col h-full mt-10">
-                      <SheetHeader className="p-6 border-b border-white/10 flex-row items-center justify-between">
+                      <SheetHeader className={`p-6 border-b border-white/10 flex-row items-center justify-between ${isRtl ? 'flex-row-reverse' : ''}`}>
                         <SheetTitle className="sr-only">Menu</SheetTitle>
                         <img src="/images/Logo-01.png" alt="Shomoukh" className="h-8 w-auto object-contain brightness-0 invert" />
                       </SheetHeader>
@@ -413,33 +469,39 @@ export const Navigation = () => {
 
                       <div className="p-6 border-t border-white/10 space-y-4">
 
-                        <div className="flex flex-col w-full pb-4">
+                        <div className="flex flex-col w-full pb-4 px-2">
                           <button
                             onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
-                            className="flex items-center justify-center gap-2 w-full py-3 text-white transition-colors font-medium border border-white/20 rounded-full bg-white/5"
+                            className={`flex items-center justify-between gap-2 w-full py-4 px-6 text-white transition-all duration-300 font-medium border border-white/10 rounded-2xl bg-white/5 ${isMobileLangOpen ? 'border-blue-500/50 bg-blue-500/10' : ''}`}
                           >
-                            <Globe className="w-4 h-4 text-white/70" />
-                            <span>{LANGUAGES.find(l => l.code === displayLang)?.native || 'English'}</span>
-                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180' : 'text-white/70'}`} />
+                            <div className="flex items-center gap-3">
+                              <Globe className={`w-4 h-4 ${isMobileLangOpen ? 'text-blue-400' : 'text-white/70'}`} />
+                              <span className="text-[15px]">{t(`languages.${displayLang}`)}</span>
+                            </div>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileLangOpen ? 'rotate-180 text-blue-400' : 'text-white/70'}`} />
                           </button>
                           <AnimatePresence>
                             {isMobileLangOpen && (
                               <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden bg-[#1E293B]/40 rounded-2xl mt-3"
+                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                animate={{ height: 'auto', opacity: 1, marginTop: 12 }}
+                                exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                                transition={{ duration: 0.3, ease: "circOut" }}
+                                className="overflow-hidden"
                               >
-                                <div className="flex flex-col py-2 border border-white/10 rounded-2xl">
+                                <div className="grid grid-cols-2 gap-2 p-2 bg-white/5 border border-white/10 rounded-2xl">
                                   {LANGUAGES.map((lang) => (
                                     <button
                                       key={lang.code}
                                       onClick={() => handleLanguageChange(lang.code)}
-                                      className={`flex justify-center items-center gap-3 w-full text-center py-3 text-[14px] transition-colors ${displayLang === lang.code ? 'text-white bg-white/10' : 'text-[#A7B0C3] hover:text-white hover:bg-white/5'
-                                        }`}
+                                      className={`flex flex-col items-center justify-center gap-1 w-full py-3 rounded-xl transition-all duration-300 ${
+                                        displayLang === lang.code 
+                                          ? 'text-white bg-blue-600/40 border border-blue-400/30' 
+                                          : 'text-[#A7B0C3] hover:text-white bg-white/5 border border-transparent'
+                                      }`}
                                     >
-                                      <span className="font-medium">{lang.native}</span>
+                                      <span className="text-[14px] font-medium">{t(`languages.${lang.code}`)} — {lang.code.toUpperCase()}</span>
+                                      <span className="text-[10px] opacity-50 uppercase font-mono">{lang.code}</span>
                                     </button>
                                   ))}
                                 </div>

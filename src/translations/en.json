@@ -1,4 +1,12 @@
 {
+  "languages": {
+    "en": "English",
+    "ar": "Arabic",
+    "ru": "Russian",
+    "zh": "Chinese",
+    "fa": "Persian",
+    "tr": "Turkish"
+  },
   "nav": {
     "aboutUs": "About Us",
     "ourStory": "Our Story",
@@ -18,7 +26,11 @@
     "login": "Login",
     "investorLogin": "Investor Login",
     "explore": "Explore",
-    "languageSelection": "Language Selection"
+    "languageSelection": "Language Selection",
+    "opportunities": "Opportunities",
+    "activeProjects": "Active Projects",
+    "investmentZones": "Investment Zones",
+    "selectLanguage": "Select Language"
   },
   "hero": {
     "slide1": {
@@ -287,13 +299,15 @@
     "addressLine1": "PO Box: 1756 | PC: 111",
     "addressLine2": "Airport Heights, Muscat",
     "addressLine3": "The Sultanate of Oman",
-    "rights": "© 2026 Shomoukh Investment. All Rights Reserved.",
+    "rights": "All Rights Reserved.",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "siteMap": "Site Map",
     "text": {
       "11": "Who We Are",
       "12": "Contact Us",
       "14": "Strategic Sectors",
       "15": "Why Oman",
-      "16": "All Rights Reserved.",
       "17": "Resources",
       "19": "Company",
       "x1": "Key Sectors",
