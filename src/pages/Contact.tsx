@@ -10,7 +10,7 @@ export default function Contact() {
   const currentLang = lang || 'en';
 
   return (
-    <div className="bg-dark text-white">
+    <div className="bg-transparent text-white">
       <section className="relative min-h-screen flex items-start pt-28 sm:pt-32 lg:pt-40 pb-16 lg:pb-24 overflow-hidden">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20 items-start">
@@ -66,7 +66,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-dark-card border border-white/5 p-5 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[40px] relative overflow-hidden group"
+            className="bg-white/[0.01] border border-white/5 p-5 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[40px] relative overflow-hidden group backdrop-blur-xl shadow-2xl"
           >
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-primary/10" />

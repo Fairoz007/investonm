@@ -71,12 +71,6 @@ export const WhyOmanSection = () => {
 
   return (
     <section id="why-oman" className="relative overflow-hidden py-24 md:py-28">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.10),transparent_45%),radial-gradient(circle_at_80%_15%,rgba(244,114,182,0.10),transparent_42%),radial-gradient(circle_at_50%_85%,rgba(59,130,246,0.10),transparent_40%)]" />
-        <div className="absolute left-[14%] top-10 h-64 w-64 rounded-full bg-primary/15 blur-[130px]" />
-        <div className="absolute right-[16%] top-[28%] h-60 w-60 rounded-full bg-violet-500/15 blur-[130px]" />
-        <div className="absolute bottom-0 left-1/2 h-56 w-[28rem] -translate-x-1/2 rounded-full bg-sky-500/15 blur-[130px]" />
-      </div>
 
       <div className="container-custom relative z-10 max-w-[1200px]">
         <div className="mx-auto max-w-4xl text-center">
@@ -94,7 +88,7 @@ export const WhyOmanSection = () => {
             return (
               <article
                 key={card.id}
-                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b1020]/80 p-8 shadow-[0_20px_44px_rgba(2,6,23,0.55)] backdrop-blur-md before:absolute before:inset-x-8 before:bottom-0 before:h-[2px] before:bg-gradient-to-r ${card.glowClass}`}
+                className={`group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-8 shadow-[0_20px_44px_rgba(2,6,23,0.3)] backdrop-blur-md before:absolute before:inset-x-8 before:bottom-0 before:h-[2px] before:bg-gradient-to-r ${card.glowClass}`}
               >
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_92%,rgba(56,189,248,0.08),transparent_40%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.06),transparent_35%)]" />
                 <div className="flex items-start gap-3">
@@ -123,7 +117,7 @@ export const WhyOmanSection = () => {
         <div className="mt-12 flex justify-center">
           <Link
             to={`/${displayLang}/about-oman`}
-            className="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-white/15 bg-[#10172a]/85 px-10 py-3 text-xl font-medium text-foreground shadow-[0_16px_40px_rgba(37,99,235,0.35)] backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-[#14203a]"
+            className="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-white/10 bg-white/5 px-10 py-3 text-xl font-medium text-foreground shadow-[0_16px_40px_rgba(37,99,235,0.2)] backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-white/10"
           >
             {t('aboutOman.exploreAdvantages')} <ArrowRight className="ml-3 h-5 w-5" />
           </Link>

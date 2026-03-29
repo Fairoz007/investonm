@@ -12,6 +12,8 @@ import Contact from '@/pages/Contact';
 import Resources from '@/pages/Resources';
 import SignIn from '@/pages/SignIn';
 import ForgotPassword from '@/pages/ForgotPassword';
+import TermsOfService from '@/pages/TermsOfService';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
 import Dashboards from '@/pages/knowledge/Dashboards';
 import Reports from '@/pages/knowledge/Reports';
 import Events from '@/pages/knowledge/Events';
@@ -136,6 +138,8 @@ function App() {
               <Route path="resources" element={<Resources />} />
               <Route path="signin" element={<SignIn />} />
               <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="terms" element={<TermsOfService />} />
+              <Route path="privacy" element={<PrivacyPolicy />} />
               <Route path="dashboards" element={<Dashboards />} />
               <Route path="reports" element={<Reports />} />
               <Route path="events" element={<Events />} />

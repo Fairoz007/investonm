@@ -197,7 +197,7 @@ export const ThrivingSectors = () => {
   }, [activeIdx]); // Reset timer when activeIdx changes manually (if applicable)
 
   return (
-    <section className="py-16 md:py-24 overflow-hidden relative bg-muted/50 border-t border-border">
+    <section className="py-16 md:py-24 overflow-hidden relative">
       <div className="container-custom relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
@@ -234,7 +234,7 @@ export const ThrivingSectors = () => {
         </div>
 
         {/* Detailed Info Section */}
-        <div className="bg-card rounded-[2rem] border border-border shadow-sm overflow-hidden flex flex-col lg:flex-row">
+        <div className="bg-white/[0.01] rounded-[2rem] border border-white/5 shadow-2xl backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row">
           {/* Image Side */}
           <div className="w-full lg:w-2/5 aspect-[4/3] lg:aspect-auto relative bg-muted">
             <img

@@ -100,7 +100,7 @@ export const LeadershipSection = () => {
 
                     {/* Right Side: Image */}
                     <motion.div variants={fadeInUp} className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end lg:pt-12 order-first lg:order-last">
-                        <div className="relative group w-full max-w-[450px]">
+                        <div className="relative group w-48 sm:w-full max-w-[450px]">
                             <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-white/[0.15]">
                                 {chairman.photo ? (
                                     <img

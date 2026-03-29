@@ -9,7 +9,7 @@ export const ResearchDataCTA = () => {
   const displayLang = lang || 'en';
 
   return (
-    <section className="py-20 lg:py-24 overflow-hidden relative bg-transparent border-t border-white/[0.03]">
+    <section className="py-20 lg:py-24 overflow-hidden relative bg-transparent">
       <div className="container-custom relative z-10">
         <ScrollReveal>
           <div className="glass-card-premium rounded-[32px] sm:rounded-[48px] p-8 sm:p-12 lg:p-16 relative overflow-hidden group">

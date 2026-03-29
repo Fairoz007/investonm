@@ -9,11 +9,8 @@ export const AboutCompanySection = () => {
 
   return (
     <section className="relative overflow-hidden py-20 md:py-24">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_40%,rgba(14,165,233,0.14),transparent_48%),radial-gradient(circle_at_76%_24%,rgba(56,189,248,0.10),transparent_42%)]" />
-      </div>
       <div className="container-custom relative z-10">
-        <div className="mx-auto max-w-[1120px] rounded-[24px] border border-white/10 bg-[#070d1f]/85 p-6 shadow-[0_18px_50px_rgba(2,6,23,0.6)] backdrop-blur-xl md:p-9">
+        <div className="mx-auto max-w-[1120px] rounded-[24px] border border-white/5 bg-white/[0.01] p-6 shadow-[0_18px_50px_rgba(2,6,23,0.3)] backdrop-blur-xl md:p-9">
           <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-14">
           
           {/* Left side: Image/Visual */}

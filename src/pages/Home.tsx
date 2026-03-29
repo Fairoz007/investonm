@@ -13,23 +13,6 @@ export default function Home() {
 
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden bg-transparent text-foreground">
-      {/* Global Starry Background & Light Beam for Home Page */}
-      <div className="absolute inset-0 pointer-events-none -z-10 bg-[#050312]">
-        {/* CSS stars */}
-        <div
-          className="absolute inset-0 opacity-50 mix-blend-screen"
-          style={{
-            backgroundImage:
-              'radial-gradient(0.2px 0.2px at 10% 10%, white 100%, transparent), radial-gradient(0.5px 0.5px at 20% 40%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.8px 0.8px at 30% 80%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.2px 0.2px at 40% 20%, white 100%, transparent), radial-gradient(0.5px 0.5px at 50% 60%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.8px 0.8px at 60% 10%, rgba(255,255,255,0.8) 100%, transparent), radial-gradient(0.2px 0.2px at 70% 50%, white 100%, transparent), radial-gradient(0.5px 0.5px at 80% 90%, rgba(255,255,255,0.7) 100%, transparent), radial-gradient(0.8px 0.8px at 90% 30%, rgba(255,255,255,0.9) 100%, transparent), radial-gradient(0.2px 0.2px at 95% 70%, white 100%, transparent)',
-            backgroundSize: '200px 200px',
-          }}
-        />
-
-        {/* Colorful space glows */}
-        <div className="absolute left-[15%] top-[25%] h-[400px] w-[600px] rounded-full bg-[#12224A]/40 blur-[130px]" />
-        <div className="absolute right-[10%] top-[15%] h-[500px] w-[500px] rounded-full bg-[#201538]/50 blur-[140px]" />
-        <div className="absolute -bottom-[10%] left-[30%] h-[400px] w-[500px] rounded-full bg-[#0E153D]/60 blur-[120px]" />
-      </div>
 
       {/* HERO SECTION */}
       <section className="relative flex flex-1 items-center w-full py-16 md:py-20">

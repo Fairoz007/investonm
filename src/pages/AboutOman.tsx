@@ -19,7 +19,7 @@ export default function AboutOman() {
   ];
 
   return (
-    <div className="bg-background text-foreground overflow-x-hidden">
+    <div className="bg-transparent text-foreground overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[75vh] lg:min-h-[80vh] flex items-center py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -62,7 +62,7 @@ export default function AboutOman() {
       </section>
 
       {/* Intro Stats */}
-      <section className="py-12 lg:py-20 border-y border-white/5 bg-background">
+      <section className="py-12 lg:py-20 border-y border-white/5 bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 text-center">
             {[
@@ -87,7 +87,7 @@ export default function AboutOman() {
       </section>
 
       {/* Strategic Advantages Grid */}
-      <section id="advantages" className="section-padding bg-background">
+      <section id="advantages" className="section-padding bg-transparent">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6">
@@ -179,7 +179,7 @@ export default function AboutOman() {
       </section>
 
       {/* Connectivity Stat - Premium */}
-      <section className="py-16 lg:py-24 bg-dark">
+      <section className="py-16 lg:py-24 bg-transparent">
         <div className="as-container-2">
           <div className="text-center max-w-3xl mx-auto mb-20 px-4">
              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-8">{t('aboutOman.connectivity.title', 'Unmatched Connectivity')}</h2>
@@ -209,7 +209,7 @@ export default function AboutOman() {
       </section>
 
       {/* Modern Call to Action */}
-      <section className="py-16 lg:py-24 relative overflow-hidden bg-dark-card/30">
+      <section className="py-16 lg:py-24 relative overflow-hidden bg-transparent">
         <div className="as-container-2 relative z-10 text-center">
           <div className="max-w-4xl mx-auto space-y-10 px-4">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight whitespace-pre-line">

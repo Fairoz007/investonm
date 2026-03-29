@@ -1,4 +1,11 @@
 {
+  "languages": {
+    "en": "İngilizce",
+    "ar": "Arapça",
+    "ru": "Rusça",
+    "fa": "Farsça",
+    "tr": "Türkçe"
+  },
   "nav": {
     "aboutUs": "Hakkımızda",
     "ourStory": "Hikayemiz",
@@ -12,283 +19,317 @@
     "logistics": "Lojistik",
     "energy": "Enerji",
     "resources": "Kaynaklar",
-    "investorIntelligence": "Yatırımcı İstihbaratı",
-    "marketReports": "Pazar Raporları",
-    "connect": "İletişim",
+    "investorIntelligence": "Yatırımcı Analitiği",
+    "marketReports": "Piyasa Raporları",
+    "connect": "İletişime Geçin",
     "login": "Giriş",
     "investorLogin": "Yatırımcı Girişi",
     "explore": "Keşfet",
-    "languageSelection": "Dil Seçimi"
+    "languageSelection": "Dil Seçimi",
+    "opportunities": "Fırsatlar",
+    "activeProjects": "Aktif Projeler",
+    "investmentZones": "Yatırım Bölgeleri",
+    "selectLanguage": "Dil Seçin"
   },
   "hero": {
     "slide1": {
-      "title": "Investing in\nWhat's Next.",
-      "description": "Private investment and strategic development across Oman and global markets."
+      "title": "Geleceğe\nYatırım Yapın",
+      "description": "Umman ve küresel piyasalarda özel yatırım ve stratejik kalkınma."
     },
     "slide2": {
-      "title": "Strategic\nDevelopment\nPlatform.",
-      "description": "Identifying and developing high-value opportunities in the Sultanate of Oman."
+      "title": "Stratejik\nKalkınma\nPlatformu",
+      "description": "Umman Sultanlığı'nda yüksek değerli fırsatların tespiti ve geliştirilmesi."
     },
     "cta": {
-      "startInvesting": "Start Investing",
-      "explore": "Explore Opportunities"
+      "startInvesting": "Yatırıma Başlayın",
+      "explore": "Fırsatları Keşfedin"
     },
-    "vision": "Oman Vision 2040"
+    "vision": "Umman Vizyonu 2040"
   },
   "common": {
-    "learnMore": "Learn More",
-    "viewAll": "View All",
-    "contact": "Contact Us",
-    "readMore": "Read More"
+    "learnMore": "Daha Fazla Bilgi",
+    "viewAll": "Tümünü Görüntüle",
+    "contact": "Bize Ulaşın",
+    "readMore": "Devamını Oku"
   },
   "ourStory": {
-    "subtitle": "Shomoukh Story",
-    "years": "18+ Years",
-    "excellence": "Investment Excellence",
-    "label": "WHO WE ARE",
-    "title": "Defining the Future of Strategic Investment in Oman.",
-    "intro1": "Shomoukh International Investment is a privately held investment company established in the Sultanate of Oman in 2006 by the Al Hashmi family.",
-    "intro2": "The firm operates as both an investment company and a strategic development platform focused on identifying and developing high-value opportunities.",
-    "missionTitle": "Our Mission",
-    "missionDesc": "To develop strategic investments that shape industries, strengthen economies, and create lasting value.",
-    "leadershipTitle": "Our Leadership",
-    "leadershipDesc": "Led by the Al Hashmi family and world-class experts.",
-    "cta": "Learn Our Story"
+    "subtitle": "Shomoukh'un Hikayesi",
+    "years": "18+ Yıl",
+    "excellence": "Yatırım Mükemmeliyeti",
+    "label": "BİZ KİMİZ",
+    "title": "Umman'da Stratejik Yatırımın Geleceğini Şekillendiriyoruz.",
+    "intro1": "Shomoukh International Investment, 2006 yılında Al Hashmi ailesi tarafından Umman Sultanlığı'nda kurulan özel bir yatırım şirketidir.",
+    "intro2": "Şirket, hem bir yatırım şirketi hem de yüksek değerli fırsatların tespiti ve geliştirilmesine odaklanan stratejik bir kalkınma platformu olarak faaliyet göstermektedir.",
+    "missionTitle": "Misyonumuz",
+    "missionDesc": "Sektörleri şekillendiren, ekonomileri güçlendiren ve kalıcı değer yaratan stratejik yatırımlar geliştirmek.",
+    "leadershipTitle": "Liderliğimiz",
+    "leadershipDesc": "Al Hashmi ailesi ve dünya standartlarında uzmanlar tarafından yönetilmektedir.",
+    "cta": "Hikayemizi Okuyun"
   },
   "services": {
-    "subtitle": "Investment Areas",
-    "label": "OUR SECTORS",
-    "title": "Excellence Across High-Value Growth Verticals.",
+    "subtitle": "Yatırım Alanları",
+    "label": "SEKTÖRLERIMIZ",
+    "title": "Yüksek Değerli Büyüme Sektörlerinde Mükemmellik.",
     "tourism": {
-      "title": "Tourism & Leisure",
-      "desc": "Developing iconic destinations and world-class hospitality across the Sultanate."
+      "title": "Turizm ve Eğlence",
+      "desc": "Sultanlık genelinde ikonik destinasyonlar ve dünya standartlarında konaklama tesisleri geliştiriyoruz."
     },
     "logistics": {
-      "title": "Logistics & Supply Chain",
-      "desc": "Strengthening Oman's position as a global logistical hub."
+      "title": "Lojistik ve Tedarik Zinciri",
+      "desc": "Umman'ın küresel bir lojistik merkezi olarak konumunu güçlendiriyoruz."
     },
     "energy": {
-      "title": "Energy & Sustainability",
-      "desc": "Investing in renewable energy and sustainable development."
+      "title": "Enerji ve Sürdürülebilirlik",
+      "desc": "Yenilenebilir enerji ve sürdürülebilir kalkınmaya yatırım yapıyoruz."
     },
     "labels": {
-      "thriving": "Thriving Sectors",
-      "incentives": "Exciting Incentives in Oman",
-      "exploreAll": "Explore All Sectors",
-      "description": "Explore the vibrant investment opportunities in Oman, spanning essential sectors like technology, renewable energy, logistics, and manufacturing."
+      "thriving": "Büyüyen Sektörler",
+      "incentives": "Umman'daki Cazip Teşvikler",
+      "exploreAll": "Tüm Sektörleri Keşfet",
+      "description": "Teknoloji, yenilenebilir enerji, lojistik ve imalat gibi temel sektörlerde Umman'ın dinamik yatırım fırsatlarını keşfedin."
     },
     "items": {
-      "healthcare": "Healthcare",
-      "tourism": "Tourism",
-      "ict": "ICT",
-      "mining": "Mining",
-      "manufacturing": "Manufacturing",
-      "renewableEnergy": "Renewable Energy",
-      "agriculture": "Agriculture",
-      "fisheries": "Fisheries",
-      "education": "Education",
-      "sport": "Sport"
+      "healthcare": "Sağlık",
+      "tourism": "Turizm",
+      "ict": "Bilgi ve İletişim Teknolojileri",
+      "mining": "Madencilik",
+      "manufacturing": "İmalat",
+      "renewableEnergy": "Yenilenebilir Enerji",
+      "agriculture": "Tarım",
+      "fisheries": "Balıkçılık",
+      "education": "Eğitim",
+      "sport": "Spor",
+      "circular-economy": "Döngüsel Ekonomi",
+      "petrochemical": "Petrokimya"
     }
   },
   "trust": {
-    "subtitle": "Why Oman?",
-    "title": "Oman offers a dynamic and strategic environment for investors seeking growth and stability.",
+    "subtitle": "Neden Umman?",
+    "title": "Umman, büyüme ve istikrar arayan yatırımcılara dinamik ve stratejik bir ortam sunmaktadır.",
     "pillars": {
       "connectivity": {
-        "title": "Global Connectivity",
-        "desc": "Strategic location bridging East and West with world-class infrastructure.",
-        "stat1": "of world population within 8h flight",
-        "stat2": "international trade agreements"
+        "title": "Küresel Bağlantısallık",
+        "desc": "Dünya standartlarında altyapıyla Doğu ve Batıyı birbirine bağlayan stratejik konum.",
+        "stat1": "dünya nüfusunun 8 saatlik uçuş mesafesinde",
+        "stat2": "uluslararası ticaret anlaşması"
       },
       "economy": {
-        "title": "Stable & Diversified Economy",
-        "desc": "Strong, robust economy with multi-sector growth opportunities.",
-        "stat1": "S&P Rating",
-        "stat2": "Investment to diversify"
+        "title": "İstikrarlı ve Çeşitlendirilmiş Ekonomi",
+        "desc": "Çok sektörlü büyüme fırsatlarına sahip güçlü ve sağlam bir ekonomi.",
+        "stat1": "S&P Notu",
+        "stat2": "Çeşitlendirme yatırımı"
       },
       "business": {
-        "title": "Business-Friendly Environment",
-        "desc": "Streamlined regulations and incentives designed to facilitate international operations.",
-        "stat1": "most efficient ports worldwide",
-        "stat2": "on personal income"
+        "title": "İş Dostu Ortam",
+        "desc": "Uluslararası operasyonları kolaylaştırmak için tasarlanmış basitleştirilmiş düzenlemeler ve teşvikler.",
+        "stat1": "dünyanın en verimli limanlarından",
+        "stat2": "kişisel gelir vergisi"
       },
       "lifestyle": {
-        "title": "High Quality of Life",
-        "desc": "Safe, modern lifestyle with natural beauty and world-class amenities.",
-        "stat1": "safest countries globally",
-        "stat2": "Gulf quality of life index rank"
+        "title": "Yüksek Yaşam Kalitesi",
+        "desc": "Doğal güzellikler ve dünya standartlarında olanaklarla güvenli ve modern bir yaşam tarzı.",
+        "stat1": "dünyanın en güvenli ülkelerinden",
+        "stat2": "Körfez yaşam kalitesi endeksi sıralaması"
       }
     }
   },
   "success": {
-    "subtitle": "Tourism",
-    "title": "A Key Driver of Economic Diversification.",
-    "description": "Oman's tourism sector offers world-class experiences from luxury coastal resorts to ancient heritage sites. The Sultanate is positioning itself as a premier destination for high-end, sustainable tourism.",
+    "subtitle": "Turizm",
+    "title": "Ekonomik Çeşitlendirmenin Temel İtici Gücü.",
+    "description": "Umman'ın turizm sektörü, lüks sahil tatil köylerinden antik miras alanlarına kadar dünya standartlarında deneyimler sunmaktadır. Sultanlık, üst düzey ve sürdürülebilir turizm için kendini önde gelen bir destinasyon olarak konumlandırmaktadır.",
     "stats": {
       "visitors": {
-        "title": "Visitors Revenue",
-        "sub": "Riyal Omani (RO)"
+        "title": "Ziyaretçi Geliri",
+        "sub": "Umman Riyali (RO)"
       },
       "employment": {
-        "title": "Employment",
-        "sub": "Jobs in tourism"
+        "title": "İstihdam",
+        "sub": "Turizmdeki iş pozisyonları"
       },
       "gdp": {
-        "title": "GDP Contribution",
-        "sub": "Of Oman's Total GDP"
+        "title": "GSYİH Katkısı",
+        "sub": "Umman GSYİH'sının yüzdesi"
       },
       "investment": {
-        "title": "Total Investment",
-        "sub": "Riyal Omani (RO)"
+        "title": "Toplam Yatırım",
+        "sub": "Umman Riyali (RO)"
       }
     }
   },
   "whoWeAre": {
-    "heroSubtitle": "Establishment 2006",
-    "heroTitle": "Architects of \nEconomic legacy.",
-    "heroDesc": "A premier private investment house dedicated to shaping Oman’s future through strategic development and global partnerships.",
-    "discoverMore": "Discover More",
-    "yearsOfGrowth": "Years of Growth",
+    "heroSubtitle": "Kuruluş 2006",
+    "heroTitle": "Ekonomik\nMirasın Mimarları.",
+    "heroDesc": "Stratejik kalkınma ve küresel ortaklıklar aracılığıyla Umman'ın geleceğini şekillendirmeye adanmış önde gelen özel bir yatırım evi.",
+    "discoverMore": "Daha Fazla Keşfet",
+    "yearsOfGrowth": "Yıllık Büyüme",
     "stats": {
-      "founded": "Founded",
-      "sectors": "Sectors",
-      "portfolio": "Investment Portfolio",
-      "global": "Global Presence"
+      "founded": "Kuruluş",
+      "sectors": "Sektörler",
+      "portfolio": "Yatırım Portföyü",
+      "global": "Küresel Varlık"
     },
-    "aboutSubtitle": "Our Foundation",
+    "aboutSubtitle": "Temelimiz",
     "aboutTitle": "Shomoukh International Investment",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To develop strategic investments that shape industries, strengthen economies, and create lasting value for our partners and the Sultanate."
+      "title": "Misyonumuz",
+      "desc": "Sektörleri şekillendiren, ekonomileri güçlendiren ve ortaklarımız ile Sultanlık için kalıcı değer yaratan stratejik yatırımlar geliştirmek."
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be a pioneering investment house that transforms opportunity into legacy, positioning Oman as a global hub for excellence."
+      "title": "Vizyonumuz",
+      "desc": "Fırsatı mirasa dönüştüren ve Umman'ı küresel bir mükemmellik merkezi olarak konumlandıran öncü bir yatırım evi olmak."
     }
   },
   "aboutOman": {
-    "heroSubtitle": "Sultanate of Oman",
-    "heroTitle": "A Strategic \nGlobal Gateway.",
-    "heroDesc": "The Sultanate of Oman offers a stable and attractive environment for long-term investment, connecting the world's fastest-growing markets.",
-    "exploreAdvantages": "Explore Advantages",
+    "heroSubtitle": "Umman Sultanlığı",
+    "heroTitle": "Stratejik Bir\nKüresel Geçit.",
+    "heroDesc": "Umman Sultanlığı, dünyanın en hızlı büyüyen piyasalarını birbirine bağlayarak uzun vadeli yatırım için istikrarlı ve cazip bir ortam sunmaktadır.",
+    "exploreAdvantages": "Avantajları Keşfet",
     "stats": {
-      "location": "Strategic Location",
-      "vision": "Oman Vision",
-      "freeZones": "Free Zones",
-      "market": "Market Access"
+      "location": "Stratejik Konum",
+      "vision": "Umman Vizyonu",
+      "freeZones": "Serbest Bölgeler",
+      "market": "Pazar Erişimi"
     },
     "whyInvest": {
-      "title": "Why Invest in Oman?",
-      "desc": "A unique combination of stability, infrastructure, and progressive policies designed to foster international business growth."
+      "title": "Neden Umman'a Yatırım Yapmalı?",
+      "desc": "Uluslararası iş büyümesini teşvik etmek için tasarlanmış instikrar, altyapı ve ilerici politikaların benzersiz bir kombinasyonu."
     }
   },
   "ourExperts": {
-    "heroSubtitle": "Shomoukh Excellence",
-    "heroTitle": "Our Experts",
-    "heroDesc": "Guided by a legacy of leadership and strategic foresight, our team drives long-term value and sustainable growth across the Sultanate and beyond.",
-    "leadership": "Leadership",
-    "readFullMessage": "Read Full Message",
-    "viewProfile": "View Profile",
-    "expertProfile": "Expert Profile",
-    "biography": "Biography",
+    "heroSubtitle": "Shomoukh Mükemmeliyeti",
+    "heroTitle": "Uzmanlarımız",
+    "heroDesc": "Liderlik mirası ve stratejik öngörüyle yönlendirilen ekibimiz, Sultanlık genelinde ve ötesinde uzun vadeli değer ve sürdürülebilir büyüme sağlamaktadır.",
+    "leadership": "Liderlik",
+    "readFullMessage": "Tam Mesajı Oku",
+    "viewProfile": "Profili Görüntüle",
+    "expertProfile": "Uzman Profili",
+    "biography": "Biyografi",
     "advisory": {
-      "title": "Strategic Advisory \n Inquiries",
-      "desc": "Connect with our leadership team for institutional partnerships, strategic investments, and market entry consultation.",
-      "button": "Connect with Our Team"
+      "title": "Stratejik Danışmanlık\nTalepleri",
+      "desc": "Kurumsal ortaklıklar, stratejik yatırımlar ve pazar giriş danışmanlığı için liderlik ekibimizle iletişime geçin.",
+      "button": "Ekibimizle İletişime Geçin"
     },
     "chairman": {
-      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
-      "role": "CHAIRMAN",
-      "messageTitle": "Chairman's Message",
-      "message": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+      "name": "Sayın Şeyh Salim Hamoud Said Al Hashmi",
+      "role": "YÖNETİM KURULU BAŞKANI",
+      "messageTitle": "Yönetim Kurulu Başkanının Mesajı",
+      "message": "Yüzyıllar boyunca Umman Sultanlığı, medeniyetler arasında bir köprü olarak durmuştur. Sahillerinden tüccarlar, akademisyenler ve gezginler, Asya, Afrika, Avrupa ve Amerika'nın büyük bölgelerini birbirine bağlayarak açıklık, diyalog ve barışçıl değişimin mirasını şekillendirmiştir.\n\nShomoukh International Investment, işte bu kalıcı ruh çerçevesinde kurulmuştur. Amacımız her zaman yatırımın yalnızca ekonomik ilerlemeye değil, aynı zamanda canlı toplulukların ve gelecek nesiller için sürdürülebilir fırsatların geliştirilmesine de katkıda bulunması gerektiği inancıyla yönlendirilmiştir.\n\nBugün, Hazreti Sultan Haysam bin Tarık Al Said'in vizyoner liderliği altında Sultanlık, ekonomik çeşitlendirmeyi, yeniliği ve küresel ortaklığı güçlendiren ileriye dönük bir gündem izlemeye devam etmektedir. Umman, dünyada coğrafi, tarihi ve kültürel açıdan benzersiz bir konuma sahiptir. Küresel ticaret yollarının kesişim noktasında yer alan ülke, işbirliği, yatırım ve sorumlu kalkınma merkezi olarak rolünü güçlendirmeye devam etmektedir.\n\nYatırımlarımız ve stratejik ortaklıklarımız aracılığıyla, yeniliği teşvik eden, sektörleri güçlendiren ve uzun vadeli refaha katkıda bulunan girişimler geliştirerek bu ulusal yolculuğu desteklemeyi amaçlıyoruz. Sınırlar ötesi ortaklıklar kurmaya ve işbirliği, ilerleme ve ortak refah değerlerini yansıtan fırsatlara yatırım yapmaya kararlıyız.\n\nGeleceğe baktığımızda hedefimiz açıktır: fırsatların genişlediği, toplulukların geliştiği ve Umman'ın kültürlerin, fikirlerin ve piyasaların buluştuğu bir yer olarak var olmaya devam ettiği bir dünyaya katkıda bulunmak."
     },
     "ceo": {
-      "name": "Sheikha Janat Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – CHIEF EXECUTIVE OFFICER",
-      "messageTitle": "Message from the Chief Executive Officer",
-      "message": "Our ambition is to develop strategic investment platforms that contribute to long-term economic growth and sustainable development. Today, our investment activities span more than 10 strategic sectors, including education, energy, manufacturing, natural resources, and international markets.\n\nWorking with global partners and institutions, we continue to expand our investment footprint across regional and international markets, supporting ventures that strengthen innovation, economic diversification, and sustainable industries.\n\nUnder the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said and guided by the aspirations of Oman Vision 2040, Oman is emerging as a competitive destination for international investment.\n\nOur long-term ambition is to build investment platforms that connect global capital with high-impact opportunities, positioning Oman as a gateway to regional markets and a hub for responsible and future-focused investment.",
-      "bio": "Sheikha Janat Al Hashmi is an Omani entrepreneur and strategic leader with experience spanning the energy, education, and investment sectors. She holds a Bachelor of Science in Geosciences with honors and a minor in Astronomy and Astrophysics from Pennsylvania State University. She began her professional career as a Geophysicist with Occidental Petroleum Corporation, where she developed expertise in energy exploration and resource management.\n\nAs Co-Founder and Chief Executive Officer of Shomoukh International Investment, she oversees strategic investment clusters across education, energy, manufacturing, mining and natural resources, international markets, and circular economy initiatives. Through these platforms, she leads ventures that support economic diversification, innovation, and sustainable development in alignment with Oman’s national priorities."
+      "name": "Şeyha Canat Selim Hamud Al Hashmi",
+      "role": "KURUCU ORTAK – İCRA KURULU BAŞKANI",
+      "messageTitle": "İcra Kurulu Başkanının Mesajı",
+      "message": "Hedefimiz, uzun vadeli ekonomik büyümeye ve sürdürülebilir kalkınmaya katkıda bulunan stratejik yatırım platformları geliştirmektir. Bugün yatırım faaliyetlerimiz eğitim, enerji, imalat, doğal kaynaklar ve uluslararası piyasalar dahil 10'dan fazla stratejik sektörü kapsamaktadır.\n\nKüresel ortaklar ve kurumlarla birlikte çalışarak bölgesel ve uluslararası piyasalardaki yatırım faaliyetlerimizi genişletmeye devam ediyoruz; yeniliği, ekonomik çeşitlendirmeyi ve sürdürülebilir sektörleri güçlendiren girişimleri destekliyoruz.\n\nHazreti Sultan Haysam bin Tarık Al Said'in vizyoner liderliği ve Umman Vizyonu 2040'ın hedeflerinin rehberliğinde Umman, uluslararası yatırım için rekabetçi bir destinasyon olarak öne çıkmaktadır.\n\nUzun vadeli hedefimiz, küresel sermayeyi yüksek etkili fırsatlarla buluşturan yatırım platformları inşa ederek Umman'ı bölgesel piyasalara açılan bir kapı ve sorumlu, geleceğe yönelik yatırımlar için bir merkez olarak konumlandırmaktır.",
+      "bio": "Şeyha Canat Al Hashmi, enerji, eğitim ve yatırım sektörlerinde deneyime sahip Ummanlı bir girişimci ve stratejik liderdir. Pennsylvania State Üniversitesi'nden onur derecesiyle Yer Bilimleri lisansı ve Astronomi ile Astrofizik yan dalı almıştır. Meslek hayatına Occidental Petroleum Corporation'da Jeofizikçi olarak başlamış; burada enerji araştırması ve kaynak yönetimi konusunda uzmanlık kazanmıştır.\n\nShomoukh International Investment'ın Kurucu Ortağı ve İcra Kurulu Başkanı olarak eğitim, enerji, imalat, madencilik ve doğal kaynaklar, uluslararası piyasalar ve döngüsel ekonomi girişimlerindeki stratejik yatırım kümelerini yönetmektedir. Bu platformlar aracılığıyla Umman'ın ulusal öncelikleriyle uyumlu ekonomik çeşitlendirmeyi, yeniliği ve sürdürülebilir kalkınmayı destekleyen girişimlere liderlik etmektedir."
     },
     "vp": {
-      "name": "Sheikh Julanda Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – VICE PRESIDENT",
-      "messageTitle": "Message from the Vice President",
-      "message": "Strategic investment plays a critical role in shaping the future of economies. At Shomoukh International Investment, we focus on developing partnerships that facilitate foreign direct investment and connect international capital with opportunities in the Sultanate of Oman. Our investment activities extend across multiple industries including energy, logistics, tourism, technology, manufacturing, agriculture, real estate, and private equity, supporting ventures designed to strengthen long-term economic diversification.\n\nThrough our global partnerships and investment platforms, we aim to expand access to regional and international markets, enabling investors to participate in emerging sectors and high-growth industries.\n\nOur objective is to contribute to the development of investment ecosystems that encourage innovation, sustainable growth, and long-term economic resilience.",
-      "bio": "Sheikh Julanda bin Salim Hamood Al Hashmi is an Omani investor and public policy advisor engaged in strategic investment and national economic development.\n\nAs Co-Founder of Shomoukh International Investment he works with international partners, institutions, and investors to advance strategic ventures and facilitate foreign direct investment into the Sultanate of Oman.\n\nHe oversees several strategic investment clusters across sectors including energy, real estate, logistics, tourism, information technology, manufacturing, agriculture and fisheries, strategic private equity investments, and circular economy and sustainable ventures. Through these platforms, he supports initiatives that strengthen economic diversification, investment development, and long-term sustainable growth.\n\nSheikh Julanda holds a Bachelor’s degree in International Affairs from The George Washington University and a Master’s degree in Government and Public Policy from Harvard University."
+      "name": "Şeyh Culanda Selim Hamud Al Hashmi",
+      "role": "KURUCU ORTAK – BAŞKAN YARDIMCISI",
+      "messageTitle": "Başkan Yardımcısının Mesajı",
+      "message": "Stratejik yatırım, ekonomilerin geleceğini şekillendirmede kritik bir rol oynamaktadır. Shomoukh International Investment olarak, yabancı doğrudan yatırımı kolaylaştıran ve uluslararası sermayeyi Umman Sultanlığı'ndaki fırsatlarla buluşturan ortaklıklar geliştirmeye odaklanıyoruz. Yatırım faaliyetlerimiz enerji, lojistik, turizm, teknoloji, imalat, tarım, gayrimenkul ve özel sermaye dahil çoklu sektörlere yayılmakta; uzun vadeli ekonomik çeşitlendirmeyi güçlendirmek için tasarlanmış girişimleri desteklemektedir.\n\nKüresel ortaklıklarımız ve yatırım platformlarımız aracılığıyla bölgesel ve uluslararası piyasalara erişimi genişletmeyi; yatırımcıların gelişen sektörlere ve yüksek büyüme potansiyelli endüstrilere katılımını sağlamayı hedefliyoruz.\n\nAmacımız, yeniliği, sürdürülebilir büyümeyi ve uzun vadeli ekonomik dayanıklılığı teşvik eden yatırım ekosistemlerinin geliştirilmesine katkıda bulunmaktır.",
+      "bio": "Şeyh Culanda bin Selim Hamud Al Hashmi, stratejik yatırım ve ulusal ekonomik kalkınma alanında faaliyet gösteren Ummanlı bir yatırımcı ve kamu politikası danışmanıdır.\n\nShomoukh International Investment'ın Kurucu Ortağı olarak, Umman Sultanlığı'na yabancı doğrudan yatırımı kolaylaştırmak ve stratejik girişimleri ilerletmek amacıyla uluslararası ortaklar, kurumlar ve yatırımcılarla çalışmaktadır.\n\nEnerji, gayrimenkul, lojistik, turizm, bilgi teknolojileri, imalat, tarım ve balıkçılık, stratejik özel sermaye yatırımları ile döngüsel ekonomi ve sürdürülebilir girişimler dahil çeşitli sektörlerdeki stratejik yatırım kümelerini denetlemektedir. Bu platformlar aracılığıyla ekonomik çeşitlendirmeyi, yatırım geliştirmeyi ve uzun vadeli sürdürülebilir büyümeyi güçlendiren girişimleri desteklemektedir.\n\nŞeyh Culanda, The George Washington University'den Uluslararası İlişkiler lisansına ve Harvard University'den Devlet ve Kamu Politikası yüksek lisansına sahiptir."
     },
     "md": {
-      "name": "Sheikha Jinan Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – MANAGING DIRECTOR",
-      "messageTitle": "Message from the Managing Director",
-      "message": "Our focus is to ensure that our investments generate meaningful long-term impact. Through our strategic investment platforms, we oversee initiatives designed to support sustainable development across sectors including energy, tourism, real estate, education, and responsible investment initiatives.\n\nOur approach emphasizes sustainable growth, innovation, and responsible capital deployment. By integrating sustainability principles across our investment strategy, we aim to support industries that contribute to economic development while creating lasting value for communities.\n\nAs Oman continues to strengthen its position within global markets under Oman Vision 2040, our goal is to support ventures that align with these national ambitions and expand the reach of Omani investment platforms into regional and international markets.",
-      "bio": "Sheikha Jinan Salim Hamood Al Hashmi is an Omani education leader and entrepreneur dedicated to advancing international education and strategic investment initiatives. She is the Co-Founder of Shomoukh International Investment and plays an active role in guiding its long-term investment strategy. She holds a Bachelor of Arts with honors in International Development and a minor in Business Administration from The George Washington University’s Elliott School of International Affairs, as well as an MBA in Global Management.\n\nHer professional experience includes work with the Embassy of Oman in Washington, the Ministry of Foreign Affairs, and investment promotion initiatives supporting Oman’s Vision 2040. She oversees strategic investment clusters focused on sustainability across sectors including energy, tourism, real estate, and education, ensuring long-term impact and responsible development."
+      "name": "Şeyha Cinan Selim Hamud Al Hashmi",
+      "role": "KURUCU ORTAK – GENEL MÜDÜR",
+      "messageTitle": "Genel Müdürün Mesajı",
+      "message": "Odak noktamız, yatırımlarımızın anlamlı uzun vadeli etki yaratmasını sağlamaktır. Stratejik yatırım platformlarımız aracılığıyla enerji, turizm, gayrimenkul, eğitim ve sorumlu yatırım girişimleri dahil sektörlerde sürdürülebilir kalkınmayı desteklemek için tasarlanmış girişimleri denetliyoruz.\n\nYaklaşımımız sürdürülebilir büyümeyi, yeniliği ve sorumlu sermaye kullanımını ön plana çıkarmaktadır. Sürdürülebilirlik ilkelerini yatırım stratejimize entegre ederek ekonomik kalkınmaya katkıda bulunan ve topluluklar için kalıcı değer yaratan sektörleri desteklemeyi amaçlıyoruz.\n\nUmman, Umman Vizyonu 2040 çerçevesinde küresel piyasalardaki konumunu güçlendirmeye devam ederken hedefimiz bu ulusal hedeflerle örtüşen ve Ummanlı yatırım platformlarının bölgesel ve uluslararası piyasalardaki erişimini genişleten girişimleri desteklemektir.",
+      "bio": "Şeyha Cinan Selim Hamud Al Hashmi, uluslararası eğitim ve stratejik yatırım girişimlerini geliştirmeye adanmış Ummanlı bir eğitim lideri ve girişimcidir. Shomoukh International Investment'ın Kurucu Ortağıdır ve uzun vadeli yatırım stratejisinin yönlendirilmesinde aktif rol oynamaktadır. The George Washington University Elliott School of International Affairs'ten onur derecesiyle Uluslararası Kalkınma lisansı ve İşletme Yönetimi yan dalı ile Küresel Yönetim MBA'i bulunmaktadır.\n\nMesleki deneyimi; Umman'ın Vashington Büyükelçiliği, Dışişleri Bakanlığı ve Umman'ın Vizyonu 2040'ı destekleyen yatırım teşvik girişimleriyle çalışmayı kapsamaktadır. Enerji, turizm, gayrimenkul ve eğitim sektörlerinde sürdürülebilirliğe odaklanan stratejik yatırım kümelerini denetlemekte; uzun vadeli etki ve sorumlu kalkınmayı güvence altına almaktadır."
     }
   },
   "contact": {
-    "heroTitle": "Connect with \n Shomoukh",
-    "heroSubtitle": "Global Reach, Local Impact",
-    "heroDesc": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
+    "heroTitle": "Shomoukh ile\nİletişime Geçin",
+    "heroSubtitle": "Küresel Erişim, Yerel Etki",
+    "heroDesc": "İster yatırım fırsatları ister stratejik ortaklıklar arıyor olun, ekibimiz birlikte nasıl büyüyebileceğimizi tartışmaya hazırdır.",
     "form": {
-      "title": "Send a Message",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "email": "Email Address",
-      "company": "Company",
-      "message": "Message",
-      "submit": "Submit Inquiry"
+      "title": "Mesaj Gönderin",
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "email": "E-posta Adresi",
+      "company": "Şirket",
+      "message": "Mesaj",
+      "submit": "Talebi Gönder"
     },
     "info": {
-      "address": "Address",
-      "muscat": "Muscat, Oman",
-      "phone": "Phone",
-      "email": "Email"
+      "address": "Adres",
+      "muscat": "Maskat, Umman",
+      "phone": "Telefon",
+      "email": "E-posta"
     }
   },
   "keySectors": {
-    "heroTitle": "Transforming \n Industries",
-    "heroSubtitle": "Strategic Sectors",
-    "heroDesc": "We invest in high-growth sectors that are critical to Oman's national development and global competitiveness."
+    "heroTitle": "Sektörleri\nDönüştürüyoruz",
+    "heroSubtitle": "Stratejik Sektörler",
+    "heroDesc": "Umman'ın ulusal kalkınması ve küresel rekabet gücü için kritik öneme sahip yüksek büyüme sektörlerine yatırım yapıyoruz."
   },
   "resources": {
-    "heroTitle": "Investor \n Resources",
-    "heroSubtitle": "Knowledge Hub",
-    "heroDesc": "Access key documents, reports, and insights into Oman's investment landscape and our portfolio performance."
+    "heroTitle": "Yatırımcı\nKaynakları",
+    "heroSubtitle": "Bilgi Merkezi",
+    "heroDesc": "Umman'ın yatırım ortamı ve portföy performansımıza ilişkin temel belgelere, raporlara ve analizlere erişin."
   },
   "signIn": {
-    "title": "Investor Portal",
-    "desc": "Access your personalized dashboard and portfolio reports.",
-    "email": "Email",
-    "password": "Password",
-    "button": "Sign In",
-    "forgot": "Forgot Password?",
-    "noAccount": "Don't have an account?",
-    "contactSupport": "Contact support"
+    "title": "Yatırımcı Portalı",
+    "desc": "Kişiselleştirilmiş kontrol panelinize ve portföy raporlarınıza erişin.",
+    "email": "E-posta",
+    "password": "Şifre",
+    "button": "Giriş Yap",
+    "forgot": "Şifrenizi mi unuttunuz?",
+    "noAccount": "Hesabınız yok mu?",
+    "contactSupport": "Destek ile iletişime geçin"
   },
   "contactCTA": {
-    "badge": "Connect",
-    "title": "Ready to connect with <span class=\"gradient-text\">our team</span>?",
-    "description": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
-    "button": "Contact Us",
+    "badge": "İletişim",
+    "title": "Ekibimizle <span class=\"gradient-text\">iletişime geçmeye</span> hazır mısınız?",
+    "description": "İster yatırım fırsatları ister stratejik ortaklıklar arıyor olun, ekibimiz birlikte nasıl büyüyebileceğimizi tartışmaya hazırdır.",
+    "button": "Bize Ulaşın",
     "card1": {
-      "title": "Strategic Advisory",
-      "description": "Tailored investment strategies and direct market entry consultation."
+      "title": "Stratejik Danışmanlık",
+      "description": "Kişiye özel yatırım stratejileri ve doğrudan pazar giriş danışmanlığı."
     },
     "card2": {
-      "title": "Institutional Support",
-      "description": "Direct access to government entities and world-class infrastructure."
+      "title": "Kurumsal Destek",
+      "description": "Devlet kuruluşlarına ve dünya standartlarında altyapıya doğrudan erişim."
     }
   },
   "footer": {
     "contact": "İletişim",
-    "directInquiry": "Doğrudan Sorgulama",
-    "address": "Adres"
+    "directInquiry": "Doğrudan Talep",
+    "address": "Adres",
+    "cta": "Umman'ın geleceğini birlikte inşa edelim",
+    "description": "Umman Sultanlığı genelinde stratejik kalkınma ve özel yatırım. 2006'dan beri mükemmellik sunuyoruz.",
+    "addressLine1": "PO Box: 1756 | PC: 111",
+    "addressLine2": "Havaalanı Yükseklikleri, Maskat",
+    "addressLine3": "Umman Sultanlığı",
+    "rights": "Tüm hakları saklıdır.",
+    "termsOfService": "Kullanım Şartları",
+    "privacyPolicy": "Gizlilik Politikası",
+    "siteMap": "Site Haritası",
+    "text": {
+      "11": "Biz Kimiz",
+      "12": "Bize Ulaşın",
+      "14": "Stratejik Sektörler",
+      "15": "Neden Umman",
+      "17": "Kaynaklar",
+      "19": "Şirket",
+      "x1": "Temel Sektörler",
+      "x2": "Yatırım Alanları",
+      "x3": "Genel Bakış",
+      "x4": "Teşvikler",
+      "x5": "Piyasa Raporları"
+    },
+    "newsletter": {
+      "title": "Güncel Kalın",
+      "description": "Umman'daki en son yatırım içgörüleri ve fırsatlar için bültenimize abone olun.",
+      "placeholder": "E-posta adresi",
+      "button": "Abone Ol"
+    }
   },
   "leadership": {
     "chairman": {
-      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
-      "title": "Chairman",
-      "message_title": "Chairman's Message",
-      "message_text": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+      "name": "Sayın Şeyh Salim Hamud Said Al Hashmi",
+      "title": "Yönetim Kurulu Başkanı",
+      "message_title": "Yönetim Kurulu Başkanının Mesajı",
+      "message_text": "Yüzyıllar boyunca Umman Sultanlığı, medeniyetler arasında bir köprü olarak durmuştur. Sahillerinden tüccarlar, akademisyenler ve gezginler, Asya, Afrika, Avrupa ve Amerika'nın büyük bölgelerini birbirine bağlayarak açıklık, diyalog ve barışçıl değişimin mirasını şekillendirmiştir.\n\nShomoukh International Investment, işte bu kalıcı ruh çerçevesinde kurulmuştur. Amacımız her zaman yatırımın yalnızca ekonomik ilerlemeye değil, aynı zamanda canlı toplulukların ve gelecek nesiller için sürdürülebilir fırsatların geliştirilmesine de katkıda bulunması gerektiği inancıyla yönlendirilmiştir.\n\nBugün, Hazreti Sultan Haysam bin Tarık Al Said'in vizyoner liderliği altında Sultanlık, ekonomik çeşitlendirmeyi, yeniliği ve küresel ortaklığı güçlendiren ileriye dönük bir gündem izlemeye devam etmektedir. Umman, dünyada coğrafi, tarihi ve kültürel açıdan benzersiz bir konuma sahiptir. Küresel ticaret yollarının kesişim noktasında yer alan ülke, işbirliği, yatırım ve sorumlu kalkınma merkezi olarak rolünü güçlendirmeye devam etmektedir.\n\nYatırımlarımız ve stratejik ortaklıklarımız aracılığıyla, yeniliği teşvik eden, sektörleri güçlendiren ve uzun vadeli refaha katkıda bulunan girişimler geliştirerek bu ulusal yolculuğu desteklemeyi amaçlıyoruz. Sınırlar ötesi ortaklıklar kurmaya ve işbirliği, ilerleme ve ortak refah değerlerini yansıtan fırsatlara yatırım yapmaya kararlıyız.\n\nGeleceğe baktığımızda hedefimiz açıktır: fırsatların genişlediği, toplulukların geliştiği ve Umman'ın kültürlerin, fikirlerin ve piyasaların buluştuğu bir yer olarak var olmaya devam ettiği bir dünyaya katkıda bulunmak."
     }
   }
 }

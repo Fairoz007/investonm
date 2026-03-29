@@ -54,7 +54,7 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <div className="bg-dark text-white overflow-x-hidden">
+    <div className="bg-transparent text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[75vh] lg:min-h-[80vh] flex items-center py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -121,7 +121,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-14 sm:py-20 border-y border-white/5 bg-dark">
+      <section className="py-14 sm:py-20 border-y border-white/5 bg-transparent">
         <div className="as-container-2">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, idx) => (
@@ -142,7 +142,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* About Content */}
-      <section id="about" className="py-16 lg:py-24 bg-dark">
+      <section id="about" className="py-16 lg:py-24 bg-transparent">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 xl:gap-32 items-center">
             <div className="space-y-8 sm:space-y-10">
@@ -176,7 +176,7 @@ export default function WhoWeAre() {
                   <motion.div 
                     key={i}
                     whileHover={{ scale: 1.02 }}
-                    className="bg-dark-card border border-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-primary/30 transition-all group"
+                    className="bg-white/[0.02] border border-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-primary/30 transition-all group backdrop-blur-sm"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mb-2 sm:mb-3 group-hover:scale-150 transition-transform" />
                     <span className="text-xs sm:text-sm font-semibold text-white/60 group-hover:text-white transition-colors uppercase tracking-tight">{item}</span>
@@ -192,7 +192,7 @@ export default function WhoWeAre() {
 
       {/* Mission & Vision - More stylized */}
       <section className="relative py-16 lg:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-dark-lighter" />
+        <div className="absolute inset-0 bg-transparent" />
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div 
@@ -235,7 +235,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 lg:py-24 bg-dark">
+      <section className="py-16 lg:py-24 bg-transparent">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="as-subtitle-2 border-primary/20 text-primary mb-6">Ethos</div>
@@ -248,7 +248,7 @@ export default function WhoWeAre() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="bg-dark-card border border-white/5 rounded-[32px] p-12 group hover:border-primary/50 transition-all duration-700"
+                className="bg-white/[0.02] border border-white/5 rounded-[32px] p-12 group hover:border-primary/50 transition-all duration-700 backdrop-blur-md"
               >
                 <div className="w-16 h-16 mb-10 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-all duration-500 group-hover:rotate-[360deg]">{v.icon}</div>
                 <h4 className="text-2xl font-display font-bold mb-6 group-hover:text-primary transition-colors">{v.title}</h4>
@@ -303,9 +303,9 @@ export default function WhoWeAre() {
       </section>
 
       {/* Chairman's Message - Premium Redesign */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-dark">
+      <section className="py-12 sm:py-16 lg:py-24 bg-transparent">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="bg-dark-card/50 border border-white/5 rounded-[40px] sm:rounded-[60px] p-6 sm:p-10 lg:p-24 relative overflow-hidden backdrop-blur-sm">
+          <div className="bg-white/[0.01] border border-white/5 rounded-[40px] sm:rounded-[60px] p-6 sm:p-10 lg:p-24 relative overflow-hidden backdrop-blur-md shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] gap-12 sm:gap-16 lg:gap-20 items-center">
               <div className="space-y-10 sm:space-y-12 order-first">
                 <div className="relative">

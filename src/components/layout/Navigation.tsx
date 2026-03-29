@@ -10,10 +10,9 @@ import { useTranslation } from "react-i18next";
 const LANGUAGES = [
   { name: 'English', native: 'English', code: 'en', full: 'English — EN' },
   { name: 'Arabic', native: 'العربية', code: 'ar', full: 'العربية — AR' },
-  { name: 'Russian', native: 'Русский', code: 'ru', full: 'Русский — RU' },
-  { name: 'Chinese', native: '中文', code: 'zh', full: '中文 — ZH' },
-  { name: 'Persian', native: 'فارسی', code: 'fa', full: 'فارسی — FA' },
-  { name: 'Turkish', native: 'Türkçe', code: 'tr', full: 'Türkçe — TR' }
+  { name: 'Russian', native: 'Русский', code: 'ru', full: 'Russian — RU' },
+  { name: 'Persian', native: 'فارسی', code: 'fa', full: 'Persian — FA' },
+  { name: 'Turkish', native: 'Türkçe', code: 'tr', full: 'Turkish — TR' },
 ];
 
 const discoverMenuItems = [
@@ -43,12 +42,12 @@ const discoverMenuItems = [
 
 const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeChildIndex, setActiveChildIndex] = useState<number | null>(null);
+  // Initialize with 0 if it's a sidebar-type menu
+  const hasSidebar = item.children?.some(child => child.hasSubmenu);
+  const [activeChildIndex, setActiveChildIndex] = useState<number | null>(hasSidebar ? 0 : null);
   const { t } = useTranslation();
 
-  const hasSidebar = item.children?.some(child => child.hasSubmenu);
   const activeChild = activeChildIndex !== null && item.children ? item.children[activeChildIndex] : null;
-  const isDiscoverOman = item.label === 'DISCOVER OMAN';
 
   const prettyLabel = (label: string) => {
     // If it's a translation key or we're not in English, return as is
@@ -65,7 +64,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
   return (
     <div
       onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => { setIsOpen(false); setActiveChildIndex(null); }}
+      onMouseLeave={() => { setIsOpen(false); if (hasSidebar) setActiveChildIndex(0); else setActiveChildIndex(null); }}
       className="relative h-full flex items-center"
     >
       <button className={`font-sans flex items-center gap-1.5 py-6 text-[15px] font-normal tracking-wide whitespace-nowrap transition-colors relative cursor-pointer ${isOpen ? 'text-white' : 'text-[#A7B0C3] hover:text-white'
@@ -77,122 +76,109 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className={`absolute top-[100%] z-[60] bg-[#0A0F1E]/80 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5),auto_auto_30px_rgba(139,92,246,0.15)] rounded-2xl overflow-hidden ${isDiscoverOman ? (isRtl ? 'right-0' : 'left-0') + ' w-[260px]' : hasSidebar ? (isRtl ? 'right-0' : 'left-0') + ' w-[600px] p-6' : (isRtl ? 'right-0' : 'left-0') + ' w-[220px] p-4'
-              }`}
+            className={`absolute top-[100%] z-[60] bg-[#050816]/95 backdrop-blur-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(59,130,246,0.1)] rounded-2xl overflow-hidden ${
+              hasSidebar 
+                ? (isRtl ? 'right-0' : 'left-0') + ' w-[640px]' 
+                : (isRtl ? 'right-0' : 'left-0') + ' w-[220px] p-2'
+            }`}
           >
-            {isDiscoverOman ? (
-              <div className="flex flex-col py-4 px-2">
-                {[
-                  {
-                    category: t('nav.whyOman'),
-                    items: [
-                      { label: t('nav.overview'), href: '/about-oman' },
-                      { label: t('nav.keyBenefits'), href: '/key-sectors' },
-                    ]
-                  },
-                  {
-                    category: t('nav.sectors'),
-                    items: [
-                      { label: t('nav.tourism'), href: '/key-sectors' },
-                      { label: t('nav.logistics'), href: '/key-sectors' },
-                      { label: t('nav.energy'), href: '/key-sectors' },
-                    ]
-                  },
-                  {
-                    category: t('nav.opportunities'),
-                    items: [
-                      { label: t('nav.activeProjects'), href: '/about-oman' },
-                      { label: t('nav.investmentZones'), href: '/key-sectors' },
-                    ]
-                  }
-                ].map((group, groupIdx) => (
-                  <div key={groupIdx} className={`flex flex-col ${groupIdx !== 0 ? 'mt-4 pt-4 border-t border-white/5' : ''}`}>
-                    <span className="text-[11px] font-medium tracking-widest text-white/50 px-4 mb-2 uppercase">{group.category}</span>
-                    {group.items.map((menuItem, itemIdx) => (
+            {hasSidebar ? (
+              <div className="flex w-full min-h-[300px]">
+                {/* Left Sidebar */}
+                <div className={`w-[240px] flex flex-col p-6 ${isRtl ? 'border-l' : 'border-r'} border-white/5 bg-white/[0.02]`}>
+                  <h3 className="text-[#3B82F6] text-[10px] font-bold tracking-[0.2em] uppercase mb-6 opacity-80 px-2 leading-none">
+                    {t(item.label)}
+                  </h3>
+                  <div className="flex flex-col gap-1.5">
+                    {item.children?.map((child, index) => (
                       <Link
-                        key={itemIdx}
-                        to={`/${lang}${menuItem.href}`}
-                        className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[14px] text-[#D1D5DB] hover:text-white hover:bg-white/5 transition-all group"
+                        key={index}
+                        to={`/${lang}${child.href}`}
+                        onMouseEnter={() => setActiveChildIndex(index)}
+                        className={`flex items-center justify-between py-3 px-4 rounded-xl transition-all duration-300 group ${
+                          activeChildIndex === index 
+                            ? 'bg-white/10 text-white translate-x-1' 
+                            : 'text-[#A7B0C3] hover:text-white hover:bg-white/5'
+                        }`}
                       >
-                        <span className={`relative z-10 transition-transform ${isRtl ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}>{menuItem.label}</span>
-                        <ChevronRight className={`w-3.5 h-3.5 opacity-0 transition-all text-[#3B82F6] ${isRtl ? 'rotate-180 translate-x-2 group-hover:translate-x-0 group-hover:opacity-100' : '-translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
+                        <span className="text-[14px] font-medium tracking-wide">{t(child.label)}</span>
+                        <ChevronRight className={`w-4 h-4 transition-all duration-300 ${isRtl ? 'rotate-180' : ''} ${
+                          activeChildIndex === index ? 'opacity-100 translate-x-1' : 'opacity-0 -translate-x-2'
+                        }`} />
                       </Link>
                     ))}
                   </div>
-                ))}
-              </div>
-            ) : hasSidebar ? (
-              <div className="flex w-full h-full gap-6">
-                {/* Main list */}
-                <div className={`flex flex-col gap-1 w-1/3 ${isRtl ? 'border-l pl-6' : 'border-r pr-6'} border-white/10`}>
-                  <h2 className="text-[#3B82F6] text-[11px] font-semibold tracking-widest uppercase mb-4 px-2">{t(item.label)}</h2>
-                  {item.children?.map((child, index) => (
-                    <Link
-                      key={index}
-                      to={`/${lang}${child.href}`}
-                      onMouseEnter={() => setActiveChildIndex(index)}
-                      className={`flex items-center justify-between py-2.5 px-3 rounded-lg transition-colors group ${activeChildIndex === index ? 'bg-white/10 text-white' : 'text-[#A7B0C3] hover:text-white hover:bg-white/5'
-                        }`}
-                    >
-                      <span className="text-[13px] font-medium">{t(child.label)}</span>
-                      {child.hasSubmenu && <ChevronRight className={`w-3.5 h-3.5 transition-colors ${isRtl ? 'rotate-180' : ''} ${activeChildIndex === index ? 'text-white' : 'opacity-50 group-hover:opacity-100'}`} />}
-                    </Link>
-                  ))}
                 </div>
-                {/* Sidebar */}
-                <div className={`w-2/3 ${isRtl ? 'pr-2' : 'pl-2'}`}>
+
+                {/* Right Content Area */}
+                <div className="flex-1 p-8 bg-transparent">
                   <AnimatePresence mode="wait">
-                    {activeChild?.hasSubmenu && activeChild.submenu && (
+                    {activeChild && (
                       <motion.div
                         key={activeChild.label}
-                        initial={{ opacity: 0, x: isRtl ? -10 : 10 }}
+                        initial={{ opacity: 0, x: isRtl ? -8 : 8 }}
                         animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: isRtl ? 10 : -10 }}
+                        exit={{ opacity: 0, x: isRtl ? 8 : -8 }}
                         transition={{ duration: 0.2 }}
                         className="h-full"
                       >
-                        <div className="grid grid-cols-2 gap-8">
-                          {activeChild.submenu.columns.map((col, idx) => (
-                            <div key={idx} className="flex flex-col gap-2">
-                              {col.title && (
-                                <h3 className="text-[#8B5CF6] text-[10px] font-medium tracking-widest uppercase mb-2">
-                                  {t(col.title)}
-                                </h3>
-                              )}
-                              <div className="flex flex-col gap-1">
-                                {col.items.map((subItem, sIdx) => (
-                                  <Link
-                                    key={sIdx}
-                                    to={`/${lang}${subItem.href}`}
-                                    className="text-[13px] text-[#A7B0C3] hover:text-white transition-colors rounded-lg px-2 py-1.5 hover:bg-white/5"
-                                  >
-                                    {t(subItem.label)}
-                                  </Link>
-                                ))}
+                        {activeChild.hasSubmenu && activeChild.submenu ? (
+                          <div className="flex flex-col gap-6">
+                            {activeChild.submenu.columns.map((col, idx) => (
+                              <div key={idx} className="flex flex-col gap-3">
+                                {col.title && (
+                                  <h4 className="text-[#8B5CF6] text-[11px] font-semibold tracking-widest uppercase mb-1 opacity-60">
+                                    {t(col.title)}
+                                  </h4>
+                                )}
+                                <div className="flex flex-col gap-2">
+                                  {col.items.map((subItem, sIdx) => (
+                                    <Link
+                                      key={sIdx}
+                                      to={`/${lang}${subItem.href}`}
+                                      className="text-[14px] text-[#D1D5DB] hover:text-white transition-all duration-300 py-1 flex items-center gap-3 group/sub"
+                                    >
+                                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-0 group-hover/sub:opacity-100 transition-all duration-300 scale-0 group-hover/sub:scale-100 shadow-[0_0_8px_#3B82F6]" />
+                                      <span className="group-hover/sub:translate-x-1 transition-transform duration-300">{t(subItem.label)}</span>
+                                    </Link>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          ))}
-                        </div>
+                            ))}
+                          </div>
+                        ) : (
+                           <div className="flex flex-col gap-4">
+                              <h4 className="text-white text-[15px] font-semibold">{t(activeChild.label)}</h4>
+                              <p className="text-[#A7B0C3] text-[13px] leading-relaxed">
+                                {t('nav.explore')} {t(activeChild.label)} {t('common.learnMore')}
+                              </p>
+                              <Link 
+                                to={`/${lang}${activeChild.href}`}
+                                className="text-blue-400 text-[13px] font-medium hover:text-blue-300 transition-colors inline-flex items-center gap-1 group/btn"
+                              >
+                                {t('common.learnMore')}
+                                <ChevronRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
+                              </Link>
+                           </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col gap-1 w-full">
-                <h2 className="text-[#3B82F6] text-[11px] font-semibold tracking-widest uppercase mb-2 px-2">{t(item.label)}</h2>
-                <div className="w-full h-px bg-white/10 mb-2" />
+              <div className="flex flex-col w-full p-2">
                 {item.children?.map((child, index) => (
                   <Link
                     key={index}
                     to={`/${lang}${child.href}`}
-                    className="flex items-center gap-3 py-2.5 px-2 rounded-lg transition-colors text-[#A7B0C3] hover:text-white hover:bg-white/5"
+                    className="flex items-center gap-3 py-3 px-4 rounded-xl transition-all duration-300 text-[#A7B0C3] hover:text-white hover:bg-white/5"
                   >
-                    <span className="text-[13px] font-medium">{t(child.label)}</span>
+                    <span className="text-[14px] font-medium tracking-wide">{t(child.label)}</span>
                   </Link>
                 ))}
               </div>
@@ -205,7 +191,7 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
 };
 
 // ... Mobile navigation remains similar but restyled slightly
-const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
+const MobileNavItem = ({ item, lang, onClose }: { item: NavItem, lang: string, onClose: () => void }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [expandedChildIndex, setExpandedChildIndex] = useState<number | null>(null);
   const { t } = useTranslation();
@@ -215,6 +201,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
     return (
       <Link
         to={`/${lang}${item.href}`}
+        onClick={onClose}
         className="block py-4 px-4 text-base font-medium text-white font-sans border-b border-white/10 hover:bg-white/5 transition-all duration-300 rounded-xl"
       >
         {t(item.label)}
@@ -271,7 +258,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                                   )}
                                   <div className="flex flex-col gap-2">
                                     {col.items.map((sub, sIdx) => (
-                                      <Link key={sIdx} to={`/${lang}${sub.href}`} className="block py-1.5 text-sm text-[#A7B0C3] hover:text-white transition-colors">
+                                      <Link key={sIdx} to={`/${lang}${sub.href}`} onClick={onClose} className="block py-1.5 text-sm text-[#A7B0C3] hover:text-white transition-colors">
                                         {t(sub.label)}
                                       </Link>
                                     ))}
@@ -286,6 +273,7 @@ const MobileNavItem = ({ item, lang }: { item: NavItem, lang: string }) => {
                   ) : (
                     <Link
                       to={`/${lang}${child.href}`}
+                      onClick={onClose}
                       className={`block py-3 text-[14px] font-medium text-[#A7B0C3] hover:text-white transition-colors px-4 border-transparent hover:border-[#3B82F6] ${isRtl ? 'border-r' : 'border-l'}`}
                     >
                       {t(child.label)}
@@ -462,7 +450,7 @@ export const Navigation = () => {
                       <div className="flex-1 overflow-auto p-4 pb-6">
                         <div className="space-y-1">
                           {NAV_ITEMS.map((item, index) => (
-                            <MobileNavItem key={index} item={item} lang={displayLang} />
+                            <MobileNavItem key={index} item={item} lang={displayLang} onClose={() => setIsMobileMenuOpen(false)} />
                           ))}
                         </div>
                       </div>

@@ -8,10 +8,10 @@ export const Footer = () => {
   const displayLang = lang || 'en';
 
   return (
-    <footer className="relative overflow-hidden bg-transparent text-foreground border-t border-white/5 font-sans pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12">
+    <footer className="relative overflow-hidden bg-transparent text-foreground font-sans pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12">
       <div className="container-custom relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6">
         {/* Top Section: Branding & Vision */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 mb-16 sm:mb-20 lg:mb-24 pb-10 sm:pb-12 border-b border-white/5">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 mb-16 sm:mb-20 lg:mb-24 pb-10 sm:pb-12">
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 text-center sm:text-left">
             <Link to={`/${displayLang}/`} className="transition-transform hover:scale-105">
               <img
@@ -157,7 +157,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8 py-8 sm:py-10 border-t border-white/5 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8 py-8 sm:py-10 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 opacity-60">
           <p className="text-center sm:text-left opacity-60">
             &copy; {new Date().getFullYear()} Shomoukh Investment. {t('footer.rights')}
           </p>

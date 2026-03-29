@@ -97,7 +97,8 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased font-sans min-h-screen overflow-x-hidden;
+    @apply text-foreground antialiased font-sans min-h-screen overflow-x-hidden;
+    background: linear-gradient(to right, #010208, #050b1a 60%, #1a0625);
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
   }
@@ -171,13 +172,9 @@
 
 @layer base {
   #root {
-    @apply min-h-screen bg-background text-foreground;
+    @apply min-h-screen text-foreground relative;
   }
 
-  main section::before {
-    content: '';
-    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border/70 to-transparent;
-  }
 
   .dash-offset-anim {
     stroke-dasharray: 100;

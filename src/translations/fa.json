@@ -1,294 +1,337 @@
 {
+  "languages": {
+    "en": "انگلیسی",
+    "ar": "عربی",
+    "ru": "روسی",
+    "fa": "فارسی",
+    "tr": "ترکی"
+  },
   "nav": {
     "aboutUs": "درباره ما",
     "ourStory": "داستان ما",
-    "whoWeAre": "ما کی هستیم",
-    "ourExperts": "کارشناسان ما",
+    "whoWeAre": "ما که هستیم",
+    "ourExperts": "متخصصان ما",
     "whyOman": "چرا عمان",
-    "overview": "بررسی اجمالی",
+    "overview": "نمای کلی",
     "keyBenefits": "مزایای کلیدی",
-    "sectors": "بخش‌ها",
+    "sectors": "بخشها",
     "tourism": "گردشگری",
     "logistics": "لجستیک",
     "energy": "انرژی",
     "resources": "منابع",
-    "investorIntelligence": "هوش سرمایه‌گذار",
-    "marketReports": "گزارش‌های بازار",
-    "connect": "تماس با ما",
+    "investorIntelligence": "بینش سرمایهگذاری",
+    "marketReports": "گزارشهای بازار",
+    "connect": "ارتباط با ما",
     "login": "ورود",
-    "investorLogin": "ورود سرمایه‌گذار",
-    "explore": "کشف کنید",
-    "languageSelection": "انتخاب زبان"
+    "investorLogin": "ورود سرمایهگذار",
+    "explore": "کاوش",
+    "languageSelection": "انتخاب زبان",
+    "opportunities": "فرصت‌ها",
+    "activeProjects": "پروژه‌های فعال",
+    "investmentZones": "مناطق سرمایه‌گذاری",
+    "selectLanguage": "انتخاب زبان"
   },
   "hero": {
     "slide1": {
-      "title": "Investing in\nWhat's Next.",
-      "description": "Private investment and strategic development across Oman and global markets."
+      "title": "سرمایهگذاری در\nآینده",
+      "description": "سرمایهگذاری خصوصی و توسعه راهبردی در سراسر عمان و بازارهای جهانی."
     },
     "slide2": {
-      "title": "Strategic\nDevelopment\nPlatform.",
-      "description": "Identifying and developing high-value opportunities in the Sultanate of Oman."
+      "title": "بستر\nتوسعه\nراهبردی",
+      "description": "شناسایی و توسعه فرصتهای ارزشمند در سلطنت عمان."
     },
     "cta": {
-      "startInvesting": "Start Investing",
-      "explore": "Explore Opportunities"
+      "startInvesting": "شروع سرمایهگذاری",
+      "explore": "کاوش فرصتها"
     },
-    "vision": "Oman Vision 2040"
+    "vision": "چشمانداز عمان ۲۰۴۰"
   },
   "common": {
-    "learnMore": "Learn More",
-    "viewAll": "View All",
-    "contact": "Contact Us",
-    "readMore": "Read More"
+    "learnMore": "بیشتر بدانید",
+    "viewAll": "مشاهده همه",
+    "contact": "تماس با ما",
+    "readMore": "ادامه مطلب"
   },
   "ourStory": {
-    "subtitle": "Shomoukh Story",
-    "years": "18+ Years",
-    "excellence": "Investment Excellence",
-    "label": "WHO WE ARE",
-    "title": "Defining the Future of Strategic Investment in Oman.",
-    "intro1": "Shomoukh International Investment is a privately held investment company established in the Sultanate of Oman in 2006 by the Al Hashmi family.",
-    "intro2": "The firm operates as both an investment company and a strategic development platform focused on identifying and developing high-value opportunities.",
-    "missionTitle": "Our Mission",
-    "missionDesc": "To develop strategic investments that shape industries, strengthen economies, and create lasting value.",
-    "leadershipTitle": "Our Leadership",
-    "leadershipDesc": "Led by the Al Hashmi family and world-class experts.",
-    "cta": "Learn Our Story"
+    "subtitle": "داستان شموخ",
+    "years": "۱۸+ سال",
+    "excellence": "برتری در سرمایهگذاری",
+    "label": "ما که هستیم",
+    "title": "تعریف آینده سرمایهگذاری راهبردی در عمان",
+    "intro1": "شموخ اینترنشنال اینوستمنت یک شرکت سرمایهگذاری خصوصی است که در سال ۲۰۰۶ توسط خانواده الهاشمی در سلطنت عمان تأسیس شد.",
+    "intro2": "این شرکت همزمان بهعنوان یک شرکت سرمایهگذاری و بستری برای توسعه راهبردی فعالیت میکند و بر شناسایی و توسعه فرصتهای باارزش تمرکز دارد.",
+    "missionTitle": "ماموریت ما",
+    "missionDesc": "توسعه سرمایهگذاریهای راهبردی که صنایع را شکل میدهند، اقتصادها را تقویت میکنند و ارزش ماندگار ایجاد میکنند.",
+    "leadershipTitle": "رهبری ما",
+    "leadershipDesc": "به رهبری خانواده الهاشمی و متخصصان برجسته جهانی.",
+    "cta": "داستان ما را بخوانید",
+    "missionTitle_long": "مأموریت ما",
+    "missionDesc_long": "توسعه سرمایه‌گذاری‌های استراتژیک که صنایع را شکل می‌دهند، اقتصادها را تقویت می‌کنند و ارزشی پایدار برای شرکای ما و سلطنت ایجاد می‌کنند."
   },
   "services": {
-    "subtitle": "Investment Areas",
-    "label": "OUR SECTORS",
-    "title": "Excellence Across High-Value Growth Verticals.",
+    "subtitle": "حوزههای سرمایهگذاری",
+    "label": "بخشهای ما",
+    "title": "برتری در حوزههای رشد با ارزش بالا",
     "tourism": {
-      "title": "Tourism & Leisure",
-      "desc": "Developing iconic destinations and world-class hospitality across the Sultanate."
+      "title": "گردشگری و تفریح",
+      "desc": "توسعه مقاصد شاخص و مهماننوازی در سطح جهانی در سراسر سلطنت."
     },
     "logistics": {
-      "title": "Logistics & Supply Chain",
-      "desc": "Strengthening Oman's position as a global logistical hub."
+      "title": "لجستیک و زنجیره تأمین",
+      "desc": "تقویت جایگاه عمان بهعنوان یک مرکز لجستیکی جهانی."
     },
     "energy": {
-      "title": "Energy & Sustainability",
-      "desc": "Investing in renewable energy and sustainable development."
+      "title": "انرژی و پایداری",
+      "desc": "سرمایهگذاری در انرژیهای تجدیدپذیر و توسعه پایدار."
     },
     "labels": {
-      "thriving": "Thriving Sectors",
-      "incentives": "Exciting Incentives in Oman",
-      "exploreAll": "Explore All Sectors",
-      "description": "Explore the vibrant investment opportunities in Oman, spanning essential sectors like technology, renewable energy, logistics, and manufacturing."
+      "thriving": "بخشهای روبهرشد",
+      "incentives": "مشوقهای جذاب در عمان",
+      "exploreAll": "کاوش همه بخشها",
+      "description": "فرصتهای پویای سرمایهگذاری در عمان را در حوزههایی مانند فناوری، انرژی تجدیدپذیر، لجستیک و تولید بررسی کنید."
     },
     "items": {
-      "healthcare": "Healthcare",
-      "tourism": "Tourism",
-      "ict": "ICT",
-      "mining": "Mining",
-      "manufacturing": "Manufacturing",
-      "renewableEnergy": "Renewable Energy",
-      "agriculture": "Agriculture",
-      "fisheries": "Fisheries",
-      "education": "Education",
-      "sport": "Sport"
+      "healthcare": "سلامت",
+      "tourism": "گردشگری",
+      "ict": "فناوری اطلاعات و ارتباطات",
+      "mining": "معدن",
+      "manufacturing": "تولید",
+      "renewableEnergy": "انرژی تجدیدپذیر",
+      "agriculture": "کشاورزی",
+      "fisheries": "شیلات",
+      "education": "آموزش",
+      "sport": "ورزش",
+      "circular-economy": "اقتصاد چرخشی",
+      "petrochemical": "پتروشیمی"
     }
   },
   "trust": {
-    "subtitle": "Why Oman?",
-    "title": "Oman offers a dynamic and strategic environment for investors seeking growth and stability.",
+    "subtitle": "چرا عمان؟",
+    "title": "عمان محیطی پویا و راهبردی برای سرمایهگذارانی فراهم میکند که بهدنبال رشد و ثبات هستند.",
     "pillars": {
       "connectivity": {
-        "title": "Global Connectivity",
-        "desc": "Strategic location bridging East and West with world-class infrastructure.",
-        "stat1": "of world population within 8h flight",
-        "stat2": "international trade agreements"
+        "title": "اتصال جهانی",
+        "desc": "موقعیت راهبردی میان شرق و غرب با زیرساختهای در سطح جهانی.",
+        "stat1": "از جمعیت جهان در شعاع پرواز ۸ ساعته",
+        "stat2": "توافقنامههای تجارت بینالمللی"
       },
       "economy": {
-        "title": "Stable & Diversified Economy",
-        "desc": "Strong, robust economy with multi-sector growth opportunities.",
-        "stat1": "S&P Rating",
-        "stat2": "Investment to diversify"
+        "title": "اقتصاد باثبات و متنوع",
+        "desc": "اقتصادی قوی و پایدار با فرصتهای رشد در بخشهای مختلف.",
+        "stat1": "رتبه S&P",
+        "stat2": "سرمایهگذاری برای تنوعبخشی"
       },
       "business": {
-        "title": "Business-Friendly Environment",
-        "desc": "Streamlined regulations and incentives designed to facilitate international operations.",
-        "stat1": "most efficient ports worldwide",
-        "stat2": "on personal income"
+        "title": "محیط کسبوکار مطلوب",
+        "desc": "مقررات سادهسازیشده و مشوقهایی که برای تسهیل فعالیتهای بینالمللی طراحی شدهاند.",
+        "stat1": "از کارآمدترین بنادر جهان",
+        "stat2": "مالیات بر درآمد شخصی"
       },
       "lifestyle": {
-        "title": "High Quality of Life",
-        "desc": "Safe, modern lifestyle with natural beauty and world-class amenities.",
-        "stat1": "safest countries globally",
-        "stat2": "Gulf quality of life index rank"
+        "title": "کیفیت بالای زندگی",
+        "desc": "سبک زندگی امن و مدرن همراه با طبیعت زیبا و امکانات در سطح جهانی.",
+        "stat1": "از امنترین کشورهای جهان",
+        "stat2": "رتبه کیفیت زندگی در خلیج"
       }
     }
   },
   "success": {
-    "subtitle": "Tourism",
-    "title": "A Key Driver of Economic Diversification.",
-    "description": "Oman's tourism sector offers world-class experiences from luxury coastal resorts to ancient heritage sites. The Sultanate is positioning itself as a premier destination for high-end, sustainable tourism.",
+    "subtitle": "گردشگری",
+    "title": "محرک کلیدی تنوع اقتصادی.",
+    "description": "بخش گردشگری عمان تجربیاتی در کلاس جهانی را از تفرجگاه‌های ساحلی مجلل تا مکان‌های باستانی میراث فرهنگی ارائه می‌دهد. سلطنت عمان خود را به عنوان مقصدی برتر برای گردشگری پایدار و سطح بالا قرار داده است.",
     "stats": {
       "visitors": {
-        "title": "Visitors Revenue",
-        "sub": "Riyal Omani (RO)"
+        "title": "درآمد بازدیدکنندگان",
+        "sub": "ریال عمان (RO)"
       },
       "employment": {
-        "title": "Employment",
-        "sub": "Jobs in tourism"
+        "title": "اشتغال",
+        "sub": "مشاغل در گردشگری"
       },
       "gdp": {
-        "title": "GDP Contribution",
-        "sub": "Of Oman's Total GDP"
+        "title": "سهم در تولید ناخالص داخلی",
+        "sub": "از کل تولید ناخالص داخلی عمان"
       },
       "investment": {
-        "title": "Total Investment",
-        "sub": "Riyal Omani (RO)"
+        "title": "کل سرمایه‌گذاری",
+        "sub": "ریال عمان (RO)"
       }
     }
   },
   "whoWeAre": {
-    "heroSubtitle": "Establishment 2006",
-    "heroTitle": "Architects of \nEconomic legacy.",
-    "heroDesc": "A premier private investment house dedicated to shaping Oman’s future through strategic development and global partnerships.",
-    "discoverMore": "Discover More",
-    "yearsOfGrowth": "Years of Growth",
+    "heroSubtitle": "تأسیس در ۲۰۰۶",
+    "heroTitle": "معماران \n میراث اقتصادی.",
+    "heroDesc": "یک خانه سرمایه‌گذاری خصوصی پیشرو که به شکل‌دهی آینده عمان از طریق توسعه استراتژیک و مشارکت‌های جهانی اختصاص یافته است.",
+    "discoverMore": "کشف بیشتر",
+    "yearsOfGrowth": "سال‌های رشد",
     "stats": {
-      "founded": "Founded",
-      "sectors": "Sectors",
-      "portfolio": "Investment Portfolio",
-      "global": "Global Presence"
+      "founded": "تأسیس شده",
+      "sectors": "بخش‌ها",
+      "portfolio": "پرتفوی سرمایه‌گذاری",
+      "global": "حضور جهانی"
     },
-    "aboutSubtitle": "Our Foundation",
-    "aboutTitle": "Shomoukh International Investment",
+    "aboutSubtitle": "بنیان ما",
+    "aboutTitle": "شموخ اینترنشنال اینوستمنت",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To develop strategic investments that shape industries, strengthen economies, and create lasting value for our partners and the Sultanate."
+      "title": "مأموریت ما",
+      "desc": "توسعه سرمایه‌گذاری‌های استراتژیک که صنایع را شکل می‌دهند، اقتصادها را تقویت می‌کنند و ارزشی پایدار برای شرکای ما و سلطنت ایجاد می‌کنند."
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be a pioneering investment house that transforms opportunity into legacy, positioning Oman as a global hub for excellence."
+      "title": "چشم‌انداز ما",
+      "desc": "تبدیل شدن به یک خانه سرمایه‌گذاری پیشرو که فرصت را به میراث تبدیل می‌کند و عمان را به عنوان قطب جهانی تعالی معرفی می‌نماید."
     }
   },
   "aboutOman": {
-    "heroSubtitle": "Sultanate of Oman",
-    "heroTitle": "A Strategic \nGlobal Gateway.",
-    "heroDesc": "The Sultanate of Oman offers a stable and attractive environment for long-term investment, connecting the world's fastest-growing markets.",
-    "exploreAdvantages": "Explore Advantages",
+    "heroSubtitle": "سلطنت عمان",
+    "heroTitle": "یک دروازه \n جهانی استراتژیک.",
+    "heroDesc": "سلطنت عمان محیطی باثبات و جذاب برای سرمایه‌گذاری بلندمدت فراهم می‌کند و سریع‌ترین بازارهای در حال رشد جهان را به هم متصل می‌سازد.",
+    "exploreAdvantages": "کاوش مزایا",
     "stats": {
-      "location": "Strategic Location",
-      "vision": "Oman Vision",
-      "freeZones": "Free Zones",
-      "market": "Market Access"
+      "location": "موقعیت استراتژیک",
+      "vision": "چشم‌انداز عمان",
+      "freeZones": "مناطق آزاد",
+      "market": "دسترسی به بازار"
     },
     "whyInvest": {
-      "title": "Why Invest in Oman?",
-      "desc": "A unique combination of stability, infrastructure, and progressive policies designed to foster international business growth."
+      "title": "چرا در عمان سرمایه‌گذاری کنیم؟",
+      "desc": "ترکیبی منحصر به فرد از ثبات، زیرساخت و سیاست‌های پیشرو که برای تقویت رشد کسب‌وکارهای بین‌المللی طراحی شده است."
     }
   },
   "ourExperts": {
-    "heroSubtitle": "Shomoukh Excellence",
-    "heroTitle": "Our Experts",
-    "heroDesc": "Guided by a legacy of leadership and strategic foresight, our team drives long-term value and sustainable growth across the Sultanate and beyond.",
-    "leadership": "Leadership",
-    "readFullMessage": "Read Full Message",
-    "viewProfile": "View Profile",
-    "expertProfile": "Expert Profile",
-    "biography": "Biography",
+    "heroSubtitle": "تعالی شموخ",
+    "heroTitle": "کارشناسان ما",
+    "heroDesc": "با هدایت میراث رهبری و آینده‌نگری استراتژیک، تیم ما ارزش بلندمدت و رشد پایدار را در سراسر سلطنت و فراتر از آن هدایت می‌کند.",
+    "leadership": "رهبری",
+    "readFullMessage": "خواندن پیام کامل",
+    "viewProfile": "مشاهده پروفایل",
+    "expertProfile": "پروفایل کارشناس",
+    "biography": "بیوگرافی",
     "advisory": {
-      "title": "Strategic Advisory \n Inquiries",
-      "desc": "Connect with our leadership team for institutional partnerships, strategic investments, and market entry consultation.",
-      "button": "Connect with Our Team"
+      "title": "استعلامات \n مشاوره استراتژیک",
+      "desc": "برای مشارکت‌های نهادی، سرمایه‌گذاری‌های استراتژیک و مشاوره ورود به بازار با تیم رهبری ما در ارتباط باشید.",
+      "button": "اتصال به تیم ما"
     },
     "chairman": {
-      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
-      "role": "CHAIRMAN",
-      "messageTitle": "Chairman's Message",
-      "message": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+      "name": "جناب شیخ سالم بن حمود بن سعید الهاشمی",
+      "role": "رئیس هیئت مدیره",
+      "messageTitle": "پیام رئیس هیئت مدیره",
+      "message": "قرن‌هاست که سلطنت عمان به عنوان پلی میان تمدن‌ها ایستاده است. بازرگانان، دانشمندان و مسافران از سواحل آن، مناطق بزرگ آسیا، آفریقا، اروپا و آمریکا را به هم متصل کرده و میراثی از گشایش، گفتگو و تبادل مسالمت‌آمیز را شکل داده‌اند.\n\nبا همین روحیه ماندگار است که «شموخ اینترنشنال اینوستمنت» تأسیس شد. هدف ما همواره بر این باور استوار بوده است که سرمایه‌گذاری نه تنها باید به پیشرفت اقتصادی کمک کند، بلکه باید در توسعه جوامع پویا و فرصت‌های پایدار برای نسل‌های آینده نیز سهیم باشد.\n\nامروز، تحت رهبری مدبرانه اعلیحضرت سلطان هیثم بن طارق المعظم، سلطنت به پیشبرد یک دستور کار آینده‌نگر ادامه می‌دهد که تنوع اقتصادی، نوآوری و مشارکت جهانی را تقویت می‌کند. عمان جایگاهی منحصر به فرد در جهان دارد — از نظر جغرافیایی، تاریخی و فرهنگی. این کشور که در تقاطع راه‌های تجاری جهانی قرار دارد، به تقویت نقش خود به عنوان مرکزی برای همکاری، سرمایه‌گذاری و توسعه مسئولانه ادامه می‌دهد.\n\nما از طریق سرمایه‌گذاری‌ها و مشارکت‌های استراتژیک خود، با توسعه پروژه‌هایی که نوآوری را ترویج می‌کنند، صنایع را تقویت می‌کنند و به رفاه بلندمدت کمک می‌نمایند، به دنبال حمایت از این مسیر ملی هستیم. ما به ایجاد مشارکت‌های فرامرزی و سرمایه‌گذاری در فرصت‌هایی که بازتاب‌دهنده ارزش‌های همکاری، پیشرفت و رفاه مشترک هستند، متعهد می‌مانیم.\n\nهمانطور که به آینده می‌نگریم، جاه‌طلبی ما روشن است: کمک به دنیایی که در آن فرصت‌ها گسترش می‌یابند، جوامع شکوفا می‌شوند و عمان همچنان به عنوان مکانی که در آن فرهنگ‌ها، ایده‌ها و بازارها با هم ملاقات می‌کنند، پابرجاست."
     },
     "ceo": {
-      "name": "Sheikha Janat Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – CHIEF EXECUTIVE OFFICER",
-      "messageTitle": "Message from the Chief Executive Officer",
-      "message": "Our ambition is to develop strategic investment platforms that contribute to long-term economic growth and sustainable development. Today, our investment activities span more than 10 strategic sectors, including education, energy, manufacturing, natural resources, and international markets.\n\nWorking with global partners and institutions, we continue to expand our investment footprint across regional and international markets, supporting ventures that strengthen innovation, economic diversification, and sustainable industries.\n\nUnder the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said and guided by the aspirations of Oman Vision 2040, Oman is emerging as a competitive destination for international investment.\n\nOur long-term ambition is to build investment platforms that connect global capital with high-impact opportunities, positioning Oman as a gateway to regional markets and a hub for responsible and future-focused investment.",
-      "bio": "Sheikha Janat Al Hashmi is an Omani entrepreneur and strategic leader with experience spanning the energy, education, and investment sectors. She holds a Bachelor of Science in Geosciences with honors and a minor in Astronomy and Astrophysics from Pennsylvania State University. She began her professional career as a Geophysicist with Occidental Petroleum Corporation, where she developed expertise in energy exploration and resource management.\n\nAs Co-Founder and Chief Executive Officer of Shomoukh International Investment, she oversees strategic investment clusters across education, energy, manufacturing, mining and natural resources, international markets, and circular economy initiatives. Through these platforms, she leads ventures that support economic diversification, innovation, and sustainable development in alignment with Oman’s national priorities."
+      "name": "شیخه جنات بنت سالم بن حمود الهاشمی",
+      "role": "بنیانگذار – مدیرعامل",
+      "messageTitle": "پیام مدیرعامل",
+      "message": "جاه‌طلبی ما توسعه بسترهای سرمایه‌گذاری استراتژیک است که به رشد اقتصادی بلندمدت و توسعه پایدار کمک می‌کند. امروزه فعالیت‌های سرمایه‌گذاری ما بیش از ۱۰ بخش استراتژیک از جمله آموزش، انرژی، تولید، منابع طبیعی و بازارهای بین‌المللی را در بر می‌گیرد.\n\nما با همکاری شرکا و مؤسسات جهانی، به گسترش حضور سرمایه‌گذاری خود در بازارهای منطقه‌ای و بین‌المللی ادامه می‌دهیم و از پروژه‌هایی حمایت می‌کنیم که نوآوری، تنوع اقتصادی و صنایع پایدار را تقویت می‌نمایند.\n\nعمان تحت رهبری مدبرانه اعلیحضرت سلطان هیثم بن طارق المعظم و با هدایت آرمان‌های چشم‌انداز ۲۰۴۰ عمان، در حال ظهور به عنوان یک مقصد رقابتی برای سرمایه‌گذاری بین‌المللی است.\n\nهدف بلندمدت ما ایجاد بسترهای سرمایه‌گذاری است که سرمایه جهانی را به فرصت‌های پربازده متصل کرده و عمان را به عنوان دروازه‌ای به بازارهای منطقه‌ای و مرکزی برای سرمایه‌گذاری‌های مسئولانه و آینده‌نگر معرفی کند.",
+      "bio": "شیخه جنات الهاشمی یک کارآفرین و رهبر استراتژیک عمانی با تجربه در بخش‌های انرژی، آموزش و سرمایه‌گذاری است. وی دارای مدرک کارشناسی علوم زمین با رتبه ممتاز و گرایش فرعی نجوم و اخترفیزیک از دانشگاه ایالتی پنسیلوانیا است. او فعالیت حرفه‌ای خود را به عنوان ژئوفیزیکدان در شرکت اکسیدنتال پترولیوم آغاز نمود و در آنجا تخصص خود را در زمینه اکتشاف انرژی و مدیریت منابع توسعه داد.\n\nاو به عنوان بنیانگذار و مدیرعامل «شموخ اینترنشنال اینوستمنت»، بر خوشه‌های سرمایه‌گذاری استراتژیک در حوزه‌های آموزش، انرژی، تولید، معدن و منابع طبیعی، بازارهای بین‌المللی و طرح‌های اقتصاد چرخشی نظارت دارد. وی از طریق این بسترها، پروژه‌هایی را رهبری می‌کند که از تنوع اقتصادی، نوآوری و توسعه پایدار در راستای اولویت‌های ملی عمان حمایت می‌کنند."
     },
     "vp": {
-      "name": "Sheikh Julanda Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – VICE PRESIDENT",
-      "messageTitle": "Message from the Vice President",
-      "message": "Strategic investment plays a critical role in shaping the future of economies. At Shomoukh International Investment, we focus on developing partnerships that facilitate foreign direct investment and connect international capital with opportunities in the Sultanate of Oman. Our investment activities extend across multiple industries including energy, logistics, tourism, technology, manufacturing, agriculture, real estate, and private equity, supporting ventures designed to strengthen long-term economic diversification.\n\nThrough our global partnerships and investment platforms, we aim to expand access to regional and international markets, enabling investors to participate in emerging sectors and high-growth industries.\n\nOur objective is to contribute to the development of investment ecosystems that encourage innovation, sustainable growth, and long-term economic resilience.",
-      "bio": "Sheikh Julanda bin Salim Hamood Al Hashmi is an Omani investor and public policy advisor engaged in strategic investment and national economic development.\n\nAs Co-Founder of Shomoukh International Investment he works with international partners, institutions, and investors to advance strategic ventures and facilitate foreign direct investment into the Sultanate of Oman.\n\nHe oversees several strategic investment clusters across sectors including energy, real estate, logistics, tourism, information technology, manufacturing, agriculture and fisheries, strategic private equity investments, and circular economy and sustainable ventures. Through these platforms, he supports initiatives that strengthen economic diversification, investment development, and long-term sustainable growth.\n\nSheikh Julanda holds a Bachelor’s degree in International Affairs from The George Washington University and a Master’s degree in Government and Public Policy from Harvard University."
+      "name": "شیخ جلندی بن سالم بن حمود الهاشمی",
+      "role": "بنیانگذار – نایب رئیس",
+      "messageTitle": "پیام نایب رئیس",
+      "message": "سرمایه‌گذاری استراتژیک نقشی حیاتی در شکل‌دهی به آینده اقتصادها ایفا می‌کند. ما در شموخ اینترنشنال اینوستمنت بر توسعه مشارکت‌هایی تمرکز داریم که سرمایه‌گذاری مستقیم خارجی را تسهیل کرده و سرمایه بین‌المللی را به فرصت‌های موجود در سلطنت عمان متصل می‌کند. فعالیت‌های سرمایه‌گذاری ما در صنایع متعددی از جمله انرژی، لجستیک، گردشگری، فناوری، تولید، کشاورزی، املاک و مستغلات و سهام خصوصی گسترده است و از پروژه‌هایی حمایت می‌کند که برای تقویت تنوع اقتصادی بلندمدت طراحی شده‌اند.\n\nهدف ما از طریق مشارکت‌های جهانی و بسترهای سرمایه‌گذاری، گسترش دسترسی به بازارهای منطقه‌ای و بین‌المللی است تا سرمایه‌گذاران بتوانند در بخش‌های نوظهور و صنایع با رشد بالا مشارکت کنند.\n\nهدف ما کمک به توسعه اکوسیستم‌های سرمایه‌گذاری است که نوآوری، رشد پایدار و تاب‌آوری اقتصادی بلندمدت را تشویق می‌کنند.",
+      "bio": "شیخ جلندی بن سالم بن حمود الهاشمی یک سرمایه‌گذار و مشاور سیاست‌گذاری عمومی عمانی است که در زمینه سرمایه‌گذاری استراتژیک و توسعه اقتصادی ملی فعالیت می‌کند.\n\nاو به عنوان بنیانگذار «شموخ اینترنشنال اینوستمنت»، با شرکا، مؤسسات و سرمایه‌گذاران بین‌المللی برای پیشبرد پروژه‌های استراتژیک و تسهیل سرمایه‌گذاری مستقیم خارجی در سلطنت عمان همکاری می‌کند.\n\nوی بر چندین خوشه سرمایه‌گذاری استراتژیک در بخش‌هایی از جمله انرژی، املاک و مستغلات، لجستیک، گردشگری، فناوری اطلاعات، تولید، کشاورزی و شیلات، سرمایه‌گذاری‌های سهام خصوصی استراتژیک و پروژه‌های اقتصاد چرخشی و پایدار نظارت دارد. وی از طریق این بسترها، از ابتکاراتی حمایت می‌کند که تنوع اقتصادی، توسعه سرمایه‌گذاری و رشد پایدار بلندمدت را تقویت می‌نمایند.\n\nشیخ جلندی دارای مدرک کارشناسی روابط بین‌الملل از دانشگاه جورج واشینگتن و مدرک کارشناسی ارشد دولت و سیاست‌گذاری عمومی از دانشگاه هاروارد است."
     },
     "md": {
-      "name": "Sheikha Jinan Salim Hamood Al Hashmi",
-      "role": "CO-FOUNDER – MANAGING DIRECTOR",
-      "messageTitle": "Message from the Managing Director",
-      "message": "Our focus is to ensure that our investments generate meaningful long-term impact. Through our strategic investment platforms, we oversee initiatives designed to support sustainable development across sectors including energy, tourism, real estate, education, and responsible investment initiatives.\n\nOur approach emphasizes sustainable growth, innovation, and responsible capital deployment. By integrating sustainability principles across our investment strategy, we aim to support industries that contribute to economic development while creating lasting value for communities.\n\nAs Oman continues to strengthen its position within global markets under Oman Vision 2040, our goal is to support ventures that align with these national ambitions and expand the reach of Omani investment platforms into regional and international markets.",
-      "bio": "Sheikha Jinan Salim Hamood Al Hashmi is an Omani education leader and entrepreneur dedicated to advancing international education and strategic investment initiatives. She is the Co-Founder of Shomoukh International Investment and plays an active role in guiding its long-term investment strategy. She holds a Bachelor of Arts with honors in International Development and a minor in Business Administration from The George Washington University’s Elliott School of International Affairs, as well as an MBA in Global Management.\n\nHer professional experience includes work with the Embassy of Oman in Washington, the Ministry of Foreign Affairs, and investment promotion initiatives supporting Oman’s Vision 2040. She oversees strategic investment clusters focused on sustainability across sectors including energy, tourism, real estate, and education, ensuring long-term impact and responsible development."
+      "name": "شیخه جنان بنت سالم بن حمود الهاشمی",
+      "role": "بنیانگذار – مدیر اجرایی",
+      "messageTitle": "پیام مدیر اجرایی",
+      "message": "تمرکز ما بر اطمینان از این است که سرمایه‌گذاری‌هایمان تأثیر معنادار بلندمدتی ایجاد کنند. ما از طریق بسترهای سرمایه‌گذاری استراتژیک خود، بر طرح‌هایی نظارت می‌کنیم که برای حمایت از توسعه پایدار در بخش‌هایی از جمله انرژی، گردشگری، املاک و مستغلات، آموزش و ابتکارات سرمایه‌گذاری مسئولانه طراحی شده‌اند.\n\nرویکرد ما بر رشد پایدار، نوآوری و تخصیص مسئولانه سرمایه تأکید دارد. با ادغام اصول پایداری در استراتژی سرمایه‌گذاری خود، هدف ما حمایت از صنایعی است که به توسعه اقتصادی کمک کرده و در عین حال ارزشی ماندگار برای جوامع خلق می‌کنند.\n\nهمانطور که عمان به تقویت جایگاه خود در بازارهای جهانی تحت چشم‌انداز ۲۰۴۰ عمان ادامه می‌دهد، هدف ما حمایت از پروژه‌هایی است که با این جاه‌طلبی‌های ملی همسو بوده و دامنه بسترهای سرمایه‌گذاری عمان را در بازارهای منطقه‌ای و بین‌المللی گسترش می‌دهند.",
+      "bio": "شیخه جنان بنت سالم بن حمود الهاشمی یک رهبر آموزشی و کارآفرین عمانی است که به پیشبرد آموزش بین‌المللی و ابتکارات سرمایه‌گذاری استراتژیک اختصاص دارد. او بنیانگذار «شموخ اینترنشنال اینوستمنت» است و نقشی فعال در هدایت استراتژی سرمایه‌گذاری بلندمدت آن ایفا می‌کند. وی دارای مدرک کارشناسی با رتبه ممتاز در توسعه بین‌الملل و گرایش فرعی مدیریت بازرگانی از مدرسه روابط بین‌الملل الیوت در دانشگاه جورج واشینگتن و همچنین مدرک MBA در مدیریت جهانی است.\n\nتجربه حرفه‌ای او شامل همکاری با سفارت عمان در واشینگتن، وزارت امور خارجه و ابتکارات ارتقای سرمایه‌گذاری در حمایت از چشم‌انداز ۲۰۴۰ عمان است. او بر خوشه‌های سرمایه‌گذاری استراتژیک با تمرکز بر پایداری در بخش‌هایی چون انرژی، گردشگری، املاک و مستغلات، و آموزش نظارت دارد و تأثیر بلندمدت و توسعه مسئولانه را تضمین می‌کند."
     }
   },
   "contact": {
-    "heroTitle": "Connect with \n Shomoukh",
-    "heroSubtitle": "Global Reach, Local Impact",
-    "heroDesc": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
+    "heroTitle": "ارتباط با\nشموخ",
+    "heroSubtitle": "دسترسی جهانی، اثرگذاری محلی",
+    "heroDesc": "چه بهدنبال فرصتهای سرمایهگذاری باشید و چه مشارکتهای راهبردی، تیم ما آماده گفتوگو با شماست.",
     "form": {
-      "title": "Send a Message",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "email": "Email Address",
-      "company": "Company",
-      "message": "Message",
-      "submit": "Submit Inquiry"
+      "title": "ارسال پیام",
+      "firstName": "نام",
+      "lastName": "نام خانوادگی",
+      "email": "آدرس ایمیل",
+      "company": "شرکت",
+      "message": "پیام",
+      "submit": "ارسال درخواست"
     },
     "info": {
-      "address": "Address",
-      "muscat": "Muscat, Oman",
-      "phone": "Phone",
-      "email": "Email"
+      "address": "آدرس",
+      "muscat": "مسقط، عمان",
+      "phone": "تلفن",
+      "email": "ایمیل"
     }
   },
   "keySectors": {
-    "heroTitle": "Transforming \n Industries",
-    "heroSubtitle": "Strategic Sectors",
-    "heroDesc": "We invest in high-growth sectors that are critical to Oman's national development and global competitiveness."
+    "heroTitle": "تحول \n صنایع",
+    "heroSubtitle": "بخش‌های استراتژیک",
+    "heroDesc": "ما در بخش‌های با رشد بالا سرمایه‌گذاری می‌کنیم که برای توسعه ملی عمان و رقابت‌پذیری جهانی حیاتی هستند."
   },
   "resources": {
-    "heroTitle": "Investor \n Resources",
-    "heroSubtitle": "Knowledge Hub",
-    "heroDesc": "Access key documents, reports, and insights into Oman's investment landscape and our portfolio performance."
+    "heroTitle": "منابع\nسرمایهگذار",
+    "heroSubtitle": "مرکز دانش",
+    "heroDesc": "به اسناد کلیدی، گزارشها و بینشهای مرتبط با فضای سرمایهگذاری عمان و عملکرد پرتفوی ما دسترسی داشته باشید."
   },
   "signIn": {
-    "title": "Investor Portal",
-    "desc": "Access your personalized dashboard and portfolio reports.",
-    "email": "Email",
-    "password": "Password",
-    "button": "Sign In",
-    "forgot": "Forgot Password?",
-    "noAccount": "Don't have an account?",
-    "contactSupport": "Contact support"
+    "title": "پرتال سرمایهگذار",
+    "desc": "به داشبورد شخصی و گزارشهای پرتفوی خود دسترسی پیدا کنید.",
+    "email": "ایمیل",
+    "password": "رمز عبور",
+    "button": "ورود",
+    "forgot": "رمز عبور را فراموش کردهاید؟",
+    "noAccount": "حساب کاربری ندارید؟",
+    "contactSupport": "تماس با پشتیبانی"
   },
   "contactCTA": {
-    "badge": "Connect",
-    "title": "Ready to connect with <span class=\"gradient-text\">our team</span>?",
-    "description": "Whether you are looking for investment opportunities or strategic partnerships, our team is ready to discuss how we can grow together.",
-    "button": "Contact Us",
+    "badge": "تماس",
+    "title": "آماده ارتباط با <span class=\"gradient-text\">تیم ما</span> هستید؟",
+    "description": "چه به دنبال فرصت‌های سرمایه‌گذاری باشید و چه مشارکت‌های استراتژیک، تیم ما آماده است تا در مورد نحوه رشد مشترک گفتگو کند.",
+    "button": "تماس با ما",
     "card1": {
-      "title": "Strategic Advisory",
-      "description": "Tailored investment strategies and direct market entry consultation."
+      "title": "مشاوره استراتژیک",
+      "description": "استراتژی‌های سرمایه‌گذاری متناسب و مشاوره مستقیم برای ورود به بازار."
     },
     "card2": {
-      "title": "Institutional Support",
-      "description": "Direct access to government entities and world-class infrastructure."
+      "title": "حمایت نهادی",
+      "description": "دسترسی مستقیم به نهادهای دولتی و زیرساخت‌های در کلاس جهانی."
     }
   },
   "footer": {
-    "contact": "تماس",
+    "contact": "تماس با ما",
     "directInquiry": "استعلام مستقیم",
-    "address": "آدرس"
+    "address": "آدرس",
+    "cta": "بیایید آینده عمان را با هم بسازیم",
+    "description": "توسعه استراتژیک و سرمایه‌گذاری خصوصی در سراسر سلطنت عمان. ارائه برتری از سال ۲۰۰۶.",
+    "addressLine1": "صندوق پستی: ۱۷۵۶ | کد پستی: ۱۱۱",
+    "addressLine2": "مرتفعات المطار، مسقط",
+    "addressLine3": "سلطنت عمان",
+    "rights": "تمامی حقوق محفوظ است.",
+    "termsOfService": "شرایط خدمات",
+    "privacyPolicy": "سیاست حریم خصوصی",
+    "siteMap": "نقشه سایت",
+    "text": {
+      "11": "ما که هستیم",
+      "12": "تماس با ما",
+      "14": "بخش‌های استراتژیک",
+      "15": "چرا عمان",
+      "17": "منابع",
+      "19": "شرکت",
+      "x1": "بخش‌های کلیدی",
+      "x2": "حوزه‌های سرمایه‌گذاری",
+      "x3": "نمای کلی",
+      "x4": "مشوق‌ها",
+      "x5": "گزارش‌های بازار"
+    },
+    "newsletter": {
+      "title": "با خبر شوید",
+      "description": "در خبرنامه ما مشترک شوید تا آخرین بینش‌ها و فرصت‌های سرمایه‌گذاری در عمان را دریافت کنید.",
+      "placeholder": "آدرس ایمیل",
+      "button": "اشتراک"
+    }
   },
   "leadership": {
     "chairman": {
-      "name": "The Honorable Sheikh Salim Hamood Said Al Hashmi",
-      "title": "Chairman",
-      "message_title": "Chairman's Message",
-      "message_text": "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants, scholars, and travelers connected the great regions of Asia, Africa, Europe, and the Americas, shaping a legacy of openness, dialogue, and peaceful exchange.\n\nIt is within this enduring spirit that Shomoukh International Investment was founded. Our purpose has always been guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities and sustainable opportunities for future generations.\n\nToday, under the visionary leadership of His Majesty Sultan Haitham bin Tarik Al Said, the Sultanate continues to advance a forward-looking agenda that strengthens economic diversification, innovation, and global partnership. Oman occupies a unique position in the world—geographically, historically, and culturally. Located at the crossroads of global trade routes, the country continues to strengthen its role as a center for cooperation, investment, and responsible development.\n\nThrough our investments and strategic partnerships, we seek to support this national journey by developing ventures that foster innovation, strengthen industries, and contribute to long-term prosperity. We remain committed to building partnerships across borders and investing in opportunities that reflect the values of cooperation, progress, and shared prosperity.\n\nAs we look to the future, our ambition remains clear: to contribute to a world where opportunity is expanded, communities thrive, and Oman continues to stand as a place where cultures, ideas, and markets meet."
+      "name": "جناب شیخ سالم بن حمود بن سعید الهاشمی",
+      "title": "رئیس هیئت مدیره",
+      "message_title": "پیام رئیس هیئت مدیره",
+      "message_text": "قرن‌هاست که سلطنت عمان به عنوان پلی میان تمدن‌ها ایستاده است. بازرگانان، دانشمندان و مسافران از سواحل آن، مناطق بزرگ آسیا، آفریقا، اروپا و آمریکا را به هم متصل کرده و میراثی از گشایش، گفتگو و تبادل مسالمت‌آمیز را شکل داده‌اند.\n\nبا همین روحیه ماندگار است که «شموخ اینترنشنال اینوستمنت» تأسیس شد. هدف ما همواره بر این باور استوار بوده است که سرمایه‌گذاری نه تنها باید به پیشرفت اقتصادی کمک کند، بلکه باید در توسعه جوامع پویا و فرصت‌های پایدار برای نسل‌های آینده نیز سهیم باشد.\n\nامروز، تحت رهبری مدبرانه اعلیحضرت سلطان هیثم بن طارق المعظم، سلطنت به پیشبرد یک دستور کار آینده‌نگر ادامه می‌دهد که تنوع اقتصادی، نوآوری و مشارکت جهانی را تقویت می‌کند. عمان جایگاهی منحصر به فرد در جهان دارد — از نظر جغرافیایی، تاریخی و فرهنگی. این کشور که در تقاطع راه‌های تجاری جهانی قرار دارد، به تقویت نقش خود به عنوان مرکزی برای همکاری، سرمایه‌گذاری و توسعه مسئولانه ادامه می‌دهد.\n\nما از طریق سرمایه‌گذاری‌ها و مشارکت‌های استراتژیک خود، با توسعه پروژه‌هایی که نوآوری را ترویج می‌کنند، صنایع را تقویت می‌کنند و به رفاه بلندمدت کمک می‌نمایند، به دنبال حمایت از این مسیر ملی هستیم. ما به ایجاد مشارکت‌های فرامرزی و سرمایه‌گذاری در فرصت‌هایی که بازتاب‌دهنده ارزش‌های همکاری، پیشرفت و رفاه مشترک هستند، متعهد می‌مانیم.\n\nهمانطور که به آینده می‌نگریم، جاه‌طلبی ما روشن است: کمک به دنیایی که در آن فرصت‌ها گسترش می‌بانند، جوامع شکوفا می‌شوند و عمان همچنان به عنوان مکانی که در آن فرهنگ‌ها، ایده‌ها و بازارها با هم ملاقات می‌کنند، پابرجاست."
     }
   }
 }

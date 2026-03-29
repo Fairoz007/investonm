@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ChevronRight, Quote } from 'lucide-react';
+import { ChevronDown, X, BookOpen, Quote } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 interface Expert {
   name: string;
@@ -11,20 +11,26 @@ interface Expert {
   messageTitle?: string;
   message: string;
   bio?: string;
+  isChairman?: boolean;
 }
 
 export default function OurExperts() {
   const { t } = useTranslation();
   const { lang } = useParams();
   const currentLang = lang || 'en';
-  const [selectedExpert, setSelectedExpert] = useState<Expert | null>(null);
+  
+  // State for expanded messages (inline)
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  // State for biography modal
+  const [selectedBioExpert, setSelectedBioExpert] = useState<Expert | null>(null);
 
   const chairman: Expert = {
-    name: t('ourExperts.chairman.name', 'Sheikh Salim Hamood Said Al Hashmi'),
+    name: t('ourExperts.chairman.name', 'The Honorable Sheikh Salim Hamood Said Al Hashmi'),
     role: t('ourExperts.chairman.role', 'CHAIRMAN'),
     image: 'https://ges.om/assets/img/chirman.png',
     messageTitle: t('ourExperts.chairman.messageTitle', "Chairman's Message"),
     message: t('ourExperts.chairman.message'),
+    isChairman: true,
   };
 
   const leaders: Expert[] = [
@@ -34,7 +40,7 @@ export default function OurExperts() {
       image: 'https://ges.om/assets/img/members/Jannat.jpg',
       messageTitle: t('ourExperts.ceo.messageTitle', 'Message from the Chief Executive Officer'),
       message: t('ourExperts.ceo.message'),
-      bio: t('ourExperts.ceo.bio')
+      bio: t('ourExperts.ceo.bio'),
     },
     {
       name: t('ourExperts.vp.name', 'Sheikh Julanda Salim Hamood Al Hashmi'),
@@ -56,18 +62,21 @@ export default function OurExperts() {
 
   const allExperts: Expert[] = [chairman, ...leaders];
 
-  // Effect to handle scroll when modal opens
+  const toggleExpand = (i: number) =>
+    setExpandedIndex(prev => (prev === i ? null : i));
+
+  // Handle modal scroll lock
   React.useEffect(() => {
-    if (selectedExpert) {
+    if (selectedBioExpert) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => { document.body.style.overflow = 'unset'; };
-  }, [selectedExpert]);
+  }, [selectedBioExpert]);
 
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-transparent text-foreground">
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-8 sm:pb-12 overflow-hidden">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -83,130 +92,183 @@ export default function OurExperts() {
         </div>
       </section>
 
-      {/* Experts List - Alternating Layout */}
-      <section className="pb-10 sm:pb-12 lg:pb-16 pt-0">
+      {/* Experts List */}
+      <section className="pb-16 lg:pb-24 pt-0">
         <div className="container-custom">
-          <div className="space-y-12 sm:space-y-16 lg:space-y-24">
-            {allExperts.map((expert, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`flex flex-col lg:flex-row ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''} gap-6 sm:gap-8 lg:gap-16 items-center`}
-              >
-                {/* Image side */}
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto lg:mx-0">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.5 }}
-                    className="aspect-[4/5] relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-xl group cursor-pointer"
-                    onClick={() => setSelectedExpert(expert)}
-                  >
-                    <img
-                      src={expert.image}
-                      alt={expert.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-                  </motion.div>
-                </div>
+          <div className="space-y-16 lg:space-y-24">
+            {allExperts.map((expert, i) => {
+              const isExpanded = expandedIndex === i;
+              const messageParagraphs = expert.message.split('\n\n');
+              const previewParas = messageParagraphs.slice(0, 2);
+              const remainingParas = messageParagraphs.slice(2);
+              const hasMore = messageParagraphs.length > 2;
 
-                {/* Content side */}
-                <div className="w-full lg:w-2/3 space-y-4 sm:space-y-6">
-                  <div className="space-y-2 sm:space-y-3">
-                    <h2 className="text-xl sm:text-2xl lg:text-4xl font-display font-bold leading-tight">
-                      <span className="gradient-text">{expert.name}</span>
-                    </h2>
-                    <div className="space-y-2 sm:space-y-3">
-                      <p className="text-sm sm:text-base lg:text-lg font-bold tracking-widest text-primary uppercase">
-                        {expert.role}
-                      </p>
-                      <div className="w-16 h-1 bg-primary/50 rounded-full" />
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
+                  <div
+                    className={`flex flex-col lg:flex-row ${
+                      i % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                    } gap-8 sm:gap-10 lg:gap-20 items-start`}
+                  >
+                    {/* Image */}
+                    <div className="w-48 sm:w-64 lg:w-80 mx-auto lg:mx-0 flex-shrink-0 sticky top-32">
+                      <div className="aspect-[4/5] relative rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
+                        <img
+                          src={expert.image}
+                          alt={expert.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="w-full lg:flex-1 space-y-6">
+                      {/* Name & Role */}
+                      <div className="space-y-3">
+                        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold leading-tight">
+                          <span className="gradient-text">{expert.name}</span>
+                        </h2>
+                        <div className="flex items-center gap-4">
+                          <div className="h-px w-8 bg-primary/50" />
+                          <p className="text-xs sm:text-sm font-bold tracking-[0.3em] text-primary uppercase">
+                            {expert.role}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Message Section */}
+                      <div className="space-y-4">
+                        {expert.messageTitle && (
+                          <p className="text-white/40 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase italic">
+                            {expert.messageTitle}
+                          </p>
+                        )}
+                        
+                        <div className="text-sm sm:text-base lg:text-lg text-white/80 leading-relaxed font-light">
+                          {/* Seamless Expansion: Both preview and rest are in the same flow */}
+                          <div className="space-y-4">
+                            {previewParas.map((para, idx) => (
+                              <p key={idx}>{para}</p>
+                            ))}
+                            
+                            <AnimatePresence initial={false}>
+                              {isExpanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: 'auto', opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                  className="overflow-hidden space-y-4"
+                                >
+                                  {remainingParas.map((para, idx) => (
+                                    <p key={idx}>{para}</p>
+                                  ))}
+                                  
+                                  {/* Biography Link (in popup) - Not for chairman */}
+                                  {!expert.isChairman && expert.bio && (
+                                    <div className="pt-6">
+                                      <button
+                                        onClick={() => setSelectedBioExpert(expert)}
+                                        className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all group"
+                                      >
+                                        <BookOpen size={16} className="text-primary group-hover:scale-110 transition-transform" />
+                                        <span className="text-xs font-bold tracking-widest uppercase text-white/90">
+                                          {t('ourExperts.viewBiography', 'Read Full Biography')}
+                                        </span>
+                                      </button>
+                                    </div>
+                                  )}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+
+                          {/* Toggle Button */}
+                          {hasMore && (
+                            <button
+                              onClick={() => toggleExpand(i)}
+                              className="mt-6 flex items-center gap-2 text-primary font-bold uppercase tracking-[0.2em] text-[10px] sm:text-xs hover:gap-3 transition-all"
+                            >
+                              <span>{isExpanded ? t('common.readLess', 'Read Less') : t('common.readMore', 'Read More')}</span>
+                              <ChevronDown size={14} className={`transition-transform duration-500 ${isExpanded ? 'rotate-180' : ''}`} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="space-y-4 text-sm lg:text-base text-white/80 leading-relaxed">
-                    {(expert.bio || expert.message).split('\n\n').slice(0, 2).map((para, idx) => (
-                      <p key={idx}>{para}</p>
-                    ))}
-                    <button
-                      onClick={() => setSelectedExpert(expert)}
-                      className="flex items-center gap-2 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm pt-4 group touch-target"
-                    >
-                      <span className="gradient-text">{t('common.readMore', 'Read More')}</span>
-                      <ChevronRight size={18} className="text-primary group-hover:translate-x-1 transition-transform rtl:rotate-180" />
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                  
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-
-
-      {/* Modal Overlay */}
+      {/* Biography Modal */}
       <AnimatePresence>
-        {selectedExpert && (
-          <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4">
+        {selectedBioExpert && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedExpert(null)}
-              className="absolute inset-0 bg-background/60 backdrop-blur-md"
+              onClick={() => setSelectedBioExpert(null)}
+              className="absolute inset-0 bg-background/80 backdrop-blur-xl"
             />
+            
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 40 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 40 }}
-              className="relative w-full sm:max-w-4xl bg-card/95 border border-white/10 rounded-t-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl flex flex-col backdrop-blur-xl max-h-[90vh]"
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-2xl bg-white/[0.03] border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col overflow-hidden"
             >
-              {/* Header */}
-              <div className="flex items-center justify-between p-5 sm:p-8 border-b border-white/5">
-                <div className="space-y-1 pr-4">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold tracking-tight">
-                    <span className="gradient-text">{selectedExpert.name}</span>
-                  </h2>
-                  <p className="text-xs sm:text-sm font-bold text-primary uppercase tracking-[0.2em]">{selectedExpert.role}</p>
+              {/* Modal Header */}
+              <div className="p-6 sm:p-10 border-b border-white/5 flex items-start justify-between bg-white/[0.01]">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/10 flex-shrink-0">
+                      <img src={selectedBioExpert.image} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">
+                        {selectedBioExpert.name}
+                      </h3>
+                      <p className="text-[10px] font-bold text-primary tracking-[0.2em] uppercase">
+                        {selectedBioExpert.role}
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <button
-                  onClick={() => setSelectedExpert(null)}
-                  className="p-3 hover:bg-white/10 rounded-full transition-colors group flex-shrink-0 touch-target"
+                  onClick={() => setSelectedBioExpert(null)}
+                  className="p-2 hover:bg-white/10 rounded-full transition-colors group"
                 >
                   <X className="w-6 h-6 text-white/50 group-hover:text-white" />
                 </button>
               </div>
 
-              {/* Content Area */}
-              <div className="flex-1 overflow-y-auto custom-scrollbar p-5 sm:p-8 md:p-12">
-                <div className="flex flex-col md:flex-row gap-8 sm:gap-12">
-                  {/* Small Profile Image */}
-                  <div className="w-full md:w-1/3 shrink-0">
-                    <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-xl max-w-[240px] mx-auto md:max-w-none md:mx-0">
-                      <img
-                        src={selectedExpert.image}
-                        alt={selectedExpert.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+              {/* Modal Content */}
+              <div className="flex-1 overflow-y-auto p-6 sm:p-10 custom-scrollbar">
+                <div className="space-y-8">
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    <h4 className="text-sm font-bold tracking-[0.2em] text-white/40 uppercase">
+                      {t('ourExperts.biography', 'Biography')}
+                    </h4>
                   </div>
-
-                  {/* Details */}
-                  <div className="flex-1 space-y-6 sm:space-y-8">
-                    <div className="space-y-4 sm:space-y-6">
-                      <div className="text-base sm:text-lg lg:text-xl text-white/80 leading-relaxed space-y-4 sm:space-y-6">
-                        {((selectedExpert.bio || selectedExpert.message) || '').split('\n\n').map((para, idx) => (
-                          <p key={idx} className="relative">
-                            {idx === 0 && <Quote className="absolute -left-6 sm:-left-10 -top-4 w-6 sm:w-8 h-6 sm:h-8 text-primary/20" />}
-                            {para}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
+                  
+                  <div className="space-y-6 text-sm sm:text-base text-white/70 leading-relaxed font-light">
+                    {selectedBioExpert.bio?.split('\n\n').map((para, idx) => (
+                      <p key={idx}>{para}</p>
+                    ))}
                   </div>
                 </div>
               </div>

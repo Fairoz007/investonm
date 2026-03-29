@@ -3,7 +3,6 @@
     "en": "English",
     "ar": "Arabic",
     "ru": "Russian",
-    "zh": "Chinese",
     "fa": "Persian",
     "tr": "Turkish"
   },
@@ -34,7 +33,7 @@
   },
   "hero": {
     "slide1": {
-      "title": "Investing in\nWhat's Next.",
+      "title": "Investing in\nthe future",
       "description": "Private investment and strategic development across Oman and global markets."
     },
     "slide2": {
