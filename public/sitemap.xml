@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://shomoukh.com/en</loc><priority>1.0</priority></url>
+  <url><loc>https://shomoukh.com/ar</loc><priority>1.0</priority></url>
+  <url><loc>https://shomoukh.com/fa</loc><priority>1.0</priority></url>
+  <url><loc>https://shomoukh.com/tr</loc><priority>1.0</priority></url>
+  <url><loc>https://shomoukh.com/ru</loc><priority>1.0</priority></url>
+  <url><loc>https://shomoukh.com/en/about-oman</loc><priority>0.8</priority></url>
+  <url><loc>https://shomoukh.com/en/key-sectors</loc><priority>0.8</priority></url>
+  <url><loc>https://shomoukh.com/en/who-we-are</loc><priority>0.8</priority></url>
+  <url><loc>https://shomoukh.com/en/our-experts</loc><priority>0.8</priority></url>
+  <url><loc>https://shomoukh.com/en/contact</loc><priority>0.8</priority></url>
+</urlset>

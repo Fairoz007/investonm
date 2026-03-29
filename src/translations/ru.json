@@ -36,9 +36,11 @@
     "vision": "Видение Омана 2040"
   },
   "common": {
+    "siteTitle": "Shomoukh International Investment",
     "learnMore": "Узнать больше",
     "viewAll": "Смотреть все",
     "contact": "Связаться с нами",
+    "comingSoon": "Скоро появится",
     "readMore": "Читать далее"
   },
   "ourStory": {

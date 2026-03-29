@@ -41,7 +41,7 @@ export default function SignIn() {
                   <input 
                     type="email" 
                     className="w-full bg-white/5 border border-white/10 rounded-2xl pl-16 pr-6 py-5 focus:border-primary focus:outline-none transition-colors"
-                    placeholder="investor@shomoukh.com"
+                    placeholder="investor@shomoukh.om"
                   />
                 </div>
               </div>

@@ -67,7 +67,11 @@ const NavDropdown = ({ item, lang }: { item: NavItem, lang: string }) => {
       onMouseLeave={() => { setIsOpen(false); if (hasSidebar) setActiveChildIndex(0); else setActiveChildIndex(null); }}
       className="relative h-full flex items-center"
     >
-      <button className={`font-sans flex items-center gap-1.5 py-6 text-[15px] font-normal tracking-wide whitespace-nowrap transition-colors relative cursor-pointer ${isOpen ? 'text-white' : 'text-[#A7B0C3] hover:text-white'
+      <button 
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        aria-label={t(item.label)}
+        className={`font-sans flex items-center gap-1.5 py-6 text-[15px] font-normal tracking-wide whitespace-nowrap transition-colors relative cursor-pointer ${isOpen ? 'text-white' : 'text-[#A7B0C3] hover:text-white'
         }`}>
         {prettyLabel(item.label)}
         <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : 'opacity-70'} ${isRtl ? 'mr-0.5' : 'ml-0.5'}`} />
@@ -212,6 +216,8 @@ const MobileNavItem = ({ item, lang, onClose }: { item: NavItem, lang: string, o
   return (
     <div className="border-b border-white/10">
       <button
+        aria-expanded={isExpanded}
+        aria-controls={`mobile-sub-${item.label}`}
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex items-center justify-between w-full py-4 px-4 text-base font-medium text-white font-sans hover:bg-white/5 transition-all duration-300 rounded-xl cursor-pointer"
       >
@@ -223,6 +229,7 @@ const MobileNavItem = ({ item, lang, onClose }: { item: NavItem, lang: string, o
       <AnimatePresence>
         {isExpanded && (
           <motion.div
+            id={`mobile-sub-${item.label}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -365,6 +372,7 @@ export const Navigation = () => {
             {/* Right Side Actions */}
             <div className={`flex shrink-0 items-center gap-6 min-w-[200px] ${isRtl ? 'justify-start' : 'justify-end'}`}>
               {/* Language Selector */}
+              {/* Language Selector Hidden
               <div
                 className="hidden md:flex relative items-center h-full group/langwrapper"
                 onMouseEnter={() => setIsLangMenuOpen(true)}
@@ -423,6 +431,7 @@ export const Navigation = () => {
                   )}
                 </AnimatePresence>
               </div>
+              */}
 
               {/* Oman 2040 Logo */}
               <a href="https://www.oman2040.om/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center transition-transform hover:scale-105">
@@ -433,7 +442,10 @@ export const Navigation = () => {
               <div className="lg:hidden flex items-center">
                 <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                   <SheetTrigger asChild>
-                    <button className="p-2 text-white/80 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10">
+                    <button 
+                      aria-label="Open menu"
+                      className="p-2 text-white/80 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
+                    >
                       <Menu className="w-6 h-6" />
                     </button>
                   </SheetTrigger>
@@ -457,6 +469,7 @@ export const Navigation = () => {
 
                       <div className="p-6 border-t border-white/10 space-y-4">
 
+                        {/* Mobile Language Selector Hidden
                         <div className="flex flex-col w-full pb-4 px-2">
                           <button
                             onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
@@ -497,6 +510,7 @@ export const Navigation = () => {
                             )}
                           </AnimatePresence>
                         </div>
+                        */}
                       </div>
                     </div>
                   </SheetContent>

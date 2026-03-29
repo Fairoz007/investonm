@@ -45,11 +45,64 @@ const SEO = () => {
   const pathParts = location.pathname.split('/');
   const pathWithoutLang = pathParts.slice(2).join('/');
 
+  // Page title mapping
+  const getPageTitle = () => {
+    const siteTitle = t('common.siteTitle');
+    
+    if (!pathWithoutLang || pathWithoutLang === '') {
+      return siteTitle;
+    }
+
+    const titleMap: { [key: string]: string } = {
+      'about-oman': t('nav.whyOman'),
+      'key-sectors': t('nav.sectors'),
+      'who-we-are': t('nav.whoWeAre'),
+      'our-experts': t('nav.ourExperts'),
+      'contact': t('nav.connect'),
+      'resources': t('nav.resources'),
+      'signin': t('nav.login'),
+      'forgot-password': t('signIn.forgot'),
+      'terms': t('footer.termsOfService'),
+      'privacy': t('footer.privacyPolicy'),
+      'dashboards': t('footer.text.x5'), // Market Reports / Dashboards fallback
+      'reports': t('nav.marketReports'),
+      'events': t('footer.text.x3'),
+      'laws': t('footer.text.x4'),
+      'why-oman/quality-of-life': t('nav.keyBenefits'),
+      'why-oman/national-strategy': t('hero.vision'),
+      'sectors/giga-projects': t('nav.activeProjects'),
+      'sectors/regions': t('nav.investmentZones'),
+    };
+
+    const pageTitle = titleMap[pathWithoutLang] || pathWithoutLang.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    return `${pageTitle} | ${siteTitle}`;
+  };
+
+  const currentUrl = `${baseUrl}${location.pathname}`;
+  const siteDescription = t('footer.description');
+  const siteTitle = t('common.siteTitle');
+
   return (
     <Helmet>
-      <title>{t('common.siteTitle')}</title>
-      <meta name="description" content={t('footer.description')} />
+      <title>{getPageTitle()}</title>
+      <meta name="description" content={siteDescription} />
       <html lang={lang || 'en'} dir={lang === 'ar' || lang === 'fa' ? 'rtl' : 'ltr'} />
+      <link rel="canonical" href={currentUrl} />
+      
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:title" content={getPageTitle()} />
+      <meta property="og:description" content={siteDescription} />
+      <meta property="og:image" content={`${baseUrl}/images/Logo-01.png`} />
+
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={currentUrl} />
+      <meta property="twitter:title" content={getPageTitle()} />
+      <meta property="twitter:description" content={siteDescription} />
+      <meta property="twitter:image" content={`${baseUrl}/images/Logo-01.png`} />
+
       {LANGUAGES.map((l) => (
         <link
           key={l}
@@ -96,7 +149,7 @@ const LanguageLayout = () => {
       <CosmicBackground />
       <SEO />
       <Navigation />
-      <main className="flex-1 pt-20 md:pt-24">
+      <main id="main-content" className="flex-1 pt-20 md:pt-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}

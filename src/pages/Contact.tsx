@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Globe, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -8,6 +8,43 @@ export default function Contact() {
   const { t } = useTranslation();
   const { lang } = useParams();
   const currentLang = lang || 'en';
+
+  const [formData, setFormData] = React.useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Simulate submission
+    setTimeout(() => {
+      setIsSubmitted(true);
+      
+      const subject = `Investment Inquiry from ${formData.firstName} ${formData.lastName}`;
+      const body = `Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Company: ${formData.company}
+
+Message:
+${formData.message}`;
+
+      const mailtoUrl = `mailto:info@shomoukh.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+
+      // Reset form after a delay
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }, 500);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   return (
     <div className="bg-transparent text-white">
@@ -28,111 +65,152 @@ export default function Contact() {
                 {t('contact.heroDesc')}
               </p>
 
-            <div className="space-y-12">
-              <div className="flex items-start gap-8 group">
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
-                  <MapPin className="text-primary group-hover:text-dark transition-colors" size={28} />
+              <div className="space-y-12">
+                <div className="flex items-start gap-8 group">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                    <MapPin className="text-primary group-hover:text-dark transition-colors" size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-white/40 uppercase tracking-widest text-xs font-bold mb-3">{t('contact.info.address')}</h3>
+                    <p className="text-2xl font-display font-bold">{t('contact.info.muscat')}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-white/40 uppercase tracking-widest text-xs font-bold mb-3">{t('contact.info.address')}</h3>
-                  <p className="text-2xl font-display font-bold">{t('contact.info.muscat')}</p>
+
+                <div className="flex items-start gap-8 group">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                    <Phone className="text-primary group-hover:text-dark transition-colors" size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-white/40 uppercase tracking-widest text-xs font-bold mb-3">{t('contact.info.phone')}</h3>
+                    <p className="text-2xl font-display font-bold">+968 2449 0000</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-8 group">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                    <Mail className="text-primary group-hover:text-dark transition-colors" size={28} />
+                  </div>
+                  <div>
+                     <h3 className="text-white/40 uppercase tracking-widest text-xs font-bold mb-3">{t('contact.info.email')}</h3>
+                     <p className="text-2xl font-display font-bold">info@shomoukh.com</p>
+                  </div>
                 </div>
               </div>
+            </motion.div>
 
-              <div className="flex items-start gap-8 group">
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
-                  <Phone className="text-primary group-hover:text-dark transition-colors" size={28} />
-                </div>
-                <div>
-                  <h3 className="text-white/40 uppercase tracking-widest text-xs font-bold mb-3">{t('contact.info.phone')}</h3>
-                  <p className="text-2xl font-display font-bold">+968 2449 0000</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-8 group">
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
-                  <Mail className="text-primary group-hover:text-dark transition-colors" size={28} />
-                </div>
-                <div>
-                   <h3 className="text-white/40 uppercase tracking-widest text-xs font-bold mb-3">{t('contact.info.email')}</h3>
-                   <p className="text-2xl font-display font-bold">info@shomoukh.com</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/[0.01] border border-white/5 p-5 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[40px] relative overflow-hidden group backdrop-blur-xl shadow-2xl"
-          >
-            {/* Background Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-primary/10" />
-            
-            <div className="relative z-10">
-              <h2 className="text-3xl font-display font-bold mb-12">{t('contact.form.title')}</h2>
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white/[0.01] border border-white/5 p-5 sm:p-8 lg:p-10 rounded-[32px] sm:rounded-[40px] relative overflow-hidden group backdrop-blur-xl shadow-2xl"
+            >
+              {/* Background Glow */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-primary/10" />
               
-              <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.firstName')}</label>
-                    <input 
-                      type="text" 
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.lastName')}</label>
-                    <input 
-                      type="text" 
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-display font-bold mb-12">{t('contact.form.title')}</h2>
+                
+                {isSubmitted ? (
+                   <motion.div 
+                     initial={{ opacity: 0, scale: 0.9 }}
+                     animate={{ opacity: 1, scale: 1 }}
+                     className="py-12 flex flex-col items-center text-center space-y-6"
+                   >
+                     <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center text-primary shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                       <Send size={40} className="animate-bounce" />
+                     </div>
+                     <div className="space-y-2">
+                       <h3 className="text-2xl font-bold">Message Sent!</h3>
+                       <p className="text-white/60">We'll get back to you shortly. Thank you for reaching out.</p>
+                     </div>
+                     <button 
+                      onClick={() => setIsSubmitted(false)}
+                      className="as-pr-btn-2 py-3 px-8 text-sm"
+                     >
+                       Send Another Message
+                     </button>
+                   </motion.div>
+                ) : (
+                  <form className="space-y-8" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.firstName')}</label>
+                        <input 
+                          type="text" 
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          required
+                          className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
+                          placeholder="John"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.lastName')}</label>
+                        <input 
+                          type="text" 
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          required
+                          className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
 
-                <div className="space-y-3">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.email')}</label>
-                  <input 
-                    type="email" 
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
+                    <div className="space-y-3">
+                      <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.email')}</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
+                        placeholder="john@example.com"
+                      />
+                    </div>
 
-                <div className="space-y-3">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.company')}</label>
-                  <input 
-                    type="text" 
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
-                    placeholder="Company Name"
-                  />
-                </div>
+                    <div className="space-y-3">
+                      <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.company')}</label>
+                      <input 
+                        type="text" 
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:border-primary focus:outline-none transition-colors"
+                        placeholder="Company Name"
+                      />
+                    </div>
 
-                <div className="space-y-3">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.message')}</label>
-                  <textarea 
-                    rows={5}
-                    className="w-full bg-white/5 border border-white/10 rounded-3xl px-6 py-5 focus:border-primary focus:outline-none transition-colors resize-none"
-                    placeholder="How can we help?"
-                  ></textarea>
-                </div>
+                    <div className="space-y-3">
+                      <label className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">{t('contact.form.message')}</label>
+                      <textarea 
+                        rows={5}
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-white/5 border border-white/10 rounded-3xl px-6 py-5 focus:border-primary focus:outline-none transition-colors resize-none"
+                        placeholder="How can we help?"
+                      ></textarea>
+                    </div>
 
-                <button className="w-full as-pr-btn-2 justify-center py-6">
-                  <span className="text text-lg">{t('contact.form.submit')}</span>
-                  <span className="icon">
-                    <Send size={20} className="rtl:-rotate-90" />
-                  </span>
-                </button>
-              </form>
-            </div>
-          </motion.div>
+                    <button type="submit" className="w-full as-pr-btn-2 justify-center py-6">
+                      <span className="text text-lg">{t('contact.form.submit')}</span>
+                      <span className="icon">
+                        <Send size={20} className="rtl:-rotate-90" />
+                      </span>
+                    </button>
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
   );
 }

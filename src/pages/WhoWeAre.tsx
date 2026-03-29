@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Target, Eye, Shield, Lightbulb, TrendingUp, ChevronRight, Zap, Cpu, Quote, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export default function WhoWeAre() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const { t } = useTranslation();
   const { lang } = useParams();
   const currentLang = lang || 'en';
@@ -299,54 +300,136 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* Chairman's Message - Premium Redesign */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-transparent">
+      {/* ─── Chairman Showcase ─────────────────────────────────────── */}
+      <section className="pb-20 sm:pb-28 lg:pb-32 pt-12">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="bg-white/[0.01] border border-white/5 rounded-[40px] sm:rounded-[60px] p-6 sm:p-10 lg:p-24 relative overflow-hidden backdrop-blur-md shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] gap-12 sm:gap-16 lg:gap-20 items-center">
-              <div className="space-y-10 sm:space-y-12 order-first">
-                <div className="relative">
-                  <div className="aspect-[4/5] rounded-[32px] sm:rounded-[40px] overflow-hidden transition-all duration-1000 border-4 border-white/5 p-1.5 sm:p-2">
-                    <img src="/images/chairman.jpg" alt="Chairman" className="w-full h-full object-cover rounded-[24px] sm:rounded-[32px]" />
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            {/* card container */}
+            <div
+              className="relative rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden border border-white/[0.07]"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0.01) 100%)',
+                backdropFilter: 'blur(20px)',
+                boxShadow: '0 40px 100px -20px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)',
+              }}
+            >
+              {/* top-right ambient glow inside card */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/[0.06] rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/[0.05] rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/4" />
+
+              <div className="relative grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-0 items-center">
+
+                {/* ── Left: Image ──────────────────────────────── */}
+                <div className="flex justify-center lg:justify-start p-8 sm:p-10 lg:p-12 xl:p-14">
+                  <div className="relative">
+                    {/* outer glow ring */}
+                    <div className="absolute inset-0 rounded-[2rem] blur-[30px] bg-blue-500/15 scale-110 pointer-events-none" />
+                    {/* image frame */}
+                    <div
+                      className="relative w-60 sm:w-72 lg:w-80 xl:w-[22rem] aspect-[4/5] rounded-[2rem] overflow-hidden"
+                      style={{
+                        boxShadow: '0 0 0 1.5px rgba(255,255,255,0.08), 0 30px 80px -10px rgba(0,0,0,0.7)',
+                      }}
+                    >
+                      <img
+                        src="/images/chairman.jpg"
+                        alt="Chairman"
+                        className="w-full h-full object-cover object-top"
+                      />
+                      {/* subtle gradient overlay at bottom */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                    </div>
+                    {/* floating role badge */}
+                    <div
+                      className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap px-5 py-2.5 rounded-full"
+                      style={{
+                        background: 'rgba(255,255,255,0.06)',
+                        backdropFilter: 'blur(16px)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                      }}
+                    >
+                      <span className="text-[10px] font-bold tracking-[0.25em] text-primary uppercase">
+                        {t('ourExperts.chairman.role', 'Chairman')}
+                      </span>
+                    </div>
                   </div>
-                  {/* Signature or Title Badge */}
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white text-dark px-6 sm:px-10 py-4 sm:py-6 rounded-xl sm:rounded-2xl shadow-2xl whitespace-nowrap text-center">
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary mb-1">{t('ourExperts.leadership')}</p>
-                    <p className="text-base sm:text-xl font-display font-bold">Sheikh Salim Hamood Said Al Hashmi</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-10 sm:space-y-12 lg:pl-10 order-last mt-8 sm:mt-10 lg:mt-0">
-                <div className="space-y-4 sm:space-y-6">
-                  <Quote size={60} className="text-primary/20 -ml-4 sm:-ml-10" />
-                  <h2 className="text-lg sm:text-xl lg:text-3xl font-display font-bold leading-tight">Building Bridges, Creating Legacy.</h2>
                 </div>
 
-                <div className="space-y-6 sm:space-y-8 text-base sm:text-lg text-white/50 leading-relaxed font-light italic">
-                  <p>
-                    "For centuries, the Sultanate of Oman has stood as a bridge between civilizations. From its shores, merchants and travelers connected the great regions of the world, shaping a legacy of openness and peaceful exchange."
-                  </p>
-                  <p>
-                    "Shomoukh International Investment was founded in this spirit. Our purpose is guided by the belief that investment should contribute not only to economic progress, but also to the development of vibrant communities."
-                  </p>
-                </div>
+                {/* ── Right: Content ───────────────────────────── */}
+                <div className="px-8 sm:px-10 lg:px-12 xl:px-14 pt-4 pb-10 sm:pb-12 lg:py-14 xl:py-16 space-y-7">
 
-                <div className="flex flex-wrap gap-6 sm:gap-10 items-center pt-6 border-t border-white/10">
-                  <Link to={`/${currentLang}/our-experts`} className="as-pr-btn-2 group border-primary/30">
-                    <span className="icon bg-primary text-white">
-                      <ArrowRight size={20} className="transition-transform group-hover:-rotate-45 rtl:group-hover:rotate-45" />
+                  {/* message label */}
+                  <div className="inline-flex items-center gap-2">
+                    <div className="h-px w-5 bg-primary/50" />
+                    <span className="text-[10px] font-bold tracking-[0.3em] text-white/35 uppercase">
+                      {t('ourExperts.chairman.messageTitle', "Chairman's Message")}
                     </span>
-                    <span className="text">{t('whoWeAre.discoverMore')}</span>
-                  </Link>
-                  <div className="flex gap-4">
-                    <div className="w-12 h-0.5 bg-primary/30 self-center" />
-                    <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white/40">The Chairman's Perspective</p>
+                  </div>
+
+                  {/* name */}
+                  <div>
+                    <h2
+                      className="font-bold leading-[1.1] tracking-tight text-white"
+                      style={{ fontSize: 'clamp(1.4rem, 3vw, 2.1rem)' }}
+                    >
+                      The Honorable<br />
+                      <span className="gradient-text">Sheikh Salim Hamood</span><br />
+                      Said Al Hashmi
+                    </h2>
+                  </div>
+
+                  {/* divider */}
+                  <div className="flex items-center gap-4">
+                    <div className="h-px flex-1 bg-white/[0.06]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                  </div>
+
+                  {/* message */}
+                  <div className="text-sm sm:text-base text-white/65 leading-[1.9] font-light space-y-4">
+                    {t('ourExperts.chairman.message').split('\n\n').slice(0, 2).map((para: string, i: number) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                    
+                    <motion.div
+                      initial={false}
+                      animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
+                      style={{ overflow: 'hidden' }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      className="space-y-4"
+                    >
+                      {t('ourExperts.chairman.message').split('\n\n').slice(2).map((para: string, i: number) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </motion.div>
+
+                    <div className="pt-4">
+                      <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="group inline-flex items-center gap-3 rounded-full font-semibold text-xs sm:text-sm tracking-wide transition-all duration-300"
+                        style={{
+                          padding: '0.65rem 1.4rem',
+                          background: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.1))',
+                          border: '1px solid rgba(59,130,246,0.25)',
+                          color: 'rgba(147,197,253,0.95)',
+                          boxShadow: '0 0 20px -8px rgba(59,130,246,0.35)',
+                        }}
+                      >
+                        <span>{isExpanded ? t('common.readLess', 'Read Less') : t('common.readMore', 'Read More')}</span>
+                        <ChevronRight size={14} className={`transition-transform duration-300 ${isExpanded ? 'rotate-90' : 'group-hover:rotate-12'}`} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

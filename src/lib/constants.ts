@@ -80,7 +80,7 @@ export const NAV_ITEMS: NavItem[] = [
     ]
   },
   {
-    label: 'resources.heroSubtitle',
+    label: 'nav.resources',
     href: '/resources',
   },
   {
